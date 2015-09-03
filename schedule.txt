@@ -1,0 +1,396 @@
+# 1
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 2
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 3
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 4
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 5
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 6
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 7
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 8
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 9
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 10
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 11
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 12
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 13
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 14
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 15
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 16
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 17
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 18
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 19
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 20
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 21
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 22
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 23
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 24
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 25
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 26
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 27
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 28
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 29
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 30
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 31
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 32
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 33
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 34
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 35
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 36
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 37
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 38
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 39
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 40
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 41
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 42
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 43
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 44
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 45
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 46
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 47
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 48
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 49
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 50
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 51
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 52
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 53
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 54
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 55
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 56
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 57
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 58
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 59
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 60
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 61
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 62
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 63
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 64
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 65
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 66
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 67
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 68
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 69
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 70
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 71
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 72
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 73
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 74
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 75
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 76
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 77
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 78
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 79
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 80
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 81
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 82
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 83
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 84
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 85
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 86
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 87
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 88
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 89
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 90
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 91
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 92
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 93
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 94
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 95
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 96
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 97
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 98
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
+# 99
+entrepreneurs produce
+entrepreneurs 0.5 hire
+entrepreneurs 0.5 fire
