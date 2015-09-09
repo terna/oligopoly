@@ -57,6 +57,13 @@ def otherSubSteps(subStep, address):
               if newValue !="": common.pruneThreshold=int(newValue)
               return True
 
+            # this subStep performs only partially the "end" item; the execution
+            # will continue in OnserverSwarm.py
+            elif subStep == "end":
+                gvf.plt.figure(2)
+                raw_input("enter to close Fig.2")
+                gvf.plt.close()
+
             else: return False
 
 ##graphical function
@@ -73,7 +80,7 @@ def visualizePlot(aL,t):
     # def of the variables within an if
     global x, y1, y2, line1, line2, ax
 
-    if not common.IPython and not common.doneGeometry: 
+    if not common.IPython and not common.doneGeometry:
        gvf.plt.figure(2)
        mngr2=gvf.plt.get_current_fig_manager()
        mngr2.window.wm_geometry("+650+0")
