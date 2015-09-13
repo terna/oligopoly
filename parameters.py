@@ -22,7 +22,7 @@ def loadParameters(self):
 		print "NetworkX 1.9.1 or greater required"
 		os.sys.exit(1)
   #sigma of the normal distribution used in randomize the position of the agents/nodes
-  print "sigma of the normal distribution used in randomize the position of the agents/nodes ", common.sigma
+  print "sigma of the normal distribution used in randomizing the position of the agents/nodes ", common.sigma
 
   mySeed = input("random number seed (1 to get it from the clock) ")
   if mySeed == 1:
