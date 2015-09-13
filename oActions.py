@@ -60,9 +60,7 @@ def otherSubSteps(subStep, address):
             # this subStep performs only partially the "end" item; the execution
             # will continue in OnserverSwarm.py
             elif subStep == "end":
-                gvf.plt.figure(2)
-                raw_input("enter to close Fig.2")
-                gvf.plt.close()
+                common.toBeExecuted="gvf.plt.figure(2);gvf.plt.close()"
 
             else: return False
 
