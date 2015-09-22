@@ -118,8 +118,8 @@ class Agent(superAgent):
     def produce(self):
         laborForce=self.numOfWorkers + \
                    1 # +1 to account for the entrepreneur itself
-        self.profit=laborForce*common.revenuesOfSalesForEachWorker - \
-                    laborForce*common.wage + gauss(0,0.5)
+        self.profit=laborForce*(common.revenuesOfSalesForEachWorker - \
+                    common.wage) + gauss(0,0.5)
         #print self.profit
 
 
