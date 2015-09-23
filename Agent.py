@@ -83,6 +83,8 @@ class Agent(superAgent):
 
         # count edges (workers) after hiring
         self.numOfWorkers=gvf.nx.degree(common.g, nbunch=self)
+        # nbunch : iterable container, optional (default=all nodes)
+        # A container of nodes. The container will be iterated through once.
         print "entrepreneur", self.number, "has", \
               self.numOfWorkers, "edge/s after hiring"
 
@@ -109,6 +111,8 @@ class Agent(superAgent):
 
             # count edges (workers) after firing
             self.numOfWorkers=gvf.nx.degree(common.g, nbunch=self)
+            # nbunch : iterable container, optional (default=all nodes)
+            # A container of nodes. The container will be iterated through once.
             print "entrepreneur", self.number, "has", \
                   self.numOfWorkers, "edge/s after firing"
 
