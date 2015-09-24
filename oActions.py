@@ -7,7 +7,7 @@ common.doneGeometry=False
 
 def do1b(address):
 
-    # to debug, having the map of the agent
+    # having the map of the agent
     agL=[]
     for ag in address.modelSwarm.agentList:
         agL.append(ag.number)
