@@ -24,3 +24,4 @@ nsize=150
 #wages and revenues
 wage=1
 revenuesOfSalesForEachWorker=1.005
+hiringThreshold=0

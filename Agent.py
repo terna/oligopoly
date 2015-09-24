@@ -66,7 +66,7 @@ class Agent(superAgent):
         # workers do not hire
         if self.agType == "workers": return
 
-        if self.profit<=0: return
+        if self.profit<=common.hiringThreshold: return
 
         tmpList=[]
         for ag in self.agentList:
@@ -81,7 +81,7 @@ class Agent(superAgent):
             gvf.colors[hired]="Aqua"
             gvf.createEdge(self, hired)
 
-        # count edges (workers) after firing (recorded, but not used
+        # count edges (workers) after hiring (recorded, but not used
         # directly)
         self.numOfWorkers=gvf.nx.degree(common.g, nbunch=self)
         # nbunch : iterable container, optional (default=all nodes)
