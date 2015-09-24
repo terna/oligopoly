@@ -81,7 +81,8 @@ class Agent(superAgent):
             gvf.colors[hired]="Aqua"
             gvf.createEdge(self, hired)
 
-        # count edges (workers) after hiring
+        # count edges (workers) after firing (recorded, but not used
+        # directly)
         self.numOfWorkers=gvf.nx.degree(common.g, nbunch=self)
         # nbunch : iterable container, optional (default=all nodes)
         # A container of nodes. The container will be iterated through once.
@@ -109,7 +110,8 @@ class Agent(superAgent):
             common.g_edge_labels.pop((self,fired))
             common.g.remove_edge(self, fired)
 
-            # count edges (workers) after firing
+            # count edges (workers) after firing (recorded, but not used
+            # directly)
             self.numOfWorkers=gvf.nx.degree(common.g, nbunch=self)
             # nbunch : iterable container, optional (default=all nodes)
             # A container of nodes. The container will be iterated through once.
@@ -120,7 +122,11 @@ class Agent(superAgent):
 
     # produce
     def produce(self):
-        laborForce=self.numOfWorkers + \
+        # the value is calutated on the fly, to be sure of accounting for
+        # modifications coming from outside
+        # (nbunch : iterable container, optional (default=all nodes)
+        # A container of nodes. The container will be iterated through once.)
+        laborForce=gvf.nx.degree(common.g, nbunch=self) + \
                    1 # +1 to account for the entrepreneur itself
         self.profit=laborForce*(common.revenuesOfSalesForEachWorker - \
                     common.wage) + gauss(0,0.5)
