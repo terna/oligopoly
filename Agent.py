@@ -79,25 +79,25 @@ class Agent(superAgent):
 
             hired.employed=True
             gvf.colors[hired]="Aqua"
-            gvf.createEdge(self, hired)
+            gvf.createEdge(self, hired) #self, here, is the hiring firm
 
-        # count edges (workers) after hiring (recorded, but not used
-        # directly)
+        # count edges (workers) of the firm, after hiring (the values is
+        # recorded, but not used directly)
         self.numOfWorkers=gvf.nx.degree(common.g, nbunch=self)
         # nbunch : iterable container, optional (default=all nodes)
         # A container of nodes. The container will be iterated through once.
         print "entrepreneur", self.number, "has", \
               self.numOfWorkers, "edge/s after hiring"
 
-        # hire
+        # fire
     def fire(self):
 
         # workers do not fire
         if self.agType == "workers": return
 
-        if self.profit>0: return
+        if self.profit<firingThreshold: return
 
-        # ATTENZIONE DEGREE ANCHE QUI
+        # the list of the employees of the firm
         entrepreneurWorkers=gvf.nx.neighbors(common.g,self)
         #print "entrepreneur", self.number, "could fire", entrepreneurWorkers
 

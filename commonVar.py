@@ -25,3 +25,4 @@ nsize=150
 wage=1
 revenuesOfSalesForEachWorker=1.005
 hiringThreshold=0
+firingThreshold=0
