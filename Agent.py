@@ -60,8 +60,8 @@ class Agent(superAgent):
     def talk(self):
 	    print self.agType, self.number
 
-    # hire
-    def hire(self):
+    # hireIfProfit
+    def hireIfProfit(self):
 
         # workers do not hire
         if self.agType == "workers": return
@@ -89,8 +89,8 @@ class Agent(superAgent):
         print "entrepreneur", self.number, "has", \
               self.numOfWorkers, "edge/s after hiring"
 
-        # fire
-    def fire(self):
+        # fireIfProfit
+    def fireIfProfit(self):
 
         # workers do not fire
         if self.agType == "workers": return
