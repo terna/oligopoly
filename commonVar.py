@@ -33,3 +33,6 @@ hiringThreshold=0
 firingThreshold=0
 
 totalProductionInA_TimeStep=0
+
+#Poisson mean in plannedProduction
+Lambda=5

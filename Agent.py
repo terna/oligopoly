@@ -4,6 +4,7 @@ from agTools import *
 from random import *
 import graphicDisplayGlobalVarAndFunctions as gvf
 import commonVar as common
+import numpy.random as npr
 
 class Agent(superAgent):
     def __init__(self, number,myWorldState,
@@ -22,6 +23,7 @@ class Agent(superAgent):
         self.agType=agType
         self.numOfWorkers=0
         self.profit=0
+        self.plannedProduction=-100 #non used in plots if -1
 
         if agType == 'workers':
             common.orderedListOfNodes.append(self)
@@ -93,6 +95,83 @@ class Agent(superAgent):
         print "entrepreneur", self.number, "has", \
               self.numOfWorkers, "edge/s after hiring"
 
+    def hireFireWithProduction(self):
+
+        # workers do not hire/fire
+        if self.agType == "workers": return
+
+        # to decide to hire/fire we need to know the number of employees
+        # the value is calcutated on the fly, to be sure of accounting for
+        # modifications coming from outside
+        # (nbunch : iterable container, optional (default=all nodes)
+        # A container of nodes. The container will be iterated through once.)
+
+        laborForce0=gvf.nx.degree(common.g, nbunch=self) + \
+                           1 # +1 to account for the entrepreneur itself
+
+        # required labor force
+        laborForceRequired=int(
+                    self.plannedProduction/common.laborProductivity)
+
+        # no action
+        if laborForce0 == laborForceRequired: return
+
+        # hire
+        if laborForce0 < laborForceRequired:
+            n = laborForceRequired - laborForce0
+            tmpList=[]
+            for ag in self.agentList:
+              if ag != self:
+                 if ag.agType=="workers" and not ag.employed:
+                    tmpList.append(ag)
+
+            if len(tmpList) > 0:
+                k = min(n, len(tmpList))
+                shuffle(tmpList)
+                for i in range(k):
+                    hired=tmpList[i]
+                    hired.employed=True
+                    gvf.colors[hired]="Aqua"
+                    gvf.createEdge(self, hired)
+                    #self, here, is the hiring firm
+
+            # count edges (workers) of the firm, after hiring (the values is
+            # recorded, but not used directly)
+            self.numOfWorkers=gvf.nx.degree(common.g, nbunch=self)
+            # nbunch : iterable container, optional (default=all nodes)
+            # A container of nodes. The container will be iterated through once.
+            print "entrepreneur", self.number, "has", \
+                  self.numOfWorkers, "edge/s after hiring"
+
+        # fire
+        if laborForce0 > laborForceRequired:
+            n = laborForce0 - laborForceRequired
+
+            # the list of the employees of the firm
+            entrepreneurWorkers=gvf.nx.neighbors(common.g,self)
+            #print "entrepreneur", self.number, "could fire", entrepreneurWorkers
+
+            if len(entrepreneurWorkers) > 0: # has to be, but ...
+                 shuffle(entrepreneurWorkers)
+                 for i in range(n):
+                    fired=entrepreneurWorkers[i]
+
+                    gvf.colors[fired]="OrangeRed"
+                    fired.employed=False
+
+                    common.g_edge_labels.pop((self,fired))
+                    common.g.remove_edge(self, fired)
+
+            # count edges (workers) after firing (recorded, but not used
+            # directly)
+            self.numOfWorkers=gvf.nx.degree(common.g, nbunch=self)
+            # nbunch : iterable container, optional (default=all nodes)
+            # A container of nodes. The container will be iterated through once.
+            print "entrepreneur", self.number, "has", \
+                  self.numOfWorkers, "edge/s after firing"
+
+
+
     # fireIfProfit
     def fireIfProfit(self):
 
@@ -146,6 +225,17 @@ class Agent(superAgent):
 
         # totalProductionInA_TimeStep
         common.totalProductionInA_TimeStep += self.production
+
+
+    # makeProductionPlan
+    def makeProductionPlan(self):
+
+        # this is an entrepreneur action
+        if self.agType == "workers": return
+
+        self.plannedProduction=npr.poisson(common.Lambda,1)[0] # 1 is the number
+        # of element of the returned matrix (vector)
+
 
 
     # calculateProfit

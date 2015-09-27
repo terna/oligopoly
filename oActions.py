@@ -69,16 +69,19 @@ def visualizePlot(aL,t):
     #print "visualizePlot acting with", len(aL)-1, "agents, at time step", t
     unemployed=0
     totalProfit=0
+    totalPlannedProduction=0
     for ag in aL:
        if not ag.employed: unemployed+=1
-       if ag.agType == "entrepreneurs": totalProfit+=ag.profit
+       if ag.agType == "entrepreneurs":
+           totalProfit+=ag.profit
+           totalPlannedProduction+=ag.plannedProduction # -100 if not used
     #print "unemployed",unemployed, "totalProfit", totalProfit, \
     #      "totalProduction", common.totalProductionInA_TimeStep
 
 
     # this global is a trick to avoid the 'not referenced' error being the
     # def of the variables within an if
-    global x, y1, y2, y3, line1, line2, line3, ax
+    global x, y1, y2, y3, y4, line1, line2, line3, line4, ax
 
     if not common.IPython and not common.doneGeometry:
        gvf.plt.figure(2)
@@ -97,6 +100,7 @@ def visualizePlot(aL,t):
       y1 = [unemployed]
       y2 = [totalProfit]
       y3 = [common.totalProductionInA_TimeStep]
+      y4 = [totalPlannedProduction]
       gvf.plt.ion()
       f2=gvf.plt.figure(2)
       ax = f2.gca()
@@ -104,6 +108,7 @@ def visualizePlot(aL,t):
       line1, = ax.plot(x, y1,label='unemployed',color='OrangeRed')
       line2, = ax.plot(x, y2,label='totalProfit',color='LawnGreen')
       line3, = ax.plot(x, y3,label='totalProduction',color='Blue')
+      if y4[0] > 0: line4, = ax.plot(x, y4,label='plannedProduction',color='Violet')
       ax.legend()
       gvf.plt.draw()
       gvf.plt.figure(1)
@@ -113,6 +118,7 @@ def visualizePlot(aL,t):
       y1.append(unemployed)
       y2.append(totalProfit)
       y3.append(common.totalProductionInA_TimeStep)
+      y4.append(totalPlannedProduction)
       gvf.plt.figure(2)
       line1.set_xdata(x)
       line1.set_ydata(y1)
@@ -120,6 +126,9 @@ def visualizePlot(aL,t):
       line2.set_ydata(y2)
       line3.set_xdata(x)
       line3.set_ydata(y3)
+      if y4[0] > 0:
+          line4.set_xdata(x)
+          line4.set_ydata(y4)
       ax.relim()
       ax.autoscale_view(True,True,True)
       gvf.plt.draw()

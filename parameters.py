@@ -55,6 +55,14 @@ def loadParameters(self):
   # laboor productivity
   print "labor productivity", common.laborProductivity
 
+  #Poisson mean in plannedProduction
+  print "Poisson distribution mean in planned production (not used in V.0);"
+  tmp=raw_input(
+     "suggested Lambda=5 (enter to confirm or input a number) ")
+  try: common.Lambda=int(tmp)
+  except: pass
+  print "Resulting value", common.Lambda
+
 
   # cycles
   self.nCycles = input("How many cycles? (0 = exit) ")

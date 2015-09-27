@@ -1,495 +1,693 @@
 # 1
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 2
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 3
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 4
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 5
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 6
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 7
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 8
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 9
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 10
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 11
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 12
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 13
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 14
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 15
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 16
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 17
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 18
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 19
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 20
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 21
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 22
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 23
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 24
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 25
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 26
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 27
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 28
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 29
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 30
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 31
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 32
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 33
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 34
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 35
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 36
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 37
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 38
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 39
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 40
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 41
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 42
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 43
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 44
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 45
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 46
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 47
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 48
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 49
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 50
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 51
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 52
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 53
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 54
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 55
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 56
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 57
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 58
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 59
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 60
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 61
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 62
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 63
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 64
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 65
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 66
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 67
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 68
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 69
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 70
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 71
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 72
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 73
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 74
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 75
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 76
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 77
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 78
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 79
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 80
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 81
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 82
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 83
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 84
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 85
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 86
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 87
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 88
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 89
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 90
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 91
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 92
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 93
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 94
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 95
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 96
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 97
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 98
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
 # 99
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
 entrepreneurs produceV0
 entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
-entrepreneurs 0.5 fireIfProfit
+entrepreneurs 0.5 fireIfProfitaaa
