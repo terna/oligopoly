@@ -60,6 +60,10 @@ class Agent(superAgent):
     def talk(self):
 	    print self.agType, self.number
 
+    # reset values, redefining the method of agTools.py in $$slapp$$
+    def setNewCycleValues(self):
+        common.totalProductionInA_TimeStep=0
+        
     # hireIfProfit
     def hireIfProfit(self):
 
