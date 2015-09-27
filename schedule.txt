@@ -1,396 +1,495 @@
 # 1
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 2
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 3
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 4
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 5
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 6
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 7
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 8
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 9
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 10
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 11
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 12
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 13
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 14
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 15
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 16
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 17
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 18
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 19
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 20
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 21
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 22
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 23
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 24
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 25
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 26
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 27
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 28
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 29
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 30
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 31
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 32
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 33
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 34
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 35
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 36
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 37
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 38
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 39
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 40
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 41
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 42
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 43
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 44
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 45
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 46
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 47
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 48
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 49
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 50
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 51
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 52
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 53
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 54
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 55
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 56
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 57
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 58
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 59
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 60
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 61
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 62
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 63
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 64
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 65
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 66
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 67
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 68
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 69
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 70
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 71
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 72
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 73
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 74
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 75
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 76
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 77
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 78
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 79
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 80
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 81
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 82
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 83
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 84
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 85
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 86
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 87
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 88
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 89
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 90
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 91
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 92
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 93
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 94
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 95
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 96
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 97
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 98
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit
 # 99
-entrepreneurs produce
+entrepreneurs produceV0
+entrepreneurs evaluateProfitV0
 entrepreneurs 0.5 hireIfProfit
 entrepreneurs 0.5 fireIfProfit

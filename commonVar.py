@@ -24,6 +24,12 @@ nsize=150
 #wages and revenues
 wage=1
 revenuesOfSalesForEachWorker=1.005
+
+#labor productivity
+laborProductivity=1
+
+#thresholds (for Version 0)
 hiringThreshold=0
 firingThreshold=0
+
 totalProductionInA_TimeStep=0

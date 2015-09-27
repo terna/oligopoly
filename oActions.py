@@ -72,11 +72,13 @@ def visualizePlot(aL,t):
     for ag in aL:
        if not ag.employed: unemployed+=1
        if ag.agType == "entrepreneurs": totalProfit+=ag.profit
-    #print "unemployed",unemployed, "totalProfit", totalProfit
+    #print "unemployed",unemployed, "totalProfit", totalProfit, \
+    #      "totalProduction", common.totalProductionInA_TimeStep
+
 
     # this global is a trick to avoid the 'not referenced' error being the
     # def of the variables within an if
-    global x, y1, y2, line1, line2, ax
+    global x, y1, y2, y3, line1, line2, line3, ax
 
     if not common.IPython and not common.doneGeometry:
        gvf.plt.figure(2)
@@ -84,16 +86,24 @@ def visualizePlot(aL,t):
        mngr2.window.wm_geometry("+650+0")
        mngr2.set_window_title("Time series")
 
+    #Matplotlib colors
+    #http://matplotlib.org/api/colors_api.html
+
+    #html colors
+    #http://www.w3schools.com/html/html_colornames.asp
+
     if t == 1:
       x =  [1]
       y1 = [unemployed]
       y2 = [totalProfit]
+      y3 = [common.totalProductionInA_TimeStep]
       gvf.plt.ion()
       f2=gvf.plt.figure(2)
       ax = f2.gca()
       ax.set_autoscale_on(True)
       line1, = ax.plot(x, y1,label='unemployed',color='OrangeRed')
       line2, = ax.plot(x, y2,label='totalProfit',color='LawnGreen')
+      line3, = ax.plot(x, y3,label='totalProduction',color='Blue')
       ax.legend()
       gvf.plt.draw()
       gvf.plt.figure(1)
@@ -102,12 +112,14 @@ def visualizePlot(aL,t):
       x.append(t)
       y1.append(unemployed)
       y2.append(totalProfit)
-
+      y3.append(common.totalProductionInA_TimeStep)
       gvf.plt.figure(2)
       line1.set_xdata(x)
       line1.set_ydata(y1)
       line2.set_xdata(x)
       line2.set_ydata(y2)
+      line3.set_xdata(x)
+      line3.set_ydata(y3)
       ax.relim()
       ax.autoscale_view(True,True,True)
       gvf.plt.draw()

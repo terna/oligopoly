@@ -63,7 +63,7 @@ class Agent(superAgent):
     # reset values, redefining the method of agTools.py in $$slapp$$
     def setNewCycleValues(self):
         common.totalProductionInA_TimeStep=0
-        
+
     # hireIfProfit
     def hireIfProfit(self):
 
@@ -93,13 +93,13 @@ class Agent(superAgent):
         print "entrepreneur", self.number, "has", \
               self.numOfWorkers, "edge/s after hiring"
 
-        # fireIfProfit
+    # fireIfProfit
     def fireIfProfit(self):
 
         # workers do not fire
         if self.agType == "workers": return
 
-        if self.profit<firingThreshold: return
+        if self.profit>=common.firingThreshold: return
 
         # the list of the employees of the firm
         entrepreneurWorkers=gvf.nx.neighbors(common.g,self)
@@ -125,16 +125,41 @@ class Agent(superAgent):
 
 
     # produce
-    def produce(self):
-        # the value is calutated on the fly, to be sure of accounting for
+    def produceV0(self):
+
+        # this is an entrepreneur action
+        if self.agType == "workers": return
+
+
+        # to produce we need to know the number of employees
+        # the value is calcutated on the fly, to be sure of accounting for
         # modifications coming from outside
         # (nbunch : iterable container, optional (default=all nodes)
         # A container of nodes. The container will be iterated through once.)
+
         laborForce=gvf.nx.degree(common.g, nbunch=self) + \
                    1 # +1 to account for the entrepreneur itself
-        self.profit=laborForce*(common.revenuesOfSalesForEachWorker - \
-                    common.wage) + gauss(0,0.5)
-        #print self.profit
+
+        # productivity is set to 1 in the benginning
+        self.production = common.laborProductivity * \
+                          laborForce
+
+        # totalProductionInA_TimeStep
+        common.totalProductionInA_TimeStep += self.production
+
+
+    # calculateProfit
+    def evaluateProfitV0(self):
+
+        # this is an entrepreneur action
+        if self.agType == "workers": return
+
+        # the number of pruducing workers is obtained indirectly via
+        # production/laborProductivity
+        #print self.production/common.laborProductivity
+        self.profit=(self.production/common.laborProductivity) * \
+                     (common.revenuesOfSalesForEachWorker - \
+                      common.wage) + gauss(0,0.05)
 
 
     # get graph

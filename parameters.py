@@ -35,15 +35,25 @@ def loadParameters(self):
 
   #self.worldXSize= input("X size of the world? ")
   self.worldXSize=1
-  print "X size of the world not relevant"
+  #print "X size of the world not relevant"
 
   #self.worldYSize= input("Y size of the world? ")
   self.worldYSize=50
-  print "y size of the world not relevant"
+  #print "y size of the world not relevant"
+
+  # Version 0 thresholds
+  print "Versions 0 hiringThreshold", common.hiringThreshold, \
+                   "firingThreshold", common.firingThreshold
 
   # wages
-  print "wage base", common.wage, "revenues of sales for each worker", \
+  print "wage base", common.wage
+
+  # revenue of sales per worker (version 0)
+  print "revenues of sales for each worker in Version 0", \
         common.revenuesOfSalesForEachWorker
+
+  # laboor productivity
+  print "labor productivity", common.laborProductivity
 
 
   # cycles
