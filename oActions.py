@@ -81,7 +81,7 @@ def visualizePlot(aL,t):
 
     # this global is a trick to avoid the 'not referenced' error being the
     # def of the variables within an if
-    global x, y1, y2, y3, y4, line1, line2, line3, line4, ax
+    global x, y1, y2, y3, y4, y5, line1, line2, line3, line4, line5, ax
 
     if not common.IPython and not common.doneGeometry:
        gvf.plt.figure(2)
@@ -101,6 +101,7 @@ def visualizePlot(aL,t):
       y2 = [totalProfit]
       y3 = [common.totalProductionInA_TimeStep]
       y4 = [totalPlannedProduction]
+      if y4[0] > 0: y5 = [common.price] # to avoid error in Version 0 schedule
       gvf.plt.ion()
       f2=gvf.plt.figure(2)
       ax = f2.gca()
@@ -108,7 +109,9 @@ def visualizePlot(aL,t):
       line1, = ax.plot(x, y1,label='unemployed',color='OrangeRed')
       line2, = ax.plot(x, y2,label='totalProfit',color='LawnGreen')
       line3, = ax.plot(x, y3,label='totalProduction',color='Blue')
-      if y4[0] > 0: line4, = ax.plot(x, y4,label='plannedProduction',color='Violet')
+      if y4[0] > 0:
+          line4, = ax.plot(x, y4,label='plannedProduction',color='Violet')
+          line5, = ax.plot(x, y4,label='price',color='Gray')
       ax.legend()
       gvf.plt.draw()
       gvf.plt.figure(1)
@@ -118,7 +121,9 @@ def visualizePlot(aL,t):
       y1.append(unemployed)
       y2.append(totalProfit)
       y3.append(common.totalProductionInA_TimeStep)
-      y4.append(totalPlannedProduction)
+      if y4[0] > 0:
+          y4.append(totalPlannedProduction)
+          y5.append(common.price)
       gvf.plt.figure(2)
       line1.set_xdata(x)
       line1.set_ydata(y1)
@@ -129,6 +134,8 @@ def visualizePlot(aL,t):
       if y4[0] > 0:
           line4.set_xdata(x)
           line4.set_ydata(y4)
+          line5.set_xdata(x)
+          line5.set_ydata(y5)
       ax.relim()
       ax.autoscale_view(True,True,True)
       gvf.plt.draw()

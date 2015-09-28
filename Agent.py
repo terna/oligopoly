@@ -204,7 +204,7 @@ class Agent(superAgent):
 
 
     # produce
-    def produceV0(self):
+    def produce(self):
 
         # this is an entrepreneur action
         if self.agType == "workers": return
@@ -238,7 +238,7 @@ class Agent(superAgent):
 
 
 
-    # calculateProfit
+    # calculateProfit V0
     def evaluateProfitV0(self):
 
         # this is an entrepreneur action
@@ -250,6 +250,18 @@ class Agent(superAgent):
         self.profit=(self.production/common.laborProductivity) * \
                      (common.revenuesOfSalesForEachWorker - \
                       common.wage) + gauss(0,0.05)
+
+    # calculateProfit
+    def evaluateProfit(self):
+
+        # this is an entrepreneur action
+        if self.agType == "workers": return
+
+        # the number of pruducing workers is obtained indirectly via
+        # production/laborProductivity
+        #print self.production/common.laborProductivity
+        self.profit=common.price * self.production - \
+                    common.wage * (self.production/common.laborProductivity)
 
 
     # get graph
