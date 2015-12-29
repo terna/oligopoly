@@ -1,4 +1,7 @@
 #commonVar.py
+
+projectVersion = 1.1
+
 prune=False
 pruneThreshold=0
 

@@ -41,9 +41,11 @@ def loadParameters(self):
   self.worldYSize=50
   #print "y size of the world not relevant"
 
-  # Version 0 thresholds
-  print "Versions 0 hiringThreshold", common.hiringThreshold, \
-                   "firingThreshold", common.firingThreshold
+  # Version and thresholds
+  try: projectVersion = str(common.projectVersion)
+  except: projectVersion = "Unknown"
+  print "\nProject version "+projectVersion,  "hiringThreshold", common.hiringThreshold, \
+                                    "firingThreshold", common.firingThreshold
 
   # wages
   print "wage base", common.wage
