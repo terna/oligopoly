@@ -58,7 +58,7 @@ def loadParameters(self):
   print "labor productivity", common.laborProductivity
 
   #Poisson mean in plannedProduction
-  print "Poisson distribution mean in planned production (not used in V.0);"
+  print "Mean value of the Poisson distribution used in production planning (not used in V.0);"
   tmp=raw_input(
      "suggested Lambda=5 (enter to confirm or input a number) ")
   try: common.Lambda=int(tmp)
