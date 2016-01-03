@@ -16,3 +16,8 @@ class WorldState:
         # to have a price around 1
         common.price= 1.4 - 0.02 * common.totalProductionInA_TimeStep
         print "Set market price to ", common.price
+
+
+    # set market price, second version
+    def setMarketPriceV2(self):
+        pass
