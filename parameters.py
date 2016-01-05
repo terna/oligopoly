@@ -4,6 +4,7 @@ import commonVar as common
 
 import networkx as nx
 import matplotlib as mplt
+import numpy.random as npr
 
 def loadParameters(self):
 
@@ -27,8 +28,10 @@ def loadParameters(self):
   mySeed = input("random number seed (1 to get it from the clock) ")
   if mySeed == 1:
         random.seed()
+        npr.seed()
   else:
         random.seed(mySeed)
+        npr.seed(mySeed)
 
   self.nAgents = 0
   print "No 'bland' agents"
@@ -50,9 +53,12 @@ def loadParameters(self):
   # wages
   print "wage base", common.wage
 
+  # social welfare compensation
+  print "social welfare compensation", common.socialWelfareCompensation
+
   # revenue of sales per worker (version 0)
-  print "revenues of sales for each worker in Version 0", \
-        common.revenuesOfSalesForEachWorker
+  #print "revenues of sales for each worker in Version 0", \
+  #      common.revenuesOfSalesForEachWorker
 
   # laboor productivity
   print "labor productivity", common.laborProductivity
@@ -64,6 +70,17 @@ def loadParameters(self):
   try: common.Lambda=int(tmp)
   except: pass
   print "Resulting value", common.Lambda
+
+  #consumption
+  print
+  print "consumption behavior with Ci = ai + bi Yi + u\n"+\
+        "u = N(0,%5.3f)" % common.consumptionErrorSD
+  print \
+  ("(1) entrepreneurs as consumers with a1 = %4.2f b1 = %4.2f Y1 = profit(t-1)+wage\n"+ \
+   "(2) employed workers           with a2 = %4.2f b2 = %4.2f Y2 = wage\n"+  \
+   "(3) unemployed workers         with a3 = %4.2f b3 = %4.2f Y3 = socialWelfareCompensation")  \
+   % (common.a1, common.b1, common.a2, common.b2, common.a3, common.b3)
+  print
 
 
   # cycles

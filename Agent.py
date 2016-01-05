@@ -23,7 +23,9 @@ class Agent(superAgent):
         self.agType=agType
         self.numOfWorkers=0
         self.profit=0
-        self.plannedProduction=-100 #non used in plots if -1
+        self.plannedProduction=-100 #not used in plots if -100
+        self.consumption=0
+        self.employed=False
 
         if agType == 'workers':
             common.orderedListOfNodes.append(self)
@@ -65,6 +67,7 @@ class Agent(superAgent):
     # reset values, redefining the method of agTools.py in $$slapp$$
     def setNewCycleValues(self):
         common.totalProductionInA_TimeStep=0
+        common.totalPlannedConsumptionInValueInA_TimeStep=0
 
     # hireIfProfit
     def hireIfProfit(self):
@@ -262,6 +265,32 @@ class Agent(superAgent):
         #print self.production/common.laborProductivity
         self.profit=common.price * self.production - \
                     common.wage * (self.production/common.laborProductivity)
+        #print "profit", self.profit
+
+
+    # compensation
+    def planConsumptionInValue(self):
+        self.consumption=0
+        #case (1)
+        #Y1=profit(t-1)+wage NB no negative consumption if profit(t-1) < 0
+        # this is an entrepreneur action
+        if self.agType == "entrepreneurs":
+            self.consumption = common.a1 + \
+                               common.b1 * (self.profit + common.wage) + \
+                               gauss(0,common.consumptionErrorSD)
+            if self.consumption < 0: self.consumption=0
+            #profit, in V2, is at time -1 due to the sequence in schedule2.xls
+
+        #case (2)
+        #Y2=wage
+        if self.agType == "workers" and self.employed:
+            self.consumption = common.a2 + \
+                               common.b2 * common.wage + \
+                               gauss(0,common.consumptionErrorSD)
+
+        #update totalPlannedConsumptionInValueInA_TimeStep
+        common.totalPlannedConsumptionInValueInA_TimeStep+=self.consumption
+        #print "C sum", common.totalPlannedConsumptionInValueInA_TimeStep
 
 
     # get graph

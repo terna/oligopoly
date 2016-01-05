@@ -101,7 +101,7 @@ def visualizePlot(aL,t):
       y2 = [totalProfit]
       y3 = [common.totalProductionInA_TimeStep]
       y4 = [totalPlannedProduction]
-      if y4[0] > 0: y5 = [common.price] # to avoid error in Version 0 schedule
+      if y4[0] > 0: y5 = [common.price10] # to avoid error in Version 0 schedule
       gvf.plt.ion()
       f2=gvf.plt.figure(2)
       ax = f2.gca()
@@ -111,8 +111,9 @@ def visualizePlot(aL,t):
       line3, = ax.plot(x, y3,label='totalProduction',color='Blue')
       if y4[0] > 0:
           line4, = ax.plot(x, y4,label='plannedProduction',color='Violet')
-          line5, = ax.plot(x, y4,label='price',color='Gray')
-      ax.legend()
+          line5, = ax.plot(x, y4,label='price10',color='Gray')
+      #loc values at http://matplotlib.org/1.3.1/users/legend_guide.html
+      ax.legend(loc=6)
       gvf.plt.draw()
       gvf.plt.figure(1)
 
@@ -123,7 +124,7 @@ def visualizePlot(aL,t):
       y3.append(common.totalProductionInA_TimeStep)
       if y4[0] > 0:
           y4.append(totalPlannedProduction)
-          y5.append(common.price)
+          y5.append(common.price10)
       gvf.plt.figure(2)
       line1.set_xdata(x)
       line1.set_ydata(y1)
