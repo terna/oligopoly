@@ -7,6 +7,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 2
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -16,6 +18,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 3
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -25,6 +29,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 4
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -34,6 +40,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 5
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -43,6 +51,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 6
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -52,6 +62,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 7
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -61,6 +73,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 8
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -70,6 +84,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 9
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -79,6 +95,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 10
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -88,6 +106,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 11
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -97,6 +117,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 12
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -106,6 +128,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 13
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -115,6 +139,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 14
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -124,6 +150,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 15
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -133,6 +161,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 16
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -142,6 +172,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 17
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -151,6 +183,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 18
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -160,6 +194,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 19
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -169,6 +205,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 20
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -178,6 +216,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 21
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -187,6 +227,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 22
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -196,6 +238,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 23
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -205,6 +249,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 24
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -214,6 +260,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 25
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -223,6 +271,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 26
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -232,6 +282,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 27
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -241,6 +293,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 28
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -250,6 +304,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 29
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -259,6 +315,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 30
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -268,6 +326,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 31
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -277,6 +337,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 32
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -286,6 +348,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 33
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -295,6 +359,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 34
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -304,6 +370,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 35
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -313,6 +381,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 36
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -322,6 +392,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 37
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -331,6 +403,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 38
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -340,6 +414,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 39
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -349,6 +425,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 40
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -358,6 +436,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 41
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -367,6 +447,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 42
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -376,6 +458,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 43
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -385,6 +469,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 44
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -394,6 +480,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 45
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -403,6 +491,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 46
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -412,6 +502,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 47
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -421,6 +513,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 48
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -430,6 +524,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 49
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -439,6 +535,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 50
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -448,6 +546,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 51
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -457,6 +557,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 52
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -466,6 +568,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 53
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -475,6 +579,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 54
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -484,6 +590,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 55
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -493,6 +601,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 56
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -502,6 +612,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 57
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -511,6 +623,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 58
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -520,6 +634,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 59
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -529,6 +645,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 60
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -538,6 +656,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 61
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -547,6 +667,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 62
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -556,6 +678,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 63
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -565,6 +689,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 64
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -574,6 +700,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 65
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -583,6 +711,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 66
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -592,6 +722,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 67
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -601,6 +733,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 68
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -610,6 +744,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 69
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -619,6 +755,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 70
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -628,6 +766,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 71
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -637,6 +777,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 72
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -646,6 +788,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 73
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -655,6 +799,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 74
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -664,6 +810,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 75
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -673,6 +821,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 76
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -682,6 +832,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 77
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -691,6 +843,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 78
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -700,6 +854,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 79
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -709,6 +865,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 80
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -718,6 +876,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 81
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -727,6 +887,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 82
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -736,6 +898,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 83
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -745,6 +909,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 84
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -754,6 +920,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 85
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -763,6 +931,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 86
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -772,6 +942,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 87
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -781,6 +953,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 88
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -790,6 +964,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 89
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -799,6 +975,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 90
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -808,6 +986,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 91
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -817,6 +997,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 92
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -826,6 +1008,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 93
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -835,6 +1019,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 94
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -844,6 +1030,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 95
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -853,6 +1041,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 96
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -862,6 +1052,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 97
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -871,6 +1063,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 98
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -880,6 +1074,8 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
 # 99
 entrepreneurs makeProductionPlan
 entrepreneurs hireFireWithProduction
@@ -889,3 +1085,5 @@ workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker

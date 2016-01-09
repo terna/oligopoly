@@ -70,6 +70,7 @@ def visualizePlot(aL,t):
     unemployed=0
     totalProfit=0
     totalPlannedProduction=0
+
     for ag in aL:
        if not ag.employed: unemployed+=1
        if ag.agType == "entrepreneurs":

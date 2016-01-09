@@ -40,7 +40,8 @@ def createGraph():
     global colors, pos
 
 
-    common.g=nx.DiGraph() # directed graph, instead of nx.Graph()
+    #common.g=nx.DiGraph() # directed graph, instead of nx.Graph()
+    common.g=nx.Graph() # undirected, for oligopoly project
     colors={}
     pos={}
     common.g_labels={}
@@ -82,15 +83,15 @@ def createEdge(a, b):
      # verifying the presence of the edge in the other direction
      try:
       otherW = common.g[b][a]['weight']
-      common.g_edge_labels[a,b]="w.s %d and %d" % (common.g[a][b]['weight'],otherW)
+      #common.g_edge_labels[a,b]="w.s %d and %d" % (common.g[a][b]['weight'],otherW)
       common.g_edge_labels[b,a]=""
-     except:
-      common.g_edge_labels[a,b]="w. %d" % common.g[a][b]['weight']
+     except: pass
+      #common.g_edge_labels[a,b]="w. %d" % common.g[a][b]['weight']
 
     if a == b:
       common.g_edge_labels[a,b]=""
-      common.g[a][b]['pseudoLabel']="auto link w. %d" \
-                                      % common.g[a][b]['weight']
+      #common.g[a][b]['pseudoLabel']="auto link w. %d" \
+      #                            % common.g[a][b]['weight']
 
 
 # using networkX and matplotlib case
@@ -166,7 +167,7 @@ def drawGraph():
                         alpha=0.3, arrows=False)
     nx.draw_networkx_edge_labels(common.g,pos,edge_labels=common.g_edge_labels,\
                                  font_size=6,font_family='sans-serif')
-    
+
 
     # https://networkx.github.io/documentation/latest/reference/drawing.html
 

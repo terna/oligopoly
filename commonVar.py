@@ -28,21 +28,20 @@ nsize=150
 #(3) unemployed workers
 #with Ci = ai + bi Y + u
 #u=N(0,consumptionErrorSD)
-consumptionErrorSD=0.05
+consumptionRandomComponentSD=0.3
 
 #(1)
-a1=1
-b1=0.6
+a1=0.4
+b1=0.55
 #Y1=profit(t-1)+wage NB no negative consumption if profit(t-1) < 0
 
 #(2)
-a2=0.2
-b2=0.7
+a2=0.3
+b2=0.65
 #Y2=wage
 
 #(3)
 socialWelfareCompensation=0.3
-#che cosa stampiamo?
 a3=0
 b3=1
 #Y3=socialWelfareCompensation
@@ -64,3 +63,6 @@ totalPlannedConsumptionInValueInA_TimeStep=0
 
 #Poisson mean in plannedProduction
 Lambda=5
+
+#threshold toEntrepreneur
+thresholdToEntrepreneur=0.5

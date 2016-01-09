@@ -74,12 +74,15 @@ def loadParameters(self):
   #consumption
   print
   print "consumption behavior with Ci = ai + bi Yi + u\n"+\
-        "u = N(0,%5.3f)" % common.consumptionErrorSD
+        "u = N(0,%5.3f)" % common.consumptionRandomComponentSD
   print \
   ("(1) entrepreneurs as consumers with a1 = %4.2f b1 = %4.2f Y1 = profit(t-1)+wage\n"+ \
    "(2) employed workers           with a2 = %4.2f b2 = %4.2f Y2 = wage\n"+  \
    "(3) unemployed workers         with a3 = %4.2f b3 = %4.2f Y3 = socialWelfareCompensation")  \
    % (common.a1, common.b1, common.a2, common.b2, common.a3, common.b3)
+  print
+
+  print "Threshold to became an entrepreneur %4.2f" % common.thresholdToEntrepreneur
   print
 
 

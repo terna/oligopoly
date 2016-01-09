@@ -21,9 +21,9 @@ class Agent(superAgent):
         self.agOperatingSets=[]
         self.number = number
         self.agType=agType
-        self.numOfWorkers=0
+        self.numOfWorkers=0 #never use it directly to make calculations
         self.profit=0
-        self.plannedProduction=-100 #not used in plots if -100
+        self.plannedProduction=0
         self.consumption=0
         self.employed=False
 
@@ -46,6 +46,7 @@ class Agent(superAgent):
             gvf.colors[self]="LawnGreen"
 
             self.employed=True
+            self.plannedProduction=-100 #not used in plots if -100
 
         self.myWorldState = myWorldState
         self.agType=agType
@@ -116,6 +117,14 @@ class Agent(superAgent):
         laborForceRequired=int(
                     self.plannedProduction/common.laborProductivity)
 
+        #???????????????????
+        #countUnemployed=0
+        #for ag in self.agentList:
+        #    if not ag.employed: countUnemployed+=1
+
+        #print "I'm entrepreneur %d laborForce %d and required %d unemployed are %d" %\
+        #(self.number, laborForce0, laborForceRequired, countUnemployed)
+
         # no action
         if laborForce0 == laborForceRequired: return
 
@@ -143,7 +152,7 @@ class Agent(superAgent):
             self.numOfWorkers=gvf.nx.degree(common.g, nbunch=self)
             # nbunch : iterable container, optional (default=all nodes)
             # A container of nodes. The container will be iterated through once.
-            print "entrepreneur", self.number, "has", \
+            print "entrepreneur", self.number, "is applying prod. plan and has", \
                   self.numOfWorkers, "edge/s after hiring"
 
         # fire
@@ -162,7 +171,7 @@ class Agent(superAgent):
                     gvf.colors[fired]="OrangeRed"
                     fired.employed=False
 
-                    common.g_edge_labels.pop((self,fired))
+                    #common.g_edge_labels.pop((self,fired)) no labels in edges
                     common.g.remove_edge(self, fired)
 
             # count edges (workers) after firing (recorded, but not used
@@ -170,7 +179,7 @@ class Agent(superAgent):
             self.numOfWorkers=gvf.nx.degree(common.g, nbunch=self)
             # nbunch : iterable container, optional (default=all nodes)
             # A container of nodes. The container will be iterated through once.
-            print "entrepreneur", self.number, "has", \
+            print "entrepreneur", self.number, "is applying prod. plan and has", \
                   self.numOfWorkers, "edge/s after firing"
 
 
@@ -193,7 +202,7 @@ class Agent(superAgent):
             gvf.colors[fired]="OrangeRed"
             fired.employed=False
 
-            common.g_edge_labels.pop((self,fired))
+            #common.g_edge_labels.pop((self,fired)) mo label in edges
             common.g.remove_edge(self, fired)
 
             # count edges (workers) after firing (recorded, but not used
@@ -277,7 +286,7 @@ class Agent(superAgent):
         if self.agType == "entrepreneurs":
             self.consumption = common.a1 + \
                                common.b1 * (self.profit + common.wage) + \
-                               gauss(0,common.consumptionErrorSD)
+                               gauss(0,common.consumptionRandomComponentSD)
             if self.consumption < 0: self.consumption=0
             #profit, in V2, is at time -1 due to the sequence in schedule2.xls
 
@@ -286,12 +295,35 @@ class Agent(superAgent):
         if self.agType == "workers" and self.employed:
             self.consumption = common.a2 + \
                                common.b2 * common.wage + \
-                               gauss(0,common.consumptionErrorSD)
+                               gauss(0,common.consumptionRandomComponentSD)
+
+        #case (3)
+        #Y3=socialWelfareCompensation
+        if self.agType == "workers" and not self.employed:
+            self.consumption = common.a3 + \
+                               common.b3 * common.socialWelfareCompensation + \
+                               gauss(0,common.consumptionRandomComponentSD)
 
         #update totalPlannedConsumptionInValueInA_TimeStep
         common.totalPlannedConsumptionInValueInA_TimeStep+=self.consumption
         #print "C sum", common.totalPlannedConsumptionInValueInA_TimeStep
 
+    #to entrepreneur
+    def toEntrepreneur(self):
+        if self.agType != "workers" or not self.employed: return
+
+        myEntrepreneur=gvf.nx.neighbors(common.g, self)[0]
+        myEntrepreneurProfit=myEntrepreneur.profit
+        if myEntrepreneurProfit >= common.thresholdToEntrepreneur:
+            print "I'm %2.0f and myEntrepreneurProfit is %4.2f" %\
+                  (self.number, myEntrepreneurProfit)
+            common.g.remove_edge(myEntrepreneur, self)
+            self.xPos-=15
+            gvf.pos[self]=(self.xPos,self.yPos)
+            # colors at http://www.w3schools.com/html/html_colornames.asp
+            gvf.colors[self]="LawnGreen"
+            self.agType="entrepreneurs"
+            self.employed=True
 
     # get graph
     def getGraph(self):
