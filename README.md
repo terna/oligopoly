@@ -5,4 +5,4 @@ Marco Mazzoli, Matteo Morini and Pietro Terna
 
 Each version of the project has a new branch in the repository
 
-Notes in Olygopoly.pdf
+Notes in Olygopoly.pdf (updated versions only in more recent branches)
