@@ -26,6 +26,7 @@ class Agent(superAgent):
         self.plannedProduction=0
         self.consumption=0
         self.employed=False
+        self.extraCostsResidualDuration=0
 
         if agType == 'workers':
             common.orderedListOfNodes.append(self)
@@ -202,7 +203,7 @@ class Agent(superAgent):
             gvf.colors[fired]="OrangeRed"
             fired.employed=False
 
-            #common.g_edge_labels.pop((self,fired)) mo label in edges
+            #common.g_edge_labels.pop((self,fired)) no label in edges
             common.g.remove_edge(self, fired)
 
             # count edges (workers) after firing (recorded, but not used
@@ -230,6 +231,7 @@ class Agent(superAgent):
 
         laborForce=gvf.nx.degree(common.g, nbunch=self) + \
                    1 # +1 to account for the entrepreneur itself
+        print "I'm entrepreneur", self.number, "my laborforce is", laborForce
 
         # productivity is set to 1 in the benginning
         self.production = common.laborProductivity * \
@@ -269,11 +271,21 @@ class Agent(superAgent):
         # this is an entrepreneur action
         if self.agType == "workers": return
 
+        # backward compatibily to version 1
+        try: XC=common.newEntrantExtraCosts
+        except: XC=0
+        try: k=self.extraCostsResidualDuration
+        except: k=0
+
+        if k==0: XC=0
+        if k>0: self.extraCostsResidualDuration-=1
+
         # the number of pruducing workers is obtained indirectly via
         # production/laborProductivity
         #print self.production/common.laborProductivity
         self.profit=common.price * self.production - \
-                    common.wage * (self.production/common.laborProductivity)
+                    common.wage * (self.production/common.laborProductivity) - \
+                    XC
         #print "profit", self.profit
 
 
@@ -315,112 +327,55 @@ class Agent(superAgent):
         myEntrepreneur=gvf.nx.neighbors(common.g, self)[0]
         myEntrepreneurProfit=myEntrepreneur.profit
         if myEntrepreneurProfit >= common.thresholdToEntrepreneur:
-            print "I'm %2.0f and myEntrepreneurProfit is %4.2f" %\
+            print "I'm worker %2.0f and myEntrepreneurProfit is %4.2f" %\
                   (self.number, myEntrepreneurProfit)
             common.g.remove_edge(myEntrepreneur, self)
-            self.xPos-=15
-            gvf.pos[self]=(self.xPos,self.yPos)
+
+            #originally, it was a worker
+            if self.xPos>0:gvf.pos[self]=(self.xPos-15,self.yPos)
+            #originally, it was an entrepreneur
+            else:gvf.pos[self]=(self.xPos,self.yPos)
             # colors at http://www.w3schools.com/html/html_colornames.asp
             gvf.colors[self]="LawnGreen"
             self.agType="entrepreneurs"
             self.employed=True
+            self.extraCostsResidualDuration=common.extraCostsDuration
+
+
+    #to workers
+    def toWorker(self):
+        if self.agType != "entrepreneurs": return
+
+        if self.profit <= common.thresholdToWorker:
+            print "I'm entrepreneur %2.0f and my profit is %4.2f" %\
+                  (self.number, self.profit)
+
+
+
+            # the list of the employees of the firm, IF ANY
+            entrepreneurWorkers=gvf.nx.neighbors(common.g,self)
+            print "entrepreneur", self.number, "has", len(entrepreneurWorkers),\
+             "workers to be fired"
+
+            if len(entrepreneurWorkers) > 0:
+                for aWorker in entrepreneurWorkers:
+                    gvf.colors[aWorker]="OrangeRed"
+                    aWorker.employed=False
+
+                    common.g.remove_edge(self, aWorker)
+
+            self.numOfWorkers=0
+
+            #originally, it was an entrepreneur
+            if self.xPos<0:gvf.pos[self]=(self.xPos+15,self.yPos)
+            #originally, it was a worker
+            else:gvf.pos[self]=(self.xPos,self.yPos)
+            # colors at http://www.w3schools.com/html/html_colornames.asp
+            gvf.colors[self]="OrangeRed"
+            self.agType="workers"
+            self.employed=False
+
 
     # get graph
     def getGraph(self):
         return common.g
-
-
-"""
-
-
-    # addAFactory
-    def addAFactory(self):
-        if self.agType != "entrepreneurs": return
-
-        # create a new factory cloning an existing one
-        # choose randomly a factory (also a cloned one)
-
-        toBeCloned=self
-        #print toBeCloned.number
-
-        # creating
-
-        common.clonedN+=1
-        anAgent = Agent(toBeCloned.number*100+common.clonedN,
-                        self.myWorldState,
-                        toBeCloned.xPos+modPosition(),
-                        toBeCloned.yPos+modPosition(),
-                        agType=toBeCloned.agType,
-                        sector=toBeCloned.sector)
-        self.agentList.append(anAgent)
-        if common.verbose: print "Factory", self.number, "has created factory #",\
-                                  anAgent.number,"in sector",anAgent.sector
-
-    # remove itself
-    def removeItself(self):
-        if self.agType != "entrepreneurs": return
-
-        toBeRemoved=self
-        if common.verbose: print "Factory #",toBeRemoved.number,\
-                                 "removed itself from sector",toBeRemoved.sector
-        self.agentList.remove(toBeRemoved)
-
-        #print "removeItself verification of surviving agents"
-        #for i in range(len(self.agentList)):
-        #    if self.agentList[i].agType=="entrepreneurs":
-        #          print self.agentList[i].number,
-
-        common.orderedListOfNodes.remove(toBeRemoved)
-        #print "\nremoveItself node removed in graph", toBeRemoved, \
-        #      toBeRemoved.number
-
-        edges_toBeDropped=[]
-        for edge in common.g.edges():
-            if edge[0]==toBeRemoved or edge[1]==toBeRemoved:
-                edges_toBeDropped.append(edge)
-        if edges_toBeDropped != []:
-            for edge in edges_toBeDropped:
-               #print "removeItself edge removed in graph", edge
-               if common.g_edge_labels.has_key(edge):
-                   common.g_edge_labels.pop(edge)
-
-        #print "removeItself previous nodes in graph", common.g.nodes()
-        common.g_labels.pop(toBeRemoved)
-
-        # remove factoryInWhichRecipeIs from all the recipes, also
-        # that having just left this factory and waiting for
-        # searchForSector order
-        if self.agentList != []:
-            for anAg in self.agentList:
-                if anAg.agType=="workers" and \
-                   anAg.factoryInWhichRecipeIs==self:
-                       anAg.factoryInWhichRecipeIs=None
-
-        # recipes in the waiting list
-        #print "removeItself recipes in the factory before cleaning"
-        #if self.recipeWaitingList != []:
-        #    for aR in self.recipeWaitingList:
-        #        print aR.number, aR.factoryInWhichRecipeIs,
-        #        aR.content
-        #else: print "None"
-
-        if self.recipeWaitingList != []:
-            for aRecipe in self.recipeWaitingList:
-                aRecipe.content = []
-                aRecipe.canMove=False
-                #aRecipe.factoryInWhichRecipeIs=None # done above
-
-        #print "removeItself recipes in the factory after cleaning"
-        #if self.recipeWaitingList != []:
-        #    for aR in self.recipeWaitingList:
-        #        print aR.number, aR.factoryInWhichRecipeIs, aR.content
-        #else: print "None"
-
-        common.g.remove_node(toBeRemoved)
-        #print "removeItself residual nodes in graph", common.g.nodes()
-
-
-def modPosition():
-    if random.randint(0,1)==0:return random.randint(-8,-6)
-    else:                     return random.randint( 6, 8)
-"""

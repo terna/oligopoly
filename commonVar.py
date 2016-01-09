@@ -66,3 +66,8 @@ Lambda=5
 
 #threshold toEntrepreneur
 thresholdToEntrepreneur=0.5
+extraCostsDuration=3
+newEntrantExtraCosts=0.5
+
+#threshold toWorker
+thresholdToWorker=-1.0

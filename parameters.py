@@ -82,7 +82,11 @@ def loadParameters(self):
    % (common.a1, common.b1, common.a2, common.b2, common.a3, common.b3)
   print
 
-  print "Threshold to became an entrepreneur %4.2f" % common.thresholdToEntrepreneur
+  print ("Threshold to became an entrepreneur %4.2f\n" +\
+  "with new entrant extra costs %4.2f and duration of the extra cost %d") % \
+  (common.thresholdToEntrepreneur, common.newEntrantExtraCosts, \
+  common.extraCostsDuration)
+  print "Threshold to became an unmployed worker %4.2f\n" % common.thresholdToWorker
   print
 
 
