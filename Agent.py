@@ -233,7 +233,7 @@ class Agent(superAgent):
                    1 # +1 to account for the entrepreneur itself
         print "I'm entrepreneur", self.number, "my laborforce is", laborForce
 
-        # productivity is set to 1 in the benginning
+        # productivity is set to 1 in the benginning from common space
         self.production = common.laborProductivity * \
                           laborForce
 
