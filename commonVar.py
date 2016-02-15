@@ -19,7 +19,8 @@ verbose=False
 clonedN=0
 
 #sigma of the normal distribution used in randomize the position of the agents/nodes
-sigma=0.7
+#sigma=0.7
+sigma=1.2
 
 #size of the nodes
 nsize=150
