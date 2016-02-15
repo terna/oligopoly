@@ -1,6 +1,6 @@
 #commonVar.py
 
-projectVersion = 2
+projectVersion = 3
 
 prune=False
 pruneThreshold=0
