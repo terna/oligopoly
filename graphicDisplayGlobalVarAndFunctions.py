@@ -98,7 +98,7 @@ def closeNetworkXdisplay():
     plt.close()
 
 def openClearNetworkXdisplay():
-    plt.ion()
+    if common.graphicStatus == "PythonViaTerminal": plt.ion()
     #plt.clf()
 
 def clearNetworkXdisplay():
@@ -166,12 +166,13 @@ def drawGraph():
                         alpha=0.3, arrows=False)
     nx.draw_networkx_edge_labels(common.g,pos,edge_labels=common.g_edge_labels,\
                                  font_size=6,font_family='sans-serif')
-    
+
 
     # https://networkx.github.io/documentation/latest/reference/drawing.html
 
-    plt.draw() ## Python
-    #plt.show() ## IPython
+    #plt.draw()
+    plt.show() # used by %Matplotlib inline [without ion()]; not conflicting
+               # with ion()
 
     #print agentGraph.nodes(data=True)
     #print agentGraph.edges(data=True)
