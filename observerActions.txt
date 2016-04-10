@@ -1,1 +1,1 @@
-modelStep nvisualizePlot visualizeNet pause clock
+modelStep visualizePlot visualizeNet pause clock

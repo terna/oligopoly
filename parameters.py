@@ -41,8 +41,8 @@ def loadParameters(self):
   self.worldYSize=50
   #print "y size of the world not relevant"
 
-  # Version 0 thresholds
-  print "Versions 0 hiringThreshold", common.hiringThreshold, \
+  # Version 1 thresholds
+  print "Versions 1 hiringThreshold", common.hiringThreshold, \
                    "firingThreshold", common.firingThreshold
 
   # wages
