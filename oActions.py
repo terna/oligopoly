@@ -86,14 +86,9 @@ def visualizePlot(aL,t):
     if not common.IPython:
        gvf.plt.figure(2)
        mngr2=gvf.plt.get_current_fig_manager()
-       mngr2.window.wm_geometry("+650+0")
+       mngr2.window.wm_geometry("+0+0")
        mngr2.set_window_title("Time series")
 
-    """
-    if common.IPython:
-       gvf.plt.figure("1. Links Entrepreneurs - Workers; 2. Time Series ")
-       gvf.plt.subplot(2,1,2)
-    """
 
     #Matplotlib colors
     #http://matplotlib.org/api/colors_api.html

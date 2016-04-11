@@ -53,7 +53,7 @@ def createGraph():
     if not common.IPython:
       plt.figure(1)
       mngr1=plt.get_current_fig_manager() #NB, after figure()
-      mngr1.window.wm_geometry("+0+0")
+      mngr1.window.wm_geometry("+650+0")
       mngr1.set_window_title("Links Entrepreneurs - Workers")
 
 
