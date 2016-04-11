@@ -3,8 +3,6 @@ from Agent import *
 import graphicDisplayGlobalVarAndFunctions as gvf
 import commonVar as common
 
-common.doneGeometry=False
-
 def do1b(address):
 
     # having the map of the agent
@@ -58,9 +56,10 @@ def otherSubSteps(subStep, address):
               return True
 
             # this subStep performs only partially the "end" item; the execution
-            # will continue in OnserverSwarm.py
+            # will continue in ObserverSwarm.py
             elif subStep == "end":
-                common.toBeExecuted="gvf.plt.figure(2);gvf.plt.close()"
+                if not common.IPython:
+                    common.toBeExecuted="gvf.plt.figure(2);gvf.plt.close()"
 
             else: return False
 
@@ -83,11 +82,17 @@ def visualizePlot(aL,t):
     # def of the variables within an if
     global x, y1, y2, y3, y4, y5, line1, line2, line3, line4, line5, ax
 
-    if not common.IPython and not common.doneGeometry:
+    if not common.IPython:
        gvf.plt.figure(2)
        mngr2=gvf.plt.get_current_fig_manager()
        mngr2.window.wm_geometry("+650+0")
        mngr2.set_window_title("Time series")
+
+    """
+    if common.IPython:
+       gvf.plt.figure("1. Links Entrepreneurs - Workers; 2. Time Series ")
+       gvf.plt.subplot(2,1,2)
+    """
 
     #Matplotlib colors
     #http://matplotlib.org/api/colors_api.html
@@ -102,10 +107,16 @@ def visualizePlot(aL,t):
       y3 = [common.totalProductionInA_TimeStep]
       y4 = [totalPlannedProduction]
       if y4[0] > 0: y5 = [common.price] # to avoid error in Version 0 schedule
-      gvf.plt.ion()
-      f2=gvf.plt.figure(2)
-      ax = f2.gca()
-      ax.set_autoscale_on(True)
+      if not common.IPython:
+       gvf.plt.ion()
+       f2=gvf.plt.figure(2)
+       ax = f2.gca()
+       ax.set_autoscale_on(True)
+      if common.IPython:
+        f2=gvf.plt.figure()
+        ax = f2.gca()
+        ax.set_autoscale_on(True)
+
       line1, = ax.plot(x, y1,label='unemployed',color='OrangeRed')
       line2, = ax.plot(x, y2,label='totalProfit',color='LawnGreen')
       line3, = ax.plot(x, y3,label='totalProduction',color='Blue')
@@ -113,10 +124,22 @@ def visualizePlot(aL,t):
           line4, = ax.plot(x, y4,label='plannedProduction',color='Violet')
           line5, = ax.plot(x, y4,label='price',color='Gray')
       ax.legend()
-      gvf.plt.draw()
-      gvf.plt.figure(1)
+      if not common.IPython: gvf.plt.figure(1)
+      if common.IPython: gvf.plt.show()
 
     else:
+      if common.IPython:
+              f2=gvf.plt.figure()
+              ax = f2.gca()
+              ax.set_autoscale_on(True)
+
+              line1, = ax.plot(x, y1,label='unemployed',color='OrangeRed')
+              line2, = ax.plot(x, y2,label='totalProfit',color='LawnGreen')
+              line3, = ax.plot(x, y3,label='totalProduction',color='Blue')
+              if y4[0] > 0:
+                line4, = ax.plot(x, y4,label='plannedProduction',color='Violet')
+                line5, = ax.plot(x, y4,label='price',color='Gray')
+              ax.legend()
       x.append(t)
       y1.append(unemployed)
       y2.append(totalProfit)
@@ -124,7 +147,7 @@ def visualizePlot(aL,t):
       if y4[0] > 0:
           y4.append(totalPlannedProduction)
           y5.append(common.price)
-      gvf.plt.figure(2)
+      if not common.IPython: gvf.plt.figure(2)
       line1.set_xdata(x)
       line1.set_ydata(y1)
       line2.set_xdata(x)
@@ -138,5 +161,5 @@ def visualizePlot(aL,t):
           line5.set_ydata(y5)
       ax.relim()
       ax.autoscale_view(True,True,True)
-      gvf.plt.draw()
-      gvf.plt.figure(1)
+      if not common.IPython: gvf.plt.figure(1)
+      if common.IPython: gvf.plt.show()
