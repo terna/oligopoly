@@ -107,13 +107,6 @@ def visualizePlot(aL,t):
       y2 = [totalProfit]
       y3 = [common.totalProductionInA_TimeStep]
       y4 = [totalPlannedProduction]
-<<<<<<< HEAD
-      if y4[0] > 0: y5 = [common.price10] # to avoid error in Version 0 schedule
-      gvf.plt.ion()
-      f2=gvf.plt.figure(2)
-      ax = f2.gca()
-      ax.set_autoscale_on(True)
-=======
       if y4[0] > 0: y5 = [common.price] # to avoid error in Version 0 schedule
       if not common.IPython:
        gvf.plt.ion()
@@ -124,25 +117,16 @@ def visualizePlot(aL,t):
         f2=gvf.plt.figure()
         ax = f2.gca()
         ax.set_autoscale_on(True)
-
->>>>>>> V1
       line1, = ax.plot(x, y1,label='unemployed',color='OrangeRed')
       line2, = ax.plot(x, y2,label='totalProfit',color='LawnGreen')
       line3, = ax.plot(x, y3,label='totalProduction',color='Blue')
       if y4[0] > 0:
           line4, = ax.plot(x, y4,label='plannedProduction',color='Violet')
-<<<<<<< HEAD
-          line5, = ax.plot(x, y4,label='price10',color='Gray')
-      #loc values at http://matplotlib.org/1.3.1/users/legend_guide.html
-      ax.legend(loc=6)
-      gvf.plt.draw()
-      gvf.plt.figure(1)
-=======
           line5, = ax.plot(x, y4,label='price',color='Gray')
-      ax.legend()
+      ax.legend(loc=6)
+      #loc values at http://matplotlib.org/1.3.1/users/legend_guide.html
       if not common.IPython: gvf.plt.figure(1)
       if common.IPython: gvf.plt.show()
->>>>>>> V1
 
     else:
       if common.IPython:
@@ -156,20 +140,15 @@ def visualizePlot(aL,t):
               if y4[0] > 0:
                 line4, = ax.plot(x, y4,label='plannedProduction',color='Violet')
                 line5, = ax.plot(x, y4,label='price',color='Gray')
-              ax.legend()
+              ax.legend(loc=6)
       x.append(t)
       y1.append(unemployed)
       y2.append(totalProfit)
       y3.append(common.totalProductionInA_TimeStep)
       if y4[0] > 0:
           y4.append(totalPlannedProduction)
-<<<<<<< HEAD
-          y5.append(common.price10)
-      gvf.plt.figure(2)
-=======
           y5.append(common.price)
       if not common.IPython: gvf.plt.figure(2)
->>>>>>> V1
       line1.set_xdata(x)
       line1.set_ydata(y1)
       line2.set_xdata(x)
