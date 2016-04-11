@@ -57,6 +57,7 @@ def createGraph():
 
 
 
+
 # searching tools
 
 def findNodesFromSector(sector):
@@ -170,7 +171,7 @@ def drawGraph():
 
     # https://networkx.github.io/documentation/latest/reference/drawing.html
 
-    plt.draw()
+    #plt.draw()
     plt.show() # used by %Matplotlib inline [without ion()]; not conflicting
                # with ion()
 
