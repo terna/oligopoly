@@ -172,6 +172,7 @@ def drawGraph():
     # https://networkx.github.io/documentation/latest/reference/drawing.html
 
     #plt.draw()
+    if common.IPython: plt.title("Links Entrepreneurs - Workers")
     plt.show() # used by %Matplotlib inline [without ion()]; not conflicting
                # with ion()
 
@@ -185,10 +186,10 @@ def drawGraph():
 
 
     # adjacency
-    print
-    for i in range(len(common.orderedListOfNodes)):
-      print "%d " % common.orderedListOfNodes[i].number,
-    print
+    #print
+    #for i in range(len(common.orderedListOfNodes)):
+    #  print "%d " % common.orderedListOfNodes[i].number,
+    #print
     #print "drawGraph verification of existing nodes",common.g.nodes()
     if common.g.nodes() !=[]:
         A = nx.adjacency_matrix(common.g, nodelist=common.orderedListOfNodes, \
