@@ -121,7 +121,9 @@ def visualizePlot(aL,t):
           line5, = ax.plot(x, y4,label='price',color='Gray')
       ax.legend(loc=6)
       #loc values at http://matplotlib.org/1.3.1/users/legend_guide.html
-      if not common.IPython: gvf.plt.figure(1)
+      if not common.IPython:
+          gvf.plt.figure(1)
+          gvf.plt.show()
       if common.IPython: gvf.plt.show()
 
     else:
@@ -159,5 +161,7 @@ def visualizePlot(aL,t):
           line5.set_ydata(y5)
       ax.relim()
       ax.autoscale_view(True,True,True)
-      if not common.IPython: gvf.plt.figure(1)
+      if not common.IPython:
+          gvf.plt.figure(1)
+          gvf.plt.show()
       if common.IPython: gvf.plt.show()
