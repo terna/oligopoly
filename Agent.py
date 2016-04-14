@@ -6,7 +6,7 @@ import graphicDisplayGlobalVarAndFunctions as gvf
 import commonVar as common
 import numpy.random as npr
 
-class Agent(superAgent):
+class Agent(SuperAgent):
     def __init__(self, number,myWorldState,
                  xPos=0, yPos=0, agType=""):
 
