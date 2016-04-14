@@ -40,7 +40,8 @@ def createGraph():
     global colors, pos
 
 
-    common.g=nx.DiGraph() # directed graph, instead of nx.Graph()
+    #common.g=nx.DiGraph() # directed graph, instead of nx.Graph()
+    common.g=nx.Graph() # undirected, for oligopoly project
     colors={}
     pos={}
     common.g_labels={}
@@ -54,7 +55,6 @@ def createGraph():
       mngr1=plt.get_current_fig_manager() #NB, after figure()
       mngr1.window.wm_geometry("+0+0")
       mngr1.set_window_title("Links Entrepreneurs - Workers")
-
 
 
 
@@ -83,15 +83,15 @@ def createEdge(a, b):
      # verifying the presence of the edge in the other direction
      try:
       otherW = common.g[b][a]['weight']
-      common.g_edge_labels[a,b]="w.s %d and %d" % (common.g[a][b]['weight'],otherW)
+      #common.g_edge_labels[a,b]="w.s %d and %d" % (common.g[a][b]['weight'],otherW)
       common.g_edge_labels[b,a]=""
-     except:
-      common.g_edge_labels[a,b]="w. %d" % common.g[a][b]['weight']
+     except: pass
+      #common.g_edge_labels[a,b]="w. %d" % common.g[a][b]['weight']
 
     if a == b:
       common.g_edge_labels[a,b]=""
-      common.g[a][b]['pseudoLabel']="auto link w. %d" \
-                                      % common.g[a][b]['weight']
+      #common.g[a][b]['pseudoLabel']="auto link w. %d" \
+      #                            % common.g[a][b]['weight']
 
 
 # using networkX and matplotlib case

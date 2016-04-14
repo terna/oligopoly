@@ -1,4 +1,7 @@
 #commonVar.py
+
+projectVersion = 2
+
 prune=False
 pruneThreshold=0
 
@@ -21,6 +24,28 @@ sigma=0.7
 #size of the nodes
 nsize=150
 
+#demand funtion paramenters (1) entrepreneurs as consumers (2) employed workers
+#(3) unemployed workers
+#with Ci = ai + bi Y + u
+#u=N(0,consumptionErrorSD)
+consumptionRandomComponentSD=0.3
+
+#(1)
+a1=0.4
+b1=0.55
+#Y1=profit(t-1)+wage NB no negative consumption if profit(t-1) < 0
+
+#(2)
+a2=0.3
+b2=0.65
+#Y2=wage
+
+#(3)
+socialWelfareCompensation=0.3
+a3=0
+b3=1
+#Y3=socialWelfareCompensation
+
 #wages and revenues
 wage=1
 revenuesOfSalesForEachWorker=1.005
@@ -32,7 +57,17 @@ laborProductivity=1
 hiringThreshold=0
 firingThreshold=0
 
+#macro variables
 totalProductionInA_TimeStep=0
+totalPlannedConsumptionInValueInA_TimeStep=0
 
 #Poisson mean in plannedProduction
 Lambda=5
+
+#threshold toEntrepreneur
+thresholdToEntrepreneur=0.5
+extraCostsDuration=3
+newEntrantExtraCosts=0.5
+
+#threshold toWorker
+thresholdToWorker=-1.0
