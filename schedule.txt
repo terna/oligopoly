@@ -1087,3 +1087,14 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.5 fireIfProfit
 workers toEntrepreneur
 entrepreneurs toWorker
+# 100
+entrepreneurs makeProductionPlan
+entrepreneurs hireFireWithProduction
+entrepreneurs produce
+entrepreneurs planConsumptionInValue
+workers planConsumptionInValue
+WorldState specialUse setMarketPriceV2
+entrepreneurs evaluateProfit
+entrepreneurs 0.5 fireIfProfit
+workers toEntrepreneur
+entrepreneurs toWorker
