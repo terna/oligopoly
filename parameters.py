@@ -63,13 +63,19 @@ def loadParameters(self):
   # laboor productivity
   print "labor productivity", common.laborProductivity
 
+
   #Poisson mean in plannedProduction
-  print "Mean value of the Poisson distribution used in production planning (not used in V.0);"
-  tmp=raw_input(
-     "suggested Lambda=5 (enter to confirm or input a number) ")
-  try: common.Lambda=int(tmp)
-  except: pass
-  print "Resulting value", common.Lambda
+  if common.projectVersion < 3:
+   print "Mean value of the Poisson distribution used in production planning "+\
+         "(not used in V.0; used only at t=1 in V.3);"
+   tmp=raw_input(
+      "suggested Lambda=5 (enter to confirm or input a number) ")
+   try: common.Lambda=int(tmp)
+   except: pass
+   print "Resulting value", common.Lambda
+  if common.projectVersion >= 3:
+   print "Lambda, mean value of the Poisson distribution used in production "+\
+         "planning at time=1, set internally"
 
   #consumption
   print
@@ -82,11 +88,11 @@ def loadParameters(self):
    % (common.a1, common.b1, common.a2, common.b2, common.a3, common.b3)
   print
 
-  print ("Threshold to became an entrepreneur %4.2f\n" +\
+  print ("Relative threshold to became an entrepreneur %4.2f\n" +\
   "with new entrant extra costs %4.2f and duration of the extra cost %d") % \
   (common.thresholdToEntrepreneur, common.newEntrantExtraCosts, \
   common.extraCostsDuration)
-  print "Threshold to became an unmployed worker %4.2f\n" % common.thresholdToWorker
+  print "Relative threshold to became an unmployed worker %4.2f\n" % common.thresholdToWorker
   print
 
 

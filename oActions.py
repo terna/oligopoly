@@ -17,7 +17,6 @@ def do1b(address):
     gvf.openClearNetworkXdisplay()
     gvf.drawGraph()
 
-
 def do2a(address,cycle):
             self=address # if necessary
 
@@ -102,7 +101,8 @@ def visualizePlot(aL,t):
       y2 = [totalProfit]
       y3 = [common.totalProductionInA_TimeStep]
       y4 = [totalPlannedProduction]
-      if y4[0] > 0: y5 = [common.price] # to avoid error in Version 0 schedule
+      if y4[0] > 0: y5 = [common.price*10] # to avoid error in Version 0 schedule
+
       if not common.IPython:
        gvf.plt.ion()
        f2=gvf.plt.figure(2)
@@ -113,13 +113,25 @@ def visualizePlot(aL,t):
         ax = f2.gca()
         ax.set_autoscale_on(True)
         gvf.plt.title('Time Series')
-      line1, = ax.plot(x, y1,label='unemployed',color='OrangeRed')
-      line2, = ax.plot(x, y2,label='totalProfit',color='LawnGreen')
-      line3, = ax.plot(x, y3,label='totalProduction',color='Blue')
+      line1, = ax.plot(x, y1,label='unemployed',color='OrangeRed', marker="*")
+      line2, = ax.plot(x, y2,label='totalProfit',color='LawnGreen', marker="*")
+      line3, = ax.plot(x, y3,label='totalProduction',color='Blue', marker="*")
       if y4[0] > 0:
-          line4, = ax.plot(x, y4,label='plannedProduction',color='Violet')
-          line5, = ax.plot(x, y4,label='price*10',color='Gray')
+          line4, = ax.plot(x, y4,label='plannedProduction',color='Violet', marker="*")
+          line5, = ax.plot(x, y4,label='price*10',color='Gray', marker="*")
       ax.legend(loc=6)
+      line1.set_xdata(x)
+      line1.set_ydata(y1)
+      line2.set_xdata(x)
+      line2.set_ydata(y2)
+      line3.set_xdata(x)
+      line3.set_ydata(y3)
+      if y4[0] > 0:
+          line4.set_xdata(x)
+          line4.set_ydata(y4)
+          line5.set_xdata(x)
+          line5.set_ydata(y5)
+
       #loc values at http://matplotlib.org/1.3.1/users/legend_guide.html
       if not common.IPython:
           gvf.plt.figure(1)
@@ -132,12 +144,12 @@ def visualizePlot(aL,t):
               ax = f2.gca()
               ax.set_autoscale_on(True)
 
-              line1, = ax.plot(x, y1,label='unemployed',color='OrangeRed')
-              line2, = ax.plot(x, y2,label='totalProfit',color='LawnGreen')
-              line3, = ax.plot(x, y3,label='totalProduction',color='Blue')
+              line1, = ax.plot(x, y1,label='unemployed',color='OrangeRed', marker="*")
+              line2, = ax.plot(x, y2,label='totalProfit',color='LawnGreen', marker="*")
+              line3, = ax.plot(x, y3,label='totalProduction',color='Blue', marker="*")
               if y4[0] > 0:
-                line4, = ax.plot(x, y4,label='plannedProduction',color='Violet')
-                line5, = ax.plot(x, y4,label='price',color='Gray')
+                line4, = ax.plot(x, y4,label='plannedProduction',color='Violet', marker="*")
+                line5, = ax.plot(x, y4,label='price',color='Gray', marker="*")
               ax.legend(loc=6)
               gvf.plt.title('Time Series')
       x.append(t)

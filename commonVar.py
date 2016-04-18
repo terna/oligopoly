@@ -2,6 +2,10 @@
 
 projectVersion = 3
 
+# the time is set by ObserverSwarm with
+# common.cycle=1
+# in the benginning
+
 prune=False
 pruneThreshold=0
 
@@ -62,13 +66,14 @@ firingThreshold=0
 totalProductionInA_TimeStep=0
 totalPlannedConsumptionInValueInA_TimeStep=0
 
-#Poisson mean in plannedProduction
+#Poisson mean in plannedProduction, will be modified in paramenters.py
+#in the function loadParameters
 Lambda=5
 
 #threshold toEntrepreneur
-thresholdToEntrepreneur=0.5
+thresholdToEntrepreneur=0.30
 extraCostsDuration=3
-newEntrantExtraCosts=0.5
+newEntrantExtraCosts=2.0
 
 #threshold toWorker
-thresholdToWorker=-1.0
+thresholdToWorker=-0.10

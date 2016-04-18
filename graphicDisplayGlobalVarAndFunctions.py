@@ -202,9 +202,9 @@ def drawGraph():
 
     # neighbors
 
-    for aNode in common.g.nodes():
-        print aNode.number, [node.number \
-                                   for node in nx.neighbors(common.g,aNode)]
+    #for aNode in common.g.nodes():
+    #    print aNode.number, [node.number \
+    #                               for node in nx.neighbors(common.g,aNode)]
     """
     # betweenness_centrality
     # Betweenness centrality of a node v is the sum of the fraction of all-pairs

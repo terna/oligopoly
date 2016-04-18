@@ -24,4 +24,3 @@ class WorldState:
         common.price= common.totalPlannedConsumptionInValueInA_TimeStep / \
                       common.totalProductionInA_TimeStep
         print "Set market price to ", common.price
-        common.price10=common.price*10 #to plot
