@@ -7,7 +7,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 2
@@ -19,7 +19,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 3
@@ -31,7 +31,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 4
@@ -43,7 +43,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 5
@@ -55,7 +55,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 6
@@ -67,7 +67,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 7
@@ -79,7 +79,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 8
@@ -91,7 +91,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 9
@@ -103,7 +103,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 10
@@ -115,7 +115,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 11
@@ -127,7 +127,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 12
@@ -139,7 +139,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 13
@@ -151,7 +151,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 14
@@ -163,7 +163,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 15
@@ -175,7 +175,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 16
@@ -187,7 +187,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 17
@@ -199,7 +199,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 18
@@ -211,7 +211,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 19
@@ -223,7 +223,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 20
@@ -235,7 +235,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 21
@@ -247,7 +247,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 22
@@ -259,7 +259,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 23
@@ -271,7 +271,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 24
@@ -283,7 +283,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 25
@@ -295,7 +295,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 26
@@ -307,7 +307,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 27
@@ -319,7 +319,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 28
@@ -331,7 +331,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 29
@@ -343,7 +343,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 30
@@ -355,7 +355,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 31
@@ -367,7 +367,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 32
@@ -379,7 +379,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 33
@@ -391,7 +391,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 34
@@ -403,7 +403,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 35
@@ -415,7 +415,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 36
@@ -427,7 +427,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 37
@@ -439,7 +439,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 38
@@ -451,7 +451,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 39
@@ -463,7 +463,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 40
@@ -475,7 +475,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 41
@@ -487,7 +487,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 42
@@ -499,7 +499,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 43
@@ -511,7 +511,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 44
@@ -523,7 +523,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 45
@@ -535,7 +535,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 46
@@ -547,7 +547,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 47
@@ -559,7 +559,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 48
@@ -571,7 +571,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 49
@@ -583,7 +583,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 50
@@ -595,7 +595,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 51
@@ -607,7 +607,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 52
@@ -619,7 +619,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 53
@@ -631,7 +631,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 54
@@ -643,7 +643,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 55
@@ -655,7 +655,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 56
@@ -667,7 +667,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 57
@@ -679,7 +679,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 58
@@ -691,7 +691,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 59
@@ -703,7 +703,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 60
@@ -715,7 +715,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 61
@@ -727,7 +727,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 62
@@ -739,7 +739,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 63
@@ -751,7 +751,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 64
@@ -763,7 +763,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 65
@@ -775,7 +775,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 66
@@ -787,7 +787,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 67
@@ -799,7 +799,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 68
@@ -811,7 +811,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 69
@@ -823,7 +823,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 70
@@ -835,7 +835,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 71
@@ -847,7 +847,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 72
@@ -859,7 +859,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 73
@@ -871,7 +871,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 74
@@ -883,7 +883,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 75
@@ -895,7 +895,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 76
@@ -907,7 +907,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 77
@@ -919,7 +919,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 78
@@ -931,7 +931,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 79
@@ -943,7 +943,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 80
@@ -955,7 +955,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 81
@@ -967,7 +967,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 82
@@ -979,7 +979,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 83
@@ -991,7 +991,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 84
@@ -1003,7 +1003,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 85
@@ -1015,7 +1015,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 86
@@ -1027,7 +1027,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 87
@@ -1039,7 +1039,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 88
@@ -1051,7 +1051,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 89
@@ -1063,7 +1063,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 90
@@ -1075,7 +1075,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 91
@@ -1087,7 +1087,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 92
@@ -1099,7 +1099,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 93
@@ -1111,7 +1111,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 94
@@ -1123,7 +1123,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 95
@@ -1135,7 +1135,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 96
@@ -1147,7 +1147,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 97
@@ -1159,7 +1159,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 98
@@ -1171,7 +1171,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 99
@@ -1183,7 +1183,7 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 # 100
@@ -1195,6 +1195,6 @@ entrepreneurs planConsumptionInValue
 workers planConsumptionInValue
 WorldState specialUse setMarketPriceV2
 entrepreneurs evaluateProfit
-entrepreneurs 0.01 fireIfProfit
+entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
