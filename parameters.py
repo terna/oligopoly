@@ -47,7 +47,9 @@ def loadParameters(self):
   # Projct version and thresholds
   try: projectVersion = str(common.projectVersion)
   except: projectVersion = "Unknown"
-  print "\nProject version "+projectVersion,  "hiringThreshold", common.hiringThreshold, \
+  try: build = str(common.build)
+  except: build = "Unknown"
+  print "\nProject version "+projectVersion, "build", build, "\nhiringThreshold", common.hiringThreshold, \
                                     "firingThreshold", common.firingThreshold
 
   # wages

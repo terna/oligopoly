@@ -22,7 +22,8 @@
 
 import commonVar as common
 
-if not common.IPython:
+if not common.IPython or common.graphicStatus=="PythonViaTerminal":
+      # the or is about ipython running in a terminal
       import matplotlib as mpl
       mpl.use("TKAgg") #to use window.wm_geometry below
 
@@ -50,7 +51,8 @@ def createGraph():
     # setting Figure 1 (the switch of the control between Figure 1 and Figure 2
     # is managed in oActions.py
 
-    if not common.IPython:
+    if not common.IPython or common.graphicStatus=="PythonViaTerminal":
+      # the or is about ipython running in a terminal
       plt.figure(1)
       mngr1=plt.get_current_fig_manager() #NB, after figure()
       mngr1.window.wm_geometry("+650+0")
@@ -172,7 +174,9 @@ def drawGraph():
     # https://networkx.github.io/documentation/latest/reference/drawing.html
 
     #plt.draw()
-    if common.IPython: plt.title("Links Entrepreneurs - Workers")
+    if common.IPython and not common.graphicStatus=="PythonViaTerminal":
+        # the and not is about ipython running in a terminal 
+        plt.title("Links Entrepreneurs - Workers")
     plt.show() # used by %Matplotlib inline [without ion()]; not conflicting
                # with ion()
 

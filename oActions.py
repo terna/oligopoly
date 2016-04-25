@@ -57,7 +57,8 @@ def otherSubSteps(subStep, address):
             # this subStep performs only partially the "end" item; the execution
             # will continue in ObserverSwarm.py
             elif subStep == "end":
-                if not common.IPython:
+                if not common.IPython or common.graphicStatus=="PythonViaTerminal":
+                    # the or is about ipython running in a terminal
                     common.toBeExecuted="gvf.plt.figure(2);gvf.plt.close()"
 
             else: return False
@@ -82,7 +83,8 @@ def visualizePlot(aL,t):
     # def of the variables within an if
     global x, y1, y2, y3, y4, y5, line1, line2, line3, line4, line5, ax
 
-    if not common.IPython:
+    if not common.IPython or common.graphicStatus=="PythonViaTerminal":
+       # the or is about ipython running in a terminal
        gvf.plt.figure(2)
        mngr2=gvf.plt.get_current_fig_manager()
        mngr2.window.wm_geometry("+0+0")
@@ -103,12 +105,14 @@ def visualizePlot(aL,t):
       y4 = [totalPlannedProduction]
       if y4[0] > 0: y5 = [common.price*10] # to avoid error in Version 0 schedule
 
-      if not common.IPython:
+      if not common.IPython or common.graphicStatus=="PythonViaTerminal":
+       # the or is about ipython running in a terminal
        gvf.plt.ion()
        f2=gvf.plt.figure(2)
        ax = f2.gca()
        ax.set_autoscale_on(True)
-      if common.IPython:
+      if common.IPython and not common.graphicStatus=="PythonViaTerminal":
+       # the and not is about ipython running in a terminal
         f2=gvf.plt.figure()
         ax = f2.gca()
         ax.set_autoscale_on(True)
@@ -133,13 +137,17 @@ def visualizePlot(aL,t):
           line5.set_ydata(y5)
 
       #loc values at http://matplotlib.org/1.3.1/users/legend_guide.html
-      if not common.IPython:
+      if not common.IPython or common.graphicStatus=="PythonViaTerminal":
+      # the or is about ipython running in a terminal
           gvf.plt.figure(1)
           gvf.plt.show()
-      if common.IPython: gvf.plt.show()
+      if common.IPython and not common.graphicStatus=="PythonViaTerminal":
+       # the and not is about ipython running in a terminal
+          gvf.plt.show()
 
     else:
-      if common.IPython:
+      if common.IPython and not common.graphicStatus=="PythonViaTerminal":
+              # the and not is about ipython running in a terminal
               f2=gvf.plt.figure()
               ax = f2.gca()
               ax.set_autoscale_on(True)
@@ -159,7 +167,9 @@ def visualizePlot(aL,t):
       if y4[0] > 0:
           y4.append(totalPlannedProduction)
           y5.append(common.price*10)
-      if not common.IPython: gvf.plt.figure(2)
+      if not common.IPython or common.graphicStatus=="PythonViaTerminal":
+          # the or is about ipython running in a terminal
+          gvf.plt.figure(2)
       line1.set_xdata(x)
       line1.set_ydata(y1)
       line2.set_xdata(x)
@@ -173,7 +183,10 @@ def visualizePlot(aL,t):
           line5.set_ydata(y5)
       ax.relim()
       ax.autoscale_view(True,True,True)
-      if not common.IPython:
+      if not common.IPython or common.graphicStatus=="PythonViaTerminal":
+          # the or is about ipython running in a terminal
           gvf.plt.figure(1)
           gvf.plt.show()
-      if common.IPython: gvf.plt.show()
+      if common.IPython and not common.graphicStatus=="PythonViaTerminal":
+       # the and not is about ipython running in a terminal
+          gvf.plt.show()
