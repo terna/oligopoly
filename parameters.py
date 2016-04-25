@@ -94,7 +94,10 @@ def loadParameters(self):
   "with new entrant extra costs %4.2f and duration of the extra cost %d") % \
   (common.thresholdToEntrepreneur, common.newEntrantExtraCosts, \
   common.extraCostsDuration)
-  print "Relative threshold to became an unemployed worker %4.2f\n" % common.thresholdToWorker
+  print "Absolute barrier to become entrepreneur", \
+         common.absoluteBarrierToBecomeEntrepreneur
+
+  print "\nRelative threshold to became an unemployed worker %4.2f\n" % common.thresholdToWorker
   print
 
 

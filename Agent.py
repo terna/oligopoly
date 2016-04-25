@@ -372,10 +372,11 @@ class Agent(SuperAgent):
     def toEntrepreneurV3(self):
         if self.agType != "workers" or not self.employed: return
 
-        myEntrepreneur=gvf.nx.neighbors(common.g, self)[0]
-        myEntrepreneurProfit=myEntrepreneur.profit
-        myEntrepreneurCosts=myEntrepreneur.costs
-        if myEntrepreneurProfit/myEntrepreneurCosts  >= \
+        if random() <= common.absoluteBarrierToBecomeEntrepreneur:
+          myEntrepreneur=gvf.nx.neighbors(common.g, self)[0]
+          myEntrepreneurProfit=myEntrepreneur.profit
+          myEntrepreneurCosts=myEntrepreneur.costs
+          if myEntrepreneurProfit/myEntrepreneurCosts  >= \
             common.thresholdToEntrepreneur:
             print "I'm worker %2.0f and my entrepreneur relative profit is %4.2f" %\
                   (self.number, myEntrepreneurProfit/myEntrepreneurCosts)
