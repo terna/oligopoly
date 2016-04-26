@@ -371,8 +371,10 @@ class Agent(SuperAgent):
     #to entrepreneurV3
     def toEntrepreneurV3(self):
         if self.agType != "workers" or not self.employed: return
-
-        if random() <= common.absoluteBarrierToBecomeEntrepreneur:
+        #print float(common.absoluteBarrierToBecomeEntrepreneur)/ \
+        #               len(self.agentList)
+        if random() <= float(common.absoluteBarrierToBecomeEntrepreneur)/ \
+                       len(self.agentList):
           myEntrepreneur=gvf.nx.neighbors(common.g, self)[0]
           myEntrepreneurProfit=myEntrepreneur.profit
           myEntrepreneurCosts=myEntrepreneur.costs

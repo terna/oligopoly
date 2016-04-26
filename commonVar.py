@@ -77,7 +77,7 @@ thresholdToEntrepreneur=0.30
 extraCostsDuration=3
 newEntrantExtraCosts=2.0
 
-absoluteBarrierToBecomeEntrepreneur=0.01
+absoluteBarrierToBecomeEntrepreneur=0.5
 
 #threshold toWorker
 thresholdToWorker=-0.10
