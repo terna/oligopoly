@@ -103,7 +103,13 @@ def visualizePlot(aL,t):
       y2 = [totalProfit]
       y3 = [common.totalProductionInA_TimeStep]
       y4 = [totalPlannedProduction]
-      if y4[0] > 0: y5 = [common.price*10] # to avoid error in Version 0 schedule
+      if y4[0] > 0: # if => to avoid error in Version 0 schedule
+          y5 = [common.price]
+          if len(aL)>=100  :y5 = [common.price*10]
+          if len(aL)>=1000 :y5 = [common.price*100]
+          if len(aL)>=10000:y5 = [common.price*1000]
+          #print "************** unemployed", y1
+          #print "************** price", y5
 
       if not common.IPython or common.graphicStatus=="PythonViaTerminal":
        # the or is about ipython running in a terminal
@@ -122,7 +128,14 @@ def visualizePlot(aL,t):
       line3, = ax.plot(x, y3,label='totalProduction',color='Blue', marker="*")
       if y4[0] > 0:
           line4, = ax.plot(x, y4,label='plannedProduction',color='Violet', marker="*")
-          line5, = ax.plot(x, y4,label='price*10',color='Gray', marker="*")
+          if                    len(aL)<100   :
+            line5, = ax.plot(x, y5,label='price',color='Gray', marker="*")
+          elif   len(aL)>=100 and len(aL)<1000  :
+            line5, = ax.plot(x, y5,label='price*10',color='Gray', marker="*")
+          elif len(aL)>=1000 and len(aL)<10000:
+            line5, = ax.plot(x, y5,label='price*100',color='Gray', marker="*")
+          elif len(aL)>=10000                 :
+            line5, = ax.plot(x, y5,label='price*1000',color='Gray', marker="*")
       ax.legend(loc=6)
       line1.set_xdata(x)
       line1.set_ydata(y1)
@@ -166,7 +179,13 @@ def visualizePlot(aL,t):
       y3.append(common.totalProductionInA_TimeStep)
       if y4[0] > 0:
           y4.append(totalPlannedProduction)
-          y5.append(common.price*10)
+          if                      len(aL)<100  : y5.append(common.price)
+          elif len(aL)>=100   and len(aL)<1000 : y5.append(common.price*10)
+          elif len(aL)>=1000  and len(aL)<10000: y5.append(common.price*100)
+          elif len(aL)>=10000                  : y5.append(common.price*1000)
+          #print "************** unemployed", y1
+          #print "************** price", y5
+
       if not common.IPython or common.graphicStatus=="PythonViaTerminal":
           # the or is about ipython running in a terminal
           gvf.plt.figure(2)
