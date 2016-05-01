@@ -94,11 +94,15 @@ def loadParameters(self):
   "with new entrant extra costs %4.2f and duration of the extra cost %d") % \
   (common.thresholdToEntrepreneur, common.newEntrantExtraCosts, \
   common.extraCostsDuration)
-  print "Absolute barrier to become entrepreneur", \
+
+  print "Absolute barrier to become entrepreneur, max number in a time step: ", \
          common.absoluteBarrierToBecomeEntrepreneur
 
   print "\nRelative threshold to became an unemployed worker %4.2f\n" % common.thresholdToWorker
-  print
+
+  print "Total demand relative random shock, uniformly distributed\nbetween "+\
+        "-%3.2f and +%3.2f" % (common.maxDemandRelativeRandomShock,\
+                               common.maxDemandRelativeRandomShock)
 
 
   # cycles
@@ -107,3 +111,5 @@ def loadParameters(self):
   v = raw_input("verbose? (y/[n]) ")
   if v=="y" or v=="Y":
     common.verbose=True #predefined False
+  print "If running in IPython, the messages of the model about che creation" +\
+        "\nof each agent are automatically off, to avoid locking the run."

@@ -79,5 +79,7 @@ newEntrantExtraCosts=2.0
 
 absoluteBarrierToBecomeEntrepreneur=5
 
+maxDemandRelativeRandomShock=0.10
+
 #threshold toWorker
 thresholdToWorker=-0.10
