@@ -2,7 +2,7 @@
 
 projectVersion = 3
 
-build = "20160501"
+build = "20160502"
 
 # the time is set by ObserverSwarm with
 # common.cycle=1
@@ -68,9 +68,13 @@ firingThreshold=0
 totalProductionInA_TimeStep=0
 totalPlannedConsumptionInValueInA_TimeStep=0
 
-#Poisson mean in plannedProduction, will be modified in paramenters.py
+#Poisson mean in makeProoductionPlan, will be modified in paramenters.py
 #in the function loadParameters
 Lambda=5
+
+#to internally calculate the Poisson mean (Lambda) in makeProoductionPlan
+#for time=1 in V3 we use the ratio rho
+rho=0.9
 
 #threshold toEntrepreneur
 thresholdToEntrepreneur=0.30
@@ -82,4 +86,4 @@ absoluteBarrierToBecomeEntrepreneur=5
 maxDemandRelativeRandomShock=0.10
 
 #threshold toWorker
-thresholdToWorker=-0.10
+thresholdToWorker=-0.15

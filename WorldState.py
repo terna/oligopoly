@@ -43,5 +43,5 @@ class WorldState:
           common.price= (common.totalPlannedConsumptionInValueInA_TimeStep / \
                          (1 + shock))  \
                          / common.totalProductionInA_TimeStep
-          print "Set market price to ", common.price
           print "Relative shock (symmetric) ", shock0
+          print "Set market price to ", common.price

@@ -258,13 +258,14 @@ class Agent(SuperAgent):
             #print nEntrepreneurs
             nWorkersPlus_nEntrepreneurs=len(self.agentList)
             #print nWorkersPlus_nEntrepreneurs
-            common.Lambda=(0.5*nWorkersPlus_nEntrepreneurs)/nEntrepreneurs
-            #print common.Lambda
+            common.Lambda=(common.rho*nWorkersPlus_nEntrepreneurs)/nEntrepreneurs
+            #print common.rho, common.Lambda
 
         if (common.projectVersion >= 3 and common.cycle==1) or \
             common.projectVersion < 3:
             self.plannedProduction=npr.poisson(common.Lambda,1)[0] # 1 is the number
             # of element of the returned matrix (vector)
+            #print self.plannedProduction
 
     # adaptProductionPlan
     def adaptProductionPlan(self):

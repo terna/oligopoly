@@ -76,8 +76,11 @@ def loadParameters(self):
    except: pass
    print "Resulting value", common.Lambda
   if common.projectVersion >= 3:
-   print "Lambda, mean value of the Poisson distribution used in production "+\
-         "planning at time=1, set internally"
+
+   print "Lambda, mean value of the Poisson distribution used in production\n"+\
+         "planning at time=1, is set internally to match the ratio\n" + \
+         "between actual and potential initial employed population,"
+   print "set to %3.2f" %  common.rho
 
   #consumption
   print
