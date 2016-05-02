@@ -74,14 +74,14 @@ Lambda=5
 
 #to internally calculate the Poisson mean (Lambda) in makeProoductionPlan
 #for time=1 in V3 we use the ratio rho
-rho=0.9
+rho=0.8
 
 #threshold toEntrepreneur
 thresholdToEntrepreneur=0.30
 extraCostsDuration=3
 newEntrantExtraCosts=2.0
 
-absoluteBarrierToBecomeEntrepreneur=5
+absoluteBarrierToBecomeEntrepreneur=10
 
 maxDemandRelativeRandomShock=0.10
 
