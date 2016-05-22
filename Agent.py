@@ -164,6 +164,9 @@ class Agent(SuperAgent):
             entrepreneurWorkers=gvf.nx.neighbors(common.g,self)
             #print "entrepreneur", self.number, "could fire", entrepreneurWorkers
 
+            entrepreneurWorkers.sort() #the list returnes by nx is unstanble as
+                                       #order
+
             if len(entrepreneurWorkers) > 0: # has to be, but ...
                  shuffle(entrepreneurWorkers)
                  for i in range(n):
@@ -196,6 +199,10 @@ class Agent(SuperAgent):
         # the list of the employees of the firm
         entrepreneurWorkers=gvf.nx.neighbors(common.g,self)
         #print "entrepreneur", self.number, "could fire", entrepreneurWorkers
+
+        entrepreneurWorkers.sort() #the list returnes by nx is unstanble as
+                                   #order
+
 
         if len(entrepreneurWorkers) > 0:
             fired=entrepreneurWorkers[randint(0,len(entrepreneurWorkers)-1)]
@@ -277,6 +284,10 @@ class Agent(SuperAgent):
 
           self.plannedProduction = common.totalProductionInPrevious_TimeStep  \
                 / nEntrepreneurs
+
+          #self.plannedProduction = common.totalDemandInPrevious_TimeStep  \
+          #        / nEntrepreneurs
+
           self.plannedProduction += gauss(0,self.plannedProduction/10)
 
 
