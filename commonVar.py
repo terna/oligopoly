@@ -79,11 +79,11 @@ rho=0.8
 #threshold toEntrepreneur
 thresholdToEntrepreneur=0.30
 extraCostsDuration=3
-newEntrantExtraCosts=2.0
+newEntrantExtraCosts=1.0
 
-absoluteBarrierToBecomeEntrepreneur=5
+absoluteBarrierToBecomeEntrepreneur=20
 
-maxDemandRelativeRandomShock=0.10
+maxDemandRelativeRandomShock=0.20
 
 #threshold toWorker
 thresholdToWorker=-0.10
