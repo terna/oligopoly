@@ -2,7 +2,7 @@
 
 projectVersion = 3
 
-build = "20160502"
+build = "20160522"
 
 # the time is set by ObserverSwarm with
 # common.cycle=1
@@ -81,9 +81,9 @@ thresholdToEntrepreneur=0.30
 extraCostsDuration=3
 newEntrantExtraCosts=2.0
 
-absoluteBarrierToBecomeEntrepreneur=10
+absoluteBarrierToBecomeEntrepreneur=5
 
 maxDemandRelativeRandomShock=0.10
 
 #threshold toWorker
-thresholdToWorker=-0.15
+thresholdToWorker=-0.10
