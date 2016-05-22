@@ -282,14 +282,16 @@ class Agent(SuperAgent):
              if ag.agType=="entrepreneurs":
                  nEntrepreneurs+=1
 
-          self.plannedProduction = common.totalProductionInPrevious_TimeStep  \
-                / nEntrepreneurs
-
-          #self.plannedProduction = common.totalDemandInPrevious_TimeStep  \
+          #self.plannedProduction = common.totalProductionInPrevious_TimeStep  \
           #        / nEntrepreneurs
 
-          self.plannedProduction += gauss(0,self.plannedProduction/10)
+          self.plannedProduction = common.totalDemandInPrevious_TimeStep  \
+                  / nEntrepreneurs
 
+          #self.plannedProduction += gauss(0,self.plannedProduction/10)
+
+          self.plannedProduction += uniform(-self.plannedProduction/10.,\
+                                             self.plannedProduction/10.)
 
     # calculateProfit V0
     def evaluateProfitV0(self):
@@ -324,7 +326,17 @@ class Agent(SuperAgent):
         #print self.production/common.laborProductivity
         self.costs=common.wage * (self.production/common.laborProductivity) + \
                     XC
-        self.profit=common.price * self.production - self.costs
+
+        #self.profit=common.price * self.production - self.costs
+
+        nEntrepreneurs = 0
+        for ag in self.agentList:
+           if ag.agType=="entrepreneurs":
+               nEntrepreneurs+=1
+        soldQuantity=common.totalPlannedConsumptionInValueInA_TimeStep / \
+                     float(nEntrepreneurs)
+
+        self.profit=common.price * soldQuantity - self.costs
         #print self.number, "profit", self.profit
 
 
