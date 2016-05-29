@@ -30,6 +30,9 @@ class WorldState:
         shock0=random.uniform(-common.maxDemandRelativeRandomShock, \
                               common.maxDemandRelativeRandomShock)
         shock=shock0
+
+        print "\n-------------------------------------"
+
         if shock >= 0:
           common.totalDemandInPrevious_TimeStep = \
              common.totalPlannedConsumptionInValueInA_TimeStep * \
@@ -40,7 +43,6 @@ class WorldState:
           print "Relative shock (symmetric) ", shock0
           print "Set market price to ", common.price
 
-        shock=shock0
         if shock <  0:
           shock *=-1. #always positive, boing added to the denominator
           common.totalDemandInPrevious_TimeStep = \
@@ -51,3 +53,5 @@ class WorldState:
                          / common.totalProductionInA_TimeStep
           print "Relative shock (symmetric) ", shock0
           print "Set market price to ", common.price
+
+        print "-------------------------------------\n"
