@@ -6,6 +6,17 @@ import graphicDisplayGlobalVarAndFunctions as gvf
 import commonVar as common
 import numpy.random as npr
 
+def mySort(ag):
+    if ag==[]: return []
+    numAg=[]
+    for a in ag:
+        numAg.append((a.number,a))
+    numAg.sort()
+    agSorted=[]
+    for i in range(len(numAg)):
+        agSorted.append(numAg[i][1])
+    return agSorted
+
 class Agent(SuperAgent):
     def __init__(self, number,myWorldState,
                  xPos=0, yPos=0, agType=""):
@@ -164,8 +175,8 @@ class Agent(SuperAgent):
             entrepreneurWorkers=gvf.nx.neighbors(common.g,self)
             #print "entrepreneur", self.number, "could fire", entrepreneurWorkers
 
-            entrepreneurWorkers.sort() #the list returnes by nx is unstanble as
-                                       #order
+            #the list returnes by nx is unstable as order
+            entrepreneurWorkers = mySort(entrepreneurWorkers)
 
             if len(entrepreneurWorkers) > 0: # has to be, but ...
                  shuffle(entrepreneurWorkers)
@@ -200,8 +211,8 @@ class Agent(SuperAgent):
         entrepreneurWorkers=gvf.nx.neighbors(common.g,self)
         #print "entrepreneur", self.number, "could fire", entrepreneurWorkers
 
-        entrepreneurWorkers.sort() #the list returnes by nx is unstanble as
-                                   #order
+        #the list returnes by nx is unstable as order
+        entrepreneurWorkers = mySort(entrepreneurWorkers)
 
 
         if len(entrepreneurWorkers) > 0:
@@ -290,8 +301,9 @@ class Agent(SuperAgent):
 
           #self.plannedProduction += gauss(0,self.plannedProduction/10)
 
-          self.plannedProduction += uniform(-self.plannedProduction/10.,\
-                                             self.plannedProduction/10.)
+          self.plannedProduction += uniform( \
+           -self.plannedProduction*common.randomComponentOfPlannedProduction,\
+            self.plannedProduction*common.randomComponentOfPlannedProduction)
 
     # calculateProfit V0
     def evaluateProfitV0(self):
