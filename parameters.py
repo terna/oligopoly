@@ -98,6 +98,9 @@ def loadParameters(self):
   (common.thresholdToEntrepreneur, common.newEntrantExtraCosts, \
   common.extraCostsDuration)
 
+  print "Random component of planned production %4.2f%s" % \
+                             (common.randomComponentOfPlannedProduction*100, "%")
+
   print "Absolute barrier to become entrepreneur, max number in a time step: ", \
          common.absoluteBarrierToBecomeEntrepreneur
 
