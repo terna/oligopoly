@@ -79,7 +79,9 @@ rho=0.8
 #threshold toEntrepreneur
 thresholdToEntrepreneur=0.30
 extraCostsDuration=3
-newEntrantExtraCosts=1.0
+newEntrantExtraCosts=2.0
+
+randomComponentOfPlannedProduction=0.10
 
 absoluteBarrierToBecomeEntrepreneur=20
 
