@@ -107,8 +107,8 @@ def loadParameters(self):
   print "\nRelative threshold to became an unemployed worker %4.2f\n" % common.thresholdToWorker
 
   print "Total demand relative random shock, uniformly distributed\nbetween "+\
-        "-%3.2f and +%3.2f" % (common.maxDemandRelativeRandomShock,\
-                               common.maxDemandRelativeRandomShock)
+        "-%4.2f%s and +%4.2f%s" % (common.maxDemandRelativeRandomShock*100,"%",\
+                               common.maxDemandRelativeRandomShock*100,"%")
 
 
   # cycles
