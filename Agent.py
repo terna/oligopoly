@@ -301,9 +301,17 @@ class Agent(SuperAgent):
 
           #self.plannedProduction += gauss(0,self.plannedProduction/10)
 
-          self.plannedProduction += uniform( \
-           -self.plannedProduction*common.randomComponentOfPlannedProduction,\
-            self.plannedProduction*common.randomComponentOfPlannedProduction)
+          shock= uniform( \
+           -common.randomComponentOfPlannedProduction,\
+            common.randomComponentOfPlannedProduction)
+
+          if shock >= 0:
+           self.plannedProduction *= (1.+shock)
+
+          if shock < 0:
+           shock *= -1.
+           self.plannedProduction /= (1.+shock)
+          #print self.number, self.plannedProduction
 
     # calculateProfit V0
     def evaluateProfitV0(self):
