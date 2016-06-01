@@ -68,7 +68,7 @@ class Agent(SuperAgent):
                "#", self.number, "has been created at", xPos, ",", yPos
 
         gvf.pos[self]=(xPos,yPos)
-        common.g_labels[self]=str(number)
+        if common.nodeNumbersInGraph: common.g_labels[self]=str(number)
         # to be used to clone (if any)
         self.xPos=xPos
         self.yPos=yPos

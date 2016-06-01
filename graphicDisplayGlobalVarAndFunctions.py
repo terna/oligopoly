@@ -160,12 +160,11 @@ def drawGraph():
     #     labels = common.g_labels)
     # https://networkx.github.io/documentation/latest/reference/generated/networkx.drawing.nx_pylab.draw_networkx.html
 
-
     nx.draw_networkx_nodes(common.g,pos,node_size=common.nsize, \
-         node_color=colors.values())
-    nx.draw_networkx_labels(common.g, pos,labels = common.g_labels,font_size=8, font_color='k',
+         node_color=colors.values()).set_edgecolor('w')
+    nx.draw_networkx_labels(common.g, pos,labels = common.g_labels,font_size=8, font_color='grey',
     font_family='sans-serif', font_weight='normal', alpha=1.0)
-    nx.draw_networkx_edges(common.g, pos, width=1.0, edge_color='k', style='solid', \
+    nx.draw_networkx_edges(common.g, pos, width=1.0, edge_color='grey', style='solid', \
                         alpha=0.3, arrows=False)
     nx.draw_networkx_edge_labels(common.g,pos,edge_labels=common.g_edge_labels,\
                                  font_size=6,font_family='sans-serif')
@@ -175,7 +174,7 @@ def drawGraph():
 
     #plt.draw()
     if common.IPython and not common.graphicStatus=="PythonViaTerminal":
-        # the and not is about ipython running in a terminal 
+        # the and not is about ipython running in a terminal
         plt.title("Links Entrepreneurs - Workers")
     plt.show() # used by %Matplotlib inline [without ion()]; not conflicting
                # with ion()

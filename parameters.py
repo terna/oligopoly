@@ -112,6 +112,8 @@ def loadParameters(self):
         "-%4.2f%s and +%4.2f%s" % (common.maxDemandRelativeRandomShock*100,"%",\
                                common.maxDemandRelativeRandomShock*100,"%")
 
+  print "Node numbers in graph:", common.nodeNumbersInGraph
+
 
   # cycles
   self.nCycles = input("How many cycles? (0 = exit) ")
