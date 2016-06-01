@@ -349,17 +349,6 @@ class Agent(SuperAgent):
         # totalActualProductionInA_TimeStep, to price formation
         self.profit=common.price * self.production - self.costs
 
-        """
-        nEntrepreneurs = 0
-        for ag in self.agentList:
-           if ag.agType=="entrepreneurs":
-               nEntrepreneurs+=1
-        soldQuantity=common.totalPlannedConsumptionInValueInA_TimeStep / \
-                     float(nEntrepreneurs)
-
-        self.profit=common.price * soldQuantity - self.costs
-        #print self.number, "profit", self.profit
-        """
 
     # compensation
     def planConsumptionInValue(self):
