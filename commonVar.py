@@ -1,6 +1,6 @@
 #commonVar.py
 
-projectVersion = 3
+projectVersion = 4
 
 build = "20160604"
 
