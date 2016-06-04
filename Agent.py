@@ -323,7 +323,7 @@ class Agent(SuperAgent):
                      (common.revenuesOfSalesForEachWorker - \
                       common.wage) + gauss(0,0.05)
 
-    # calculateProfit
+        # calculateProfit
     def evaluateProfit(self):
 
         # this is an entrepreneur action
@@ -343,7 +343,6 @@ class Agent(SuperAgent):
         #print self.production/common.laborProductivity
         self.costs=common.wage * (self.production/common.laborProductivity) + \
                     XC
-
 
         # the entrepreur sells her production, which is cotributing - via
         # totalActualProductionInA_TimeStep, to price formation
