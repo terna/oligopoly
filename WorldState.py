@@ -55,3 +55,16 @@ class WorldState:
           print "Set market price to ", common.price
 
         print "-------------------------------------\n"
+
+
+    # random shock to wages (temporary method to experiment with wages)
+    def randomShockToWages(self):
+          k=0.10
+          shock= random.uniform(-k,k)
+
+          if shock >= 0:
+           common.wage *= (1.+shock)
+
+          if shock < 0:
+           shock *= -1.
+           common.wage /= (1.+shock)

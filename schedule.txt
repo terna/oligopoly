@@ -10,6 +10,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 2
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -22,6 +23,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 3
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -34,6 +36,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 4
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -46,6 +49,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 5
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -58,6 +62,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 6
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -70,6 +75,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 7
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -82,6 +88,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 8
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -94,6 +101,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 9
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -106,6 +114,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 10
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -118,6 +127,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 11
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -130,6 +140,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 12
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -142,6 +153,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 13
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -154,6 +166,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 14
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -166,6 +179,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 15
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -178,6 +192,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 16
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -190,6 +205,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 17
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -202,6 +218,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 18
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -214,6 +231,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 19
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -226,6 +244,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 20
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -238,6 +257,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 21
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -250,6 +270,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 22
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -262,6 +283,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 23
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -274,6 +296,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 24
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -286,6 +309,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 25
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -298,6 +322,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 26
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -310,6 +335,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 27
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -322,6 +348,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 28
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -334,6 +361,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 29
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -346,6 +374,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 30
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -358,6 +387,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 31
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -370,6 +400,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 32
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -382,6 +413,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 33
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -394,6 +426,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 34
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -406,6 +439,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 35
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -418,6 +452,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 36
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -430,6 +465,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 37
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -442,6 +478,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 38
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -454,6 +491,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 39
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -466,6 +504,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 40
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -478,6 +517,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 41
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -490,6 +530,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 42
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -502,6 +543,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 43
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -514,6 +556,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 44
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -526,6 +569,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 45
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -538,6 +582,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 46
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -550,6 +595,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 47
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -562,6 +608,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 48
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -574,6 +621,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 49
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -586,6 +634,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 50
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -598,6 +647,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 51
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -610,6 +660,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 52
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -622,6 +673,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 53
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -634,6 +686,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 54
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -646,6 +699,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 55
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -658,6 +712,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 56
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -670,6 +725,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 57
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -682,6 +738,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 58
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -694,6 +751,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 59
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -706,6 +764,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 60
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -718,6 +777,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 61
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -730,6 +790,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 62
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -742,6 +803,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 63
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -754,6 +816,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 64
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -766,6 +829,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 65
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -778,6 +842,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 66
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -790,6 +855,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 67
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -802,6 +868,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 68
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -814,6 +881,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 69
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -826,6 +894,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 70
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -838,6 +907,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 71
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -850,6 +920,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 72
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -862,6 +933,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 73
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -874,6 +946,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 74
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -886,6 +959,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 75
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -898,6 +972,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 76
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -910,6 +985,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 77
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -922,6 +998,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 78
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -934,6 +1011,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 79
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -946,6 +1024,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 80
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -958,6 +1037,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 81
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -970,6 +1050,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 82
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -982,6 +1063,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 83
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -994,6 +1076,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 84
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1006,6 +1089,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 85
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1018,6 +1102,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 86
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1030,6 +1115,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 87
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1042,6 +1128,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 88
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1054,6 +1141,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 89
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1066,6 +1154,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 90
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1078,6 +1167,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 91
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1090,6 +1180,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 92
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1102,6 +1193,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 93
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1114,6 +1206,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 94
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1126,6 +1219,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 95
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1138,6 +1232,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 96
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1150,6 +1245,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 97
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1162,6 +1258,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 98
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1174,6 +1271,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 99
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1186,6 +1284,7 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
 # 100
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1198,3 +1297,4 @@ entrepreneurs evaluateProfit
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
+WorldState specialUse randomShockToWages
