@@ -81,7 +81,7 @@ def visualizePlot(aL,t):
 
     # this global is a trick to avoid the 'not referenced' error being the
     # def of the variables within an if
-    global x, y1, y2, y3, y4, y5, line1, line2, line3, line4, line5, ax
+    global x, y1, y2, y3, y4, y5, y6, line1, line2, line3, line4, line5, line6, ax
 
     if not common.IPython or common.graphicStatus=="PythonViaTerminal":
        # the or is about ipython running in a terminal
@@ -110,6 +110,10 @@ def visualizePlot(aL,t):
           if len(aL)>=10000:y5 = [common.price*1000]
           #print "************** unemployed", y1
           #print "************** price", y5
+          y6 = [common.wage]
+          if len(aL)>=100  :y6 = [common.wage*10]
+          if len(aL)>=1000 :y6 = [common.wage*100]
+          if len(aL)>=10000:y6 = [common.wage*1000]
 
       if not common.IPython or common.graphicStatus=="PythonViaTerminal":
        # the or is about ipython running in a terminal
@@ -128,6 +132,7 @@ def visualizePlot(aL,t):
       line3, = ax.plot(x, y3,label='totalProduction',color='Blue', marker="*")
       if y4[0] > 0:
           line4, = ax.plot(x, y4,label='plannedProduction',color='Violet', marker="*")
+
           if                    len(aL)<100   :
             line5, = ax.plot(x, y5,label='price',color='Gray', marker="*")
           elif   len(aL)>=100 and len(aL)<1000  :
@@ -136,6 +141,16 @@ def visualizePlot(aL,t):
             line5, = ax.plot(x, y5,label='price*100',color='Gray', marker="*")
           elif len(aL)>=10000                 :
             line5, = ax.plot(x, y5,label='price*1000',color='Gray', marker="*")
+
+          if                    len(aL)<100   :
+            line6, = ax.plot(x, y6,label='wage',color='Brown', marker="*")
+          elif   len(aL)>=100 and len(aL)<1000  :
+            line6, = ax.plot(x, y6,label='wage*10',color='Brown', marker="*")
+          elif len(aL)>=1000 and len(aL)<10000:
+            line6, = ax.plot(x, y6,label='wage*100',color='Brown', marker="*")
+          elif len(aL)>=10000                 :
+            line6, = ax.plot(x, y6,label='wage*1000',color='Brown', marker="*")
+
       ax.legend(loc=6)
       line1.set_xdata(x)
       line1.set_ydata(y1)
@@ -148,6 +163,8 @@ def visualizePlot(aL,t):
           line4.set_ydata(y4)
           line5.set_xdata(x)
           line5.set_ydata(y5)
+          line6.set_xdata(x)
+          line6.set_ydata(y6)
 
       #loc values at http://matplotlib.org/1.3.1/users/legend_guide.html
       if not common.IPython or common.graphicStatus=="PythonViaTerminal":
@@ -171,6 +188,7 @@ def visualizePlot(aL,t):
               if y4[0] > 0:
                 line4, = ax.plot(x, y4,label='plannedProduction',color='Violet', marker="*")
                 line5, = ax.plot(x, y4,label='price',color='Gray', marker="*")
+                line6, = ax.plot(x, y4,label='wage',color='Brown', marker="*")
               ax.legend(loc=6)
               gvf.plt.title('Time Series')
       x.append(t)
@@ -179,12 +197,19 @@ def visualizePlot(aL,t):
       y3.append(common.totalProductionInA_TimeStep)
       if y4[0] > 0:
           y4.append(totalPlannedProduction)
+
           if                      len(aL)<100  : y5.append(common.price)
           elif len(aL)>=100   and len(aL)<1000 : y5.append(common.price*10)
           elif len(aL)>=1000  and len(aL)<10000: y5.append(common.price*100)
           elif len(aL)>=10000                  : y5.append(common.price*1000)
           #print "************** unemployed", y1
           #print "************** price", y5
+
+          if                      len(aL)<100  : y6.append(common.wage)
+          elif len(aL)>=100   and len(aL)<1000 : y6.append(common.wage*10)
+          elif len(aL)>=1000  and len(aL)<10000: y6.append(common.wage*100)
+          elif len(aL)>=10000                  : y6.append(common.wage*1000)
+
 
       if not common.IPython or common.graphicStatus=="PythonViaTerminal":
           # the or is about ipython running in a terminal
@@ -200,6 +225,8 @@ def visualizePlot(aL,t):
           line4.set_ydata(y4)
           line5.set_xdata(x)
           line5.set_ydata(y5)
+          line6.set_xdata(x)
+          line6.set_ydata(y6)
       ax.relim()
       ax.autoscale_view(True,True,True)
       if not common.IPython or common.graphicStatus=="PythonViaTerminal":
