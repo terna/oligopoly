@@ -38,7 +38,7 @@ def createTheAgent(self,line,num,leftX,rightX,bottomY,topY,agType):
                                  agType=agType)
                  self.agentList.append(anAgent)
 
-                 anAgent.setAgentList(self.agentList) #in ModelSwarm.py
+                 #anAgent.setAgentList(self.agentList) #in ModelSwarm.py
 
 
                 else:
