@@ -2,7 +2,7 @@
 
 projectVersion = 4
 
-build = "20160606"
+build = "20160608"
 
 # the time is set by ObserverSwarm with
 # common.cycle=1
@@ -89,5 +89,9 @@ maxDemandRelativeRandomShock=0.20
 
 #threshold toWorker
 thresholdToWorker=-0.20
+
+fullEmploymentThreshold=0.05
+wageStepInFullEmployment=0.10
+fullEmploymentStatus=False
 
 nodeNumbersInGraph=False

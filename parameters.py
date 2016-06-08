@@ -115,6 +115,12 @@ def loadParameters(self):
   print "Node numbers in graph:", common.nodeNumbersInGraph
 
 
+  print "Full employment threshold "+\
+        "%4.2f%s and wage step in full employment %4.2f%s" \
+                             % (common.fullEmploymentThreshold*100,"%",\
+                                common.wageStepInFullEmployment*100,"%")
+
+
   # cycles
   self.nCycles = input("How many cycles? (0 = exit) ")
 

@@ -68,3 +68,30 @@ class WorldState:
           if shock < 0:
            shock *= -1.
            common.wage /= (1.+shock)
+
+
+    # shock to wages (full employment case)
+    def fullEmploymentEffectOnWages(self):
+
+          # employed people
+          peopleList=common.g.nodes()
+          totalPeople=len(peopleList)
+          totalEmployed=0
+          for p in peopleList:
+              if p.employed: totalEmployed+=1
+          #print totalPeople, totalEmployed
+          unemploymentRate=1. - float(totalEmployed)/ \
+                                float(totalPeople)
+          if not common.fullEmploymentStatus and \
+             unemploymentRate <= common.fullEmploymentThreshold:
+                common.wage*=(1 + common.wageStepInFullEmployment)
+                common.fullEmploymentStatus=True
+
+
+          if common.fullEmploymentStatus and \
+             unemploymentRate > common.fullEmploymentThreshold:
+                common.wage/=(1 + common.wageStepInFullEmployment)
+                common.fullEmploymentStatus=False
+
+
+          #common.wage =
