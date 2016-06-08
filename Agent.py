@@ -6,6 +6,7 @@ import graphicDisplayGlobalVarAndFunctions as gvf
 import commonVar as common
 import numpy.random as npr
 
+
 def mySort(ag):
     if ag==[]: return []
     numAg=[]
@@ -16,6 +17,7 @@ def mySort(ag):
     for i in range(len(numAg)):
         agSorted.append(numAg[i][1])
     return agSorted
+
 
 class Agent(SuperAgent):
     def __init__(self, number,myWorldState,

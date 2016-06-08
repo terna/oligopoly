@@ -92,6 +92,3 @@ class WorldState:
              unemploymentRate > common.fullEmploymentThreshold:
                 common.wage/=(1 + common.wageStepInFullEmployment)
                 common.fullEmploymentStatus=False
-
-
-          #common.wage =

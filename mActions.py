@@ -37,7 +37,9 @@ def createTheAgent(self,line,num,leftX,rightX,bottomY,topY,agType):
                                  float(line.split()[2])+random.gauss(0,common.sigma),
                                  agType=agType)
                  self.agentList.append(anAgent)
-                 #anAgent.setAgentList(self.agentList) #in ModelSwarm.py
+
+                 anAgent.setAgentList(self.agentList) #in ModelSwarm.py
+
 
                 else:
                  print "Error in file "+agType+".txt"
