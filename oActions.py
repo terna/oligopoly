@@ -187,8 +187,26 @@ def visualizePlot(aL,t):
               line3, = ax.plot(x, y3,label='totalProduction',color='Blue', marker="*")
               if y4[0] > 0:
                 line4, = ax.plot(x, y4,label='plannedProduction',color='Violet', marker="*")
-                line5, = ax.plot(x, y4,label='price',color='Gray', marker="*")
-                line6, = ax.plot(x, y4,label='wage',color='Brown', marker="*")
+                #line5, = ax.plot(x, y5,label='price',color='Gray', marker="*")
+                #line6, = ax.plot(x, y6,label='wage',color='Brown', marker="*")
+                if                    len(aL)<100   :
+                  line5, = ax.plot(x, y5,label='price',color='Gray', marker="*")
+                elif   len(aL)>=100 and len(aL)<1000  :
+                  line5, = ax.plot(x, y5,label='price*10',color='Gray', marker="*")
+                elif len(aL)>=1000 and len(aL)<10000:
+                  line5, = ax.plot(x, y5,label='price*100',color='Gray', marker="*")
+                elif len(aL)>=10000                 :
+                  line5, = ax.plot(x, y5,label='price*1000',color='Gray', marker="*")
+
+                if                    len(aL)<100   :
+                  line6, = ax.plot(x, y6,label='wage',color='Brown', marker="*")
+                elif   len(aL)>=100 and len(aL)<1000  :
+                  line6, = ax.plot(x, y6,label='wage*10',color='Brown', marker="*")
+                elif len(aL)>=1000 and len(aL)<10000:
+                  line6, = ax.plot(x, y6,label='wage*100',color='Brown', marker="*")
+                elif len(aL)>=10000                 :
+                  line6, = ax.plot(x, y6,label='wage*1000',color='Brown', marker="*")
+
               ax.legend(loc=6)
               gvf.plt.title('Time Series')
       x.append(t)
