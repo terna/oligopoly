@@ -1,5 +1,7 @@
 from Tools import *
 from Agent import *
+import time
+import csv
 import graphicDisplayGlobalVarAndFunctions as gvf
 import commonVar as common
 
@@ -59,7 +61,10 @@ def otherSubSteps(subStep, address):
             elif subStep == "end":
                 if not common.IPython or common.graphicStatus=="PythonViaTerminal":
                     # the or is about ipython running in a terminal
-                    common.toBeExecuted="gvf.plt.figure(2);gvf.plt.close()"
+                    # += and ; as first character because a first part
+                    # of the string toBeExecuted is already defined in
+                    # commonVar.py
+                    common.toBeExecuted+=";gvf.plt.figure(2);gvf.plt.close()"
 
             else: return False
 
@@ -81,7 +86,7 @@ def visualizePlot(aL,t):
 
     # this global is a trick to avoid the 'not referenced' error being the
     # def of the variables within an if
-    global x, y1, y2, y3, y4, y5, y6, line1, line2, line3, line4, line5, line6, ax
+    global x, y1, y2, y3, y4, y5, y5base, y6, y6base, line1, line2, line3, line4, line5, line6, ax
 
     if not common.IPython or common.graphicStatus=="PythonViaTerminal":
        # the or is about ipython running in a terminal
@@ -104,12 +109,14 @@ def visualizePlot(aL,t):
       y3 = [common.totalProductionInA_TimeStep]
       y4 = [totalPlannedProduction]
       if y4[0] > 0: # if => to avoid error in Version 0 schedule
+          y5base = [common.price]
           y5 = [common.price]
           if len(aL)>=100  :y5 = [common.price*10]
           if len(aL)>=1000 :y5 = [common.price*100]
           if len(aL)>=10000:y5 = [common.price*1000]
           #print "************** unemployed", y1
           #print "************** price", y5
+          y6base = [common.wage]
           y6 = [common.wage]
           if len(aL)>=100  :y6 = [common.wage*10]
           if len(aL)>=1000 :y6 = [common.wage*100]
@@ -216,6 +223,7 @@ def visualizePlot(aL,t):
       if y4[0] > 0:
           y4.append(totalPlannedProduction)
 
+          y5base.append(common.price)
           if                      len(aL)<100  : y5.append(common.price)
           elif len(aL)>=100   and len(aL)<1000 : y5.append(common.price*10)
           elif len(aL)>=1000  and len(aL)<10000: y5.append(common.price*100)
@@ -223,6 +231,7 @@ def visualizePlot(aL,t):
           #print "************** unemployed", y1
           #print "************** price", y5
 
+          y6base.append(common.wage)
           if                      len(aL)<100  : y6.append(common.wage)
           elif len(aL)>=100   and len(aL)<1000 : y6.append(common.wage*10)
           elif len(aL)>=1000  and len(aL)<10000: y6.append(common.wage*100)
@@ -254,3 +263,20 @@ def visualizePlot(aL,t):
       if common.IPython and not common.graphicStatus=="PythonViaTerminal":
        # the and not is about ipython running in a terminal
           gvf.plt.show()
+
+
+
+##saving time series via toBeExecuted in commonVar.py
+def saveTimeSeries():
+    fileName=time.strftime("%Y%m%d-%H:%M:%S.csv")
+    csvfile=open(common.pro+"/"+fileName,"w")
+    csv_writer=csv.writer(csvfile, delimiter=',')
+
+    csv_writer.writerow(['unemployed','totalProfit','totalProduction',\
+                         'plannedProduction','price','wage'])
+
+    for i in range(len(y1)):
+        csv_writer.writerow([y1[i],y2[i],y3[i],y4[i],y5base[i],y6base[i]])
+
+    csvfile.close()
+    print "file",fileName, "written in oligopoly folder."

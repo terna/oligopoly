@@ -2,7 +2,7 @@
 
 projectVersion = 4
 
-build = "20160610"
+build = "20160613"
 
 # the time is set by ObserverSwarm with
 # common.cycle=1
@@ -95,3 +95,7 @@ wageStepInFullEmployment=0.10
 fullEmploymentStatus=False
 
 nodeNumbersInGraph=False
+
+# step to be executed at end (plus an optional second part added
+# within oActions.py)
+toBeExecuted="saveTimeSeries()"
