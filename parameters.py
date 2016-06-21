@@ -11,6 +11,7 @@ def loadParameters(self):
   print "NetworkX version %s running" % nx.__version__
   print "Matplotlib version %s running\n" % mplt.__version__
 
+
   nxv=nx.__version__.split('.')
   vOK=False
   if int(nxv[0])>1: vOK=True
@@ -22,6 +23,20 @@ def loadParameters(self):
   if not vOK:
 		print "NetworkX 1.9.1 or greater required"
 		os.sys.exit(1)
+
+
+  mpltv=mplt.__version__.split('.')
+  vOK=False
+  if int(mpltv[0])>1: vOK=True
+  if len(mpltv)>=2:
+      if int(mpltv[0])==1 and int(mpltv[1])>5: vOK=True
+  if len(mpltv)>=3:
+      if int(mpltv[0])==1 and int(mpltv[1])==5 and int(mpltv[2])>=1: vOK=True
+
+  if not vOK:
+		print "Matplotlib 1.5.1 or greater required"
+		os.sys.exit(1)
+
   #sigma of the normal distribution used in randomize the position of the agents/nodes
   print "sigma of the normal distribution used in randomizing the position of the agents/nodes ", common.sigma
 
