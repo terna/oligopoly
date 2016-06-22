@@ -5,11 +5,13 @@ import commonVar as common
 import networkx as nx
 import matplotlib as mplt
 import numpy.random as npr
+import pandas as pd
 
 def loadParameters(self):
 
   print "NetworkX version %s running" % nx.__version__
-  print "Matplotlib version %s running\n" % mplt.__version__
+  print "matplotlib version %s running" % mplt.__version__
+  print "pandas version %s running\n" % pd.__version__
 
 
   nxv=nx.__version__.split('.')
@@ -34,7 +36,19 @@ def loadParameters(self):
       if int(mpltv[0])==1 and int(mpltv[1])==5 and int(mpltv[2])>=1: vOK=True
 
   if not vOK:
-		print "Matplotlib 1.5.1 or greater required"
+		print "patplotlib 1.5.1 or greater required"
+		os.sys.exit(1)
+
+  pdv=pd.__version__.split('.')
+  vOK=False
+  if int(pdv[0])>0: vOK=True
+  if len(pdv)>=1:
+      if int(pdv[0])==0 and int(pdv[1])>18: vOK=True
+  if len(pdv)>=3:
+      if int(pdv[0])==0 and int(pdv[1])==18 and int(pdv[2])>=1: vOK=True
+
+  if not vOK:
+		print "pandas 0.18.1 or greater required"
 		os.sys.exit(1)
 
   #sigma of the normal distribution used in randomize the position of the agents/nodes
