@@ -4,6 +4,7 @@ import time
 import csv
 import graphicDisplayGlobalVarAndFunctions as gvf
 import commonVar as common
+import pandas as pd
 
 def do1b(address):
 
@@ -43,6 +44,10 @@ def otherSubSteps(subStep, address):
               raw_input ("Hit enter key to continue")
               return True
 
+            elif subStep == "collectTimeSeries":
+              collectTimeSeries(address.modelSwarm.agentList,common.cycle)
+              return True
+
             elif subStep == "visualizePlot":
               visualizePlot(address.modelSwarm.agentList,common.cycle)
               return True
@@ -68,9 +73,43 @@ def otherSubSteps(subStep, address):
 
             else: return False
 
+## collect time series
+def collectTimeSeries(aL,t):
+
+    #creating the dataframe
+    try: common.df
+    except:
+       common.df = pd.DataFrame(columns=\
+         ['unemployed','totalProfit','totalProduction','plannedProduction',\
+          'price','wage'])
+       print "\nCreation of fhe dataframe\n"
+       #print common.df
+
+    unemployed=0
+    totalProfit=0
+    totalPlannedProduction=0
+    for ag in aL:
+       if not ag.employed: unemployed+=1
+       if ag.agType == "entrepreneurs":
+           totalProfit+=ag.profit
+           totalPlannedProduction+=ag.plannedProduction
+
+    df2 = pd.DataFrame([[unemployed, totalProfit, \
+                         common.totalProductionInA_TimeStep, \
+                         totalPlannedProduction, \
+                         common.price, common.wage]], \
+    columns=['unemployed','totalProfit','totalProduction','plannedProduction',\
+             'price','wage'])
+    #print df2
+
+    common.df=common.df.append(df2,ignore_index=True)
+    print common.df
+
 
 ##graphical function
 def visualizePlot(aL,t):
+
+
     #print "visualizePlot acting with", len(aL)-1, "agents, at time step", t
     unemployed=0
     totalProfit=0
