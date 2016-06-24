@@ -103,7 +103,7 @@ def collectTimeSeries(aL,t):
     #print df2
 
     common.df=common.df.append(df2,ignore_index=True)
-    print common.df
+    #print common.df #warning: here the row index starts from 0
 
 
 ##graphical function
@@ -310,13 +310,8 @@ def visualizePlot(aL,t):
 def saveTimeSeries():
     fileName=time.strftime("%Y%m%d-%H:%M:%S.csv")
     csvfile=open(common.pro+"/"+fileName,"w")
-    csv_writer=csv.writer(csvfile, delimiter=',')
 
-    csv_writer.writerow(['unemployed','totalProfit','totalProduction',\
-                         'plannedProduction','price','wage'])
-
-    for i in range(len(y1)):
-        csv_writer.writerow([y1[i],y2[i],y3[i],y4[i],y5base[i],y6base[i]])
+    common.df.to_csv(csvfile,index_label=False,index=False)
 
     csvfile.close()
     print "file",fileName, "written in oligopoly folder."
