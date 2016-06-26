@@ -174,7 +174,7 @@ def drawGraph():
 
     #plt.draw()
     if common.IPython and not common.graphicStatus=="PythonViaTerminal":
-        # the and not is about ipython running in a terminal
+        # the 'and not' is about ipython running in a terminal
         plt.title("Links Entrepreneurs - Workers")
     plt.show() # used by %Matplotlib inline [without ion()]; not conflicting
                # with ion()
