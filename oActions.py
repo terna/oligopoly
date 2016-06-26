@@ -218,6 +218,8 @@ def visualizePlot(aL,t):
       # the or is about ipython running in a terminal
           gvf.plt.figure(1)
           gvf.plt.show()
+          gvf.plt.pause(0.01) #to display the sequence
+
       if common.IPython and not common.graphicStatus=="PythonViaTerminal":
        # the and not is about ipython running in a terminal
           gvf.plt.show()
@@ -300,6 +302,8 @@ def visualizePlot(aL,t):
           # the or is about ipython running in a terminal
           gvf.plt.figure(1)
           gvf.plt.show()
+          gvf.plt.pause(0.01) #to display the sequence
+
       if common.IPython and not common.graphicStatus=="PythonViaTerminal":
        # the and not is about ipython running in a terminal
           gvf.plt.show()

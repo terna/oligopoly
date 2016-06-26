@@ -179,6 +179,9 @@ def drawGraph():
     plt.show() # used by %Matplotlib inline [without ion()]; not conflicting
                # with ion()
 
+    if common.graphicStatus == "PythonViaTerminal": plt.pause(0.01)
+    # to show the sequence of the shown images in absence of pauses
+
     #print agentGraph.nodes(data=True)
     #print agentGraph.edges(data=True)
     #print labels
