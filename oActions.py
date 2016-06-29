@@ -133,7 +133,7 @@ def visualizePlot():
        f2=gvf.plt.figure(2)
        gvf.plt.clf()
        myax = f2.gca()
-       #myax.set_autoscale_on(True
+       #myax.set_autoscale_on(True)
 
        dfOut=common.df
        #set index to start from 1
@@ -152,6 +152,7 @@ def visualizePlot():
        # the and not is about ipython running in a terminal
        f2=gvf.plt.figure()
        myax = f2.gca()
+       #myax.set_autoscale_on(True)
        gvf.plt.title('Time Series')
 
        dfOut=common.df
