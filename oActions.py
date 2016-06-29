@@ -124,6 +124,8 @@ def visualizePlot():
        mngr2.window.wm_geometry("+0+0")
        mngr2.set_window_title("Time series")
 
+       params = {'legend.fontsize': 10}
+       gvf.plt.rcParams.update(params)
 
     if not common.IPython or common.graphicStatus=="PythonViaTerminal":
        # the or is about ipython running in a terminal
@@ -131,33 +133,49 @@ def visualizePlot():
        f2=gvf.plt.figure(2)
        gvf.plt.clf()
        myax = f2.gca()
-       #myax.set_autoscale_on(True)
+       #myax.set_autoscale_on(True
 
        dfOut=common.df
        #set index to start from 1
        dfOut.index += 1
-       dfOut.plot(marker="*",color=["OrangeRed","LawnGreen",\
+       myPlot=dfOut.plot(secondary_y=['price','wage'],\
+                  marker="*",color=["OrangeRed","LawnGreen",\
                                     "Blue","Violet","Gray","Brown"],\
                                     ax=myax)
+       myPlot.set_ylabel('unemployed, totalProfit, totalProduction, plannedProduction')
+       myPlot.right_ax.set_ylabel('price, wage')
+       myPlot.legend(loc='upper left')
+       myPlot.axes.right_ax.legend(loc='lower right')
+
+
+    if common.IPython and not common.graphicStatus=="PythonViaTerminal":
+       # the and not is about ipython running in a terminal
+       f2=gvf.plt.figure()
+       myax = f2.gca()
+       gvf.plt.title('Time Series')
+
+       dfOut=common.df
+       #set index to start from 1
+       dfOut.index += 1
+       myPlot=dfOut.plot(secondary_y=['price','wage'],\
+                  marker="*",color=["OrangeRed","LawnGreen",\
+                                    "Blue","Violet","Gray","Brown"],\
+                                    ax=myax)
+       myPlot.set_ylabel('unemployed, totalProfit, totalProduction, plannedProduction')
+       myPlot.right_ax.set_ylabel('price, wage')
+       myPlot.legend(loc='upper left')
+       myPlot.axes.right_ax.legend(loc='lower right')
+
+
+    if not common.IPython or common.graphicStatus=="PythonViaTerminal":
+       # the or is about ipython running in a terminal
+       gvf.plt.figure(1)
        #gvf.plt.show()
        #gvf.plt.pause(0.01) #to display the sequence
 
     if common.IPython and not common.graphicStatus=="PythonViaTerminal":
        # the and not is about ipython running in a terminal
-        f2=gvf.plt.figure()
-        #ax = f2.gca()
-        #ax.set_autoscale_on(True)
-        gvf.plt.title('Time Series')
-
-    if not common.IPython or common.graphicStatus=="PythonViaTerminal":
-      # the or is about ipython running in a terminal
-          gvf.plt.figure(1)
-          #gvf.plt.show()
-          #gvf.plt.pause(0.01) #to display the sequence
-
-    if common.IPython and not common.graphicStatus=="PythonViaTerminal":
-      # the and not is about ipython running in a terminal
-          gvf.plt.show()
+       gvf.plt.show()
 
 
 

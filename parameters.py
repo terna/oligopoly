@@ -6,8 +6,18 @@ import networkx as nx
 import matplotlib as mplt
 import numpy.random as npr
 import pandas as pd
+from IPython import get_ipython
 
 def loadParameters(self):
+
+  #preliminary cntrol
+  if common.graphicStatus=="PythonViaTerminal" and common.IPython:
+      print "Please do not run the 'oligopoly project' in IPython via a terminal."
+      os.sys.exit(1)
+
+
+  print 'Warning: if running in "jupyter console" the graphic output is missing."'
+
 
   print "NetworkX version %s running" % nx.__version__
   print "matplotlib version %s running" % mplt.__version__
