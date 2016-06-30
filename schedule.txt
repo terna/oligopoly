@@ -11,6 +11,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 2
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -24,6 +25,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 3
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -37,6 +39,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 4
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -50,6 +53,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 5
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -63,6 +67,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 6
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -76,6 +81,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 7
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -89,6 +95,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 8
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -102,6 +109,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 9
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -115,6 +123,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 10
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -128,6 +137,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 11
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -141,6 +151,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 12
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -154,6 +165,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 13
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -167,6 +179,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 14
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -180,6 +193,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 15
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -193,6 +207,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 16
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -206,6 +221,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 17
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -219,6 +235,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 18
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -232,6 +249,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 19
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -245,6 +263,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 20
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -258,6 +277,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 21
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -271,6 +291,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 22
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -284,6 +305,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 23
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -297,6 +319,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 24
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -310,6 +333,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 25
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -323,6 +347,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 26
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -336,6 +361,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 27
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -349,6 +375,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 28
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -362,6 +389,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 29
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -375,6 +403,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 30
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -388,6 +417,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 31
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -401,6 +431,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 32
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -414,6 +445,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 33
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -427,6 +459,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 34
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -440,6 +473,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 35
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -453,6 +487,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 36
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -466,6 +501,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 37
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -479,6 +515,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 38
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -492,6 +529,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 39
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -505,6 +543,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 40
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -518,6 +557,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 41
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -531,6 +571,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 42
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -544,6 +585,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 43
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -557,6 +599,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 44
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -570,6 +613,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 45
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -583,6 +627,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 46
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -596,6 +641,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 47
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -609,6 +655,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 48
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -622,6 +669,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 49
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -635,6 +683,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 50
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -648,6 +697,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 51
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -661,6 +711,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 52
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -674,6 +725,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 53
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -687,6 +739,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 54
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -700,6 +753,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 55
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -713,6 +767,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 56
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -726,6 +781,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 57
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -739,6 +795,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 58
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -752,6 +809,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 59
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -765,6 +823,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 60
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -778,6 +837,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 61
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -791,6 +851,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 62
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -804,6 +865,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 63
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -817,6 +879,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 64
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -830,6 +893,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 65
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -843,6 +907,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 66
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -856,6 +921,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 67
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -869,6 +935,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 68
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -882,6 +949,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 69
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -895,6 +963,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 70
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -908,6 +977,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 71
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -921,6 +991,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 72
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -934,6 +1005,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 73
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -947,6 +1019,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 74
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -960,6 +1033,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 75
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -973,6 +1047,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 76
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -986,6 +1061,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 77
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -999,6 +1075,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 78
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1012,6 +1089,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 79
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1025,6 +1103,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 80
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1038,6 +1117,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 81
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1051,6 +1131,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 82
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1064,6 +1145,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 83
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1077,6 +1159,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 84
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1090,6 +1173,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 85
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1103,6 +1187,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 86
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1116,6 +1201,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 87
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1129,6 +1215,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 88
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1142,6 +1229,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 89
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1155,6 +1243,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 90
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1168,6 +1257,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 91
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1181,6 +1271,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 92
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1194,6 +1285,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 93
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1207,6 +1299,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 94
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1220,6 +1313,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 95
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1233,6 +1327,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 96
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1246,6 +1341,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 97
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1259,6 +1355,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 98
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1272,6 +1369,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 99
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1285,6 +1383,7 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages
 # 100
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1298,3 +1397,4 @@ entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
 WorldState specialUse fullEmploymentEffectOnWages
+WorldState specialUse incumbentActionOnWages

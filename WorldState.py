@@ -92,3 +92,8 @@ class WorldState:
              unemploymentRate > common.fullEmploymentThreshold:
                 common.wage/=(1 + common.wageStepInFullEmployment)
                 common.fullEmploymentStatus=False
+
+    # incumbents rising wages as na entry barrier
+    def incumbentActionOnWages(self):
+        print "*************************incumbentActionOnWages"
+        pass
