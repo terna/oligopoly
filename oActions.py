@@ -44,6 +44,10 @@ def otherSubSteps(subStep, address):
               raw_input ("Hit enter key to continue")
               return True
 
+            elif subStep == "collectStructuralData":
+              collectStructuralData(address.modelSwarm.agentList,common.cycle)
+              return True
+
             elif subStep == "collectTimeSeries":
               collectTimeSeries(address.modelSwarm.agentList,common.cycle)
               return True
@@ -73,17 +77,41 @@ def otherSubSteps(subStep, address):
 
             else: return False
 
+
+
+# collect Structural Data
+def collectStructuralData(aL,t):
+    #creating the dataframe
+    try: common.str_df
+    except:
+       common.str_df = pd.DataFrame(columns=\
+         ['entrepreneurs','workers'])
+       print "\nCreation of fhe structural dataframe\n"
+       print common.str_df
+
+    print "************************collectStructuralData****************"
+    nWorkers=0
+    nEntrepreneurs=0
+    for ag in aL:
+        if ag.agType=="entrepreneurs":
+            nEntrepreneurs+=1
+        if ag.agType=="workers":
+            nWorkers+=1
+    print nEntrepreneurs, nWorkers
+
+
+
 ## collect time series
 def collectTimeSeries(aL,t):
 
     #creating the dataframe
-    try: common.df
+    try: common.ts_df
     except:
-       common.df = pd.DataFrame(columns=\
+       common.ts_df = pd.DataFrame(columns=\
          ['unemployed','totalProfit','totalProduction','plannedProduction',\
           'price','wage'])
-       print "\nCreation of fhe dataframe\n"
-       #print common.df
+       print "\nCreation of fhe time series dataframe\n"
+       #print common.ts_df
 
     unemployed=0
     totalProfit=0
@@ -94,16 +122,16 @@ def collectTimeSeries(aL,t):
            totalProfit+=ag.profit
            totalPlannedProduction+=ag.plannedProduction
 
-    df2 = pd.DataFrame([[unemployed, totalProfit, \
+    ts_df2 = pd.DataFrame([[unemployed, totalProfit, \
                          common.totalProductionInA_TimeStep, \
                          totalPlannedProduction, \
                          common.price, common.wage]], \
     columns=['unemployed','totalProfit','totalProduction','plannedProduction',\
              'price','wage'])
-    #print df2
+    #print ts_df2
 
-    common.df=common.df.append(df2,ignore_index=True)
-    #print common.df #warning: here the row index starts from 0
+    common.ts_df=common.ts_df.append(ts_df2,ignore_index=True)
+    #print common.ts_df #warning: here the row index starts from 0
 
 
 ##graphical function
@@ -135,10 +163,10 @@ def visualizePlot():
        myax = f2.gca()
        #myax.set_autoscale_on(True)
 
-       dfOut=common.df
+       ts_dfOut=common.ts_df
        #set index to start from 1
-       dfOut.index += 1
-       myPlot=dfOut.plot(secondary_y=['price','wage'],\
+       ts_dfOut.index += 1
+       myPlot=ts_dfOut.plot(secondary_y=['price','wage'],\
                   marker="*",color=["OrangeRed","LawnGreen",\
                                     "Blue","Violet","Gray","Brown"],\
                                     ax=myax)
@@ -155,10 +183,10 @@ def visualizePlot():
        #myax.set_autoscale_on(True)
        gvf.plt.title('Time Series')
 
-       dfOut=common.df
+       ts_dfOut=common.ts_df
        #set index to start from 1
-       dfOut.index += 1
-       myPlot=dfOut.plot(secondary_y=['price','wage'],\
+       ts_dfOut.index += 1
+       myPlot=ts_dfOut.plot(secondary_y=['price','wage'],\
                   marker="*",color=["OrangeRed","LawnGreen",\
                                     "Blue","Violet","Gray","Brown"],\
                                     ax=myax)
@@ -185,7 +213,7 @@ def saveTimeSeries():
     fileName=time.strftime("%Y%m%d-%H:%M:%S.csv")
     csvfile=open(common.pro+"/"+fileName,"w")
 
-    common.df.to_csv(csvfile,index_label=False,index=False)
+    common.ts_df.to_csv(csvfile,index_label=False,index=False)
 
     csvfile.close()
     print "file",fileName, "written in oligopoly folder."
