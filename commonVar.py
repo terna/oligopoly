@@ -2,7 +2,7 @@
 
 projectVersion = 4
 
-build = "20160629"
+build = "20160703"
 
 # the time is set by ObserverSwarm with
 # common.cycle=1

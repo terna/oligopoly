@@ -87,9 +87,8 @@ def collectStructuralData(aL,t):
        common.str_df = pd.DataFrame(columns=\
          ['entrepreneurs','workers'])
        print "\nCreation of fhe structural dataframe\n"
-       print common.str_df
+       #print common.str_df
 
-    print "************************collectStructuralData****************"
     nWorkers=0
     nEntrepreneurs=0
     for ag in aL:
@@ -97,7 +96,15 @@ def collectStructuralData(aL,t):
             nEntrepreneurs+=1
         if ag.agType=="workers":
             nWorkers+=1
-    print nEntrepreneurs, nWorkers
+    #print nEntrepreneurs, nWorkers
+    str_df2 = pd.DataFrame([[nEntrepreneurs, nWorkers]], \
+              columns=['entrepreneurs','workers'])
+    #print str_df2
+
+    common.str_df=common.str_df.append(str_df2,ignore_index=True)
+    #print common.str_df #warning: here the row index starts from 0
+                         #(correctly in this case, being initial data
+                         #in each period)
 
 
 
@@ -210,13 +217,19 @@ def visualizePlot():
 
 ##saving time series via toBeExecuted in commonVar.py
 def saveTimeSeries():
-    fileName=time.strftime("%Y%m%d-%H:%M:%S.csv")
+    tt=time.strftime("%Y%m%d-%H:%M:%S")
+
+    fileName=tt+"_ts.csv"
     csvfile=open(common.pro+"/"+fileName,"w")
-
     common.ts_df.to_csv(csvfile,index_label=False,index=False)
-
     csvfile.close()
-    print "file",fileName, "written in oligopoly folder."
+
+    fileName=tt+"_str.csv"
+    csvfile=open(common.pro+"/"+fileName,"w")
+    common.str_df.to_csv(csvfile,index_label=False,index=False)
+    csvfile.close()
+
+    print "two files with date and hour", tt, "written in oligopoly folder."
 
 
 """
