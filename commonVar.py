@@ -2,7 +2,7 @@
 
 projectVersion = 4
 
-build = "20160703"
+build = "20160711"
 
 # the time is set by ObserverSwarm with
 # common.cycle=1
@@ -55,6 +55,16 @@ b3=1
 
 #wages and revenues
 wage=1
+
+fullEmploymentThreshold=0.05
+wageStepInFullEmployment=0.10
+fullEmploymentStatus=False
+
+wageAddendum=0
+maxAcceptableOligopolistRelativeIncrement=0.20
+temporaryRelativeWageIncrementAsBarrier=0.15
+
+
 revenuesOfSalesForEachWorker=1.005
 
 #labor productivity
@@ -79,20 +89,17 @@ rho=0.8
 #threshold toEntrepreneur
 thresholdToEntrepreneur=0.20
 extraCostsDuration=3
-newEntrantExtraCosts=2.0
+newEntrantExtraCosts=60 #was 100.0 # was 2.0
 
 randomComponentOfPlannedProduction=0.10
 
-absoluteBarrierToBecomeEntrepreneur=20
+absoluteBarrierToBecomeEntrepreneur=50 #was 20
 
-maxDemandRelativeRandomShock=0.20
+maxDemandRelativeRandomShock=0.10 #was 0.20
 
 #threshold toWorker
 thresholdToWorker=-0.20
 
-fullEmploymentThreshold=0.05
-wageStepInFullEmployment=0.10
-fullEmploymentStatus=False
 
 nodeNumbersInGraph=False
 

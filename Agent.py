@@ -81,8 +81,13 @@ class Agent(SuperAgent):
 
     # reset values, redefining the method of agTools.py in $$slapp$$
     def setNewCycleValues(self):
-        common.totalProductionInA_TimeStep=0
-        common.totalPlannedConsumptionInValueInA_TimeStep=0
+        # the if is to save time, given that the order is arriving to
+        # all the agents (in principle, to reset local variables)
+        if self.number==1:
+            common.totalProductionInA_TimeStep=0
+            common.totalPlannedConsumptionInValueInA_TimeStep=0
+            common.totalProfit=0
+            common.totalPlannedProduction=0
 
     # hireIfProfit
     def hireIfProfit(self):
@@ -287,6 +292,12 @@ class Agent(SuperAgent):
             # of element of the returned matrix (vector)
             #print self.plannedProduction
 
+            common.totalPlannedProduction+=self.plannedProduction
+            #print "entrepreneur", self.number, "plan", self.plannedProduction,\
+            #  "total", common.totalPlannedProduction
+
+
+
     # adaptProductionPlan
     def adaptProductionPlan(self):
         if common.cycle > 1:
@@ -311,6 +322,11 @@ class Agent(SuperAgent):
            shock *= -1.
            self.plannedProduction /= (1.+shock)
           #print self.number, self.plannedProduction
+
+          common.totalPlannedProduction+=self.plannedProduction
+          #print "entrepreneur", self.number, "plan", self.plannedProduction,\
+          #    "total", common.totalPlannedProduction
+
 
     # calculateProfit V0
     def evaluateProfitV0(self):
@@ -349,6 +365,8 @@ class Agent(SuperAgent):
         # the entrepreur sells her production, which is cotributing - via
         # totalActualProductionInA_TimeStep, to price formation
         self.profit=common.price * self.production - self.costs
+
+        common.totalProfit+=self.profit
 
 
     # compensation
@@ -415,7 +433,7 @@ class Agent(SuperAgent):
           myEntrepreneurCosts=myEntrepreneur.costs
           if myEntrepreneurProfit/myEntrepreneurCosts  >= \
             common.thresholdToEntrepreneur:
-            print "I'm worker %2.0f and my entrepreneur relative profit is %4.2f" %\
+            print "Worker %2.0f is now an entrepreneur (previous firm relative profit %4.2f)" %\
                   (self.number, myEntrepreneurProfit/myEntrepreneurCosts)
             common.g.remove_edge(myEntrepreneur, self)
 

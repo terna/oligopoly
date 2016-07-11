@@ -6,6 +6,7 @@ import graphicDisplayGlobalVarAndFunctions as gvf
 import commonVar as common
 import pandas as pd
 
+
 def do1b(address):
 
     # having the map of the agent
@@ -121,17 +122,12 @@ def collectTimeSeries(aL,t):
        #print common.ts_df
 
     unemployed=0
-    totalProfit=0
-    totalPlannedProduction=0
     for ag in aL:
        if not ag.employed: unemployed+=1
-       if ag.agType == "entrepreneurs":
-           totalProfit+=ag.profit
-           totalPlannedProduction+=ag.plannedProduction
 
-    ts_df2 = pd.DataFrame([[unemployed, totalProfit, \
+    ts_df2 = pd.DataFrame([[unemployed, common.totalProfit, \
                          common.totalProductionInA_TimeStep, \
-                         totalPlannedProduction, \
+                         common.totalPlannedProduction, \
                          common.price, common.wage]], \
     columns=['unemployed','totalProfit','totalProduction','plannedProduction',\
              'price','wage'])

@@ -132,7 +132,7 @@ def loadParameters(self):
    % (common.a1, common.b1, common.a2, common.b2, common.a3, common.b3)
   print
 
-  print ("Relative threshold to became an entrepreneur %4.2f\n" +\
+  print ("Relative threshold to become an entrepreneur %4.2f\n" +\
   "with new entrant extra costs %4.2f and duration of the extra cost %d") % \
   (common.thresholdToEntrepreneur, common.newEntrantExtraCosts, \
   common.extraCostsDuration)
@@ -145,7 +145,8 @@ def loadParameters(self):
   print "Absolute barrier to become entrepreneur, max number in a time step: ", \
          common.absoluteBarrierToBecomeEntrepreneur
 
-  print "\nRelative threshold to became an unemployed worker %4.2f\n" % common.thresholdToWorker
+  print "\nRelative threshold to lose the entrepreneur status (becoming a unemployed worker) %4.2f\n" \
+        % common.thresholdToWorker
 
   print "Total demand relative random shock, uniformly distributed\nbetween "+\
         "-%4.2f%s and +%4.2f%s" % (common.maxDemandRelativeRandomShock*100,"%",\
@@ -159,6 +160,10 @@ def loadParameters(self):
                              % (common.fullEmploymentThreshold*100,"%",\
                                 common.wageStepInFullEmployment*100,"%")
 
+  print "Wage relative increment as an entry barrier: "+\
+      "%4.2f%s; trigger level (relative increment of oligopolistic firms): %4.2f%s" \
+                % (common.temporaryRelativeWageIncrementAsBarrier*100,"%",\
+                   common.maxAcceptableOligopolistRelativeIncrement*100,"%")
 
   # cycles
   self.nCycles = input("How many cycles? (0 = exit) ")

@@ -73,6 +73,11 @@ class WorldState:
     # shock to wages (full employment case)
     def fullEmploymentEffectOnWages(self):
 
+          # wages: reset incumbent aciont if any
+          if common.wageAddendum > 0:
+              common.wage -= common.wageAddendum
+              common.wageAddendum = 0
+
           # employed people
           peopleList=common.g.nodes()
           totalPeople=len(peopleList)
@@ -95,5 +100,27 @@ class WorldState:
 
     # incumbents rising wages as na entry barrier
     def incumbentActionOnWages(self):
-        print "*************************incumbentActionOnWages"
-        pass
+
+        # current number of entrepreneurs
+        peopleList=common.g.nodes()
+        nEntrepreneurs=0
+        for p in peopleList:
+          if p.agType=="entrepreneurs": nEntrepreneurs+=1
+        nEntrepreneurs=float(nEntrepreneurs)
+
+        # previous number of entrepreneurs
+        nEntrepreneurs0=common.str_df.iloc[-1,0] # indexes Python style
+
+        #print nEntrepreneurs, nEntrepreneurs0
+
+        # wages: reset incumbent aciont if any
+        if common.wageAddendum > 0:
+            common.wage -= common.wageAddendum
+            common.wageAddendum = 0
+
+        # wages: set
+        if nEntrepreneurs/nEntrepreneurs0 - 1 > \
+          common.maxAcceptableOligopolistRelativeIncrement:
+          common.wageAddendum = common.wage*\
+                        common.temporaryRelativeWageIncrementAsBarrier
+          common.wage+=common.wageAddendum
