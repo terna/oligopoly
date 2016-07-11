@@ -87,15 +87,15 @@ Lambda=5
 rho=0.8
 
 #threshold toEntrepreneur
-thresholdToEntrepreneur=0.20
+thresholdToEntrepreneur=0.15 #was 0.20
 extraCostsDuration=3
 newEntrantExtraCosts=60 #was 100.0 # was 2.0
 
 randomComponentOfPlannedProduction=0.10
 
-absoluteBarrierToBecomeEntrepreneur=50 #was 20
+absoluteBarrierToBecomeEntrepreneur=20
 
-maxDemandRelativeRandomShock=0.10 #was 0.20
+maxDemandRelativeRandomShock=0.15 #was 0.10 #was 0.20
 
 #threshold toWorker
 thresholdToWorker=-0.20
