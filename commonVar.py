@@ -2,7 +2,11 @@
 
 projectVersion = 4
 
-build = "20160711"
+build = "20160712"
+
+# controlling the existence of an agent with number==0 used by reset
+# step in modelActions.txt
+agent1existing=False
 
 # the time is set by ObserverSwarm with
 # common.cycle=1

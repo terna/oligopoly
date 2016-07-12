@@ -21,6 +21,9 @@ def do1(address):
 def createTheAgent(self,line,num,leftX,rightX,bottomY,topY,agType):
                 # explicitly pass self, here we use a function
 
+                # check for a least an agent with numner==1
+                if num==1: common.agent1existing=True
+
                 # workers
                 if agType=="workers":
                  anAgent = Agent(num, self.worldStateList[0],

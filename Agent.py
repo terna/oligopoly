@@ -83,7 +83,11 @@ class Agent(SuperAgent):
     def setNewCycleValues(self):
         # the if is to save time, given that the order is arriving to
         # all the agents (in principle, to reset local variables)
-        if self.number==1:
+        if not common.agent1existing:
+            print "At least one of the agents has to have number==1"
+            print "Missing that agent, all the agents are resetting common values"
+
+        if self.number==1 or not common.agent1existing:
             common.totalProductionInA_TimeStep=0
             common.totalPlannedConsumptionInValueInA_TimeStep=0
             common.totalProfit=0
