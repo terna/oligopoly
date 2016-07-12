@@ -73,7 +73,7 @@ class WorldState:
     # shock to wages (full employment case)
     def fullEmploymentEffectOnWages(self):
 
-          # wages: reset incumbent aciont if any
+          # wages: reset incumbent action if any
           if common.wageAddendum > 0:
               common.wage -= common.wageAddendum
               common.wageAddendum = 0
@@ -113,7 +113,7 @@ class WorldState:
 
         #print nEntrepreneurs, nEntrepreneurs0
 
-        # wages: reset incumbent aciont if any
+        # wages: reset incumbent action if any
         if common.wageAddendum > 0:
             common.wage -= common.wageAddendum
             common.wageAddendum = 0
