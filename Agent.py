@@ -524,6 +524,12 @@ class Agent(SuperAgent):
             self.agType="workers"
             self.employed=False
 
+    #work troubles
+    def workTroubles(self):
+         if self.agType != "entrepreneurs": return
+
+         pass
+
 
     # get graph
     def getGraph(self):
