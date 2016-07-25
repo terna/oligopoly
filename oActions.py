@@ -213,7 +213,7 @@ def visualizePlot():
 
 ##saving time series via toBeExecuted in commonVar.py
 def saveTimeSeries():
-    tt=time.strftime("%Y%m%d--%H-%M-%S")
+    tt=time.strftime("%Y%m%d_%H-%M-%S")
 
     fileName=tt+"_ts.csv"
     csvfile=open(common.pro+"/"+fileName,"w")
