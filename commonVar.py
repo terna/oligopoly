@@ -2,7 +2,7 @@
 
 projectVersion = 5
 
-build = "20160726"
+build = "20160804"
 
 # controlling the existence of an agent with number==0 used by reset
 # step in modelActions.txt
@@ -70,6 +70,11 @@ temporaryRelativeWageIncrementAsBarrier=0.15
 
 
 revenuesOfSalesForEachWorker=1.005
+
+# work troubles, production correction Lambda, relative value
+productionCorrectionLambda=0.10
+# does it generate a cut of the wages
+wageCutForWorkTroubles=True
 
 #labor productivity
 laborProductivity=1

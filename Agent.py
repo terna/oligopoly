@@ -51,6 +51,8 @@ class Agent(SuperAgent):
 
             self.employed=False
 
+            self.workTroubles=0
+
         if agType == 'entrepreneurs':
             common.orderedListOfNodes.append(self)
             #use to keep the order
@@ -61,6 +63,7 @@ class Agent(SuperAgent):
 
             self.employed=True
             self.plannedProduction=-100 #not used in plots if -100
+            self.hasTroubles=0
 
         self.myWorldState = myWorldState
         self.agType=agType
@@ -404,6 +407,37 @@ class Agent(SuperAgent):
         common.totalPlannedConsumptionInValueInA_TimeStep+=self.consumption
         #print "C sum", common.totalPlannedConsumptionInValueInA_TimeStep
 
+    # compensation
+    def planConsumptionInValueV5(self):
+        self.consumption=0
+        #case (1)
+        #Y1=profit(t-1)+wage NB no negative consumption if profit(t-1) < 0
+        # this is an entrepreneur action
+        if self.agType == "entrepreneurs":
+            self.consumption = common.a1 + \
+                               common.b1 * (self.profit + common.wage) + \
+                               gauss(0,common.consumptionRandomComponentSD)
+            if self.consumption < 0: self.consumption=0
+            #profit, in V2, is at time -1 due to the sequence in schedule2.xls
+
+        #case (2)
+        #Y2=wage
+        if self.agType == "workers" and self.employed:
+            self.consumption = common.a2 + \
+                               common.b2 * common.wage + \
+                               gauss(0,common.consumptionRandomComponentSD)
+
+        #case (3)
+        #Y3=socialWelfareCompensation
+        if self.agType == "workers" and not self.employed:
+            self.consumption = common.a3 + \
+                               common.b3 * common.socialWelfareCompensation + \
+                               gauss(0,common.consumptionRandomComponentSD)
+
+        #update totalPlannedConsumptionInValueInA_TimeStep
+        common.totalPlannedConsumptionInValueInA_TimeStep+=self.consumption
+        #print "C sum", common.totalPlannedConsumptionInValueInA_TimeStep
+
     #to entrepreneur
     def toEntrepreneur(self):
         if self.agType != "workers" or not self.employed: return
@@ -526,9 +560,27 @@ class Agent(SuperAgent):
 
     #work troubles
     def workTroubles(self):
+
+         # NB this metod acts with the probability set in the schedule.txt
+         # file
          if self.agType != "entrepreneurs": return
 
-         pass
+         # production shock due to work trobles
+
+         lambdaShock=uniform(common.productionCorrectionLambda/2,
+                             common.productionCorrectionLambda)
+         self.hasTroubles=lambdaShock
+         print "Entrepreneur", self.number, "is suffering a reduction of "\
+               "production of", lambdaShock*100, "%, due to work troubles"
+
+         if common.wageCutForWorkTroubles:
+           # the list of the employees of the firm
+           entrepreneurWorkers=gvf.nx.neighbors(common.g,self)
+           for aWorker in entrepreneurWorkers:
+             #avoiding the entrepreneur herself using the network
+             print "Worker ", aWorker.number, "is suffering a reduction of "\
+                   "wage of", lambdaShock*100, "%, due to work troubles"
+
 
 
     # get graph

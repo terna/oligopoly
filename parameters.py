@@ -165,6 +165,15 @@ def loadParameters(self):
                 % (common.temporaryRelativeWageIncrementAsBarrier*100,"%",\
                    common.maxAcceptableOligopolistRelativeIncrement*100,"%")
 
+  print "Production correction (lost production) due to work troubles "+\
+        "between %4.2f%s and %4.2f%s, if any." \
+                % (common.productionCorrectionLambda*100/2,"%",\
+                   common.productionCorrectionLambda*100,"%")
+  print "The correction acts with the probability indicate in the "+\
+        "file schedule.txt for the method 'workTroubles'"
+  print "Is it applied also to the wages of the worker of the firm? ",\
+        common.wageCutForWorkTroubles
+
   # cycles
   self.nCycles = input("How many cycles? (0 = exit) ")
 
