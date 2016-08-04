@@ -96,6 +96,10 @@ class Agent(SuperAgent):
             common.totalProfit=0
             common.totalPlannedProduction=0
 
+        # troubles related variables
+        if self.agType=="entrepreneurs": self.hasTroubles= 0
+        if self.agType=="workers":       self.workTroubles=0
+
     # hireIfProfit
     def hireIfProfit(self):
 
@@ -423,6 +427,12 @@ class Agent(SuperAgent):
         #case (2)
         #Y2=wage
         if self.agType == "workers" and self.employed:
+          if common.wageCutForWorkTroubles and self.workTroubles != 0:
+            self.consumption = common.a2 + \
+                               common.b2 * common.wage*(1.-self.workTroubles) + \
+                               gauss(0,common.consumptionRandomComponentSD)
+            #print "worker", self.number, "wage x",(1.-self.workTroubles)
+          else:
             self.consumption = common.a2 + \
                                common.b2 * common.wage + \
                                gauss(0,common.consumptionRandomComponentSD)
@@ -577,7 +587,9 @@ class Agent(SuperAgent):
            # the list of the employees of the firm
            entrepreneurWorkers=gvf.nx.neighbors(common.g,self)
            for aWorker in entrepreneurWorkers:
-             #avoiding the entrepreneur herself using the network
+             #avoiding the entrepreneur herself, as we are refering to her
+             # network of workers
+             aWorker.workTroubles=lambdaShock
              print "Worker ", aWorker.number, "is suffering a reduction of "\
                    "wage of", lambdaShock*100, "%, due to work troubles"
 
