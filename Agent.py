@@ -279,6 +279,33 @@ class Agent(SuperAgent):
         common.totalProductionInPrevious_TimeStep=common.totalProductionInA_TimeStep
 
 
+    # produce
+    def produceV5(self):
+
+        # this is an entrepreneur action
+        if self.agType == "workers": return
+
+
+        # to produce we need to know the number of employees
+        # the value is calcutated on the fly, to be sure of accounting for
+        # modifications coming from outside
+        # (nbunch : iterable container, optional (default=all nodes)
+        # A container of nodes. The container will be iterated through once.)
+
+        laborForce=gvf.nx.degree(common.g, nbunch=self) + \
+                   1 # +1 to account for the entrepreneur itself
+        print "I'm entrepreneur", self.number, "my laborforce is", laborForce
+
+        # productivity is set to 1 in the benginning from common space
+        self.production = common.laborProductivity * \
+                          laborForce
+
+        # totalProductionInA_TimeStep
+        common.totalProductionInA_TimeStep += self.production
+        # having a copy, that is update after each agent's action
+        common.totalProductionInPrevious_TimeStep=common.totalProductionInA_TimeStep
+
+
 
     # makeProductionPlan
     def makeProductionPlan(self):

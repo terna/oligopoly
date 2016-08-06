@@ -2,7 +2,7 @@
 
 projectVersion = 5
 
-build = "20160804"
+build = "20160806"
 
 # controlling the existence of an agent with number==0 used by reset
 # step in modelActions.txt
