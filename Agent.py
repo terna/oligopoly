@@ -300,6 +300,15 @@ class Agent(SuperAgent):
         self.production = common.laborProductivity * \
                           laborForce
 
+        #print "I'm entrepreneur",self.number,"production before correction is",\
+        #    self.production
+
+        #correction for work troubles, if any
+        self.production *= (1.-self.hasTroubles) #self.hasTroubles is 0 if no troubles
+
+        #print "I'm entrepreneur",self.number,"production after correction is",\
+        #    self.production
+
         # totalProductionInA_TimeStep
         common.totalProductionInA_TimeStep += self.production
         # having a copy, that is update after each agent's action
