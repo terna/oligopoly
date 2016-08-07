@@ -416,6 +416,34 @@ class Agent(SuperAgent):
         common.totalProfit+=self.profit
 
 
+        # calculateProfit
+    def evaluateProfitV5(self):
+
+        # this is an entrepreneur action
+        if self.agType == "workers": return
+
+        # backward compatibily to version 1
+        try: XC=common.newEntrantExtraCosts
+        except: XC=0
+        try: k=self.extraCostsResidualDuration
+        except: k=0
+
+        if k==0: XC=0
+        if k>0: self.extraCostsResidualDuration-=1
+
+        # the number of pruducing workers is obtained indirectly via
+        # production/laborProductivity
+        #print self.production/common.laborProductivity
+        self.costs=common.wage * (self.production/common.laborProductivity) + \
+                    XC
+
+        # the entrepreur sells her production, which is cotributing - via
+        # totalActualProductionInA_TimeStep, to price formation
+        self.profit=common.price * self.production - self.costs
+
+        common.totalProfit+=self.profit
+
+
     # compensation
     def planConsumptionInValue(self):
         self.consumption=0
