@@ -141,7 +141,7 @@ class Agent(SuperAgent):
         # A container of nodes. The container will be iterated through once.)
 
         laborForce0=gvf.nx.degree(common.g, nbunch=self) + \
-                           1 # +1 to account for the entrepreneur itself
+                           1 # +1 to account for the entrepreneur herself
 
         # required labor force
         laborForceRequired=int(
@@ -266,7 +266,7 @@ class Agent(SuperAgent):
         # A container of nodes. The container will be iterated through once.)
 
         laborForce=gvf.nx.degree(common.g, nbunch=self) + \
-                   1 # +1 to account for the entrepreneur itself
+                   1 # +1 to account for the entrepreneur herself
         print "I'm entrepreneur", self.number, "my laborforce is", laborForce
 
         # productivity is set to 1 in the benginning from common space
@@ -293,7 +293,7 @@ class Agent(SuperAgent):
         # A container of nodes. The container will be iterated through once.)
 
         laborForce=gvf.nx.degree(common.g, nbunch=self) + \
-                   1 # +1 to account for the entrepreneur itself
+                   1 # +1 to account for the entrepreneur herself
         print "I'm entrepreneur", self.number, "my laborforce is", laborForce
 
         # productivity is set to 1 in the benginning from common space
@@ -434,12 +434,37 @@ class Agent(SuperAgent):
         # the number of pruducing workers is obtained indirectly via
         # production/laborProductivity
         #print self.production/common.laborProductivity
-        self.costs=common.wage * (self.production/common.laborProductivity) + \
+
+        # how many workers, not via productvity due to possible troubles
+        # in production
+
+        laborForce=gvf.nx.degree(common.g, nbunch=self) + \
+                   1 # +1 to account for the entrepreneur herself
+
+        # the followin if/else structure is for control reasons because if
+        # not common.wageCutForWorkTroubles we do not take in account
+        # self.workTroubles also if != 0; if = 0 is non relevant in any case
+        if common.wageCutForWorkTroubles:
+         self.costs=(common.wage - self.hasTroubles) \
+                    * (laborForce - 1) \
+                    + common.wage * 1 +  \
                     XC
+                    # above, common.wage * 1 is for the entrepreur herself
+
+        else:
+         self.costs=common.wage * laborForce + \
+                    XC
+        #print "I'm entrepreur", self.number, "costs are",self.costs
+
+        # penalty Value
+        pv=0
+        if self.hasTroubles > 0 : pv = common.penaltyValue
 
         # the entrepreur sells her production, which is cotributing - via
         # totalActualProductionInA_TimeStep, to price formation
-        self.profit=common.price * self.production - self.costs
+        self.profit=common.price * (1.-pv) * self.production - self.costs
+        print "I'm entrepreur", self.number, "my price is ",\
+              common.price * (1.-pv)
 
         common.totalProfit+=self.profit
 
@@ -491,7 +516,10 @@ class Agent(SuperAgent):
         #case (2)
         #Y2=wage
         if self.agType == "workers" and self.employed:
-          if common.wageCutForWorkTroubles and self.workTroubles != 0:
+          # the followin if/else structure is for control reasons because if
+          # not common.wageCutForWorkTroubles we do not take in account
+          # self.workTroubles also if != 0; if = 0 is non relevant in any case
+          if common.wageCutForWorkTroubles:
             self.consumption = common.a2 + \
                                common.b2 * common.wage*(1.-self.workTroubles) + \
                                gauss(0,common.consumptionRandomComponentSD)
@@ -635,17 +663,17 @@ class Agent(SuperAgent):
     #work troubles
     def workTroubles(self):
 
-         # NB this metod acts with the probability set in the schedule.txt
+         # NB this method acts with the probability set in the schedule.txt
          # file
          if self.agType != "entrepreneurs": return
 
-         # production shock due to work trobles
+         # production shock due to work troubles
 
-         lambdaShock=uniform(common.productionCorrectionLambda/2,
-                             common.productionCorrectionLambda)
-         self.hasTroubles=lambdaShock
+         psiShock=uniform(common.productionCorrectionPsi/2,
+                             common.productionCorrectionPsi)
+         self.hasTroubles=psiShock
          print "Entrepreneur", self.number, "is suffering a reduction of "\
-               "production of", lambdaShock*100, "%, due to work troubles"
+               "production of", psiShock*100, "%, due to work troubles"
 
          if common.wageCutForWorkTroubles:
            # the list of the employees of the firm
@@ -653,9 +681,9 @@ class Agent(SuperAgent):
            for aWorker in entrepreneurWorkers:
              #avoiding the entrepreneur herself, as we are refering to her
              # network of workers
-             aWorker.workTroubles=lambdaShock
+             aWorker.workTroubles=psiShock
              print "Worker ", aWorker.number, "is suffering a reduction of "\
-                   "wage of", lambdaShock*100, "%, due to work troubles"
+                   "wage of", psiShock*100, "%, due to work troubles"
 
 
 

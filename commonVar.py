@@ -71,10 +71,12 @@ temporaryRelativeWageIncrementAsBarrier=0.15
 
 revenuesOfSalesForEachWorker=1.005
 
-# work troubles, production correction Lambda, relative value
-productionCorrectionLambda=0.10
+# work troubles, production correction Psi, relative value
+productionCorrectionPsi=0.10
 # does it generate a cut of the wages
-wageCutForWorkTroubles=True
+wageCutForWorkTroubles=False
+# price penalty for work troubles
+penaltyValue=0.10
 
 #labor productivity
 laborProductivity=1
