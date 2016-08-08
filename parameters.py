@@ -110,13 +110,13 @@ def loadParameters(self):
    print "Mean value of the Poisson distribution used in production planning "+\
          "(not used in V.0; used only at t=1 in V.3);"
    tmp=raw_input(
-      "suggested Lambda=5 (enter to confirm or input a number) ")
-   try: common.Lambda=int(tmp)
+      "suggested Nu=5 (enter to confirm or input a number) ")
+   try: common.Nu=int(tmp)
    except: pass
-   print "Resulting value", common.Lambda
+   print "Resulting value", common.Nu
   if common.projectVersion >= 3:
 
-   print "Lambda, mean value of the Poisson distribution used in production\n"+\
+   print "Nu, mean value of the Poisson distribution used in production\n"+\
          "planning at time=1, is set internally to match the ratio\n" + \
          "between actual and potential initial employed population,"
    print "set to %3.2f" %  common.rho

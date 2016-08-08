@@ -89,9 +89,9 @@ totalPlannedConsumptionInValueInA_TimeStep=0
 
 #Poisson mean in makeProoductionPlan, will be modified in paramenters.py
 #in the function loadParameters
-Lambda=5
+Nu=5
 
-#to internally calculate the Poisson mean (Lambda) in makeProoductionPlan
+#to internally calculate the Poisson mean (Nu) in makeProoductionPlan
 #for time=1 in V3 we use the ratio rho
 rho=0.8
 
