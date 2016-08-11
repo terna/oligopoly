@@ -7,8 +7,18 @@ import matplotlib as mplt
 import numpy.random as npr
 import pandas as pd
 from IPython import get_ipython
+import pandas as pd
 
 def loadParameters(self):
+
+  #creating the dataframe of the paramenters
+  try: common.str_df
+  except:
+     common.par_df = pd.DataFrame(columns=\
+         ['Parameter names','Values'])
+     print "\nCreation of fhe parameter dataframe\n"
+     #print common.par_df
+
 
   #preliminary cntrol
   if common.graphicStatus=="PythonViaTerminal" and common.IPython:
@@ -80,7 +90,7 @@ def loadParameters(self):
   #print "X size of the world not relevant"
 
   #self.worldYSize= input("Y size of the world? ")
-  self.worldYSize=50
+  self.worldYSize=1
   #print "y size of the world not relevant"
 
   # Projct version and thresholds
@@ -90,12 +100,17 @@ def loadParameters(self):
   except: build = "Unknown"
   print "\nProject version "+projectVersion, "build", build, "\nhiringThreshold", common.hiringThreshold, \
                                     "firingThreshold", common.firingThreshold
-
+  dataFrameAppend("project version",projectVersion)  ## saving pars
+  dataFrameAppend("build",build)  ## saving pars
+  dataFrameAppend("seed",mySeed)  ## saving pars
   # wages
   print "wage base", common.wage
+  dataFrameAppend("wage base",common.wage)  ## saving pars
+
 
   # social welfare compensation
   print "social welfare compensation", common.socialWelfareCompensation
+  dataFrameAppend("social welfare compensation",common.socialWelfareCompensation)  ## saving pars
 
   # revenue of sales per worker (version 0)
   #print "revenues of sales for each worker in Version 0", \
@@ -103,23 +118,26 @@ def loadParameters(self):
 
   # laboor productivity
   print "labor productivity", common.laborProductivity
-
+  dataFrameAppend("labor productivity",common.laborProductivity)  ## saving pars
 
   #Poisson mean in plannedProduction
   if common.projectVersion < 3:
    print "Mean value of the Poisson distribution used in production planning "+\
          "(not used in V.0; used only at t=1 in V.3);"
    tmp=raw_input(
-      "suggested Nu=5 (enter to confirm or input a number) ")
-   try: common.Nu=int(tmp)
+      "suggested nu=5 (enter to confirm or input a number) ")
+   try: common.nu=int(tmp)
    except: pass
-   print "Resulting value", common.Nu
+   print "Resulting value", common.nu
   if common.projectVersion >= 3:
 
-   print "Nu, mean value of the Poisson distribution used in production\n"+\
+   print "nu, mean value of the Poisson distribution used in production\n"+\
          "planning at time=1, is set internally to match the ratio\n" + \
          "between actual and potential initial employed population,"
    print "set to %3.2f" %  common.rho
+   dataFrameAppend("expected employment ratio at t=1",common.rho)  ## saving pars
+   dataFrameAppend("resulting nu value for the P. distrib.",common.nu)  ## saving pars
+
 
   #consumption
   print
@@ -131,55 +149,111 @@ def loadParameters(self):
    "(3) unemployed workers         with a3 = %4.2f b3 = %4.2f Y3 = socialWelfareCompensation")  \
    % (common.a1, common.b1, common.a2, common.b2, common.a3, common.b3)
   print
+  dataFrameAppend("consumption behavior: a1",common.a1)  ## saving pars
+  dataFrameAppend("consumption behavior: b1",common.b1)  ## saving pars
+  dataFrameAppend("consumption behavior: a2",common.a2)  ## saving pars
+  dataFrameAppend("consumption behavior: b2",common.b2)  ## saving pars
+  dataFrameAppend("consumption behavior: a3",common.a3)  ## saving pars
+  dataFrameAppend("consumption behavior: b3",common.b3)  ## saving pars
+
 
   print ("Relative threshold to become an entrepreneur %4.2f\n" +\
-  "with new entrant extra costs %4.2f and duration of the extra cost %d") % \
+  "with new entrant extra costs %4.2f and duration of the extra costs %d") % \
   (common.thresholdToEntrepreneur, common.newEntrantExtraCosts, \
   common.extraCostsDuration)
+  dataFrameAppend("relative threshold to become an entrepreneur",\
+                   common.thresholdToEntrepreneur)  ## saving pars
+  dataFrameAppend("new entrant extra costs",\
+                   common.newEntrantExtraCosts)  ## saving pars
+  dataFrameAppend("duration (# of cycles) of the extra costs",\
+                   common.extraCostsDuration)  ## saving pars
 
   print \
   "Random component of planned production, uniformly distributed between %4.2f%s and %4.2f%s" % \
                         (-common.randomComponentOfPlannedProduction*100, "%",\
                           common.randomComponentOfPlannedProduction*100, "%")
+  dataFrameAppend("min random rel. component of planned production",\
+                   -common.randomComponentOfPlannedProduction)  ## saving pars
+  dataFrameAppend("max random rel. component of planned production",\
+                    common.randomComponentOfPlannedProduction)  ## saving pars
 
   print "Absolute barrier to become entrepreneur, max number in a time step: ", \
          common.absoluteBarrierToBecomeEntrepreneur
+  dataFrameAppend("max new entrant number in a time step",\
+                    common.absoluteBarrierToBecomeEntrepreneur)  ## saving pars
 
   print "\nRelative threshold to lose the entrepreneur status (becoming a unemployed worker) %4.2f\n" \
         % common.thresholdToWorker
+  dataFrameAppend("relative threshold from entrepreneur to unempl.",\
+                    common.thresholdToWorker)  ## saving pars
 
   print "Total demand relative random shock, uniformly distributed\nbetween "+\
         "-%4.2f%s and +%4.2f%s" % (common.maxDemandRelativeRandomShock*100,"%",\
                                common.maxDemandRelativeRandomShock*100,"%")
+  dataFrameAppend("min of uniform demand relative random shock",\
+                    -common.maxDemandRelativeRandomShock)  ## saving pars
+  dataFrameAppend("max of uniform demand relative random shock",\
+                     common.maxDemandRelativeRandomShock)  ## saving pars
 
   print "Node numbers in graph:", common.nodeNumbersInGraph
 
 
   print "Full employment threshold "+\
-        "%4.2f%s and wage step in full employment %4.2f%s" \
+        "%4.2f%s and wage step up in full employment %4.2f%s" \
                              % (common.fullEmploymentThreshold*100,"%",\
                                 common.wageStepInFullEmployment*100,"%")
+  dataFrameAppend("full employment threshold",\
+                     common.fullEmploymentThreshold)  ## saving pars
+  dataFrameAppend("wage step up in full employment",\
+                     common.wageStepInFullEmployment)  ## saving pars
 
   print "Wage relative increment as an entry barrier: "+\
       "%4.2f%s; trigger level (relative increment of oligopolistic firms): %4.2f%s" \
                 % (common.temporaryRelativeWageIncrementAsBarrier*100,"%",\
                    common.maxAcceptableOligopolistRelativeIncrement*100,"%")
+  dataFrameAppend("wage relative increment as an entry barrier",\
+                     common.temporaryRelativeWageIncrementAsBarrier)  ## saving pars
+  dataFrameAppend("trigger level (relative increment of olig. firms)",\
+                     common.maxAcceptableOligopolistRelativeIncrement)  ## saving par
 
   print "Production correction (lost production) due to work troubles "+\
         "between %4.2f%s and %4.2f%s, if any." \
-                % (common.productionCorrectionPsi*100/2,"%",\
+                % (common.productionCorrectionPsi*100/2.,"%",\
                    common.productionCorrectionPsi*100,"%")
   print "The correction acts with the probability indicate in the "+\
-        "file schedule.txt for the method 'workTroubles'"
+        "file schedule.xls for the method 'workTroubles'"
   print "Is it applied also to the wages of the worker of the firm? ",\
         common.wageCutForWorkTroubles
   print "Price penalty for the firms suffering work troubles %4.2f%s" %\
-        (common.penaltyValue*100,"%") 
+        (common.penaltyValue*100,"%")
+  dataFrameAppend("min lost production due to work troubles",\
+                     common.productionCorrectionPsi/2.)  ## saving pars
+  dataFrameAppend("max lost production due to work troubles",\
+                     common.productionCorrectionPsi)  ## saving pars
+  dataFrameAppend("probability of work troubles, see below",\
+                     "-")  ## saving par
+  if common.wageCutForWorkTroubles:
+   dataFrameAppend("we cut also the wages","yes")  ## saving pars
+  else:
+   dataFrameAppend("we cut also the wages","no")  ## saving pars
+  dataFrameAppend("price penalty for the firms if work troubles",\
+                     common.penaltyValue)  ## saving par
+
   # cycles
   self.nCycles = input("How many cycles? (0 = exit) ")
+
+  dataFrameAppend("# of cycles", self.nCycles)  ## saving par
 
   v = raw_input("verbose? (y/[n]) ")
   if v=="y" or v=="Y":
     common.verbose=True #predefined False
   print "If running in IPython, the messages of the model about che creation" +\
         "\nof each agent are automatically off, to avoid locking the run."
+
+def dataFrameAppend(name,value):
+    par_df2 = pd.DataFrame([[name, value]], \
+    columns=['Parameter names','Values'])
+    #print par_df2
+
+    common.par_df=common.par_df.append(par_df2,ignore_index=True)
+    #print common.par_df #warning: here the row index starts from 0

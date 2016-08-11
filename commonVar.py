@@ -2,7 +2,7 @@
 
 projectVersion = 5
 
-build = "20160808"
+build = "20160811"
 
 # controlling the existence of an agent with number==0 used by reset
 # step in modelActions.txt
@@ -58,7 +58,7 @@ b3=1
 #Y3=socialWelfareCompensation
 
 #wages and revenues
-wage=1
+wage=1.
 
 fullEmploymentThreshold=0.05
 wageStepInFullEmployment=0.10
@@ -91,9 +91,9 @@ totalPlannedConsumptionInValueInA_TimeStep=0
 
 #Poisson mean in makeProoductionPlan, will be modified in paramenters.py
 #in the function loadParameters
-Nu=5
+nu=5
 
-#to internally calculate the Poisson mean (Nu) in makeProoductionPlan
+#to internally calculate the Poisson mean (nu) in makeProoductionPlan
 #for time=1 in V3 we use the ratio rho
 rho=0.8
 
