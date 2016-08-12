@@ -102,7 +102,7 @@ def loadParameters(self):
                                     "firingThreshold", common.firingThreshold
   dataFrameAppend("project version",projectVersion)  ## saving pars
   dataFrameAppend("build",build)  ## saving pars
-  dataFrameAppend("seed",mySeed)  ## saving pars
+  dataFrameAppend("seed (1 gets it from the clock)",mySeed)  ## saving pars
   # wages
   print "wage base", common.wage
   dataFrameAppend("wage base",common.wage)  ## saving pars
@@ -156,6 +156,9 @@ def loadParameters(self):
   dataFrameAppend("consumption behavior: a3",common.a3)  ## saving pars
   dataFrameAppend("consumption behavior: b3",common.b3)  ## saving pars
 
+  print "consumption random component (SD)", common.consumptionRandomComponentSD
+  dataFrameAppend("consumption random component (SD)", \
+                   common.consumptionRandomComponentSD)  ## saving pars
 
   print ("Relative threshold to become an entrepreneur %4.2f\n" +\
   "with new entrant extra costs %4.2f and duration of the extra costs %d") % \
