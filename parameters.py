@@ -136,8 +136,6 @@ def loadParameters(self):
          "between actual and potential initial employed population,"
    print "set to %3.2f" %  common.rho
    dataFrameAppend("expected employment ratio at t=1",common.rho)  ## saving pars
-   dataFrameAppend("resulting nu value for the P. distrib.",common.nu)  ## saving pars
-
 
   #consumption
   print
