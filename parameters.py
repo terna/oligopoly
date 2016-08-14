@@ -234,9 +234,9 @@ def loadParameters(self):
   dataFrameAppend("probability of work troubles, see below",\
                      "-")  ## saving par
   if common.wageCutForWorkTroubles:
-   dataFrameAppend("we cut also the wages","yes")  ## saving pars
+   dataFrameAppend("cut also the wages","yes")  ## saving pars
   else:
-   dataFrameAppend("we cut also the wages","no")  ## saving pars
+   dataFrameAppend("cut also the wages","no")  ## saving pars
   dataFrameAppend("price penalty for the firms if work troubles",\
                      common.penaltyValue)  ## saving par
 
