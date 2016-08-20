@@ -6,13 +6,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 2
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -21,13 +21,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 3
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -36,13 +36,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 4
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -51,13 +51,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 5
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -66,13 +66,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 6
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -81,13 +81,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 7
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -96,13 +96,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 8
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -111,13 +111,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 9
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -126,13 +126,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 10
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -141,13 +141,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 11
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -156,13 +156,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 12
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -171,13 +171,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 13
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -186,13 +186,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 14
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -201,13 +201,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 15
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -216,13 +216,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 16
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -231,13 +231,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 17
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -246,13 +246,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 18
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -261,13 +261,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 19
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -276,13 +276,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 20
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -291,13 +291,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 21
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -306,13 +306,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 22
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -321,13 +321,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 23
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -336,13 +336,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 24
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -351,13 +351,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 25
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -366,13 +366,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 26
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -381,13 +381,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 27
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -396,13 +396,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 28
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -411,13 +411,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 29
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -426,13 +426,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 30
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -441,13 +441,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 31
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -456,13 +456,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 32
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -471,13 +471,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 33
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -486,13 +486,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 34
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -501,13 +501,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 35
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -516,13 +516,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 36
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -531,13 +531,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 37
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -546,13 +546,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 38
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -561,13 +561,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 39
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -576,13 +576,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 40
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -591,13 +591,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 41
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -606,13 +606,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 42
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -621,13 +621,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 43
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -636,13 +636,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 44
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -651,13 +651,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 45
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -666,13 +666,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 46
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -681,13 +681,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 47
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -696,13 +696,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 48
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -711,13 +711,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 49
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -726,13 +726,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 50
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -741,13 +741,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 51
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -756,13 +756,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 52
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -771,13 +771,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 53
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -786,13 +786,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 54
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -801,13 +801,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 55
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -816,13 +816,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 56
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -831,13 +831,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 57
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -846,13 +846,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 58
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -861,13 +861,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 59
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -876,13 +876,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 60
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -891,13 +891,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 61
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -906,13 +906,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 62
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -921,13 +921,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 63
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -936,13 +936,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 64
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -951,13 +951,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 65
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -966,13 +966,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 66
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -981,13 +981,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 67
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -996,13 +996,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 68
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1011,13 +1011,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 69
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1026,13 +1026,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 70
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1041,13 +1041,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 71
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1056,13 +1056,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 72
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1071,13 +1071,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 73
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1086,13 +1086,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 74
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1101,13 +1101,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 75
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1116,13 +1116,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 76
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1131,13 +1131,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 77
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1146,13 +1146,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 78
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1161,13 +1161,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 79
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1176,13 +1176,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 80
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1191,13 +1191,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 81
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1206,13 +1206,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 82
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1221,13 +1221,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 83
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1236,13 +1236,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 84
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1251,13 +1251,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 85
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1266,13 +1266,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 86
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1281,13 +1281,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 87
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1296,13 +1296,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 88
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1311,13 +1311,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 89
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1326,13 +1326,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 90
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1341,13 +1341,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 91
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1356,13 +1356,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 92
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1371,13 +1371,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 93
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1386,13 +1386,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 94
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1401,13 +1401,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 95
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1416,13 +1416,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 96
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1431,13 +1431,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 97
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1446,13 +1446,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 98
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1461,13 +1461,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 99
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1476,13 +1476,13 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
 # 100
 entrepreneurs makeProductionPlan
 entrepreneurs adaptProductionPlan
@@ -1491,10 +1491,10 @@ entrepreneurs 0.05 workTroubles
 entrepreneurs produceV5
 entrepreneurs planConsumptionInValueV5
 workers planConsumptionInValueV5
-WorldState specialUse setMarketPriceV3
+WorldState computationalUse setMarketPriceV3
 entrepreneurs evaluateProfitV5
 entrepreneurs 0.0001 fireIfProfit
 workers toEntrepreneurV3
 entrepreneurs toWorkerV3
-WorldState specialUse fullEmploymentEffectOnWages
-WorldState specialUse incumbentActionOnWages
+WorldState computationalUse fullEmploymentEffectOnWages
+WorldState computationalUse incumbentActionOnWages
