@@ -7,6 +7,10 @@ import commonVar as common
 import pandas as pd
 import parameters as par
 
+# to eliminate an annoying warning at time 1 in time series plot
+import warnings
+warnings.filterwarnings("ignore", module="matplotlib")
+
 
 def do1b(address):
 
