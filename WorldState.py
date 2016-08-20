@@ -3,12 +3,9 @@ from Tools import *
 import commonVar as common
 
 class WorldState:
-    def __init__(self, number):
+    def __init__(self):
         # the environment
-        self.number = number
-        #self.generalMovingProb=1 # not used in Oligopoly project
-        print "World state number ", self.number, \
-     	      " has been created."
+        print "World state has been created."
 
 
     # set market price V1

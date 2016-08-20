@@ -26,7 +26,7 @@ def createTheAgent(self,line,num,leftX,rightX,bottomY,topY,agType):
 
                 # workers
                 if agType=="workers":
-                 anAgent = Agent(num, self.worldStateList[0],
+                 anAgent = Agent(num, self.worldState,
 	                             float(line.split()[1])+random.gauss(0,common.sigma),
 	                             float(line.split()[2])+random.gauss(0,common.sigma),
 	                             agType=agType)
@@ -35,7 +35,7 @@ def createTheAgent(self,line,num,leftX,rightX,bottomY,topY,agType):
 
                 # entrepreneurs
                 elif agType=="entrepreneurs":
-                 anAgent = Agent(num, self.worldStateList[0],
+                 anAgent = Agent(num, self.worldState,
                                  float(line.split()[1])+random.gauss(0,common.sigma),
                                  float(line.split()[2])+random.gauss(0,common.sigma),
                                  agType=agType)
