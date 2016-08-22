@@ -10,7 +10,6 @@ def do0(address):
 
 def do1(address):
             self=address # if necessary
-            actionDictionary[self.actionGroup1.getName()]=self.actionGroup1
 
             # keep safe the original list
             address.agentListCopy=address.agentList[:]
