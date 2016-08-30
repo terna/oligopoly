@@ -2,7 +2,7 @@
 from Tools import *
 import commonVar as common
 
-class WorldState:
+class WorldState(object):
     def __init__(self):
         # the environment
         print "World state has been created."
