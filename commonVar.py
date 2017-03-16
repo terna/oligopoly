@@ -74,7 +74,7 @@ revenuesOfSalesForEachWorker=1.005
 # work troubles, production correction Psi, relative value
 productionCorrectionPsi=0.10
 # does it generate a cut of the wages
-wageCutForWorkTroubles=False
+wageCutForWorkTroubles=True
 # price penalty for work troubles
 penaltyValue=0.10
 
@@ -95,7 +95,7 @@ nu=5
 
 #to internally calculate the Poisson mean (nu) in makeProoductionPlan
 #for time=1 in V3 we use the ratio rho
-rho=0.95
+rho=0.9
 
 #threshold toEntrepreneur
 thresholdToEntrepreneur=0.15 #was 0.20

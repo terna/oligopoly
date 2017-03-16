@@ -693,8 +693,8 @@ class Agent(SuperAgent):
              #avoiding the entrepreneur herself, as we are refering to her
              # network of workers
              aWorker.workTroubles=psiShock
-             print "Worker ", aWorker.number, "is suffering a reduction of "\
-                   "wage of", psiShock*100, "%, due to work troubles"
+             #print "Worker ", aWorker.number, "is suffering a reduction of "\
+             #      "wage of", psiShock*100, "%, due to work troubles"
 
 
 
