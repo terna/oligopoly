@@ -95,7 +95,7 @@ nu=5
 
 #to internally calculate the Poisson mean (nu) in makeProoductionPlan
 #for time=1 in V3 we use the ratio rho
-rho=0.9
+rho=0.95
 
 #threshold toEntrepreneur
 thresholdToEntrepreneur=0.15 #was 0.20
