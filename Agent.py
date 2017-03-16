@@ -353,8 +353,19 @@ class Agent(SuperAgent):
              if ag.agType=="entrepreneurs":
                  nEntrepreneurs+=1
 
-          self.plannedProduction = common.totalDemandInPrevious_TimeStep  \
-                  / nEntrepreneurs
+          #previous period price
+          #print ("++++++++++++++++++++++", common.ts_df.price.values[-1])
+          #print ("&&&&&&&&&&&&&&&&&&&&&&",len(common.ts_df.price.values))
+
+          if len(common.ts_df.price.values)==1:
+              previuosPrice=common.ts_df.price.values[-1] # t=2
+          if len(common.ts_df.price.values)>1:
+              previuosPrice=common.ts_df.price.values[-2] # t>2
+          #NB adapt acts from t>1
+
+          self.plannedProduction = (common.totalDemandInPrevious_TimeStep / \
+                                    previuosPrice) \
+                                    / nEntrepreneurs
 
           #self.plannedProduction += gauss(0,self.plannedProduction/10)
 

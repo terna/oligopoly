@@ -138,6 +138,9 @@ def collectTimeSeries(aL,t):
              'price','wage'])
     #print ts_df2
 
+    # set previous price (t-1)
+    common.p0=common.price
+
     common.ts_df=common.ts_df.append(ts_df2,ignore_index=True)
     #print common.ts_df #warning: here the row index starts from 0
 

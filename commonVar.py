@@ -1,8 +1,8 @@
 #commonVar.py
 
-projectVersion = 5
+projectVersion = "5b"
 
-build = "20160831"
+build = "20170315"
 
 # controlling the existence of an agent with number==0 used by reset
 # step in modelActions.txt
@@ -95,7 +95,7 @@ nu=5
 
 #to internally calculate the Poisson mean (nu) in makeProoductionPlan
 #for time=1 in V3 we use the ratio rho
-rho=0.8
+rho=0.9
 
 #threshold toEntrepreneur
 thresholdToEntrepreneur=0.15 #was 0.20
