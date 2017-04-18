@@ -34,29 +34,19 @@ def loadParameters(self):
   print "pandas version %s running\n" % pd.__version__
 
 
-  nxv=nx.__version__.split('.')
-  vOK=False
-  if int(nxv[0])>1: vOK=True
-  if len(nxv)>=2:
-      if int(nxv[0])==1 and int(nxv[1])>9: vOK=True
-  if len(nxv)>=3:
-      if int(nxv[0])==1 and int(nxv[1])==9 and int(nxv[2])>=1: vOK=True
+  nxv=nx.__version__
+  vOK=checkVersion(nxv,'NetworkX',1,9,1)
 
   if not vOK:
 		print "NetworkX 1.9.1 or greater required"
 		os.sys.exit(1)
 
 
-  mpltv=mplt.__version__.split('.')
-  vOK=False
-  if int(mpltv[0])>1: vOK=True
-  if len(mpltv)>=2:
-      if int(mpltv[0])==1 and int(mpltv[1])>5: vOK=True
-  if len(mpltv)>=3:
-      if int(mpltv[0])==1 and int(mpltv[1])==5 and int(mpltv[2])>=1: vOK=True
+  mpltv=mplt.__version__
+  vOK=checkVersion(mpltv,'Matplotlib',1,5,1)
 
   if not vOK:
-		print "patplotlib 1.5.1 or greater required"
+		print "Matplotlib 1.5.1 or greater required"
 		os.sys.exit(1)
 
   pdv=pd.__version__.split('.')
