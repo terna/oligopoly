@@ -1,0 +1,20 @@
+--- memoTwoImagesOnScreen.py	(original)
++++ memoTwoImagesOnScreen.py	(refactored)
+@@ -30,7 +30,7 @@
+ 
+ 
+ 
+-raw_input('enter')
++input('enter')
+ 
+ plt.figure(1)
+ 
+@@ -44,7 +44,7 @@
+ 
+ 
+ 
+-raw_input('enter')
++input('enter')
+ plt.close()
+ plt.figure(1)
+ 

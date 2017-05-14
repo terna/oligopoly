@@ -1,0 +1,62 @@
+--- oActions.py	(original)
++++ oActions.py	(refactored)
+@@ -31,7 +31,7 @@
+ 
+             # ask each agent, without parameters
+ 
+-            print "Time = ", cycle, "ask all agents to report position"
++            print("Time = ", cycle, "ask all agents to report position")
+             askEachAgentInCollection(address.modelSwarm.getAgentList(),Agent.reportPosition)
+ 
+ 
+@@ -39,7 +39,7 @@
+             self=address # if necessary
+ 
+             # ask a single agent, without parameters
+-            print "Time = ",cycle,"ask first agent to report position"
++            print("Time = ",cycle,"ask first agent to report position")
+             if address.modelSwarm.getAgentList() != []:
+                 askAgent(address.modelSwarm.getAgentList()[0],\
+                          Agent.reportPosition)
+@@ -47,7 +47,7 @@
+ def otherSubSteps(subStep, address):
+ 
+             if subStep == "pause":
+-              raw_input ("Hit enter key to continue")
++              input ("Hit enter key to continue")
+               return True
+ 
+             elif subStep == "collectStructuralData":
+@@ -64,7 +64,7 @@
+ 
+             elif subStep == "prune":
+               common.prune=True
+-              newValue=raw_input (("Prune links with weight < %d\n"+\
++              newValue=input (("Prune links with weight < %d\n"+\
+                                    "Enter to confirm "+\
+                                    "or introduce a new level: ") % \
+                                        common.pruneThreshold)
+@@ -92,7 +92,7 @@
+     except:
+        common.str_df = pd.DataFrame(columns=\
+          ['entrepreneurs','workers'])
+-       print "\nCreation of fhe structural dataframe\n"
++       print("\nCreation of fhe structural dataframe\n")
+        #print common.str_df
+ 
+     nWorkers=0
+@@ -123,7 +123,7 @@
+        common.ts_df = pd.DataFrame(columns=\
+          ['unemployed','totalProfit','totalProduction','plannedProduction',\
+           'price','wage'])
+-       print "\nCreation of fhe time series dataframe\n"
++       print("\nCreation of fhe time series dataframe\n")
+        #print common.ts_df
+ 
+     unemployed=0
+@@ -243,4 +243,4 @@
+     common.str_df.to_csv(csvfile,index_label=False,index=False)
+     csvfile.close()
+ 
+-    print "Three files with date and hour", tt, "written in oligopoly folder."
++    print("Three files with date and hour", tt, "written in oligopoly folder.")

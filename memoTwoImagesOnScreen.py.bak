@@ -30,7 +30,7 @@ plt.draw()
 
 
 
-input('enter')
+raw_input('enter')
 
 plt.figure(1)
 
@@ -44,7 +44,7 @@ plt.draw()
 
 
 
-input('enter')
+raw_input('enter')
 plt.close()
 plt.figure(1)
 

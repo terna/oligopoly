@@ -1,0 +1,62 @@
+--- WorldState.py	(original)
++++ WorldState.py	(refactored)
+@@ -5,14 +5,14 @@
+ class WorldState(object):
+     def __init__(self):
+         # the environment
+-        print "World state has been created."
++        print("World state has been created.")
+ 
+ 
+     # set market price V1
+     def setMarketPriceV1(self):
+         # to have a price around 1
+         common.price= 1.4 - 0.02 * common.totalProductionInA_TimeStep
+-        print "Set market price to ", common.price
++        print("Set market price to ", common.price)
+         common.price10=common.price*10 #to plot
+ 
+ 
+@@ -20,7 +20,7 @@
+     def setMarketPriceV2(self):
+         common.price= common.totalPlannedConsumptionInValueInA_TimeStep / \
+                       common.totalProductionInA_TimeStep
+-        print "Set market price to ", common.price
++        print("Set market price to ", common.price)
+ 
+     # set market price V3
+     def setMarketPriceV3(self):
+@@ -28,7 +28,7 @@
+                               common.maxDemandRelativeRandomShock)
+         shock=shock0
+ 
+-        print "\n-------------------------------------"
++        print("\n-------------------------------------")
+ 
+         if shock >= 0:
+           common.totalDemandInPrevious_TimeStep = \
+@@ -37,8 +37,8 @@
+           common.price= (common.totalPlannedConsumptionInValueInA_TimeStep * \
+                          (1 + shock))  \
+                          / common.totalProductionInA_TimeStep
+-          print "Relative shock (symmetric) ", shock0
+-          print "Set market price to ", common.price
++          print("Relative shock (symmetric) ", shock0)
++          print("Set market price to ", common.price)
+ 
+         if shock <  0:
+           shock *=-1. #always positive, boing added to the denominator
+@@ -48,10 +48,10 @@
+           common.price= (common.totalPlannedConsumptionInValueInA_TimeStep / \
+                          (1 + shock))  \
+                          / common.totalProductionInA_TimeStep
+-          print "Relative shock (symmetric) ", shock0
+-          print "Set market price to ", common.price
++          print("Relative shock (symmetric) ", shock0)
++          print("Set market price to ", common.price)
+ 
+-        print "-------------------------------------\n"
++        print("-------------------------------------\n")
+ 
+ 
+     # random shock to wages (temporary method to experiment with wages)

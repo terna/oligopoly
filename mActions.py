@@ -44,5 +44,5 @@ def createTheAgent(self,line,num,agType):
 
 
                 else:
-                 print "Error in file "+agType+".txt"
+                 print("Error in file "+agType+".txt")
                  os.sys.exit(1)

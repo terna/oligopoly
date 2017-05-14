@@ -1,0 +1,56 @@
+--- graphicDisplayGlobalVarAndFunctions.py	(original)
++++ graphicDisplayGlobalVarAndFunctions.py	(refactored)
+@@ -72,7 +72,7 @@
+ def createEdge(a, b):
+     # implicitly directed, due to the use of DiGraph
+     if a == None or b == None:
+-       print "Internal error, attempt to create an edge with a node defined None"
++       print("Internal error, attempt to create an edge with a node defined None")
+        exit(0)
+ 
+     try:
+@@ -119,17 +119,17 @@
+     if not common.prune: return
+     common.prune=False
+ 
+-    print "New threshold to prune: < %d" % common.pruneThreshold
++    print("New threshold to prune: < %d" % common.pruneThreshold)
+ 
+     edges=common.g.edges()
+-    print "weights of the links"
++    print("weights of the links")
+     for anEdge in edges:
+         u = anEdge[0].number
+         uu= anEdge[0]
+         v = anEdge[1].number
+         vv= anEdge[1]
+         w = common.g[anEdge[0]][anEdge[1]]["weight"]
+-        print u, v, w
++        print(u, v, w)
+ 
+         if w < common.pruneThreshold:
+             # managing labels, related to createEdge phase above
+@@ -161,7 +161,7 @@
+     # https://networkx.github.io/documentation/latest/reference/generated/networkx.drawing.nx_pylab.draw_networkx.html
+ 
+     nx.draw_networkx_nodes(common.g,pos,node_size=common.nsize, \
+-         node_color=colors.values()).set_edgecolor('w')
++         node_color=list(colors.values())).set_edgecolor('w')
+     nx.draw_networkx_labels(common.g, pos,labels = common.g_labels,font_size=8, font_color='grey',
+     font_family='sans-serif', font_weight='normal', alpha=1.0)
+     nx.draw_networkx_edges(common.g, pos, width=1.0, edge_color='grey', style='solid', \
+@@ -201,10 +201,10 @@
+         A = nx.adjacency_matrix(common.g, nodelist=common.orderedListOfNodes, \
+                               weight='weight')
+         #print A          # as sparse matrix, defaul from nx 1.9.1
+-        print A.todense() # as a regular matrix
+-
+-    else: print "No nodes, impossible to create the adjacency_matrix"
+-    print
++        print(A.todense()) # as a regular matrix
++
++    else: print("No nodes, impossible to create the adjacency_matrix")
++    print()
+ 
+     # neighbors
+ 
