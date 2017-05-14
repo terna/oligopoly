@@ -23,3 +23,7 @@ produces:
     a file.changes : the list of the changes
 
 The correction done in this way are mainly related to *print* and *input* statements
+
+**Handmade** corrections
+
+To *parameters.py*, documented in the commit *parameters.py hand made corrections*
