@@ -1,8 +1,8 @@
 #commonVar.py
 
-projectVersion = "5b"
+projectVersion = "5bP3"
 
-build = "20170418"
+build = "20170514"
 
 # controlling the existence of an agent with number==0 used by reset
 # step in modelActions.txt
