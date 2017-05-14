@@ -38,16 +38,16 @@ def loadParameters(self):
   vOK=checkVersion(nxv,'NetworkX',1,9,1)
 
   if not vOK:
-		print("NetworkX 1.9.1 or greater required")
-		os.sys.exit(1)
+        print("NetworkX 1.9.1 or greater required")
+        os.sys.exit(1)
 
 
   mpltv=mplt.__version__
   vOK=checkVersion(mpltv,'Matplotlib',1,5,1)
 
   if not vOK:
-		print("Matplotlib 1.5.1 or greater required")
-		os.sys.exit(1)
+        print("Matplotlib 1.5.1 or greater required")
+        os.sys.exit(1)
 
   pdv=pd.__version__.split('.')
   vOK=False
@@ -58,8 +58,8 @@ def loadParameters(self):
       if int(pdv[0])==0 and int(pdv[1])==18 and int(pdv[2])>=1: vOK=True
 
   if not vOK:
-		print("pandas 0.18.1 or greater required")
-		os.sys.exit(1)
+        print("pandas 0.18.1 or greater required")
+        os.sys.exit(1)
 
   #sigma of the normal distribution used in randomize the position of the agents/nodes
   print("sigma of the normal distribution used in randomizing the position of the agents/nodes ", common.sigma)
@@ -111,7 +111,7 @@ def loadParameters(self):
   dataFrameAppend("labor productivity",common.laborProductivity)  ## saving pars
 
   #Poisson mean in plannedProduction
-  if common.projectVersion < 3:
+  if common.projectVersion < "3":
    print("Mean value of the Poisson distribution used in production planning "+\
          "(not used in V.0; used only at t=1 in V.3);")
    tmp=input(
@@ -119,7 +119,7 @@ def loadParameters(self):
    try: common.nu=int(tmp)
    except: pass
    print("Resulting value", common.nu)
-  if common.projectVersion >= 3:
+  if common.projectVersion >= "3":
 
    print("nu, mean value of the Poisson distribution used in production\n"+\
          "planning at time=1, is set internally to match the ratio\n" + \
