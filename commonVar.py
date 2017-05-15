@@ -4,6 +4,8 @@ projectVersion = "5bP3"
 
 build = "20170514"
 
+debug= False
+
 # controlling the existence of an agent with number==0 used by reset
 # step in modelActions.txt
 agent1existing=False

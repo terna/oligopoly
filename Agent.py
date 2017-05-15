@@ -322,7 +322,7 @@ class Agent(SuperAgent):
         # this is an entrepreneur action
         if self.agType == "workers": return
 
-        if common.projectVersion >= 3 and common.cycle==1:
+        if common.projectVersion >= "3" and common.cycle==1:
             nEntrepreneurs = 0
             for ag in self.agentList:
                 if ag.agType=="entrepreneurs":
@@ -333,8 +333,8 @@ class Agent(SuperAgent):
             common.nu=(common.rho*nWorkersPlus_nEntrepreneurs)/nEntrepreneurs
             #print common.rho, common.nu
 
-        if (common.projectVersion >= 3 and common.cycle==1) or \
-            common.projectVersion < 3:
+        if (common.projectVersion >= "3" and common.cycle==1) or \
+            common.projectVersion < "3":
             self.plannedProduction=npr.poisson(common.nu,1)[0] # 1 is the number
             # of element of the returned matrix (vector)
             #print self.plannedProduction

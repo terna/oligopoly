@@ -27,3 +27,5 @@ The correction done in this way are mainly related to *print* and *input* statem
 **Handmade** corrections
 
 To *parameters.py*, documented in the commit *parameters.py hand made corrections*
+
+To *Agent.py*, with str for version "3" comparing
