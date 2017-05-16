@@ -1,9 +1,0 @@
---- mActions.py	(original)
-+++ mActions.py	(refactored)
-@@ -44,5 +44,5 @@
- 
- 
-                 else:
--                 print "Error in file "+agType+".txt"
-+                 print("Error in file "+agType+".txt")
-                  os.sys.exit(1)
