@@ -69,6 +69,7 @@ def visualizePlot(aL,t):
     unemployed=0
     totalProfit=0
     totalPlannedProduction=0
+
     for ag in aL:
        if not ag.employed: unemployed+=1
        if ag.agType == "entrepreneurs":
@@ -116,14 +117,14 @@ def visualizePlot(aL,t):
         f2=gvf.plt.figure()
         ax = f2.gca()
         ax.set_autoscale_on(True)
-
       line1, = ax.plot(x, y1,label='unemployed',color='OrangeRed')
       line2, = ax.plot(x, y2,label='totalProfit',color='LawnGreen')
       line3, = ax.plot(x, y3,label='totalProduction',color='Blue')
       if y4[0] > 0:
           line4, = ax.plot(x, y4,label='plannedProduction',color='Violet')
           line5, = ax.plot(x, y4,label='price',color='Gray')
-      ax.legend()
+      ax.legend(loc=6)
+      #loc values at http://matplotlib.org/1.3.1/users/legend_guide.html
       if not common.IPython: gvf.plt.figure(1)
       if common.IPython: gvf.plt.show()
 
@@ -139,7 +140,7 @@ def visualizePlot(aL,t):
               if y4[0] > 0:
                 line4, = ax.plot(x, y4,label='plannedProduction',color='Violet')
                 line5, = ax.plot(x, y4,label='price',color='Gray')
-              ax.legend()
+              ax.legend(loc=6)
       x.append(t)
       y1.append(unemployed)
       y2.append(totalProfit)
