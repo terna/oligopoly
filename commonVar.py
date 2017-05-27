@@ -1,8 +1,8 @@
 #commonVar.py
 
-projectVersion = 5
+projectVersion = "5b"
 
-build = "20160831"
+build = "20170418"
 
 # controlling the existence of an agent with number==0 used by reset
 # step in modelActions.txt
@@ -76,7 +76,7 @@ productionCorrectionPsi=0.10
 # does it generate a cut of the wages
 wageCutForWorkTroubles=False
 # price penalty for work troubles
-penaltyValue=0.10
+penaltyValue=0 # was 0.10
 
 #labor productivity
 laborProductivity=1
@@ -95,7 +95,7 @@ nu=5
 
 #to internally calculate the Poisson mean (nu) in makeProoductionPlan
 #for time=1 in V3 we use the ratio rho
-rho=0.8
+rho=0.9
 
 #threshold toEntrepreneur
 thresholdToEntrepreneur=0.15 #was 0.20
@@ -104,6 +104,7 @@ newEntrantExtraCosts=60 #was 100.0 # was 2.0
 
 randomComponentOfPlannedProduction=0.10
 
+#max new entrant number in a time step
 absoluteBarrierToBecomeEntrepreneur=20
 
 maxDemandRelativeRandomShock=0.15 #was 0.10 #was 0.20
