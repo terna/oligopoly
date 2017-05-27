@@ -1,8 +1,8 @@
 #commonVar.py
 
-projectVersion = "5bP3"
+projectVersion = "5bPy3"
 
-build = "20170516"
+build = "20170527"
 
 debug= False
 
