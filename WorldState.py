@@ -24,4 +24,34 @@ class WorldState:
         common.price= common.totalPlannedConsumptionInValueInA_TimeStep / \
                       common.totalProductionInA_TimeStep
         print "Set market price to ", common.price
-        common.price10=common.price*10 #to plot
+
+    # set market price V3
+    def setMarketPriceV3(self):
+        shock0=random.uniform(-common.maxDemandRelativeRandomShock, \
+                              common.maxDemandRelativeRandomShock)
+        shock=shock0
+
+        print "\n-------------------------------------"
+
+        if shock >= 0:
+          common.totalDemandInPrevious_TimeStep = \
+             common.totalPlannedConsumptionInValueInA_TimeStep * \
+             (1 + shock)
+          common.price= (common.totalPlannedConsumptionInValueInA_TimeStep * \
+                         (1 + shock))  \
+                         / common.totalProductionInA_TimeStep
+          print "Relative shock (symmetric) ", shock0
+          print "Set market price to ", common.price
+
+        if shock <  0:
+          shock *=-1. #always positive, boing added to the denominator
+          common.totalDemandInPrevious_TimeStep = \
+              common.totalPlannedConsumptionInValueInA_TimeStep / \
+              (1 + shock)
+          common.price= (common.totalPlannedConsumptionInValueInA_TimeStep / \
+                         (1 + shock))  \
+                         / common.totalProductionInA_TimeStep
+          print "Relative shock (symmetric) ", shock0
+          print "Set market price to ", common.price
+
+        print "-------------------------------------\n"

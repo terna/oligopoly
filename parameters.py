@@ -47,7 +47,9 @@ def loadParameters(self):
   # Projct version and thresholds
   try: projectVersion = str(common.projectVersion)
   except: projectVersion = "Unknown"
-  print "\nProject version "+projectVersion,  "hiringThreshold", common.hiringThreshold, \
+  try: build = str(common.build)
+  except: build = "Unknown"
+  print "\nProject version "+projectVersion, "build", build, "\nhiringThreshold", common.hiringThreshold, \
                                     "firingThreshold", common.firingThreshold
 
   # wages
@@ -63,13 +65,22 @@ def loadParameters(self):
   # laboor productivity
   print "labor productivity", common.laborProductivity
 
+
   #Poisson mean in plannedProduction
-  print "Mean value of the Poisson distribution used in production planning (not used in V.0);"
-  tmp=raw_input(
-     "suggested Lambda=5 (enter to confirm or input a number) ")
-  try: common.Lambda=int(tmp)
-  except: pass
-  print "Resulting value", common.Lambda
+  if common.projectVersion < 3:
+   print "Mean value of the Poisson distribution used in production planning "+\
+         "(not used in V.0; used only at t=1 in V.3);"
+   tmp=raw_input(
+      "suggested Lambda=5 (enter to confirm or input a number) ")
+   try: common.Lambda=int(tmp)
+   except: pass
+   print "Resulting value", common.Lambda
+  if common.projectVersion >= 3:
+
+   print "Lambda, mean value of the Poisson distribution used in production\n"+\
+         "planning at time=1, is set internally to match the ratio\n" + \
+         "between actual and potential initial employed population,"
+   print "set to %3.2f" %  common.rho
 
   #consumption
   print
@@ -82,12 +93,26 @@ def loadParameters(self):
    % (common.a1, common.b1, common.a2, common.b2, common.a3, common.b3)
   print
 
-  print ("Threshold to became an entrepreneur %4.2f\n" +\
+  print ("Relative threshold to became an entrepreneur %4.2f\n" +\
   "with new entrant extra costs %4.2f and duration of the extra cost %d") % \
   (common.thresholdToEntrepreneur, common.newEntrantExtraCosts, \
   common.extraCostsDuration)
-  print "Threshold to became an unmployed worker %4.2f\n" % common.thresholdToWorker
-  print
+
+  print \
+  "Random component of planned production, uniformly distributed between %4.2f%s and %4.2f%s" % \
+                        (-common.randomComponentOfPlannedProduction*100, "%",\
+                          common.randomComponentOfPlannedProduction*100, "%")
+
+  print "Absolute barrier to become entrepreneur, max number in a time step: ", \
+         common.absoluteBarrierToBecomeEntrepreneur
+
+  print "\nRelative threshold to became an unemployed worker %4.2f\n" % common.thresholdToWorker
+
+  print "Total demand relative random shock, uniformly distributed\nbetween "+\
+        "-%4.2f%s and +%4.2f%s" % (common.maxDemandRelativeRandomShock*100,"%",\
+                               common.maxDemandRelativeRandomShock*100,"%")
+
+  print "Node numbers in graph:", common.nodeNumbersInGraph
 
 
   # cycles
@@ -96,3 +121,5 @@ def loadParameters(self):
   v = raw_input("verbose? (y/[n]) ")
   if v=="y" or v=="Y":
     common.verbose=True #predefined False
+  print "If running in IPython, the messages of the model about che creation" +\
+        "\nof each agent are automatically off, to avoid locking the run."

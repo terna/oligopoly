@@ -22,7 +22,8 @@
 
 import commonVar as common
 
-if not common.IPython:
+if not common.IPython or common.graphicStatus=="PythonViaTerminal":
+      # the or is about ipython running in a terminal
       import matplotlib as mpl
       mpl.use("TKAgg") #to use window.wm_geometry below
 
@@ -50,10 +51,11 @@ def createGraph():
     # setting Figure 1 (the switch of the control between Figure 1 and Figure 2
     # is managed in oActions.py
 
-    if not common.IPython:
+    if not common.IPython or common.graphicStatus=="PythonViaTerminal":
+      # the or is about ipython running in a terminal
       plt.figure(1)
       mngr1=plt.get_current_fig_manager() #NB, after figure()
-      mngr1.window.wm_geometry("+0+0")
+      mngr1.window.wm_geometry("+650+0")
       mngr1.set_window_title("Links Entrepreneurs - Workers")
 
 
@@ -158,12 +160,11 @@ def drawGraph():
     #     labels = common.g_labels)
     # https://networkx.github.io/documentation/latest/reference/generated/networkx.drawing.nx_pylab.draw_networkx.html
 
-
     nx.draw_networkx_nodes(common.g,pos,node_size=common.nsize, \
-         node_color=colors.values())
-    nx.draw_networkx_labels(common.g, pos,labels = common.g_labels,font_size=8, font_color='k',
+         node_color=colors.values()).set_edgecolor('w')
+    nx.draw_networkx_labels(common.g, pos,labels = common.g_labels,font_size=8, font_color='grey',
     font_family='sans-serif', font_weight='normal', alpha=1.0)
-    nx.draw_networkx_edges(common.g, pos, width=1.0, edge_color='k', style='solid', \
+    nx.draw_networkx_edges(common.g, pos, width=1.0, edge_color='grey', style='solid', \
                         alpha=0.3, arrows=False)
     nx.draw_networkx_edge_labels(common.g,pos,edge_labels=common.g_edge_labels,\
                                  font_size=6,font_family='sans-serif')
@@ -172,6 +173,9 @@ def drawGraph():
     # https://networkx.github.io/documentation/latest/reference/drawing.html
 
     #plt.draw()
+    if common.IPython and not common.graphicStatus=="PythonViaTerminal":
+        # the and not is about ipython running in a terminal
+        plt.title("Links Entrepreneurs - Workers")
     plt.show() # used by %Matplotlib inline [without ion()]; not conflicting
                # with ion()
 
@@ -185,10 +189,10 @@ def drawGraph():
 
 
     # adjacency
-    print
-    for i in range(len(common.orderedListOfNodes)):
-      print "%d " % common.orderedListOfNodes[i].number,
-    print
+    #print
+    #for i in range(len(common.orderedListOfNodes)):
+    #  print "%d " % common.orderedListOfNodes[i].number,
+    #print
     #print "drawGraph verification of existing nodes",common.g.nodes()
     if common.g.nodes() !=[]:
         A = nx.adjacency_matrix(common.g, nodelist=common.orderedListOfNodes, \
@@ -201,9 +205,9 @@ def drawGraph():
 
     # neighbors
 
-    for aNode in common.g.nodes():
-        print aNode.number, [node.number \
-                                   for node in nx.neighbors(common.g,aNode)]
+    #for aNode in common.g.nodes():
+    #    print aNode.number, [node.number \
+    #                               for node in nx.neighbors(common.g,aNode)]
     """
     # betweenness_centrality
     # Betweenness centrality of a node v is the sum of the fraction of all-pairs

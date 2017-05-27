@@ -1,5 +1,5 @@
 # this file contains a preparatory exercise, kept here as a memo for future similar problems
-# the technique below in implmented in oligopoly project, files:
+# the technique below is implemented in oligopoly project, files:
 # graphicDisplayGlobalVarAndFunctions.py and
 # oActions.py
 

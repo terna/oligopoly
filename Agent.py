@@ -6,6 +6,20 @@ import graphicDisplayGlobalVarAndFunctions as gvf
 import commonVar as common
 import numpy.random as npr
 
+<<<<<<< HEAD
+=======
+def mySort(ag):
+    if ag==[]: return []
+    numAg=[]
+    for a in ag:
+        numAg.append((a.number,a))
+    numAg.sort()
+    agSorted=[]
+    for i in range(len(numAg)):
+        agSorted.append(numAg[i][1])
+    return agSorted
+
+>>>>>>> origin/V3
 class Agent(SuperAgent):
     def __init__(self, number,myWorldState,
                  xPos=0, yPos=0, agType=""):
@@ -57,7 +71,7 @@ class Agent(SuperAgent):
                "#", self.number, "has been created at", xPos, ",", yPos
 
         gvf.pos[self]=(xPos,yPos)
-        common.g_labels[self]=str(number)
+        if common.nodeNumbersInGraph: common.g_labels[self]=str(number)
         # to be used to clone (if any)
         self.xPos=xPos
         self.yPos=yPos
@@ -164,6 +178,9 @@ class Agent(SuperAgent):
             entrepreneurWorkers=gvf.nx.neighbors(common.g,self)
             #print "entrepreneur", self.number, "could fire", entrepreneurWorkers
 
+            #the list returnes by nx is unstable as order
+            entrepreneurWorkers = mySort(entrepreneurWorkers)
+
             if len(entrepreneurWorkers) > 0: # has to be, but ...
                  shuffle(entrepreneurWorkers)
                  for i in range(n):
@@ -196,6 +213,10 @@ class Agent(SuperAgent):
         # the list of the employees of the firm
         entrepreneurWorkers=gvf.nx.neighbors(common.g,self)
         #print "entrepreneur", self.number, "could fire", entrepreneurWorkers
+
+        #the list returnes by nx is unstable as order
+        entrepreneurWorkers = mySort(entrepreneurWorkers)
+
 
         if len(entrepreneurWorkers) > 0:
             fired=entrepreneurWorkers[randint(0,len(entrepreneurWorkers)-1)]
@@ -239,6 +260,9 @@ class Agent(SuperAgent):
 
         # totalProductionInA_TimeStep
         common.totalProductionInA_TimeStep += self.production
+        # having a copy, that is update after each agent's action
+        common.totalProductionInPrevious_TimeStep=common.totalProductionInA_TimeStep
+
 
 
     # makeProductionPlan
@@ -247,10 +271,47 @@ class Agent(SuperAgent):
         # this is an entrepreneur action
         if self.agType == "workers": return
 
-        self.plannedProduction=npr.poisson(common.Lambda,1)[0] # 1 is the number
-        # of element of the returned matrix (vector)
+        if common.projectVersion >= 3 and common.cycle==1:
+            nEntrepreneurs = 0
+            for ag in self.agentList:
+                if ag.agType=="entrepreneurs":
+                    nEntrepreneurs+=1
+            #print nEntrepreneurs
+            nWorkersPlus_nEntrepreneurs=len(self.agentList)
+            #print nWorkersPlus_nEntrepreneurs
+            common.Lambda=(common.rho*nWorkersPlus_nEntrepreneurs)/nEntrepreneurs
+            #print common.rho, common.Lambda
 
+        if (common.projectVersion >= 3 and common.cycle==1) or \
+            common.projectVersion < 3:
+            self.plannedProduction=npr.poisson(common.Lambda,1)[0] # 1 is the number
+            # of element of the returned matrix (vector)
+            #print self.plannedProduction
 
+    # adaptProductionPlan
+    def adaptProductionPlan(self):
+        if common.cycle > 1:
+          nEntrepreneurs = 0
+          for ag in self.agentList:
+             if ag.agType=="entrepreneurs":
+                 nEntrepreneurs+=1
+
+          self.plannedProduction = common.totalDemandInPrevious_TimeStep  \
+                  / nEntrepreneurs
+
+          #self.plannedProduction += gauss(0,self.plannedProduction/10)
+
+          shock= uniform( \
+           -common.randomComponentOfPlannedProduction,\
+            common.randomComponentOfPlannedProduction)
+
+          if shock >= 0:
+           self.plannedProduction *= (1.+shock)
+
+          if shock < 0:
+           shock *= -1.
+           self.plannedProduction /= (1.+shock)
+          #print self.number, self.plannedProduction
 
     # calculateProfit V0
     def evaluateProfitV0(self):
@@ -258,14 +319,14 @@ class Agent(SuperAgent):
         # this is an entrepreneur action
         if self.agType == "workers": return
 
-        # the number of pruducing workers is obtained indirectly via
+        # the number of producing workers is obtained indirectly via
         # production/laborProductivity
         #print self.production/common.laborProductivity
         self.profit=(self.production/common.laborProductivity) * \
                      (common.revenuesOfSalesForEachWorker - \
                       common.wage) + gauss(0,0.05)
 
-    # calculateProfit
+        # calculateProfit
     def evaluateProfit(self):
 
         # this is an entrepreneur action
@@ -283,10 +344,12 @@ class Agent(SuperAgent):
         # the number of pruducing workers is obtained indirectly via
         # production/laborProductivity
         #print self.production/common.laborProductivity
-        self.profit=common.price * self.production - \
-                    common.wage * (self.production/common.laborProductivity) - \
+        self.costs=common.wage * (self.production/common.laborProductivity) + \
                     XC
-        #print "profit", self.profit
+
+        # the entrepreur sells her production, which is cotributing - via
+        # totalActualProductionInA_TimeStep, to price formation
+        self.profit=common.price * self.production - self.costs
 
 
     # compensation
@@ -341,6 +404,32 @@ class Agent(SuperAgent):
             self.employed=True
             self.extraCostsResidualDuration=common.extraCostsDuration
 
+    #to entrepreneurV3
+    def toEntrepreneurV3(self):
+        if self.agType != "workers" or not self.employed: return
+        #print float(common.absoluteBarrierToBecomeEntrepreneur)/ \
+        #               len(self.agentList)
+        if random() <= float(common.absoluteBarrierToBecomeEntrepreneur)/ \
+                       len(self.agentList):
+          myEntrepreneur=gvf.nx.neighbors(common.g, self)[0]
+          myEntrepreneurProfit=myEntrepreneur.profit
+          myEntrepreneurCosts=myEntrepreneur.costs
+          if myEntrepreneurProfit/myEntrepreneurCosts  >= \
+            common.thresholdToEntrepreneur:
+            print "I'm worker %2.0f and my entrepreneur relative profit is %4.2f" %\
+                  (self.number, myEntrepreneurProfit/myEntrepreneurCosts)
+            common.g.remove_edge(myEntrepreneur, self)
+
+            #originally, it was a worker
+            if self.xPos>0:gvf.pos[self]=(self.xPos-15,self.yPos)
+            #originally, it was an entrepreneur
+            else:gvf.pos[self]=(self.xPos,self.yPos)
+            # colors at http://www.w3schools.com/html/html_colornames.asp
+            gvf.colors[self]="LawnGreen"
+            self.agType="entrepreneurs"
+            self.employed=True
+            self.extraCostsResidualDuration=common.extraCostsDuration
+
 
     #to workers
     def toWorker(self):
@@ -349,6 +438,45 @@ class Agent(SuperAgent):
         if self.profit <= common.thresholdToWorker:
             print "I'm entrepreneur %2.0f and my profit is %4.2f" %\
                   (self.number, self.profit)
+
+
+
+            # the list of the employees of the firm, IF ANY
+            entrepreneurWorkers=gvf.nx.neighbors(common.g,self)
+            print "entrepreneur", self.number, "has", len(entrepreneurWorkers),\
+             "workers to be fired"
+
+            if len(entrepreneurWorkers) > 0:
+                for aWorker in entrepreneurWorkers:
+                    gvf.colors[aWorker]="OrangeRed"
+                    aWorker.employed=False
+
+                    common.g.remove_edge(self, aWorker)
+
+            self.numOfWorkers=0
+
+            #originally, it was an entrepreneur
+            if self.xPos<0:gvf.pos[self]=(self.xPos+15,self.yPos)
+            #originally, it was a worker
+            else:gvf.pos[self]=(self.xPos,self.yPos)
+            # colors at http://www.w3schools.com/html/html_colornames.asp
+            gvf.colors[self]="OrangeRed"
+            self.agType="workers"
+            self.employed=False
+
+    #to workersV3
+    def toWorkerV3(self):
+        if self.agType != "entrepreneurs": return
+
+        #check for newborn firms
+        try:
+            self.costs
+        except:
+            return
+
+        if self.profit/self.costs <= common.thresholdToWorker:
+            print "I'm entrepreneur %2.0f and my relative profit is %4.2f" %\
+                  (self.number, self.profit/self.costs)
 
 
 

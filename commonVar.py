@@ -1,6 +1,12 @@
 #commonVar.py
 
-projectVersion = 2
+projectVersion = 3
+
+build = "20160604"
+
+# the time is set by ObserverSwarm with
+# common.cycle=1
+# in the benginning
 
 prune=False
 pruneThreshold=0
@@ -19,7 +25,8 @@ verbose=False
 clonedN=0
 
 #sigma of the normal distribution used in randomize the position of the agents/nodes
-sigma=0.7
+#sigma=0.7
+sigma=1.2
 
 #size of the nodes
 nsize=150
@@ -61,13 +68,26 @@ firingThreshold=0
 totalProductionInA_TimeStep=0
 totalPlannedConsumptionInValueInA_TimeStep=0
 
-#Poisson mean in plannedProduction
+#Poisson mean in makeProoductionPlan, will be modified in paramenters.py
+#in the function loadParameters
 Lambda=5
 
+#to internally calculate the Poisson mean (Lambda) in makeProoductionPlan
+#for time=1 in V3 we use the ratio rho
+rho=0.8
+
 #threshold toEntrepreneur
-thresholdToEntrepreneur=0.5
+thresholdToEntrepreneur=0.20
 extraCostsDuration=3
-newEntrantExtraCosts=0.5
+newEntrantExtraCosts=2.0
+
+randomComponentOfPlannedProduction=0.10
+
+absoluteBarrierToBecomeEntrepreneur=20
+
+maxDemandRelativeRandomShock=0.20
 
 #threshold toWorker
-thresholdToWorker=-1.0
+thresholdToWorker=-0.20
+
+nodeNumbersInGraph=False
