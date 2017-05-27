@@ -5,11 +5,24 @@ import commonVar as common
 import networkx as nx
 import matplotlib as mplt
 import numpy.random as npr
+import pandas as pd
+from IPython import get_ipython
 
 def loadParameters(self):
 
+  #preliminary cntrol
+  if common.graphicStatus=="PythonViaTerminal" and common.IPython:
+      print "Please do not run the 'oligopoly project' in IPython via a terminal."
+      os.sys.exit(1)
+
+
+  print 'Warning: if running in "jupyter console" the graphic output is missing."'
+
+
   print "NetworkX version %s running" % nx.__version__
-  print "Matplotlib version %s running\n" % mplt.__version__
+  print "matplotlib version %s running" % mplt.__version__
+  print "pandas version %s running\n" % pd.__version__
+
 
   nxv=nx.__version__.split('.')
   vOK=False
@@ -22,6 +35,32 @@ def loadParameters(self):
   if not vOK:
 		print "NetworkX 1.9.1 or greater required"
 		os.sys.exit(1)
+
+
+  mpltv=mplt.__version__.split('.')
+  vOK=False
+  if int(mpltv[0])>1: vOK=True
+  if len(mpltv)>=2:
+      if int(mpltv[0])==1 and int(mpltv[1])>5: vOK=True
+  if len(mpltv)>=3:
+      if int(mpltv[0])==1 and int(mpltv[1])==5 and int(mpltv[2])>=1: vOK=True
+
+  if not vOK:
+		print "patplotlib 1.5.1 or greater required"
+		os.sys.exit(1)
+
+  pdv=pd.__version__.split('.')
+  vOK=False
+  if int(pdv[0])>0: vOK=True
+  if len(pdv)>=1:
+      if int(pdv[0])==0 and int(pdv[1])>18: vOK=True
+  if len(pdv)>=3:
+      if int(pdv[0])==0 and int(pdv[1])==18 and int(pdv[2])>=1: vOK=True
+
+  if not vOK:
+		print "pandas 0.18.1 or greater required"
+		os.sys.exit(1)
+
   #sigma of the normal distribution used in randomize the position of the agents/nodes
   print "sigma of the normal distribution used in randomizing the position of the agents/nodes ", common.sigma
 
@@ -93,7 +132,7 @@ def loadParameters(self):
    % (common.a1, common.b1, common.a2, common.b2, common.a3, common.b3)
   print
 
-  print ("Relative threshold to became an entrepreneur %4.2f\n" +\
+  print ("Relative threshold to become an entrepreneur %4.2f\n" +\
   "with new entrant extra costs %4.2f and duration of the extra cost %d") % \
   (common.thresholdToEntrepreneur, common.newEntrantExtraCosts, \
   common.extraCostsDuration)
@@ -106,7 +145,8 @@ def loadParameters(self):
   print "Absolute barrier to become entrepreneur, max number in a time step: ", \
          common.absoluteBarrierToBecomeEntrepreneur
 
-  print "\nRelative threshold to became an unemployed worker %4.2f\n" % common.thresholdToWorker
+  print "\nRelative threshold to lose the entrepreneur status (becoming a unemployed worker) %4.2f\n" \
+        % common.thresholdToWorker
 
   print "Total demand relative random shock, uniformly distributed\nbetween "+\
         "-%4.2f%s and +%4.2f%s" % (common.maxDemandRelativeRandomShock*100,"%",\
@@ -114,6 +154,16 @@ def loadParameters(self):
 
   print "Node numbers in graph:", common.nodeNumbersInGraph
 
+
+  print "Full employment threshold "+\
+        "%4.2f%s and wage step in full employment %4.2f%s" \
+                             % (common.fullEmploymentThreshold*100,"%",\
+                                common.wageStepInFullEmployment*100,"%")
+
+  print "Wage relative increment as an entry barrier: "+\
+      "%4.2f%s; trigger level (relative increment of oligopolistic firms): %4.2f%s" \
+                % (common.temporaryRelativeWageIncrementAsBarrier*100,"%",\
+                   common.maxAcceptableOligopolistRelativeIncrement*100,"%")
 
   # cycles
   self.nCycles = input("How many cycles? (0 = exit) ")

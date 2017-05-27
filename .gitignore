@@ -1,8 +1,4 @@
 *.pyc
 workers.txt
-
-workers.txt
-
-workers.txt
-
-workers.txt
+*.csv
+.ipynb_checkpoints/readingCVSoutput-checkpoint.ipynb

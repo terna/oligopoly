@@ -174,10 +174,13 @@ def drawGraph():
 
     #plt.draw()
     if common.IPython and not common.graphicStatus=="PythonViaTerminal":
-        # the and not is about ipython running in a terminal
+        # the 'and not' is about ipython running in a terminal
         plt.title("Links Entrepreneurs - Workers")
     plt.show() # used by %Matplotlib inline [without ion()]; not conflicting
                # with ion()
+
+    if common.graphicStatus == "PythonViaTerminal": plt.pause(0.01)
+    # to show the sequence of the shown images in absence of pauses
 
     #print agentGraph.nodes(data=True)
     #print agentGraph.edges(data=True)

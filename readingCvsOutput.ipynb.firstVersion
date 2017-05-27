@@ -1,0 +1,176 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [],
+   "source": [
+    "%pylab inline\n",
+    "import matplotlib.pyplot as plt\n",
+    "\n",
+    "#import matplotlib\n",
+    "#matplotlib.style.use('ggplot') ## gnuplot style\n",
+    "\n",
+    "import numpy as np\n",
+    "import pandas as pd\n",
+    "\n",
+    "#size\n",
+    "width, height=12,8\n",
+    "plt.rcParams['figure.figsize'] = width, height #aggiunta pt"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [],
+   "source": [
+    "# to chose a csv file in the current folder\n",
+    "import os\n",
+    "filesHere=os.listdir(\"./\")\n",
+    "selected=[]\n",
+    "for i in range(len(filesHere)):\n",
+    "    if filesHere[i].find('.csv')>0: selected.append(filesHere[i])\n",
+    "for i in range(len(selected)):\n",
+    "    print i, selected[i]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [],
+   "source": [
+    "num=input(\"Chosse a file via its number (>=0;<=\"+str(len(selected)-1)+\" \")\n",
+    "df = pd.read_csv(selected[num])\n",
+    "#set index to start from 1\n",
+    "df.index += 1"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [],
+   "source": [
+    "df"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [],
+   "source": [
+    "df.keys()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [],
+   "source": [
+    "df.describe()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [],
+   "source": [
+    "df.corr(method='pearson')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [],
+   "source": [
+    "df.loc[:,['unemployed','totalProfit','totalProduction','plannedProduction']].plot(marker=\"*\",\n",
+    "    color=[\"OrangeRed\",\"LawnGreen\",\"Blue\",\"Violet\"])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [],
+   "source": [
+    "df.loc[:,['price','wage']].plot(marker=\"*\",color=[\"Gray\",\"Brown\"])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [],
+   "source": [
+    "myPlot = df.plot(secondary_y=['price','wage'],marker=\"*\",\n",
+    "color=[\"OrangeRed\",\"LawnGreen\",\"Blue\",\"Violet\",\"Gray\",\"Brown\"]) # legend=False|True|'reverse' || mark_right=False to avoid (rightmark_right=False)\n",
+    "myPlot.set_ylabel('unemployed, totalProfit, totalProduction, plannedProduction')\n",
+    "myPlot.right_ax.set_ylabel('price, wage')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [],
+   "source": [
+    "myPlot = df.plot(secondary_y=['price','wage'],marker=\"*\",\n",
+    "color=[\"OrangeRed\",\"LawnGreen\",\"Blue\",\"Violet\",\"Gray\",\"Brown\"])\n",
+    "myPlot.set_ylabel('unemployed, totalProfit, totalProduction, plannedProduction')\n",
+    "myPlot.right_ax.set_ylabel('price, wage')\n",
+    "myPlot.legend(loc='upper left') #, bbox_to_anchor=(-0.35, 0.5)\n",
+    "myPlot.axes.right_ax.legend(loc='lower right') #, bbox_to_anchor=(1.1, 0.5)"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 2",
+   "language": "python",
+   "name": "python2"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 2
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython2",
+   "version": "2.7.11"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 0
+}
