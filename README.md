@@ -1,7 +1,7 @@
 # Oligopoly
 
 
-Marco Mazzoli, Matteo Morini and Pietro Terna
+Marco Mazzoli, Matteo Morini, and Pietro Terna
 
 The model and its construction are reported in [Oligopoly.pdf](Oligopoly.pdf).
 
