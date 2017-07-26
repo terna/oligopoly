@@ -119,3 +119,7 @@ nodeNumbersInGraph = False
 # step to be executed at end (plus an optional second part added
 # within oActions.py)
 toBeExecuted = "saveTimeSeries()"
+
+# specialAction in observerActions.txt is evatulated to "makeSpecialAction"
+# defined in oActions.py
+specialAction = "makeSpecialAction()"
