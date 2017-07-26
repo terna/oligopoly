@@ -1,1 +1,2 @@
-collectStructuralData modelStep collectTimeSeries visualizePlot visualizeNet Npause clock
+collectStructuralData specialAction modelStep collectTimeSeries visualizePlot
+visualizeNet Npause clock

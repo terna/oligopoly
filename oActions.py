@@ -277,3 +277,16 @@ def saveTimeSeries():
     csvfile.close()
 
     print("Three files with date and hour", tt, "written in oligopoly folder.")
+
+
+
+# special action code, to be activated if the time
+# (cycle) is equal to ...
+#
+def makeSpecialAction():
+
+    if common.cycle == 1:
+        print("doing a special action at time =", common.cycle)
+
+    if common.cycle == 2:
+        print("doing a special action at time =", common.cycle)
