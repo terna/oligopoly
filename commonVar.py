@@ -1,10 +1,24 @@
 # commonVar.py
 
-projectVersion = "5bPy3"
+projectVersion = "5c"
 
-build = "20170611"
+build = "20170729"
 
 debug = False
+
+# function for the management of the paramenters
+def setVar():
+    print(nameValues)
+    globals().update(nameValues)
+
+def check(nn):
+    try:
+        globals()[nn]
+        return (True, globals()[nn])
+    except BaseException:
+        return (False, False)
+
+
 
 # controlling the existence of an agent with number==0 used by reset
 # step in modelActions.txt
