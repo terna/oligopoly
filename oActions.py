@@ -277,3 +277,41 @@ def saveTimeSeries():
     csvfile.close()
 
     print("Three files with date and hour", tt, "written in oligopoly folder.")
+
+
+
+# special action code, to be activated if the time
+# (cycle) is equal to ...
+#
+def makeSpecialAction():
+
+    if common.cycle == 1:
+        print("The special action has to be activated at cycle ... ")
+        common.activationCycle = int(input("-1 if never "))
+
+    if common.cycle == common.activationCycle:
+        print("\n***Special action at time =", common.cycle)
+        print("***Modification of the following parameters\n")
+
+        fIn=open(common.project+"/modPars.txt","r")
+
+        common.nameValues={}
+
+        for line in fIn:
+              lineS=line.split(" ")
+              n=lineS[0]
+
+              try: v=int(lineS[1])
+              except:
+                   try: v=float(lineS[1])
+                   except: v=lineS[1]
+
+              if common.check(n)[0]:
+                print('existing parameter '+n+', former value',\
+                       common.check(n)[1], ' new value ', v,'\n')
+              else:
+                print('added parameter '+n+', value ', v,'\n')
+
+              common.nameValues[n]=v
+
+        fIn.close()
