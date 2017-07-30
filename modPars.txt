@@ -1,2 +1,1 @@
-boh 42
-maxAcceptableOligopolistRelativeIncrement 0.30
+maxAcceptableOligopolistRelativeIncrement 0.40
