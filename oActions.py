@@ -344,6 +344,17 @@ def collectModPars(parName, previousValue, newValue):
                 print("Creation of the modified parameter database\n")
                 # print common.modPars_df
 
+                # recording the modification cycle
+
+                modPars_df2 = pd.DataFrame([\
+                            ["Modifications at time = "+str(common.activationCycle), \
+                             np.NaN, np.NaN]], columns=['parameter', \
+                                              'previousValue','newValue'])
+
+                common.modPars_df = common.modPars_df.append(modPars_df2, \
+                                              ignore_index=True)
+
+                # regular data recording
             modPars_df2 = pd.DataFrame([[parName, previousValue, newValue]],
                                    columns=['parameter', \
                                             'previousValue','newValue'])
