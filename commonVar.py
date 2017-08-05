@@ -2,13 +2,13 @@
 
 projectVersion = "5c"
 
-build = "20170729"
+build = "20170805"
 
 debug = False
 
 # function for the management of the paramenters
 def setVar():
-    print(nameValues)
+    #print(nameValues)
     globals().update(nameValues)
 
 def check(nn):
@@ -137,3 +137,6 @@ toBeExecuted = "saveData()"
 # specialAction in observerActions.txt is evatulated to "makeSpecialAction"
 # defined in oActions.py
 specialAction = "makeSpecialAction()"
+
+# pars definitions to use them in the table of the modified pars
+parsDict={}
