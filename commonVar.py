@@ -2,7 +2,7 @@
 
 projectVersion = "5c"
 
-build = "20170805"
+build = "20170808"
 
 debug = False
 
@@ -137,6 +137,9 @@ toBeExecuted = "saveData()"
 # specialAction in observerActions.txt is evatulated to "makeSpecialAction"
 # defined in oActions.py
 specialAction = "makeSpecialAction()"
+# with
+file_modPars=False
+# as feasibility control
 
 # pars definitions to use them in the table of the modified pars
 parsDict={}

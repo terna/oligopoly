@@ -298,20 +298,26 @@ def saveData():
 def makeSpecialAction():
 
     if common.cycle == 1:
-        print("The special action has to be activated at cycle ... ")
-        common.activationCycle = int(input("-1 if never "))
 
-    if common.cycle == common.activationCycle:
+        files=os.listdir(common.pro)
+
+        if "modPars.txt" in files:
+            common.file_modPars=True
+            print("The special action has to be activated at cycle ... ")
+            common.activationCycle = int(input("-1 if never "))
+
+        else:
+            print("\nWarning: no file 'modPars.txt', the specialAction "+\
+                  "item has no effect.\n\n")
+
+
+
+    if common.file_modPars and common.cycle == common.activationCycle:
         print("\n***Special action at time =", common.cycle)
         print("***Modification of the following parameters\n")
 
-        try:
-            fIn=open(common.pro+"/modPars.txt","r")
-        except BaseException:
-            print ("***Warning: no modifications, missing 'modPars.txt' file.\n")
-            return
-
         common.nameValues={}
+        fIn=open(common.pro+"/modPars.txt","r")
 
         for line in fIn:
               lineS=line.split(" ")
