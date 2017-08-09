@@ -1,1 +1,4 @@
-maxAcceptableOligopolistRelativeIncrement 0.40
+consumptionRandomComponentSD		0
+randomComponentOfPlannedProduction		0
+maxDemandRelativeRandomShock		0
+productionCorrectionPsi			0
