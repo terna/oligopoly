@@ -320,7 +320,9 @@ def makeSpecialAction():
         fIn=open(common.pro+"/modPars.txt","r")
 
         for line in fIn:
-              lineS=line.split(" ")
+              line=line.replace('\t',' ')
+              lineS=line.split() #one or more spaces as a delimiter
+
               n=lineS[0]
 
               if n=="mySeed" or n=="projectVersion" or n=="build" \
@@ -333,6 +335,7 @@ def makeSpecialAction():
               except:
                    try: v=float(lineS[1])
                    except: v=lineS[1]
+
 
               if common.check(n)[0]:
                 print('existing parameter '+n+', former value',\
