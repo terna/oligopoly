@@ -187,8 +187,8 @@ def loadParameters(self):
           (-common.randomComponentOfPlannedProduction * 100, "%",
            common.randomComponentOfPlannedProduction * 100, "%"))
     dataFrameAppend("randomComponentOfPlannedProduction",
-                    "min/max random rel. component of planned production",
-                    -common.randomComponentOfPlannedProduction)  # saving pars
+                    "min(*-1)/max random rel. component of planned production",
+                    common.randomComponentOfPlannedProduction)  # saving pars
 
     print(
         "Absolute barrier to become entrepreneur, max number in a time step: ",
