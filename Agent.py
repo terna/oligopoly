@@ -329,7 +329,7 @@ class Agent(SuperAgent):
         # print "I'm entrepreneur",self.number,"production after correction is",\
         #    self.production
 
-        # individual data collection
+        """# individual data collection
         # creating the dataframe
         try:
             common.productionDataCounter
@@ -348,6 +348,7 @@ class Agent(SuperAgent):
         common.productionDataCounter+=1
         common.firm_df.set_value(common.productionDataCounter,\
                                  'production',self.production)
+        """
 
 
 
@@ -536,9 +537,9 @@ class Agent(SuperAgent):
         # individual data collection
         # creating the dataframe
         try:
-            common.profitDataCounter
+            common.dataCounter
         except BaseException:
-            common.profitDataCounter=-1
+            common.dataCounter=-1
 
         try:
             common.firm_df
@@ -549,8 +550,10 @@ class Agent(SuperAgent):
                         'profit'])
             print("\nCreation of fhe dataframe of the firms (individual data)\n")
 
-        common.profitDataCounter+=1
-        common.firm_df.set_value(common.profitDataCounter,\
+        common.dataCounter+=1
+        common.firm_df.set_value(common.dataCounter,\
+                                 'production',self.production)
+        common.firm_df.set_value(common.dataCounter,\
                                  'profit',self.profit)
 
 
