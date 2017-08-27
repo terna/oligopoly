@@ -342,7 +342,7 @@ class Agent(SuperAgent):
             common.firm_df = pd.DataFrame(
                     columns=[
                         'production',
-                        'totalProfit'])
+                        'profit'])
             print("\nCreation of fhe dataframe of the firms (individual data)\n")
 
         common.productionDataCounter+=1
@@ -546,12 +546,12 @@ class Agent(SuperAgent):
             common.firm_df = pd.DataFrame(
                     columns=[
                         'production',
-                        'totalProfit'])
+                        'profit'])
             print("\nCreation of fhe dataframe of the firms (individual data)\n")
 
         common.profitDataCounter+=1
         common.firm_df.set_value(common.profitDataCounter,\
-                                 'totalProfit',self.profit)
+                                 'profit',self.profit)
 
 
         common.totalProfit += self.profit
