@@ -243,4 +243,9 @@ def saveTimeSeries():
     common.str_df.to_csv(csvfile,index_label=False,index=False)
     csvfile.close()
 
-    print "Three files with date and hour", tt, "written in oligopoly folder."
+    fileName = tt + "_firms.csv"
+    csvfile = open(common.pro + "/" + fileName, "w")
+    common.firm_df.to_csv(csvfile, index_label=False, index=False)
+    csvfile.close()
+
+    print "Four files with date and hour", tt, "written in oligopoly folder."

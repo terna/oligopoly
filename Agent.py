@@ -5,6 +5,7 @@ from random import *
 import graphicDisplayGlobalVarAndFunctions as gvf
 import commonVar as common
 import numpy.random as npr
+import pandas as pd
 
 
 def mySort(ag):
@@ -476,6 +477,30 @@ class Agent(SuperAgent):
         self.profit=common.price * (1.-pv) * self.production - self.costs
         print "I'm entrepreur", self.number, "my price is ",\
               common.price * (1.-pv)
+
+
+        # individual data collection
+        # creating the dataframe
+        try:
+            common.dataCounter
+        except BaseException:
+            common.dataCounter=-1
+
+        try:
+            common.firm_df
+        except BaseException:
+            common.firm_df = pd.DataFrame(
+                    columns=[
+                        'production',
+                        'profit'])
+            print("\nCreation of fhe dataframe of the firms (individual data)\n")
+
+        common.dataCounter+=1
+        common.firm_df.set_value(common.dataCounter,\
+                                 'production',self.production)
+        common.firm_df.set_value(common.dataCounter,\
+                                 'profit',self.profit)
+
 
         common.totalProfit+=self.profit
 
