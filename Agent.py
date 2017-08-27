@@ -5,7 +5,7 @@ from random import *
 import graphicDisplayGlobalVarAndFunctions as gvf
 import commonVar as common
 import numpy.random as npr
-
+import pandas as pd
 
 def mySort(ag):
     if ag == []:
@@ -329,6 +329,28 @@ class Agent(SuperAgent):
         # print "I'm entrepreneur",self.number,"production after correction is",\
         #    self.production
 
+        # individual data collection
+        # creating the dataframe
+        try:
+            common.productionDataCounter
+        except BaseException:
+            common.productionDataCounter=-1
+
+        try:
+            common.firm_df
+        except BaseException:
+            common.firm_df = pd.DataFrame(
+                    columns=[
+                        'production',
+                        'totalProfit'])
+            print("\nCreation of fhe dataframe of the firms (individual data)\n")
+
+        common.productionDataCounter+=1
+        common.firm_df.set_value(common.productionDataCounter,\
+                                 'production',self.production)
+
+
+
         # totalProductionInA_TimeStep
         common.totalProductionInA_TimeStep += self.production
         # having a copy, that is update after each agent's action
@@ -510,9 +532,31 @@ class Agent(SuperAgent):
         print("I'm entrepreur", self.number, "my price is ",
               common.price * (1. - pv))
 
+
+        # individual data collection
+        # creating the dataframe
+        try:
+            common.profitDataCounter
+        except BaseException:
+            common.profitDataCounter=-1
+
+        try:
+            common.firm_df
+        except BaseException:
+            common.firm_df = pd.DataFrame(
+                    columns=[
+                        'production',
+                        'totalProfit'])
+            print("\nCreation of fhe dataframe of the firms (individual data)\n")
+
+        common.profitDataCounter+=1
+        common.firm_df.set_value(common.profitDataCounter,\
+                                 'totalProfit',self.profit)
+
+
         common.totalProfit += self.profit
 
-    # compensation
+    # consumptions
     def planConsumptionInValue(self):
         self.consumption = 0
         #case (1)

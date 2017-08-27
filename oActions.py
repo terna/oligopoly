@@ -279,16 +279,21 @@ def saveData():
     common.str_df.to_csv(csvfile, index_label=False, index=False)
     csvfile.close()
 
+    fileName = tt + "_firms.csv"
+    csvfile = open(common.pro + "/" + fileName, "w")
+    common.firm_df.to_csv(csvfile, index_label=False, index=False)
+    csvfile.close()
+
     # the common.modPars_df can be missing
     try:
         common.modPars_df
         fileName = tt + "_modPars.csv"
         csvfile = open(common.pro + "/" + fileName, "w")
         common.modPars_df.to_csv(csvfile, index_label=False, index=False)
-        print("Four files with date and hour", tt, "written in oligopoly folder.")
+        print("Five files with date and hour", tt, "written in oligopoly folder.")
 
     except BaseException:
-        print("Three files with date and hour", tt, "written in oligopoly folder.")
+        print("Four files with date and hour", tt, "written in oligopoly folder.")
 
 
 
