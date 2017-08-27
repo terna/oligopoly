@@ -329,28 +329,6 @@ class Agent(SuperAgent):
         # print "I'm entrepreneur",self.number,"production after correction is",\
         #    self.production
 
-        """# individual data collection
-        # creating the dataframe
-        try:
-            common.productionDataCounter
-        except BaseException:
-            common.productionDataCounter=-1
-
-        try:
-            common.firm_df
-        except BaseException:
-            common.firm_df = pd.DataFrame(
-                    columns=[
-                        'production',
-                        'profit'])
-            print("\nCreation of fhe dataframe of the firms (individual data)\n")
-
-        common.productionDataCounter+=1
-        common.firm_df.set_value(common.productionDataCounter,\
-                                 'production',self.production)
-        """
-
-
 
         # totalProductionInA_TimeStep
         common.totalProductionInA_TimeStep += self.production
