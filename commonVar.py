@@ -1,8 +1,8 @@
 # commonVar.py
 
-projectVersion = "5c_fd"
+projectVersion = "develHayekianMarket"
 
-build = "20170827"
+build = "20170903"
 
 debug = False
 
