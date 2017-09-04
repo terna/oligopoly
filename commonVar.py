@@ -1,6 +1,6 @@
 # commonVar.py
 
-projectVersion = "develHayekianMarket, will be 6"
+projectVersion = "develHayekianMarket, will be 6,"
 
 build = "20170904"
 
@@ -127,6 +127,8 @@ maxDemandRelativeRandomShock = 0.15  # was 0.10 #was 0.20
 # threshold toWorker
 thresholdToWorker = -0.20
 
+# when to start the hayekian market
+startHayekian = 6
 
 nodeNumbersInGraph = False
 

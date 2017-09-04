@@ -271,6 +271,13 @@ def loadParameters(self):
     dataFrameAppend("penaltyValue","price penalty for the firms if work troubles",
                     common.penaltyValue)  # saving par
 
+    print("\nHayekian market starts at cycle = %3d\n" %
+            common.startHayekian)
+    dataFrameAppend("startHayekian",
+                        "cycle to starts the hayekian market",
+                        common.startHayekian)  # saving pars
+
+
     # cycles
     self.nCycles = eval(input("How many cycles? (0 = exit) "))
 
