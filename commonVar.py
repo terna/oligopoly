@@ -1,6 +1,6 @@
 # commonVar.py
 
-projectVersion = "develHayekianMarket"
+projectVersion = "develHayekianMarket, will be 6"
 
 build = "20170903"
 
