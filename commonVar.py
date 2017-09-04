@@ -2,7 +2,7 @@
 
 projectVersion = "develHayekianMarket, will be 6"
 
-build = "20170903"
+build = "20170904"
 
 debug = False
 
