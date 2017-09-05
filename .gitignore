@@ -5,7 +5,3 @@ schedule.txt
 .ipynb_checkpoints/readingCVSoutput-checkpoint.ipynb
 
 *.ipynb
-
-*.xls
-
-*.txt
