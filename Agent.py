@@ -6,6 +6,7 @@ import graphicDisplayGlobalVarAndFunctions as gvf
 import commonVar as common
 import numpy.random as npr
 import pandas as pd
+import os
 
 def mySort(ag):
     if ag == []:
@@ -43,7 +44,7 @@ class Agent(SuperAgent):
         self.employed = False
         self.extraCostsResidualDuration = 0
 
-        if agType == 'workers':
+        if agType == 'workers': #useful in initial creation
             common.orderedListOfNodes.append(self)
             # use to keep the order
             # in output (ex. adjacency matrix)
@@ -55,7 +56,7 @@ class Agent(SuperAgent):
 
             self.workTroubles = 0
 
-        if agType == 'entrepreneurs':
+        if agType == 'entrepreneurs': #useful in initial creation
             common.orderedListOfNodes.append(self)
             # use to keep the order
             # in output (ex. adjacency matrix)
@@ -81,6 +82,15 @@ class Agent(SuperAgent):
         # to be used to clone (if any)
         self.xPos = xPos
         self.yPos = yPos
+
+        # price memory
+        self.lastBuyPrice  = 1 #tmp @@
+        self.lastSellPrice = 1 #tmp @@
+
+        # consumption planning for the current cycle
+        # if the planning has been made, the variable contains
+        # the number of the cycle
+        self.consumptionPlanningInCycleNumber = -1
 
     # talk
     def talk(self):
@@ -407,6 +417,8 @@ class Agent(SuperAgent):
 
     # adaptProductionPlanV6
     def adaptProductionPlanV6(self):
+
+        # pre hayekian period
         if common.cycle > 1 and common.cycle < common.startHayekianMarket:
             nEntrepreneurs = 0
             for ag in self.agentList:
@@ -444,6 +456,54 @@ class Agent(SuperAgent):
             common.totalPlannedProduction += self.plannedProduction
             # print "entrepreneur", self.number, "plan", self.plannedProduction,\
             #    "total", common.totalPlannedProduction
+
+        # hayekian period
+        if common.cycle >= common.startHayekianMarket:
+            if common.startHayekianMarket <=1:
+               print("startHayekianMarket must be > 1")
+               os.sys.exit(1)
+
+            nEntrepreneurs = 0
+            for ag in self.agentList:
+                if ag.agType == "entrepreneurs":
+                    nEntrepreneurs += 1
+
+
+            self.plannedProduction = (common.totalDemandInPrevious_TimeStep /
+                                      #previuosPrice) \ # tmp tmp @@
+                                      self.lastSellPrice) \
+                / nEntrepreneurs
+
+            shock = uniform(
+                -common.randomComponentOfPlannedProduction,
+                common.randomComponentOfPlannedProduction)
+
+            if shock >= 0:
+                self.plannedProduction *= (1. + shock)
+
+            if shock < 0:
+                shock *= -1.
+                self.plannedProduction /= (1. + shock)
+            # print self.number, self.plannedProduction
+
+            common.totalPlannedProduction += self.plannedProduction
+            # print "entrepreneur", self.number, "plan", self.plannedProduction,\
+            #    "total", common.totalPlannedProduction
+
+    # all acting as consumers on the market place
+    def actOnMarketPlace(self):
+        if common.cycle < common.startHayekianMarket: return
+
+        # this function checks that the plaiing of the consumtion has been
+        # made for the current cycle
+
+        if self.consumptionPlanningInCycleNumber != common.cycle:
+            print('Attempt of using actOnMarketPlace method before the\n'+\
+                  ' consumpion planning')
+            os.sys.exit(1)
+
+
+
 
     # calculateProfit V0
     def evaluateProfitV0(self):
@@ -650,6 +710,8 @@ class Agent(SuperAgent):
         # update totalPlannedConsumptionInValueInA_TimeStep
         common.totalPlannedConsumptionInValueInA_TimeStep += self.consumption
         # print "C sum", common.totalPlannedConsumptionInValueInA_TimeStep
+
+        self.consumptionPlanningInCycleNumber=common.cycle
 
     # to entrepreneur
     def toEntrepreneur(self):
