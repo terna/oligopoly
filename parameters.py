@@ -272,10 +272,10 @@ def loadParameters(self):
                     common.penaltyValue)  # saving par
 
     print("\nHayekian market starts at cycle = %3d\n" %
-            common.startHayekian)
+            common.startHayekianMarket)
     dataFrameAppend("startHayekian",
                         "cycle to starts the hayekian market",
-                        common.startHayekian)  # saving pars
+                        common.startHayekianMarket)  # saving pars
 
 
     # cycles

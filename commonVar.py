@@ -2,7 +2,7 @@
 
 projectVersion = "develHayekianMarket, will be 6,"
 
-build = "20170904"
+build = "20170908"
 
 debug = False
 
@@ -103,6 +103,8 @@ firingThreshold = 0
 # macro variables
 totalProductionInA_TimeStep = 0
 totalPlannedConsumptionInValueInA_TimeStep = 0
+totalConsumptionInQuantityInA_TimeStep = 0
+totalConsumptionInQuantityInPrevious_TimeStep = 0
 
 # Poisson mean in makeProoductionPlan, will be modified in paramenters.py
 # in the function loadParameters
@@ -128,7 +130,7 @@ maxDemandRelativeRandomShock = 0.15  # was 0.10 #was 0.20
 thresholdToWorker = -0.20
 
 # when to start the hayekian market
-startHayekian = 6
+startHayekianMarket = 6
 
 nodeNumbersInGraph = False
 

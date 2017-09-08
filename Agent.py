@@ -41,6 +41,7 @@ class Agent(SuperAgent):
         self.profit = 0
         self.plannedProduction = 0
         self.consumption = 0
+        self.consumptionQuantity=0
         self.employed = False
         self.extraCostsResidualDuration = 0
 
@@ -105,8 +106,30 @@ class Agent(SuperAgent):
             print("Missing that agent, all the agents are resetting common values")
 
         if self.number == 1 or not common.agent1existing:
+
+            # introduced with V6
+            # V6 reset block starts hene
+            if common.cycle == common.startHayekianMarket:
+                common.totalConsumptionInQuantityInPrevious_TimeStep = \
+                common.totalPlannedConsumptionInValueInA_TimeStep
+
+            elif common.cycle > common.startHayekianMarket:
+                if len(common.ts_df.price.values) == 1:
+                    previuosPrice = common.ts_df.price.values[-1]  # t=2
+                if len(common.ts_df.price.values) > 1:
+                    previuosPrice = common.ts_df.price.values[-2]  # t>2
+                # NB adapt acts from t>1
+
+                common.totalConsumptionInQuantityInPrevious_TimeStep = \
+                   common.totalPlannedConsumptionInValueInA_TimeStep / \
+                   previuosPrice
+
+            common.totalConsumptionInQuantityInA_TimeStep = 0
+            # v6 reset block ends here
+
             common.totalProductionInA_TimeStep = 0
             common.totalPlannedConsumptionInValueInA_TimeStep = 0
+
             common.totalProfit = 0
             common.totalPlannedProduction = 0
 
@@ -425,10 +448,6 @@ class Agent(SuperAgent):
                 if ag.agType == "entrepreneurs":
                     nEntrepreneurs += 1
 
-            # previous period price
-            #print ("++++++++++++++++++++++", common.ts_df.price.values[-1])
-            #print ("&&&&&&&&&&&&&&&&&&&&&&",len(common.ts_df.price.values))
-
             if len(common.ts_df.price.values) == 1:
                 previuosPrice = common.ts_df.price.values[-1]  # t=2
             if len(common.ts_df.price.values) > 1:
@@ -461,7 +480,8 @@ class Agent(SuperAgent):
         if common.cycle >= common.startHayekianMarket:
             if common.startHayekianMarket <=1:
                print("startHayekianMarket must be > 1")
-               os.sys.exit(1)
+               os.sys.exit(1) # to stop the execution, in the calling module
+                              # we have multiple except, with 'SystemExit' case
 
             nEntrepreneurs = 0
             for ag in self.agentList:
@@ -469,10 +489,9 @@ class Agent(SuperAgent):
                     nEntrepreneurs += 1
 
 
-            self.plannedProduction = (common.totalDemandInPrevious_TimeStep /
-                                      #previuosPrice) \ # tmp tmp @@
-                                      self.lastSellPrice) \
-                / nEntrepreneurs
+            self.plannedProduction = \
+                      common.totalConsumptionInQuantityInPrevious_TimeStep \
+                      / nEntrepreneurs
 
             shock = uniform(
                 -common.randomComponentOfPlannedProduction,
@@ -494,14 +513,23 @@ class Agent(SuperAgent):
     def actOnMarketPlace(self):
         if common.cycle < common.startHayekianMarket: return
 
-        # this function checks that the plaiing of the consumtion has been
+        # the function checks that the planning of the consumtion has been
         # made for the current cycle
 
         if self.consumptionPlanningInCycleNumber != common.cycle:
-            print('Attempt of using actOnMarketPlace method before the\n'+\
-                  ' consumpion planning')
-            os.sys.exit(1)
+            print('Attempt of using actOnMarketPlace method before'+\
+                  ' consumption planning')
+            os.sys.exit(1) # to stop the execution, in the calling module
+                           # we have multiple except, with 'SystemExit' case
 
+        self.consumptionQuantity = self.consumption / self.lastBuyPrice
+
+        # update totalPlannedConsumptionInQuantityInA_TimeStep
+
+        # this is a temporary solution; the sum has to come from
+        # individual actual actions
+        common.totalConsumptionInQuantityInA_TimeStep += \
+                                                 self.consumptionQuantity
 
 
 
