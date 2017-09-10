@@ -93,6 +93,12 @@ class Agent(SuperAgent):
         # the number of the cycle
         self.consumptionPlanningInCycleNumber = -1
 
+        # first call in a cycle
+        self.firstCallInACycle = -1
+
+        # seller list in actOnMarketPlace
+        self.sellerList=[]
+
     # talk
     def talk(self):
         print(self.agType, self.number)
@@ -110,19 +116,19 @@ class Agent(SuperAgent):
             # introduced with V6
             # V6 reset block starts hene
             if common.cycle == common.startHayekianMarket:
+                if len(common.ts_df.price.values) == 1:
+                   previuosPrice = common.ts_df.price.values[-1]  # t=2
+                if len(common.ts_df.price.values) > 1:
+                   previuosPrice = common.ts_df.price.values[-2]  # t>2
+                # NB the code above can act only from t>1
+
                 common.totalConsumptionInQuantityInPrevious_TimeStep = \
-                common.totalPlannedConsumptionInValueInA_TimeStep
+                common.totalPlannedConsumptionInValueInA_TimeStep  \
+                / previuosPrice
 
             elif common.cycle > common.startHayekianMarket:
-                if len(common.ts_df.price.values) == 1:
-                    previuosPrice = common.ts_df.price.values[-1]  # t=2
-                if len(common.ts_df.price.values) > 1:
-                    previuosPrice = common.ts_df.price.values[-2]  # t>2
-                # NB adapt acts from t>1
-
                 common.totalConsumptionInQuantityInPrevious_TimeStep = \
-                   common.totalPlannedConsumptionInValueInA_TimeStep / \
-                   previuosPrice
+                   common.totalConsumptionInQuantityInA_TimeStep
 
             common.totalConsumptionInQuantityInA_TimeStep = 0
             # v6 reset block ends here
@@ -522,15 +528,28 @@ class Agent(SuperAgent):
             os.sys.exit(1) # to stop the execution, in the calling module
                            # we have multiple except, with 'SystemExit' case
 
-        self.consumptionQuantity = self.consumption / self.lastBuyPrice
+        # first call in a cycle, acting only once
+        if self.firstCallInACycle != common.cycle:
+           self.firstCallInACycle = common.cycle
 
-        # update totalPlannedConsumptionInQuantityInA_TimeStep
+           self.consumptionQuantity = self.consumption / self.lastBuyPrice
 
-        # this is a temporary solution; the sum has to come from
-        # individual actual actions
-        common.totalConsumptionInQuantityInA_TimeStep += \
+           # update totalPlannedConsumptionInQuantityInA_TimeStep
+
+           # this is a temporary solution; the sum has to come from
+           # individual actual actions
+           common.totalConsumptionInQuantityInA_TimeStep += \
                                                  self.consumptionQuantity
 
+           # create a tmp list of sellers
+           self.sellerList=[]
+           for anAg in self.agentList:
+               if anAg.getType() == "entrepreneurs":
+                   self.sellerList.append(anAg)
+
+        # choosing a seller
+        aSeller=choice(self.sellerList) #choice from random lib
+        #print("£$£$£$£$£$£$£$£$£$ ", self.number, aSeller.number, aSeller.getType())
 
 
     # calculateProfit V0
@@ -898,3 +917,7 @@ class Agent(SuperAgent):
     # get graph
     def getGraph(self):
         return common.g
+
+    # get type
+    def getType(self):
+        return self.agType
