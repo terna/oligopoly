@@ -283,6 +283,12 @@ def loadParameters(self):
                         "correction of starting prices in h. market",
                         common.initShock)  # saving pars
 
+    print("\nAsymmetry in individual starting prices (h. market) = %3d\n" %
+            common.correctionAsymmetry)
+    dataFrameAppend("correctionAsymmetry",
+                        "asymmetry in individual starting prices (h. market)",
+                        common.correctionAsymmetry)  # saving pars
+
     # cycles
     self.nCycles = eval(input("How many cycles? (0 = exit) "))
 
