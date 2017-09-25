@@ -132,6 +132,9 @@ thresholdToWorker = -0.20
 # when to start the hayekian market
 startHayekianMarket = 6
 
+# Range of the correction of agent starting prices
+initShock = 0.5
+
 nodeNumbersInGraph = False
 
 # step to be executed at end (plus an optional second part added

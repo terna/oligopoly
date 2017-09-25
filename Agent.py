@@ -120,7 +120,7 @@ class Agent(SuperAgent):
                    previuosPrice = common.ts_df.price.values[-1]  # t=2
                 if len(common.ts_df.price.values) > 1:
                    previuosPrice = common.ts_df.price.values[-2]  # t>2
-                # NB the code above can act only from t>1
+                # NB the code above can act only if t>1
 
                 common.totalConsumptionInQuantityInPrevious_TimeStep = \
                 common.totalPlannedConsumptionInValueInA_TimeStep  \
@@ -547,9 +547,15 @@ class Agent(SuperAgent):
                if anAg.getType() == "entrepreneurs":
                    self.sellerList.append(anAg)
 
+           # setting the price in the first hayekian step in a cycle
+           if len(common.ts_df.price.values) > 1:
+              self.lastBuyPrice  = self.lastSellPrice = \
+                      common.ts_df.price.values[-1]
+           # NB the code above can act only from t>1
+
         # choosing a seller
         aSeller=choice(self.sellerList) #choice from random lib
-        #print("£$£$£$£$£$£$£$£$£$ ", self.number, aSeller.number, aSeller.getType())
+        #print("$$$$$$$$$$$ ", self.number, aSeller.number, aSeller.getType())
 
 
     # calculateProfit V0

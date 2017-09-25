@@ -277,6 +277,11 @@ def loadParameters(self):
                         "cycle to starts the hayekian market",
                         common.startHayekianMarket)  # saving pars
 
+    print("\nRange of the correction of agent starting prices in h. market = %3d\n" %
+            common.initShock)
+    dataFrameAppend("initShock",
+                        "correction of starting prices in h. market",
+                        common.initShock)  # saving pars
 
     # cycles
     self.nCycles = eval(input("How many cycles? (0 = exit) "))
