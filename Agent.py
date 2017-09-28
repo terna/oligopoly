@@ -519,6 +519,21 @@ class Agent(SuperAgent):
     def actOnMarketPlace(self):
         if common.cycle < common.startHayekianMarket: return
 
+        if common.cycle == common.startHayekianMarket:
+           # setting the price in the first hayekian step in a cycle
+           if len(common.ts_df.price.values) > 1:
+              self.lastBuyPrice  = self.lastSellPrice = \
+                      common.ts_df.price.values[-1]
+              self.lastBuyPrice *= 1 + \
+                   uniform(-common.correctionAsymmetry*common.initShock, \
+                           (1-common.correctionAsymmetry)*common.initShock)
+              self.lastSellPrice *= 1+ \
+                   uniform(-(1-common.correctionAsymmetry)*common.initShock, \
+                           common.correctionAsymmetry*common.initShock)
+              print(self.number,self.lastBuyPrice,self.lastSellPrice)
+           # NB the code above can act only if t>1
+
+
         # the function checks that the planning of the consumtion has been
         # made for the current cycle
 
@@ -528,10 +543,11 @@ class Agent(SuperAgent):
             os.sys.exit(1) # to stop the execution, in the calling module
                            # we have multiple except, with 'SystemExit' case
 
-        # first call in a cycle, acting only once
+        # first call in a cycle, acting only once per cycle
         if self.firstCallInACycle != common.cycle:
            self.firstCallInACycle = common.cycle
 
+           # TO BE modified
            self.consumptionQuantity = self.consumption / self.lastBuyPrice
 
            # update totalPlannedConsumptionInQuantityInA_TimeStep
@@ -547,11 +563,6 @@ class Agent(SuperAgent):
                if anAg.getType() == "entrepreneurs":
                    self.sellerList.append(anAg)
 
-           # setting the price in the first hayekian step in a cycle
-           if len(common.ts_df.price.values) > 1:
-              self.lastBuyPrice  = self.lastSellPrice = \
-                      common.ts_df.price.values[-1]
-           # NB the code above can act only from t>1
 
         # choosing a seller
         aSeller=choice(self.sellerList) #choice from random lib
