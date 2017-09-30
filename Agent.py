@@ -99,6 +99,14 @@ class Agent(SuperAgent):
         # seller list in actOnMarketPlace
         self.sellerList=[]
 
+        # status to be used in actOnMarketPlace
+        #  0 means never used
+        #  1 if previous action was a successful buy attempt
+        # -1 if previous action was an unsuccessful buy attempt
+        #  2 if previous action was a successful sell attempt
+        # -2 if previous action was an unsuccessful sell attempt
+        self.status = 0
+
     # talk
     def talk(self):
         print(self.agType, self.number)
@@ -525,11 +533,11 @@ class Agent(SuperAgent):
               self.lastBuyPrice  = self.lastSellPrice = \
                       common.ts_df.price.values[-1]
               self.lastBuyPrice *= 1 + \
-                   uniform(-common.correctionAsymmetry*common.initShock, \
-                           (1-common.correctionAsymmetry)*common.initShock)
+                   uniform(-common.initAsymmetry*common.initShock, \
+                           (1-common.initAsymmetry)*common.initShock)
               self.lastSellPrice *= 1+ \
-                   uniform(-(1-common.correctionAsymmetry)*common.initShock, \
-                           common.correctionAsymmetry*common.initShock)
+                   uniform(-(1-common.initAsymmetry)*common.initShock, \
+                           common.initAsymmetry*common.initShock)
               print(self.number,self.lastBuyPrice,self.lastSellPrice)
            # NB the code above can act only if t>1
 

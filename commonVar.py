@@ -134,8 +134,13 @@ startHayekianMarket = 6
 
 # Range of the correction of agent starting prices (h. market)
 initShock = 0.5
-# asymmetry in individual starting prices (h. market)
-correctionAsymmetry = 0.75
+# initial asymmetry in individual starting prices (h. market)
+initAsymmetry = 0.75
+
+# Range of the correction of agent current price (h. market), as buyer/seller
+runningShock = 0.1
+# current asymmetry in individual price correction (h. market)
+runningAsymmetry = 0.9
 
 nodeNumbersInGraph = False
 
