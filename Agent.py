@@ -85,8 +85,8 @@ class Agent(SuperAgent):
         self.yPos = yPos
 
         # price memory
-        self.lastBuyPrice  = 1 #tmp @@
-        self.lastSellPrice = 1 #tmp @@
+        self.buyPrice  = 1
+        self.sellPrice = 1
 
         # consumption planning for the current cycle
         # if the planning has been made, the variable contains
@@ -106,6 +106,9 @@ class Agent(SuperAgent):
         #  2 if previous action was a successful sell attempt
         # -2 if previous action was an unsuccessful sell attempt
         self.status = 0
+
+        # price warming has to be done only once (hayekian market)
+        self.priceWarmingDone = False
 
     # talk
     def talk(self):
@@ -527,54 +530,101 @@ class Agent(SuperAgent):
     def actOnMarketPlace(self):
         if common.cycle < common.startHayekianMarket: return
 
-        if common.cycle == common.startHayekianMarket:
-           # setting the price in the first hayekian step in a cycle
+        if common.cycle == common.startHayekianMarket and \
+           not self.priceWarmingDone:
+           # setting the price in the first hayekian step in a run
+           # (price warming)
            if len(common.ts_df.price.values) > 1:
-              self.lastBuyPrice  = self.lastSellPrice = \
+              self.buyPrice  = self.sellPrice = \
                       common.ts_df.price.values[-1]
-              self.lastBuyPrice *= 1 + \
+              self.buyPrice *= 1 + \
                    uniform(-common.initAsymmetry*common.initShock, \
                            (1-common.initAsymmetry)*common.initShock)
-              self.lastSellPrice *= 1+ \
+              self.sellPrice *= 1+ \
                    uniform(-(1-common.initAsymmetry)*common.initShock, \
                            common.initAsymmetry*common.initShock)
-              print(self.number,self.lastBuyPrice,self.lastSellPrice)
+              self.priceWarmingDone = True
+              print(self.number,self.buyPrice,self.sellPrice)
            # NB the code above can act only if t>1
 
 
-        # the function checks that the planning of the consumtion has been
-        # made for the current cycle
-
-        if self.consumptionPlanningInCycleNumber != common.cycle:
-            print('Attempt of using actOnMarketPlace method before'+\
-                  ' consumption planning')
-            os.sys.exit(1) # to stop the execution, in the calling module
-                           # we have multiple except, with 'SystemExit' case
 
         # first call in a cycle, acting only once per cycle
         if self.firstCallInACycle != common.cycle:
            self.firstCallInACycle = common.cycle
 
-           # TO BE modified
-           self.consumptionQuantity = self.consumption / self.lastBuyPrice
-
-           # update totalPlannedConsumptionInQuantityInA_TimeStep
-
-           # this is a temporary solution; the sum has to come from
-           # individual actual actions
-           common.totalConsumptionInQuantityInA_TimeStep += \
-                                                 self.consumptionQuantity
-
+           # the step checks that the planning of the consumtion has been
+           # made for the current cycle
+           if self.consumptionPlanningInCycleNumber != common.cycle:
+               print('Attempt of using actOnMarketPlace method before'+\
+                     ' consumption planning')
+               os.sys.exit(1) # to stop the execution, in the calling module
+                           # we have multiple except, with 'SystemExit' case
            # create a tmp list of sellers
            self.sellerList=[]
            for anAg in self.agentList:
                if anAg.getType() == "entrepreneurs":
                    self.sellerList.append(anAg)
 
+           # TO BE modified
+           # to be excecuted only once in each cycle, at the beginning
+           self.consumptionQuantity = self.consumption / self.buyPrice
+
+
+           # TO BE modified and to be placed after each sub step in a cycle
+           # update totalPlannedConsumptionInQuantityInA_TimeStep
+           # this is a temporary solution; the sum has to come from
+           # individual actual actions
+           common.totalConsumptionInQuantityInA_TimeStep += \
+                                                 self.consumptionQuantity
+
+
+        # correcting running prices
+
+        # to be skipped if the hayekian market just started
+        # if the status is != 0 we are after the first absolute
+        # hayekian substep
+
+        if self.status == 1:  # buyer case (status 1, successful buy attempt)
+           self.buyPrice *= 1 + uniform(-common.runningAsymmetry* \
+                                        common.runningShock, \
+                                        (1-common.runningAsymmetry)* \
+                                        common.runningShock)
+           print(self.number, 1, self.buyPrice, self.sellPrice)
+
+        if self.status == -1:  # buyer case (status -1, unsuccessful buy attemp)
+           self.buyPrice *= 1 + uniform(-(1-common.runningAsymmetry)* \
+                                        common.runningShock, \
+                                        common.runningAsymmetry* \
+                                        common.runningShock)
+           print(self.number, -1, self.buyPrice, self.sellPrice)
+
+        if self.status == 2:  # seller case (status 2, successful sell attempt)
+           self.sellPrice *= 1 + uniform(-(1-common.runningAsymmetry)* \
+                                        common.runningShock, \
+                                        common.runningAsymmetry* \
+                                        common.runningShock)
+           print(self.number, 2, self.buyPrice, self.sellPrice)
+
+        if self.status == -2:  # seller case (status -2, unsuccessful sell attempt)
+           self.sellPrice *= 1 + uniform(-common.runningAsymmetry* \
+                                        common.runningShock, \
+                                        (1-common.runningAsymmetry)* \
+                                        common.runningShock)
+           print(self.number, -2, self.buyPrice, self.sellPrice)
+
+
 
         # choosing a seller
-        aSeller=choice(self.sellerList) #choice from random lib
+        if self.sellerList != []:
+            aSeller=choice(self.sellerList) #choice from random lib
+        else:
+            print("Warning, impossible to buy, no entrepreneurs/sellers.")
+            return
         #print("$$$$$$$$$$$ ", self.number, aSeller.number, aSeller.getType())
+
+        # TMP TMP TMP
+        self.status = -2
 
 
     # calculateProfit V0
