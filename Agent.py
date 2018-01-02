@@ -460,11 +460,13 @@ class Agent(SuperAgent):
 
         # pre hayekian period
         if common.cycle > 1 and common.cycle < common.startHayekianMarket:
+            # count of the entrepreneur number
             nEntrepreneurs = 0
             for ag in self.agentList:
                 if ag.agType == "entrepreneurs":
                     nEntrepreneurs += 1
 
+            # with the scheme of prices until V.5c_fd
             if len(common.ts_df.price.values) == 1:
                 previuosPrice = common.ts_df.price.values[-1]  # t=2
             if len(common.ts_df.price.values) > 1:
@@ -474,8 +476,6 @@ class Agent(SuperAgent):
             self.plannedProduction = (common.totalDemandInPrevious_TimeStep /
                                       previuosPrice) \
                 / nEntrepreneurs
-
-            #self.plannedProduction += gauss(0,self.plannedProduction/10)
 
             shock = uniform(
                 -common.randomComponentOfPlannedProduction,
@@ -566,7 +566,6 @@ class Agent(SuperAgent):
                if anAg.getType() == "entrepreneurs":
                    self.sellerList.append(anAg)
 
-           # TO BE modified
            # to be excecuted only once in each cycle, at the beginning
            self.consumptionQuantity = self.consumption / self.buyPrice
 
@@ -622,6 +621,12 @@ class Agent(SuperAgent):
             print("Warning, impossible to buy, no entrepreneurs/sellers.")
             return
         #print("$$$$$$$$$$$ ", self.number, aSeller.number, aSeller.getType())
+
+        residuo prodotto di aSeller
+        se buyPrice >= sellPrice ||| buyer va in status 1 e seller in status 2
+        diminisce il prodotto del seller (che registra il ricavo) e il fabbisogno
+        del buyer
+
 
         # TMP TMP TMP
         self.status = -2
