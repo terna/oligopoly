@@ -131,7 +131,7 @@ class Agent(SuperAgent):
                    previuosPrice = common.ts_df.price.values[-1]  # t=2
                 if len(common.ts_df.price.values) > 1:
                    previuosPrice = common.ts_df.price.values[-2]  # t>2
-                # NB the code above can act only if t>1
+                # the code above can act only if t>1
 
                 common.totalConsumptionInQuantityInPrevious_TimeStep = \
                 common.totalPlannedConsumptionInValueInA_TimeStep  \
@@ -145,6 +145,7 @@ class Agent(SuperAgent):
             # v6 reset block ends here
 
             common.totalProductionInA_TimeStep = 0
+            #if common.cycle<common.startHayekianMarket:
             common.totalPlannedConsumptionInValueInA_TimeStep = 0
 
             common.totalProfit = 0
@@ -255,7 +256,8 @@ class Agent(SuperAgent):
             n = laborForce0 - laborForceRequired
 
             # the list of the employees of the firm
-            entrepreneurWorkers = gvf.nx.neighbors(common.g, self)
+            #entrepreneurWorkers = gvf.nx.neighbors(common.g, self) with nx 2.0
+            entrepreneurWorkers = list(common.g.neighbors(self))
             # print "entrepreneur", self.number, "could fire",
             # entrepreneurWorkers
 
@@ -297,7 +299,8 @@ class Agent(SuperAgent):
             return
 
         # the list of the employees of the firm
-        entrepreneurWorkers = gvf.nx.neighbors(common.g, self)
+        #entrepreneurWorkers = gvf.nx.neighbors(common.g, self) with nx 2.0
+        entrepreneurWorkers = list(common.g.neighbors(self))
         # print "entrepreneur", self.number, "could fire", entrepreneurWorkers
 
         # the list returnes by nx is unstable as order
@@ -532,8 +535,12 @@ class Agent(SuperAgent):
 
         if common.cycle == common.startHayekianMarket and \
            not self.priceWarmingDone:
+
            # setting the price in the first hayekian step in a run
-           # (price warming)
+           # (after price warming); maybe in the first hayekian cycle
+           # we have several actions on the market, so the control above
+           # (and not self.priceWarmingDone) stops the execution in
+           # the successive substeps
            if len(common.ts_df.price.values) > 1:
               self.buyPrice  = self.sellPrice = \
                       common.ts_df.price.values[-1]
@@ -544,9 +551,11 @@ class Agent(SuperAgent):
                    uniform(-(1-common.initAsymmetry)*common.initShock, \
                            common.initAsymmetry*common.initShock)
               self.priceWarmingDone = True
-              print(self.number,self.buyPrice,self.sellPrice)
+              print("Ag.", self.number,"buying at", self.buyPrice,
+                                       "selling at",self.sellPrice)
+              if self.buyPrice >= self.sellPrice:
+                  print ("buyPrice >= sellPrice")
            # NB the code above can act only if t>1
-
 
 
         # first call in a cycle, acting only once per cycle
@@ -560,13 +569,15 @@ class Agent(SuperAgent):
                      ' consumption planning')
                os.sys.exit(1) # to stop the execution, in the calling module
                            # we have multiple except, with 'SystemExit' case
+
            # create a tmp list of sellers
            self.sellerList=[]
            for anAg in self.agentList:
                if anAg.getType() == "entrepreneurs":
                    self.sellerList.append(anAg)
 
-           # to be excecuted only once in each cycle, at the beginning
+           # to be excecuted only once in each cycle, in the first call
+           # self.consumption is the individual planned value of consumption
            self.consumptionQuantity = self.consumption / self.buyPrice
 
 
@@ -577,7 +588,7 @@ class Agent(SuperAgent):
            common.totalConsumptionInQuantityInA_TimeStep += \
                                                  self.consumptionQuantity
 
-
+        """
         # correcting running prices
 
         # to be skipped if the hayekian market just started
@@ -630,7 +641,7 @@ class Agent(SuperAgent):
 
         # TMP TMP TMP
         self.status = -2
-
+        """
 
     # calculateProfit V0
     def evaluateProfitV0(self):
@@ -845,7 +856,8 @@ class Agent(SuperAgent):
         if self.agType != "workers" or not self.employed:
             return
 
-        myEntrepreneur = gvf.nx.neighbors(common.g, self)[0]
+        #myEntrepreneur = gvf.nx.neighbors(common.g, self)[0] with nx 2.0
+        myEntrepreneur = list(common.g.neighbors(self))[0]
         myEntrepreneurProfit = myEntrepreneur.profit
         if myEntrepreneurProfit >= common.thresholdToEntrepreneur:
             print("I'm worker %2.0f and myEntrepreneurProfit is %4.2f" %
@@ -872,7 +884,8 @@ class Agent(SuperAgent):
         #               len(self.agentList)
         if random() <= float(common.absoluteBarrierToBecomeEntrepreneur) / \
                 len(self.agentList):
-            myEntrepreneur = gvf.nx.neighbors(common.g, self)[0]
+            #myEntrepreneur = gvf.nx.neighbors(common.g, self)[0] with nx 2.0
+            myEntrepreneur = list(common.g.neighbors(self))[0]
             myEntrepreneurProfit = myEntrepreneur.profit
             myEntrepreneurCosts = myEntrepreneur.costs
             if myEntrepreneurProfit / myEntrepreneurCosts >= \
@@ -904,8 +917,10 @@ class Agent(SuperAgent):
                   (self.number, self.profit))
 
             # the list of the employees of the firm, IF ANY
-            entrepreneurWorkers = gvf.nx.neighbors(common.g, self)
-            print("entrepreneur", self.number, "has", len(entrepreneurWorkers),
+            #entrepreneurWorkers = gvf.nx.neighbors(common.g, self) with nx 2.0
+            entrepreneurWorkers = list(common.g.neighbors(self))
+            print("entrepreneur", self.number, "has",
+                   len(entrepreneurWorkers),
                   "workers to be fired")
 
             if len(entrepreneurWorkers) > 0:
@@ -944,8 +959,10 @@ class Agent(SuperAgent):
                   (self.number, self.profit / self.costs))
 
             # the list of the employees of the firm, IF ANY
-            entrepreneurWorkers = gvf.nx.neighbors(common.g, self)
-            print("entrepreneur", self.number, "has", len(entrepreneurWorkers),
+            #entrepreneurWorkers = gvf.nx.neighbors(common.g, self) with nx 2.0
+            entrepreneurWorkers = list(common.g.neighbors(self))
+            print("entrepreneur", self.number, "has",
+                  len(entrepreneurWorkers),
                   "workers to be fired")
 
             if len(entrepreneurWorkers) > 0:
@@ -985,8 +1002,9 @@ class Agent(SuperAgent):
               "production of", psiShock * 100, "%, due to work troubles")
 
         if common.wageCutForWorkTroubles:
-                # the list of the employees of the firm
-            entrepreneurWorkers = gvf.nx.neighbors(common.g, self)
+            # the list of the employees of the firm
+            #entrepreneurWorkers = gvf.nx.neighbors(common.g, self) with nx 2.0
+            entrepreneurWorkers = list(common.g.neighbors(self))
             for aWorker in entrepreneurWorkers:
                 # avoiding the entrepreneur herself, as we are refering to her
                 # network of workers
