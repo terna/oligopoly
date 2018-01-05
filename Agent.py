@@ -128,7 +128,7 @@ class Agent(SuperAgent):
 
             # introduced with V6
             # V6 reset block starts hene
-            # this part is specific of the first hayekian cicle
+            # this part is specific of the first hayekian cycle
             # where it replaces the lack of a previous values in
             # quantity
             if common.cycle == common.startHayekianMarket:
@@ -590,11 +590,11 @@ class Agent(SuperAgent):
 
 
         # acting (NB self.consumption comes from planConsumptionInValueV6)
-        # buy action possible
+        # if buying action is possible
         print("cycle",common.cycle,"ag",self.number,"cons val",self.consumption)
-        if self.consumption > 0:
+        if self.consumption > 0 and self.sellerList != []:
             # chose a seller
-            mySeller=self.sellerList(randint(0,len(self.sellerList)-1))
+            mySeller=self.sellerList[randint(0,len(self.sellerList)-1)]
 
             # make a deal
             if self.buyPrice >= mySeller.sellPrice:
@@ -1019,6 +1019,10 @@ class Agent(SuperAgent):
             self.consumption = common.a3 + \
                 common.b3 * common.socialWelfareCompensation + \
                 gauss(0, common.consumptionRandomComponentSD)
+
+        if self.consumption < 0:
+            #print('*************************************',self.employed, \
+            #        self.consumption)
 
         # update totalPlannedConsumptionInValueInA_TimeStep
         if common.cycle < common.startHayekianMarket:
