@@ -277,23 +277,30 @@ def loadParameters(self):
                         "cycle to starts the hayekian market",
                         common.startHayekianMarket)  # saving pars
 
-    print("\nRange of the correction of agent starting prices in h. market = %3d\n" %
+    print("\nRange of the correction of agent starting prices in h. market = %5.2f\n" %
             common.initShock)
     dataFrameAppend("initShock",
                         "correction of starting prices in h. market",
                         common.initShock)  # saving pars
 
-    print("\nAsymmetry in individual starting prices (h. market) = %3d\n" %
+    print("\nAsymmetry in individual starting prices (h. market) = %5.2f\n" %
             common.initAsymmetry)
     dataFrameAppend("initAsymmetry",
                         "asymmetry in individual starting prices (h. market)",
                         common.initAsymmetry)  # saving pars
 
-    print("\nRange of the correction of agent running prices in h. market = %3d\n"\
+    print("\nRange of the correction of agent running prices in h. market = %5.2f\n"\
             % common.runningShock)
     dataFrameAppend("runningShock",
                         "correction of running prices in h. market",
                         common.runningShock)  # saving pars
+
+    print("\nAsymmetry in individual running prices (h. market) = %5.2f\n" %
+            common.runningAsymmetry)
+    dataFrameAppend("runningAsymmetry",
+                        "asymmetry in individual running prices (h. market)",
+                        common.runningAsymmetry)  # saving pars
+
 
     # cycles
     self.nCycles = eval(input("How many cycles? (0 = exit) "))

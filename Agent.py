@@ -93,8 +93,8 @@ class Agent(SuperAgent):
         # the number of the cycle
         self.consumptionPlanningInCycleNumber = -1
 
-        # first call in a cycle
-        self.firstCallInACycle = -1
+        # the cycle we are in
+        self.currentCycle=-1
 
         # seller list in actOnMarketPlace
         self.sellerList=[]
@@ -126,6 +126,9 @@ class Agent(SuperAgent):
 
             # introduced with V6
             # V6 reset block starts hene
+            # this part is specific of the first hayekian cicle
+            # where it replaces the lack of a previous values in
+            # quantity
             if common.cycle == common.startHayekianMarket:
                 if len(common.ts_df.price.values) == 1:
                    previuosPrice = common.ts_df.price.values[-1]  # t=2
@@ -145,7 +148,6 @@ class Agent(SuperAgent):
             # v6 reset block ends here
 
             common.totalProductionInA_TimeStep = 0
-            #if common.cycle<common.startHayekianMarket:
             common.totalPlannedConsumptionInValueInA_TimeStep = 0
 
             common.totalProfit = 0
@@ -533,36 +535,40 @@ class Agent(SuperAgent):
     def actOnMarketPlace(self):
         if common.cycle < common.startHayekianMarket: return
 
-        if common.cycle == common.startHayekianMarket and \
-           not self.priceWarmingDone:
+        if not self.priceWarmingDone:
+           # setting the price uniquely in the first hayekian step of the
+           # first hayekian cycle
 
-           # setting the price in the first hayekian step in a run
-           # (after price warming); maybe in the first hayekian cycle
-           # we have several actions on the market, so the control above
-           # (and not self.priceWarmingDone) stops the execution in
-           # the successive substeps
+           # this operation is close the usual scheme of adaptProductionPlan
+           # with the correction introduced from the version 5b, but
+           # here the previous price to be used is that at t-1 because
+           # we are on the side of the consumers; instead, in the pre-hayekian
+           # setting, the producers look at the price used by the consumers
+           # to guess quantities in the previous period, so that in t-2.
            if len(common.ts_df.price.values) > 1:
               self.buyPrice  = self.sellPrice = \
-                      common.ts_df.price.values[-1]
+                      common.ts_df.price.values[-1] # the last one
               self.buyPrice *= 1 + \
                    uniform(-common.initAsymmetry*common.initShock, \
-                           (1-common.initAsymmetry)*common.initShock)
+                           (1-common.initAsymmetry)*common.initAsymmetry)
               self.sellPrice *= 1+ \
                    uniform(-(1-common.initAsymmetry)*common.initShock, \
                            common.initAsymmetry*common.initShock)
-              self.priceWarmingDone = True
-              print("Ag.", self.number,"buying at", self.buyPrice,
-                                       "selling at",self.sellPrice)
-              if self.buyPrice >= self.sellPrice:
-                  print ("buyPrice >= sellPrice")
+              #print("Ag.", self.number,"buying at", self.buyPrice,
+              #                         "selling at",self.sellPrice)
+              #if self.buyPrice >= self.sellPrice:
+              #        print ("buyPrice >= sellPrice")
            # NB the code above can act only if t>1
 
+           self.priceWarmingDone = True
 
-        # first call in a cycle, acting only once per cycle
-        if self.firstCallInACycle != common.cycle:
-           self.firstCallInACycle = common.cycle
 
-           # the step checks that the planning of the consumtion has been
+
+        # first call in each cycle, prepearing action (only once per cycle)
+        if self.currentCycle != common.cycle:
+           self.currentCycle = common.cycle
+
+           # we check that the planning of the consumtion has been
            # made for the current cycle
            if self.consumptionPlanningInCycleNumber != common.cycle:
                print('Attempt of using actOnMarketPlace method before'+\
@@ -576,19 +582,33 @@ class Agent(SuperAgent):
                if anAg.getType() == "entrepreneurs":
                    self.sellerList.append(anAg)
 
-           # to be excecuted only once in each cycle, in the first call
-           # self.consumption is the individual planned value of consumption
-           self.consumptionQuantity = self.consumption / self.buyPrice
 
+        # acting (NB self.consumption comes from planConsumptionInValueV6)
+        # buy action possible
+        if self.consumption > 0:
+            # choosing a seller
+            self.mySeller=self.sellerList(randint(0,len(self.sellerList)-1))
 
-           # TO BE modified and to be placed after each sub step in a cycle
-           # update totalPlannedConsumptionInQuantityInA_TimeStep
-           # this is a temporary solution; the sum has to come from
-           # individual actual actions
-           common.totalConsumptionInQuantityInA_TimeStep += \
-                                                 self.consumptionQuantity
+        # make a deal
+        if self.buyPrice >= self.mySeller.sellPrice:
+            pass
 
         """
+        sceglie un seller e se pB >= pS acquista tutto quello che sta
+        in self.consumption
+
+        lo divide per pS e lo aggiinge agli acq in quantita'
+        tmp anche agli acquisti in valore
+
+        common.totalConsumptionInQuantityInA_TimeStep +=
+        adaptProductionPlanV6 dopo hayekian usa le quantita
+        ma temporaneamente per la prova crea anche tot valore per
+        setMarketPriceV3
+        """
+
+        """
+
+        DOPO AVERE COMPERATO
         # correcting running prices
 
         # to be skipped if the hayekian market just started
@@ -807,7 +827,7 @@ class Agent(SuperAgent):
         common.totalPlannedConsumptionInValueInA_TimeStep += self.consumption
         # print "C sum", common.totalPlannedConsumptionInValueInA_TimeStep
 
-    # compensation
+    # consumptions
     def planConsumptionInValueV5(self):
         self.consumption = 0
         #case (1)
@@ -847,6 +867,51 @@ class Agent(SuperAgent):
 
         # update totalPlannedConsumptionInValueInA_TimeStep
         common.totalPlannedConsumptionInValueInA_TimeStep += self.consumption
+        # print "C sum", common.totalPlannedConsumptionInValueInA_TimeStep
+
+        self.consumptionPlanningInCycleNumber=common.cycle
+
+    # consumptions
+    def planConsumptionInValueV6(self):
+        self.consumption = 0
+        #case (1)
+        # Y1=profit(t-1)+wage NB no negative consumption if profit(t-1) < 0
+        # this is an entrepreneur action
+        if self.agType == "entrepreneurs":
+            self.consumption = common.a1 + \
+                common.b1 * (self.profit + common.wage) + \
+                gauss(0, common.consumptionRandomComponentSD)
+            if self.consumption < 0:
+                self.consumption = 0
+            # profit, in V2, is at time -1 due to the sequence in schedule2.xls
+
+        #case (2)
+        # Y2=wage
+        if self.agType == "workers" and self.employed:
+            # the followin if/else structure is for control reasons because if
+            # not common.wageCutForWorkTroubles we do not take in account
+            # self.workTroubles also if != 0; if = 0 is non relevant in any
+            # case
+            if common.wageCutForWorkTroubles:
+                self.consumption = common.a2 + \
+                    common.b2 * common.wage * (1. - self.workTroubles) + \
+                    gauss(0, common.consumptionRandomComponentSD)
+                # print "worker", self.number, "wage x",(1.-self.workTroubles)
+            else:
+                self.consumption = common.a2 + \
+                    common.b2 * common.wage + \
+                    gauss(0, common.consumptionRandomComponentSD)
+
+        #case (3)
+        # Y3=socialWelfareCompensation
+        if self.agType == "workers" and not self.employed:
+            self.consumption = common.a3 + \
+                common.b3 * common.socialWelfareCompensation + \
+                gauss(0, common.consumptionRandomComponentSD)
+
+        # update totalPlannedConsumptionInValueInA_TimeStep
+        if common.cycle < common.startHayekianMarket:
+         common.totalPlannedConsumptionInValueInA_TimeStep += self.consumption
         # print "C sum", common.totalPlannedConsumptionInValueInA_TimeStep
 
         self.consumptionPlanningInCycleNumber=common.cycle
