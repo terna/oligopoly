@@ -40,6 +40,8 @@ class Agent(SuperAgent):
         self.numOfWorkers = 0  # never use it directly to make calculations
         self.profit = 0
         self.plannedProduction = 0
+        self.soldProduction = 0
+        self.revenue = 0
         self.consumption = 0
         self.consumptionQuantity=0
         self.employed = False
@@ -209,7 +211,7 @@ class Agent(SuperAgent):
         laborForceRequired = int(
             self.plannedProduction / common.laborProductivity)
 
-        #???????????????????
+        #
         # countUnemployed=0
         # for ag in self.agentList:
         #    if not ag.employed: countUnemployed+=1
@@ -531,6 +533,10 @@ class Agent(SuperAgent):
             # print "entrepreneur", self.number, "plan", self.plannedProduction,\
             #    "total", common.totalPlannedProduction
 
+            # to record sold production and revenue in hayekian phase
+            self.soldProduction=0
+            self.revenue=0
+
     # all acting as consumers on the market place
     def actOnMarketPlace(self):
         if common.cycle < common.startHayekianMarket: return
@@ -585,24 +591,37 @@ class Agent(SuperAgent):
 
         # acting (NB self.consumption comes from planConsumptionInValueV6)
         # buy action possible
+        print("cycle",common.cycle,"ag",self.number,"cons val",self.consumption)
         if self.consumption > 0:
-            # choosing a seller
-            self.mySeller=self.sellerList(randint(0,len(self.sellerList)-1))
+            # chose a seller
+            mySeller=self.sellerList(randint(0,len(self.sellerList)-1))
 
-        # make a deal
-        if self.buyPrice >= self.mySeller.sellPrice:
-            pass
+            # make a deal
+            if self.buyPrice >= mySeller.sellPrice:
+               # NB production can be < plannedProduction due to lack of workers
+               sellerQ=mySeller.production - mySeller.soldProduction
+               buyerQ=min(self.consumption/mySeller.sellPrice, sellerQ)
+               mySeller.soldProduction+=buyerQ
+               mySeller.revenue+=buyerQ*mySeller.sellPrice
+               self.consumption-=buyerQ*mySeller.sellPrice
+               print("cycle",common.cycle,"ag",self.number,"cons val",self.consumption)
+
+               common.totalConsumptionInQuantityInA_TimeStep += buyerQ
+
+               #TMP TMP TMP
+               common.totalPlannedConsumptionInValueInA_TimeStep += \
+                     buyerQ*mySeller.sellPrice
+
+
 
         """
-        sceglie un seller e se pB >= pS acquista tutto quello che sta
-        in self.consumption
-
         lo divide per pS e lo aggiinge agli acq in quantita'
         tmp anche agli acquisti in valore
 
         common.totalConsumptionInQuantityInA_TimeStep +=
-        adaptProductionPlanV6 dopo hayekian usa le quantita
-        ma temporaneamente per la prova crea anche tot valore per
+        adaptProductionPlanV6 dopo hayekian usa le quantita'
+        ma temporaneamente per la prova accumula anche
+        common.totalPlannedConsumptionInValueInA_TimeStep
         setMarketPriceV3
         """
 
@@ -705,7 +724,7 @@ class Agent(SuperAgent):
         self.costs = common.wage * \
             (self.production / common.laborProductivity) + XC
 
-        # the entrepreur sells her production, which is cotributing - via
+        # the entrepreur sells her production, which is contributing - via
         # totalActualProductionInA_TimeStep, to price formation
         self.profit = common.price * self.production - self.costs
 
@@ -763,11 +782,103 @@ class Agent(SuperAgent):
         if self.hasTroubles > 0:
             pv = common.penaltyValue
 
-        # the entrepreur sells her production, which is cotributing - via
+        # the entrepreur sells her production, which is contributing - via
         # totalActualProductionInA_TimeStep, to price formation
         self.profit = common.price * (1. - pv) * self.production - self.costs
         print("I'm entrepreur", self.number, "my price is ",
               common.price * (1. - pv))
+
+
+        # individual data collection
+        # creating the dataframe
+        try:
+            common.dataCounter
+        except BaseException:
+            common.dataCounter=-1
+
+        try:
+            common.firm_df
+        except BaseException:
+            common.firm_df = pd.DataFrame(
+                    columns=[
+                        'production',
+                        'profit'])
+            print("\nCreation of fhe dataframe of the firms (individual data)\n")
+
+        common.dataCounter+=1
+        common.firm_df.set_value(common.dataCounter,\
+                                 'production',self.production)
+        common.firm_df.set_value(common.dataCounter,\
+                                 'profit',self.profit)
+
+
+        common.totalProfit += self.profit
+
+        # calculateProfit
+    def evaluateProfitV6(self):
+
+        # this is an entrepreneur action
+        if self.agType == "workers":
+            return
+
+        # backward compatibily to version 1
+        try:
+            XC = common.newEntrantExtraCosts
+        except BaseException:
+            XC = 0
+        try:
+            k = self.extraCostsResidualDuration
+        except BaseException:
+            k = 0
+
+        if k == 0:
+            XC = 0
+        if k > 0:
+            self.extraCostsResidualDuration -= 1
+
+        # the number of pruducing workers is obtained indirectly via
+        # production/laborProductivity
+        # print self.production/common.laborProductivity
+
+        # how many workers, not via productvity due to possible troubles
+        # in production
+
+        laborForce = gvf.nx.degree(common.g, nbunch=self) + \
+            1  # +1 to account for the entrepreneur herself
+
+        # the followin if/else structure is for control reasons because if
+        # not common.wageCutForWorkTroubles we do not take in account
+        # self.workTroubles also if != 0; if = 0 is non relevant in any case
+        if common.wageCutForWorkTroubles:
+            self.costs = (common.wage - self.hasTroubles) \
+                * (laborForce - 1) \
+                + common.wage * 1 +  \
+                XC
+            # above, common.wage * 1 is for the entrepreur herself
+
+        else:
+            self.costs = common.wage * laborForce + \
+                XC
+        # print "I'm entrepreur", self.number, "costs are",self.costs
+
+        # penalty Value
+        pv = 0
+        if self.hasTroubles > 0:
+            pv = common.penaltyValue
+
+        # V6 - before hayekian phase
+        if common.cycle < common.startHayekianMarket:
+           # the entrepreur sells her production, which is contributing - via
+           # totalActualProductionInA_TimeStep, to price formation
+           self.profit = common.price * (1. - pv) * self.production - self.costs
+           print("I'm entrepreur", self.number, "my price is ",
+              common.price * (1. - pv))
+
+        # V6 - into the hayekian phase
+        else:
+           self.profit = self.revenue - self.costs
+           print("I'm entrepreur", self.number, "my individual price is ",
+              self.sellPrice)
 
 
         # individual data collection
