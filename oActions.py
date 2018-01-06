@@ -132,6 +132,7 @@ def collectTimeSeries(aL, t):
                 'totalProfit',
                 'totalProduction',
                 'plannedProduction',
+                'hPriceSd',
                 'price',
                 'wage'])
         print("\nCreation of fhe time series dataframe\n")
@@ -142,16 +143,25 @@ def collectTimeSeries(aL, t):
         if not ag.employed:
             unemployed += 1
 
+    # hiding unexisting mean or sd of prices, in the pre-hayekian period
+    # or in the hayekian one if data are too few
+    # -100 is used in checkHayekianPrices function of WorldState.py
+    if common.price == -100: common.price=common.p0
+    hPriceSd_=common.hPriceSd
+    if common.hPriceSd==-100: hPriceSd_=common.price
+
     ts_df2 = pd.DataFrame([[unemployed,
                             common.totalProfit,
                             common.totalProductionInA_TimeStep,
                             common.totalPlannedProduction,
+                            hPriceSd_,
                             common.price,
                             common.wage]],
                           columns=['unemployed',
                                    'totalProfit',
                                    'totalProduction',
                                    'plannedProduction',
+                                   'hPriceSd',
                                    'price',
                                    'wage'])
     # print ts_df2
@@ -196,6 +206,7 @@ def visualizePlot():
         ts_dfOut.index += 1
         myPlot = ts_dfOut.plot(
             secondary_y=[
+                'hPriceSd',
                 'price',
                 'wage'],
             marker="*",
@@ -204,12 +215,13 @@ def visualizePlot():
                 "LawnGreen",
                 "Blue",
                 "Violet",
+                "Pink",
                 "Gray",
                 "Brown"],
             ax=myax)
         myPlot.set_ylabel(
             'unemployed, totalProfit, totalProduction, plannedProduction')
-        myPlot.right_ax.set_ylabel('price, wage')
+        myPlot.right_ax.set_ylabel('hPriceSd, price, wage')
         myPlot.legend(loc='upper left')
         myPlot.axes.right_ax.legend(loc='lower right')
 
@@ -225,6 +237,7 @@ def visualizePlot():
         ts_dfOut.index += 1
         myPlot = ts_dfOut.plot(
             secondary_y=[
+                'hPriceSd',
                 'price',
                 'wage'],
             marker="*",
@@ -233,6 +246,7 @@ def visualizePlot():
                 "LawnGreen",
                 "Blue",
                 "Violet",
+                "Pink",
                 "Gray",
                 "Brown"],
             ax=myax)

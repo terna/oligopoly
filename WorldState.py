@@ -6,7 +6,7 @@ import statistics
 def checkHayekianPrices(a):
     # list a not empty
     if a!=[]: m = statistics.mean(a)
-    else: a = -100 # -100 will not appear in graphs
+    else: m = -100 # -100 will not appear in graphs
     # and with at least one element
     if len(a)>1: sd = statistics.stdev(a)
     else: sd=-100 # -100 will not appear in graphs
