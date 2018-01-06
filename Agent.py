@@ -147,6 +147,11 @@ class Agent(SuperAgent):
                    common.totalConsumptionInQuantityInA_TimeStep
 
             common.totalConsumptionInQuantityInA_TimeStep = 0
+            # list of all the transaction prices in a cycle of the
+            # hayekian market
+            try: checkPrices(common.hayekianMarketTransactionPriceList_inACycle)
+            except Exception: pass
+            common.hayekianMarketTransactionPriceList_inACycle=[]
             # v6 reset block ends here
 
             common.totalProductionInA_TimeStep = 0
@@ -591,7 +596,7 @@ class Agent(SuperAgent):
 
         # acting (NB self.consumption comes from planConsumptionInValueV6)
         # if buying action is possible
-        print("cycle",common.cycle,"ag",self.number,"cons val",self.consumption)
+        #print("cycle",common.cycle,"ag",self.number,"cons val",self.consumption)
         if self.consumption > 0 and self.sellerList != []:
             # chose a seller
             mySeller=self.sellerList[randint(0,len(self.sellerList)-1)]
@@ -604,7 +609,11 @@ class Agent(SuperAgent):
                mySeller.soldProduction+=buyerQ
                mySeller.revenue+=buyerQ*mySeller.sellPrice
                self.consumption-=buyerQ*mySeller.sellPrice
-               print("cycle",common.cycle,"ag",self.number,"cons val",self.consumption)
+               #print("cycle",common.cycle,"ag",self.number,"deal: cons val",\
+               #        buyerQ*mySeller.sellPrice,"price",mySeller.sellPrice)
+               # saving the price of the transaction
+               common.hayekianMarketTransactionPriceList_inACycle.\
+                      append(mySeller.sellPrice)
 
                common.totalConsumptionInQuantityInA_TimeStep += buyerQ
 
@@ -1023,6 +1032,7 @@ class Agent(SuperAgent):
         if self.consumption < 0:
             #print('*************************************',self.employed, \
             #        self.consumption)
+            self.consumption=0
 
         # update totalPlannedConsumptionInValueInA_TimeStep
         if common.cycle < common.startHayekianMarket:

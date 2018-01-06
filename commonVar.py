@@ -1,8 +1,8 @@
 # commonVar.py
 
-projectVersion = "develHayekianMarket, will be 6,"
+projectVersion = "develHayekianMarket, will be V6,"
 
-build = "20180105"
+build = "20180106"
 
 debug = True
 
@@ -157,3 +157,6 @@ file_modPars=False
 
 # pars definitions to use them in the table of the modified pars
 parsDict={}
+
+# to report hayekian price st. dev. if not still calculated
+hPriceSd = -100 # -100 will not appear in graphs
