@@ -146,9 +146,9 @@ def collectTimeSeries(aL, t):
     # hiding unexisting mean or sd of prices, in the pre-hayekian period
     # or in the hayekian one if data are too few
     # -100 is used in checkHayekianPrices function of WorldState.py
-    if common.price == -100: common.price=common.p0
+    if common.price == -100: common.price=np.nan 
     hPriceSd_=common.hPriceSd
-    if common.hPriceSd==-100: hPriceSd_=common.price
+    if common.hPriceSd==-100: hPriceSd_=np.nan
 
     ts_df2 = pd.DataFrame([[unemployed,
                             common.totalProfit,
