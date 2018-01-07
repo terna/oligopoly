@@ -101,13 +101,17 @@ class Agent(SuperAgent):
         # seller list in actOnMarketPlace
         self.sellerList=[]
 
-        # status to be used in actOnMarketPlace
+        #  status to be used in actOnMarketPlace acting as a buyer
         #  0 means never used
         #  1 if previous action was a successful buy attempt
         # -1 if previous action was an unsuccessful buy attempt
-        #  2 if previous action was a successful sell attempt
-        # -2 if previous action was an unsuccessful sell attempt
-        self.status = 0
+        self.statusB = 0
+
+        #  status to be used in actOnMarketPlace acting as a seller
+        #  0 means never used
+        #  1 if previous action was a successful sell attempt
+        # -1 if previous action was an unsuccessful sell attempt
+        self.statusS = 0
 
         # price warming has to be done only once (hayekian market)
         self.priceWarmingDone = False
@@ -600,96 +604,71 @@ class Agent(SuperAgent):
         if self.consumption > 0 and self.sellerList != []:
             # chose a seller
             mySeller=self.sellerList[randint(0,len(self.sellerList)-1)]
+            sellerQ=mySeller.production - mySeller.soldProduction>0
+            if sellerQ>0:
+              # try a deal
+              if self.buyPrice <  mySeller.sellPrice:
+                 self.statusB=self.statusS=-1
+              if self.buyPrice >= mySeller.sellPrice:
+                 self.statusB=self.statusS= 1
+                 # NB production can be < plannedProduction due to lack of workers
+                 buyerQ=min(self.consumption/mySeller.sellPrice, sellerQ)
+                 mySeller.soldProduction+=buyerQ
+                 mySeller.revenue+=buyerQ*mySeller.sellPrice
+                 self.consumption-=buyerQ*mySeller.sellPrice
+                 #print("cycle",common.cycle,"ag",self.number,"deal: cons val",\
+                 #        buyerQ*mySeller.sellPrice,"price",mySeller.sellPrice)
+                 # saving the price of the transaction
+                 common.hayekianMarketTransactionPriceList_inACycle.\
+                        append(mySeller.sellPrice)
 
-            # make a deal
-            if self.buyPrice >= mySeller.sellPrice:
-               # NB production can be < plannedProduction due to lack of workers
-               sellerQ=mySeller.production - mySeller.soldProduction
-               buyerQ=min(self.consumption/mySeller.sellPrice, sellerQ)
-               mySeller.soldProduction+=buyerQ
-               mySeller.revenue+=buyerQ*mySeller.sellPrice
-               self.consumption-=buyerQ*mySeller.sellPrice
-               #print("cycle",common.cycle,"ag",self.number,"deal: cons val",\
-               #        buyerQ*mySeller.sellPrice,"price",mySeller.sellPrice)
-               # saving the price of the transaction
-               common.hayekianMarketTransactionPriceList_inACycle.\
-                      append(mySeller.sellPrice)
+                 common.totalConsumptionInQuantityInA_TimeStep += buyerQ
 
-               common.totalConsumptionInQuantityInA_TimeStep += buyerQ
-
-               #TMP TMP TMP
-               common.totalPlannedConsumptionInValueInA_TimeStep += \
-                     buyerQ*mySeller.sellPrice
+                 #TMP TMP TMP
+                 common.totalPlannedConsumptionInValueInA_TimeStep += \
+                        buyerQ*mySeller.sellPrice
 
 
 
-        """
-        lo divide per pS e lo aggiinge agli acq in quantita'
-        tmp anche agli acquisti in valore
+        # correct running prices
 
-        common.totalConsumptionInQuantityInA_TimeStep +=
-        adaptProductionPlanV6 dopo hayekian usa le quantita'
-        ma temporaneamente per la prova accumula anche
-        common.totalPlannedConsumptionInValueInA_TimeStep
-        setMarketPriceV3
-        """
+        # if the status is != 0 the agent has already been acting
 
-        """
-
-        DOPO AVERE COMPERATO
-        # correcting running prices
-
-        # to be skipped if the hayekian market just started
-        # if the status is != 0 we are after the first absolute
-        # hayekian substep
-
-        if self.status == 1:  # buyer case (status 1, successful buy attempt)
+        if self.statusB == 1:  # buyer case (statusB 1, successful buy attempt,
+                               # acting mostly to decrease the reservation price)
            self.buyPrice *= 1 + uniform(-common.runningAsymmetry* \
                                         common.runningShock, \
                                         (1-common.runningAsymmetry)* \
                                         common.runningShock)
-           print(self.number, 1, self.buyPrice, self.sellPrice)
 
-        if self.status == -1:  # buyer case (status -1, unsuccessful buy attemp)
+        if self.statusB == -1: # buyer case (statusB -1, unsuccessful buy attempt,
+                               # acting mostly to increase the reservation price)
            self.buyPrice *= 1 + uniform(-(1-common.runningAsymmetry)* \
                                         common.runningShock, \
                                         common.runningAsymmetry* \
                                         common.runningShock)
-           print(self.number, -1, self.buyPrice, self.sellPrice)
 
-        if self.status == 2:  # seller case (status 2, successful sell attempt)
+        if self.statusS == 1:  # seller case (statusS 2, successful sell attempt,
+                               # acting mostly to increase the reservation price)
            self.sellPrice *= 1 + uniform(-(1-common.runningAsymmetry)* \
                                         common.runningShock, \
                                         common.runningAsymmetry* \
                                         common.runningShock)
-           print(self.number, 2, self.buyPrice, self.sellPrice)
 
-        if self.status == -2:  # seller case (status -2, unsuccessful sell attempt)
+        if self.statusS == -1: # seller case (statusS -2, unsuccess. s. attempt,
+                               # acting mostly to decrease the reservation price)
            self.sellPrice *= 1 + uniform(-common.runningAsymmetry* \
                                         common.runningShock, \
                                         (1-common.runningAsymmetry)* \
                                         common.runningShock)
-           print(self.number, -2, self.buyPrice, self.sellPrice)
 
 
+        print("ag.", self.number, "new prices", self.buyPrice, self.sellPrice)
 
-        # choosing a seller
-        if self.sellerList != []:
-            aSeller=choice(self.sellerList) #choice from random lib
-        else:
-            print("Warning, impossible to buy, no entrepreneurs/sellers.")
-            return
-        #print("$$$$$$$$$$$ ", self.number, aSeller.number, aSeller.getType())
-
-        residuo prodotto di aSeller
-        se buyPrice >= sellPrice ||| buyer va in status 1 e seller in status 2
-        diminisce il prodotto del seller (che registra il ricavo) e il fabbisogno
-        del buyer
+        # cleaning the situation
+        self.statusB=self.statusA=0
 
 
-        # TMP TMP TMP
-        self.status = -2
-        """
 
     # calculateProfit V0
     def evaluateProfitV0(self):
