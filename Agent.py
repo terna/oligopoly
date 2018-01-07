@@ -624,10 +624,6 @@ class Agent(SuperAgent):
 
                  common.totalConsumptionInQuantityInA_TimeStep += buyerQ
 
-                 #TMP TMP TMP
-                 common.totalPlannedConsumptionInValueInA_TimeStep += \
-                        buyerQ*mySeller.sellPrice
-
 
 
         # correct running prices
@@ -663,7 +659,7 @@ class Agent(SuperAgent):
                                         common.runningShock)
 
 
-        print("ag.", self.number, "new prices", self.buyPrice, self.sellPrice)
+        #print("ag.", self.number, "new prices", self.buyPrice, self.sellPrice)
 
         # cleaning the situation
         self.statusB=self.statusA=0
