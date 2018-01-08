@@ -564,11 +564,11 @@ class Agent(SuperAgent):
               self.buyPrice  = self.sellPrice = \
                       common.ts_df.price.values[-1] # the last one
               self.buyPrice *= 1 + \
-                   uniform(-common.initAsymmetry*common.initShock, \
-                           (1-common.initAsymmetry)*common.initAsymmetry)
-              self.sellPrice *= 1+ \
                    uniform(-(1-common.initAsymmetry)*common.initShock, \
                            common.initAsymmetry*common.initShock)
+              self.sellPrice *= 1+ \
+                   uniform(-common.initAsymmetry*common.initShock, \
+                           (1-common.initAsymmetry)*common.initAsymmetry)
               #print("Ag.", self.number,"buying at", self.buyPrice,
               #                         "selling at",self.sellPrice)
               #if self.buyPrice >= self.sellPrice:

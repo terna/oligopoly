@@ -2,7 +2,7 @@
 
 projectVersion = "develHayekianMarket, will be V6,"
 
-build = "20180107"
+build = "20180108"
 
 debug = True
 
@@ -133,9 +133,9 @@ thresholdToWorker = -0.20
 startHayekianMarket = 6
 
 # Range of the correction of agent starting prices (h. market)
-initShock = 0.5
+initShock = 0.3
 # initial asymmetry in individual starting prices (h. market)
-initAsymmetry = 0.60
+initAsymmetry = 0.90
 
 # Range of the correction of agent current price (h. market), as buyer/seller
 runningShock = 0.05
