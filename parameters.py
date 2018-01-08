@@ -302,6 +302,17 @@ def loadParameters(self):
                         common.runningAsymmetry)  # saving pars
 
 
+    # Max quota (base 1) of the consumption in each step of a cycle
+    print("\nMax quota (base 1) of the consumptions in each step of a cycle\n")
+    common.consumptionQuota = eval(input(\
+                      "(enter any value in a non-hayekian simulation): "))
+
+    dataFrameAppend("consumptionQuota",
+                        "Max quota (b. 1) of the cons. in each step of a cycle",
+                        common.consumptionQuota)  # saving pars
+
+
+
     # cycles
     self.nCycles = eval(input("How many cycles? (0 = exit) "))
 

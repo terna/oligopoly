@@ -612,7 +612,11 @@ class Agent(SuperAgent):
               if self.buyPrice >= mySeller.sellPrice:
                  self.statusB=self.statusS= 1
                  # NB production can be < plannedProduction due to lack of workers
-                 buyerQ=min(self.consumption/mySeller.sellPrice, sellerQ)
+
+                 # consumption in value cannot exceed self.maxConsumptionInAStep
+                 buyerQ=min(self.consumption/mySeller.sellPrice, sellerQ,\
+                            self.maxConsumptionInAStep/mySeller.sellPrice)
+
                  mySeller.soldProduction+=buyerQ
                  mySeller.revenue+=buyerQ*mySeller.sellPrice
                  self.consumption-=buyerQ*mySeller.sellPrice
@@ -1008,6 +1012,9 @@ class Agent(SuperAgent):
             #print('*************************************',self.employed, \
             #        self.consumption)
             self.consumption=0
+
+        # max cons. in each step of a cycles of the hayekian phase
+        self.maxConsumptionInAStep=self.consumption*common.consumptionQuota\
 
         # update totalPlannedConsumptionInValueInA_TimeStep
         if common.cycle < common.startHayekianMarket:
