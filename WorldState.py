@@ -114,7 +114,8 @@ class WorldState(object):
             common.wageAddendum = 0
 
         # wages: set
-        if nEntrepreneurs / nEntrepreneurs0 - 1 > \
+        if nEntrepreneurs > 1:
+          if nEntrepreneurs / nEntrepreneurs0 - 1 > \
                 common.maxAcceptableOligopolistRelativeIncrement:
             common.wageAddendum = common.wage *\
                 common.temporaryRelativeWageIncrementAsBarrier
