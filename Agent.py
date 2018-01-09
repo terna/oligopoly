@@ -648,14 +648,14 @@ class Agent(SuperAgent):
                                         common.runningAsymmetry* \
                                         common.runningShock)
 
-        if self.statusS == 1:  # seller case (statusS 2, successful sell attempt,
+        if self.statusS == 1:  # seller case (statusS 1, successful sell attempt,
                                # acting mostly to increase the reservation price)
            self.sellPrice *= 1 + uniform(-(1-common.runningAsymmetry)* \
                                         common.runningShock, \
                                         common.runningAsymmetry* \
                                         common.runningShock)
 
-        if self.statusS == -1: # seller case (statusS -2, unsuccess. s. attempt,
+        if self.statusS == -1: # seller case (statusS -1, unsuccess. s. attempt,
                                # acting mostly to decrease the reservation price)
            self.sellPrice *= 1 + uniform(-common.runningAsymmetry* \
                                         common.runningShock, \
@@ -666,7 +666,7 @@ class Agent(SuperAgent):
         #print("ag.", self.number, "new prices", self.buyPrice, self.sellPrice)
 
         # cleaning the situation
-        self.statusB=self.statusA=0
+        self.statusB=self.statusS=0
 
 
 
