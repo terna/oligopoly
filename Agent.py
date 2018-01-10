@@ -608,9 +608,9 @@ class Agent(SuperAgent):
             if sellerQ>0:
               # try a deal
               if self.buyPrice <  mySeller.sellPrice:
-                 self.statusB=self.statusS=-1
+                 self.statusB=mySeller.statusS=-1
               if self.buyPrice >= mySeller.sellPrice:
-                 self.statusB=self.statusS= 1
+                 self.statusB=mySeller.statusS= 1
                  # NB production can be < plannedProduction due to lack of workers
 
                  # consumption in value cannot exceed self.maxConsumptionInAStep
@@ -630,43 +630,43 @@ class Agent(SuperAgent):
 
 
 
-        # correct running prices
+            # correct running prices
 
-        # if the status is != 0 the agent has already been acting
+            # if the status is != 0 the agent has already been acting
 
-        if self.statusB == 1:  # buyer case (statusB 1, successful buy attempt,
+            if self.statusB == 1:  # buyer case (statusB 1, successful buy attempt,
                                # acting mostly to decrease the reservation price)
-           self.buyPrice *= 1 + uniform(-common.runningAsymmetry* \
+              self.buyPrice *= 1 + uniform(-common.runningAsymmetry* \
                                         common.runningShock, \
                                         (1-common.runningAsymmetry)* \
                                         common.runningShock)
 
-        if self.statusB == -1: # buyer case (statusB -1, unsuccessful buy attempt,
+            if self.statusB == -1: # buyer case (statusB -1, unsuccessful buy attempt,
                                # acting mostly to increase the reservation price)
-           self.buyPrice *= 1 + uniform(-(1-common.runningAsymmetry)* \
+              self.buyPrice *= 1 + uniform(-(1-common.runningAsymmetry)* \
                                         common.runningShock, \
                                         common.runningAsymmetry* \
                                         common.runningShock)
 
-        if self.statusS == 1:  # seller case (statusS 1, successful sell attempt,
+            if mySeller.statusS == 1:  # seller case (statusS 1, successful sell attempt,
                                # acting mostly to increase the reservation price)
-           self.sellPrice *= 1 + uniform(-(1-common.runningAsymmetry)* \
+              mySeller.sellPrice *= 1 + uniform(-(1-common.runningAsymmetry)* \
                                         common.runningShock, \
                                         common.runningAsymmetry* \
                                         common.runningShock)
 
-        if self.statusS == -1: # seller case (statusS -1, unsuccess. s. attempt,
+            if mySeller.statusS == -1: # seller case (statusS -1, unsuccess. s. attempt,
                                # acting mostly to decrease the reservation price)
-           self.sellPrice *= 1 + uniform(-common.runningAsymmetry* \
+              mySeller.sellPrice *= 1 + uniform(-common.runningAsymmetry* \
                                         common.runningShock, \
                                         (1-common.runningAsymmetry)* \
                                         common.runningShock)
 
 
-        #print("ag.", self.number, "new prices", self.buyPrice, self.sellPrice)
+            #print("ag.", self.number, "new prices", self.buyPrice, mySeller.sellPrice)
 
-        # cleaning the situation
-        self.statusB=self.statusS=0
+            # cleaning the situation (redundant)\\
+            self.statusB=mySeller.statusS=0
 
 
 
