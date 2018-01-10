@@ -604,7 +604,7 @@ class Agent(SuperAgent):
         if self.consumption > 0 and self.sellerList != []:
             # chose a seller
             mySeller=self.sellerList[randint(0,len(self.sellerList)-1)]
-            sellerQ=mySeller.production - mySeller.soldProduction>0
+            sellerQ=mySeller.production - mySeller.soldProduction
             if sellerQ>0:
               # try a deal
               if self.buyPrice <  mySeller.sellPrice:
