@@ -611,6 +611,11 @@ class Agent(SuperAgent):
                  self.statusB=mySeller.statusS=-1
               if self.buyPrice >= mySeller.sellPrice:
                  self.statusB=mySeller.statusS= 1
+
+                 #print(common.cycle,"entr.",mySeller.number,\
+                 #  mySeller.production,mySeller.soldProduction,\
+                 #  mySeller.sellPrice)
+
                  # NB production can be < plannedProduction due to lack of workers
 
                  # consumption in value cannot exceed self.maxConsumptionInAStep
