@@ -96,6 +96,7 @@ class WorldState(object):
                print("Relative shock (symmetric) ", shock0)
                print("Set market price to ", common.price)
 
+        # hayekina phase
         else:
             (common.price, common.hPriceSd)=checkHayekianPrices(\
                    common.hayekianMarketTransactionPriceList_inACycle)

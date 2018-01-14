@@ -132,6 +132,7 @@ def collectTimeSeries(aL, t):
                 'totalProfit',
                 'totalProduction',
                 'plannedProduction',
+                'consumptionQ',
                 'hPriceSd',
                 'price',
                 'wage'])
@@ -146,14 +147,20 @@ def collectTimeSeries(aL, t):
     # hiding unexisting mean or sd of prices, in the pre-hayekian period
     # or in the hayekian one if data are too few
     # -100 is used in checkHayekianPrices function of WorldState.py
-    if common.price == -100: common.price=np.nan 
+    if common.price == -100: common.price=np.nan
     hPriceSd_=common.hPriceSd
     if common.hPriceSd==-100: hPriceSd_=np.nan
+
+    # hiding unexisting measure of consumtion in quantity in the pre-hayekian
+    # phase
+    if common.totalConsumptionInQuantityInA_TimeStep==0:
+        common.totalConsumptionInQuantityInA_TimeStep=np.nan
 
     ts_df2 = pd.DataFrame([[unemployed,
                             common.totalProfit,
                             common.totalProductionInA_TimeStep,
                             common.totalPlannedProduction,
+                            common.totalConsumptionInQuantityInA_TimeStep,
                             hPriceSd_,
                             common.price,
                             common.wage]],
@@ -161,6 +168,7 @@ def collectTimeSeries(aL, t):
                                    'totalProfit',
                                    'totalProduction',
                                    'plannedProduction',
+                                   'consumptionQ',
                                    'hPriceSd',
                                    'price',
                                    'wage'])
@@ -215,12 +223,13 @@ def visualizePlot():
                 "LawnGreen",
                 "Blue",
                 "Violet",
+                'lightblue',
                 "Pink",
                 "Gray",
                 "Brown"],
             ax=myax)
         myPlot.set_ylabel(
-            'unemployed, totalProfit, totalProduction, plannedProduction')
+        'unemployed, totalProfit, totalProduction, plannedProduction, consumptionQ')
         myPlot.right_ax.set_ylabel('hPriceSd, price, wage')
         myPlot.legend(loc='upper left')
         myPlot.axes.right_ax.legend(loc='lower right')
@@ -246,13 +255,14 @@ def visualizePlot():
                 "LawnGreen",
                 "Blue",
                 "Violet",
+                'lightblue',
                 "Pink",
                 "Gray",
                 "Brown"],
             ax=myax)
         myPlot.set_ylabel(
-            'unemployed, totalProfit, totalProduction, plannedProduction')
-        myPlot.right_ax.set_ylabel('price, wage')
+        'unemployed, totalProfit, totalProduction, plannedProduction, consumptionQ')
+        myPlot.right_ax.set_ylabel('hPriceSd, price, wage')
         myPlot.legend(loc='upper left')
         myPlot.axes.right_ax.legend(loc='lower right')
 
