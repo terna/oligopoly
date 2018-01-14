@@ -2,7 +2,7 @@
 
 projectVersion = "develHayekianMarket, will be V6,"
 
-build = "20180110"
+build = "20180114"
 
 debug = True
 
@@ -58,12 +58,12 @@ consumptionRandomComponentSD = 0.3
 
 #(1)
 a1 = 0.4
-b1 = 0.55
+b1 = 0.6 #0.55
 # Y1=profit(t-1)+wage NB no negative consumption if profit(t-1) < 0
 
 #(2)
 a2 = 0.3
-b2 = 0.65
+b2 = 0.7 #0.65
 # Y2=wage
 
 #(3)
