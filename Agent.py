@@ -20,6 +20,11 @@ def mySort(ag):
         agSorted.append(numAg[i][1])
     return agSorted
 
+def applyRationallyTheRateOfChange(base,rate):
+        if rate >= 0:
+            return base*(1+rate)
+        if rate <  0:
+            return base/(1+abs(rate))
 
 class Agent(SuperAgent):
     def __init__(self, number, myWorldState,
@@ -563,12 +568,15 @@ class Agent(SuperAgent):
            if len(common.ts_df.price.values) > 1:
               self.buyPrice  = self.sellPrice = \
                       common.ts_df.price.values[-1] # the last one
-              self.buyPrice *= 1 + \
-                   uniform(-(1-common.initAsymmetry)*common.initShock, \
-                           common.initAsymmetry*common.initShock)
-              self.sellPrice *= 1+ \
-                   uniform(-common.initAsymmetry*common.initShock, \
-                           (1-common.initAsymmetry)*common.initAsymmetry)
+              self.buyPrice = \
+                     applyRationallyTheRateOfChange(self.buyPrice,\
+                        uniform(-(1-common.initAsymmetry)*common.initShock, \
+                                common.initAsymmetry*common.initShock))
+              self.sellPrice = \
+                     applyRationallyTheRateOfChange(self.sellPrice,\
+                        uniform(-common.initAsymmetry*common.initShock, \
+                                (1-common.initAsymmetry)*common.initAsymmetry))
+
               #print("Ag.", self.number,"buying at", self.buyPrice,
               #                         "selling at",self.sellPrice)
               #if self.buyPrice >= self.sellPrice:
@@ -641,31 +649,35 @@ class Agent(SuperAgent):
 
             if self.statusB == 1:  # buyer case (statusB 1, successful buy attempt,
                                # acting mostly to decrease the reservation price)
-              self.buyPrice *= 1 + uniform(-common.runningAsymmetry* \
+              self.buyPrice = applyRationallyTheRateOfChange(self.buyPrice,\
+                                  uniform(-common.runningAsymmetry* \
                                         common.runningShock, \
                                         (1-common.runningAsymmetry)* \
-                                        common.runningShock)
+                                        common.runningShock))
 
             if self.statusB == -1: # buyer case (statusB -1, unsuccessful buy attempt,
                                # acting mostly to increase the reservation price)
-              self.buyPrice *= 1 + uniform(-(1-common.runningAsymmetry)* \
+              self.buyPrice = applyRationallyTheRateOfChange(self.buyPrice,\
+                                  uniform(-(1-common.runningAsymmetry)* \
                                         common.runningShock, \
                                         common.runningAsymmetry* \
-                                        common.runningShock)
+                                        common.runningShock))
 
             if mySeller.statusS == 1:  # seller case (statusS 1, successful sell attempt,
                                # acting mostly to increase the reservation price)
-              mySeller.sellPrice *= 1 + uniform(-(1-common.runningAsymmetry)* \
+              mySeller.sellPrice = applyRationallyTheRateOfChange(mySeller.sellPrice,\
+                                       uniform(-(1-common.runningAsymmetry)* \
                                         common.runningShock, \
                                         common.runningAsymmetry* \
-                                        common.runningShock)
+                                        common.runningShock))
 
             if mySeller.statusS == -1: # seller case (statusS -1, unsuccess. s. attempt,
                                # acting mostly to decrease the reservation price)
-              mySeller.sellPrice *= 1 + uniform(-common.runningAsymmetry* \
+              mySeller.sellPrice = applyRationallyTheRateOfChange(mySeller.sellPrice,\
+                                       uniform(-common.runningAsymmetry* \
                                         common.runningShock, \
                                         (1-common.runningAsymmetry)* \
-                                        common.runningShock)
+                                        common.runningShock))
 
 
             #print("ag.", self.number, "new prices", self.buyPrice, mySeller.sellPrice)
