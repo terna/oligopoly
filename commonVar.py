@@ -2,9 +2,9 @@
 
 projectVersion = "develHayekianMarket, will be V6,"
 
-build = "20180114"
+build = "20180119"
 
-debug = True
+debug = False
 
 # function for the management of the paramenters
 def setVar():
