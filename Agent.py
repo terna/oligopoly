@@ -646,7 +646,6 @@ class Agent(SuperAgent):
             # correct running prices
 
             # if the status is != 0 the agent has already been acting
-
             if self.statusB == 1:  # buyer case (statusB 1, successful buy attempt,
                                # acting mostly to decrease the reservation price)
               self.buyPrice = applyRationallyTheRateOfChange(self.buyPrice,\
@@ -678,7 +677,6 @@ class Agent(SuperAgent):
                                         common.runningShock, \
                                         (1-common.runningAsymmetry)* \
                                         common.runningShock))
-
 
             #print("ag.", self.number, "new prices", self.buyPrice, mySeller.sellPrice)
 
