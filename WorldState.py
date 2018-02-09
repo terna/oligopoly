@@ -30,7 +30,7 @@ class WorldState(object):
         print("\n-------------------------------------")
 
         if shock >= 0:
-            common.totalDemandInPrevious_TimeStep = \
+            totalDemand = \
                 common.totalPlannedConsumptionInValueInA_TimeStep * \
                 (1 + shock)
             common.price = (common.totalPlannedConsumptionInValueInA_TimeStep *
@@ -38,10 +38,13 @@ class WorldState(object):
                 / common.totalProductionInA_TimeStep
             print("Relative shock (symmetric) ", shock0)
             print("Set market price to ", common.price)
+            # common.totalDemandInPrevious_TimeStep is necessary for
+            # adaptProductionPlan and adaptProductionPlanV6
+            common.totalDemandInPrevious_TimeStep=totalDemand
 
         if shock < 0:
             shock *= -1.  # always positive, boing added to the denominator
-            common.totalDemandInPrevious_TimeStep = \
+            totalDemand = \
                 common.totalPlannedConsumptionInValueInA_TimeStep / \
                 (1 + shock)
             common.price = (common.totalPlannedConsumptionInValueInA_TimeStep /
@@ -49,6 +52,9 @@ class WorldState(object):
                 / common.totalProductionInA_TimeStep
             print("Relative shock (symmetric) ", shock0)
             print("Set market price to ", common.price)
+            # common.totalDemandInPrevious_TimeStep is necessary for
+            # adaptProductionPlan and adaptProductionPlanV6
+            common.totalDemandInPrevious_TimeStep=totalDemand
 
         print("-------------------------------------\n")
 
