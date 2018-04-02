@@ -138,28 +138,36 @@ class Agent(SuperAgent):
             # introduced with V6
             # V6 reset block starts hene
             # this part is specific of the first hayekian cycle
-            # where it replaces the lack of a previous values in
+            # where it replaces the lack of a previous value in
             # quantity
-            if common.cycle == common.startHayekianMarket:
-                if len(common.ts_df.price.values) == 1:
-                   previuosPrice = common.ts_df.price.values[-1]  # t=2
-                if len(common.ts_df.price.values) > 1:
-                   previuosPrice = common.ts_df.price.values[-2]  # t>2
-                # the code above can act only if t>1
+            # here, if possible, we use the price at t-2
+            if common.startHayekianMarket > 1:
+               if common.cycle == common.startHayekianMarket:
+                  if len(common.ts_df.price.values) == 1:
+                     previuosPrice = common.ts_df.price.values[-1]  # t=2
+                  if len(common.ts_df.price.values) > 1:
+                     previuosPrice = common.ts_df.price.values[-2]  # t>2
+                  # the code above can act only if t>1
+                  if common.cycle > 1: # if == 1 do nothing
+                                       # makeProductionPlan acts
+                                       # establishing directly
+                                       # self.plannedProduction and the total
+                                       # common.totalPlannedProduction
+                     common.totalConsumptionInQuantityInPrevious_TimeStep = \
+                       common.totalPlannedConsumptionInValueInA_TimeStep  \
+                       / previuosPrice
 
-                common.totalConsumptionInQuantityInPrevious_TimeStep = \
-                common.totalPlannedConsumptionInValueInA_TimeStep  \
-                / previuosPrice
-
+            # not in case common.cycle == common.startHayekianMarket == 1
             elif common.cycle > common.startHayekianMarket:
                 common.totalConsumptionInQuantityInPrevious_TimeStep = \
                    common.totalConsumptionInQuantityInA_TimeStep
+            # !!!! here we can use also delayed values, look at !!!! in
+            # notesOnHayekianTransformation.md
 
             common.totalConsumptionInQuantityInA_TimeStep = 0
+
             # list of all the transaction prices in a cycle of the
             # hayekian market
-            try: checkPrices(common.hayekianMarketTransactionPriceList_inACycle)
-            except Exception: pass
             common.hayekianMarketTransactionPriceList_inACycle=[]
             # v6 reset block ends here
 
@@ -169,7 +177,7 @@ class Agent(SuperAgent):
             common.totalProfit = 0
             common.totalPlannedProduction = 0
 
-        # troubles related variables
+        # troubles related idividual variables
         if self.agType == "entrepreneurs":
             self.hasTroubles = 0
         if self.agType == "workers":
@@ -515,11 +523,9 @@ class Agent(SuperAgent):
             #    "total", common.totalPlannedProduction
 
         # hayekian period
-        if common.cycle >= common.startHayekianMarket:
-            if common.startHayekianMarket <=1:
-               print("startHayekianMarket must be > 1")
-               os.sys.exit(1) # to stop the execution, in the calling module
-                              # we have multiple except, with 'SystemExit' case
+        if common.cycle >1 and common.cycle >= common.startHayekianMarket:
+            #the case common.cycle==1, with common.startHayekianMarket==1, is
+            #absorbed by makeProductionPlan
 
             nEntrepreneurs = 0
             for ag in self.agentList:
@@ -559,39 +565,61 @@ class Agent(SuperAgent):
            # setting the price uniquely in the first hayekian step of the
            # first hayekian cycle
 
-           # this operation is close the usual scheme of adaptProductionPlan
-           # with the correction introduced from the version 5b, but
-           # here the previous price to be used is that at t-1 because
-           # we are on the side of the consumers; instead, in the pre-hayekian
-           # setting, the producers look at the price used by the consumers
-           # to guess quantities in the previous period, so that in t-2.
-           if len(common.ts_df.price.values) > 1:
+           if common.startHayekianMarket>1:
+            if len(common.ts_df.price.values) > 1:
               self.buyPrice  = self.sellPrice = \
-                      common.ts_df.price.values[-1] # the last one
-              self.buyPrice = \
-                     applyRationallyTheRateOfChange(self.buyPrice,\
-                        uniform(-(1-common.initAsymmetry)*common.initShock, \
-                                common.initAsymmetry*common.initShock))
-              self.sellPrice = \
-                     applyRationallyTheRateOfChange(self.sellPrice,\
-                        uniform(-common.initAsymmetry*common.initShock, \
-                                (1-common.initAsymmetry)*common.initAsymmetry))
-
+                      common.ts_df.price.values[-1] # the last price
               #print("Ag.", self.number,"buying at", self.buyPrice,
               #                         "selling at",self.sellPrice)
               #if self.buyPrice >= self.sellPrice:
               #        print ("buyPrice >= sellPrice")
-           # NB the code above can act only if t>1
+              # NB the code above can act only if t>1
+            if len(common.ts_df.price.values) > 2:
+              self.buyPrice  = self.sellPrice = \
+                      common.ts_df.price.values[-2] # the second last price
+              #print("Ag.", self.number,"buying at", self.buyPrice,
+              #                         "selling at",self.sellPrice)
+              #if self.buyPrice >= self.sellPrice:
+              #        print ("buyPrice >= sellPrice")
+              # NB the code above can act only if t>2
 
-           self.priceWarmingDone = True
+           else: # case t==1 being common.startHayekianMarket==1
+                 # look at the equilibrium price that would have been created
+                 # at t==1 in the non-hayekian execution
+
+                 # in the common.startHayekianMarket == 1 case, when
+                 # actOnMaketPlace is activated
+                 # we already have
+                 # common.totalPlannedConsumptionInValueInA_TimeStep and
+                 # common.totalProductionInA_TimeStep
+                 # so, we can calculate
+              self.buyPrice  = self.sellPrice = \
+                            common.totalPlannedConsumptionInValueInA_TimeStep \
+                            / common.totalProductionInA_TimeStep
+
+                 # outside WorldState setMarketPriceV3 method, to avoid here
+                 # random shocks
+
+           self.buyPrice = \
+                     applyRationallyTheRateOfChange(self.buyPrice,\
+                        uniform(-(1-common.initAsymmetry)*common.initShock, \
+                                common.initAsymmetry*common.initShock))
+           self.sellPrice = \
+                     applyRationallyTheRateOfChange(self.sellPrice,\
+                        uniform(-common.initAsymmetry*common.initShock, \
+                                (1-common.initAsymmetry)*common.initAsymmetry))
+
+
+        self.priceWarmingDone = True
 
 
 
-        # first call in each cycle, prepearing action (only once per cycle)
+
+        # first call in each cycle, preparing action (only once per cycle)
         if self.currentCycle != common.cycle:
            self.currentCycle = common.cycle
 
-           # we check that the planning of the consumtion has been
+           # we check that the planning of the consumption has been
            # made for the current cycle
            if self.consumptionPlanningInCycleNumber != common.cycle:
                print('Attempt of using actOnMarketPlace method before'+\
@@ -1029,12 +1057,20 @@ class Agent(SuperAgent):
             self.consumption=0
 
         # max cons. in each step of a cycles of the hayekian phase
-        self.maxConsumptionInAStep=self.consumption*common.consumptionQuota\
+        self.maxConsumptionInAStep=self.consumption*common.consumptionQuota
 
         # update totalPlannedConsumptionInValueInA_TimeStep
-        if common.cycle < common.startHayekianMarket:
-         common.totalPlannedConsumptionInValueInA_TimeStep += self.consumption
-        # print "C sum", common.totalPlannedConsumptionInValueInA_TimeStep
+        if common.cycle < common.startHayekianMarket or \
+           (common.cycle == common.startHayekianMarket and \
+           common.startHayekianMarket == 1):
+           # the 'or' condition is necessary In the hayekian perspective,
+           # when the start is a cyce 1; the value of
+           # common.totalPlannedConsumptionInValueInA_TimeStep is necessary
+           # in the warming phase: look at the ‘else’ within
+           # ‘if not self.priceWarmingDone’
+
+           common.totalPlannedConsumptionInValueInA_TimeStep += self.consumption
+           # print "C sum", common.totalPlannedConsumptionInValueInA_TimeStep
 
         self.consumptionPlanningInCycleNumber=common.cycle
 

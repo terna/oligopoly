@@ -1,8 +1,8 @@
 # commonVar.py
 
-projectVersion = "develHayekianMarket, will be V6,"
+projectVersion = "6, temporary develHayekianMarket"
 
-build = "20180129"
+build = "20180403"
 
 debug = False
 
@@ -129,8 +129,8 @@ maxDemandRelativeRandomShock = 0.15  # was 0.10 #was 0.20
 # threshold toWorker
 thresholdToWorker = -0.20
 
-# when to start the hayekian market
-startHayekianMarket = 6
+# start the hayekian market at cycle ... (NB > 0)
+startHayekianMarket = 1 #6
 
 # Range of the correction of agent starting prices (h. market)
 initShock = 0.3
