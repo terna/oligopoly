@@ -1,8 +1,12 @@
 # commonVar.py
 
-projectVersion = "5c_fd"
+projectVersion = "6, temporary develHayekianMarket"
 
+<<<<<<< HEAD
 build = "20180209"
+=======
+build = "20180403"
+>>>>>>> develHayekianMarket
 
 debug = False
 
@@ -58,12 +62,12 @@ consumptionRandomComponentSD = 0.3
 
 #(1)
 a1 = 0.4
-b1 = 0.55
+b1 = 0.6 #0.55
 # Y1=profit(t-1)+wage NB no negative consumption if profit(t-1) < 0
 
 #(2)
 a2 = 0.3
-b2 = 0.65
+b2 = 0.7 #0.65
 # Y2=wage
 
 #(3)
@@ -103,6 +107,8 @@ firingThreshold = 0
 # macro variables
 totalProductionInA_TimeStep = 0
 totalPlannedConsumptionInValueInA_TimeStep = 0
+totalConsumptionInQuantityInA_TimeStep = 0
+totalConsumptionInQuantityInPrevious_TimeStep = 0
 
 # Poisson mean in makeProoductionPlan, will be modified in paramenters.py
 # in the function loadParameters
@@ -127,6 +133,18 @@ maxDemandRelativeRandomShock = 0.15  # was 0.10 #was 0.20
 # threshold toWorker
 thresholdToWorker = -0.20
 
+# start the hayekian market at cycle ... (NB > 0)
+startHayekianMarket = 1 #6
+
+# Range of the correction of agent starting prices (h. market)
+initShock = 0.3
+# initial asymmetry in individual starting prices (h. market)
+initAsymmetry = 0.90
+
+# Range of the correction of agent current price (h. market), as buyer/seller
+runningShock = 0.05
+# current asymmetry in individual price correction (h. market)
+runningAsymmetry = 0.9
 
 nodeNumbersInGraph = False
 
@@ -143,3 +161,6 @@ file_modPars=False
 
 # pars definitions to use them in the table of the modified pars
 parsDict={}
+
+# to report hayekian price st. dev. if not still calculated
+hPriceSd = -100 # -100 will not appear in graphs

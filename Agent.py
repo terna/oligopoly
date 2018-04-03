@@ -6,6 +6,7 @@ import graphicDisplayGlobalVarAndFunctions as gvf
 import commonVar as common
 import numpy.random as npr
 import pandas as pd
+import os
 
 def mySort(ag):
     if ag == []:
@@ -19,6 +20,11 @@ def mySort(ag):
         agSorted.append(numAg[i][1])
     return agSorted
 
+def applyRationallyTheRateOfChange(base,rate):
+        if rate >= 0:
+            return base*(1+rate)
+        if rate <  0:
+            return base/(1+abs(rate))
 
 class Agent(SuperAgent):
     def __init__(self, number, myWorldState,
@@ -39,11 +45,14 @@ class Agent(SuperAgent):
         self.numOfWorkers = 0  # never use it directly to make calculations
         self.profit = 0
         self.plannedProduction = 0
+        self.soldProduction = 0
+        self.revenue = 0
         self.consumption = 0
+        self.consumptionQuantity=0
         self.employed = False
         self.extraCostsResidualDuration = 0
 
-        if agType == 'workers':
+        if agType == 'workers': #useful in initial creation
             common.orderedListOfNodes.append(self)
             # use to keep the order
             # in output (ex. adjacency matrix)
@@ -55,7 +64,7 @@ class Agent(SuperAgent):
 
             self.workTroubles = 0
 
-        if agType == 'entrepreneurs':
+        if agType == 'entrepreneurs': #useful in initial creation
             common.orderedListOfNodes.append(self)
             # use to keep the order
             # in output (ex. adjacency matrix)
@@ -82,6 +91,36 @@ class Agent(SuperAgent):
         self.xPos = xPos
         self.yPos = yPos
 
+        # price memory
+        self.buyPrice  = 1
+        self.sellPrice = 1
+
+        # consumption planning for the current cycle
+        # if the planning has been made, the variable contains
+        # the number of the cycle
+        self.consumptionPlanningInCycleNumber = -1
+
+        # the cycle we are in
+        self.currentCycle=-1
+
+        # seller list in actOnMarketPlace
+        self.sellerList=[]
+
+        #  status to be used in actOnMarketPlace acting as a buyer
+        #  0 means never used
+        #  1 if previous action was a successful buy attempt
+        # -1 if previous action was an unsuccessful buy attempt
+        self.statusB = 0
+
+        #  status to be used in actOnMarketPlace acting as a seller
+        #  0 means never used
+        #  1 if previous action was a successful sell attempt
+        # -1 if previous action was an unsuccessful sell attempt
+        self.statusS = 0
+
+        # price warming has to be done only once (hayekian market)
+        self.priceWarmingDone = False
+
     # talk
     def talk(self):
         print(self.agType, self.number)
@@ -95,12 +134,50 @@ class Agent(SuperAgent):
             print("Missing that agent, all the agents are resetting common values")
 
         if self.number == 1 or not common.agent1existing:
+
+            # introduced with V6
+            # V6 reset block starts hene
+            # this part is specific of the first hayekian cycle
+            # where it replaces the lack of a previous value in
+            # quantity
+            # here, if possible, we use the price at t-2
+            if common.startHayekianMarket > 1:
+               if common.cycle == common.startHayekianMarket:
+                  if len(common.ts_df.price.values) == 1:
+                     previuosPrice = common.ts_df.price.values[-1]  # t=2
+                  if len(common.ts_df.price.values) > 1:
+                     previuosPrice = common.ts_df.price.values[-2]  # t>2
+                  # the code above can act only if t>1
+                  if common.cycle > 1: # if == 1 do nothing
+                                       # makeProductionPlan acts
+                                       # establishing directly
+                                       # self.plannedProduction and the total
+                                       # common.totalPlannedProduction
+                     common.totalConsumptionInQuantityInPrevious_TimeStep = \
+                       common.totalPlannedConsumptionInValueInA_TimeStep  \
+                       / previuosPrice
+
+            # not in case common.cycle == common.startHayekianMarket == 1
+            elif common.cycle > common.startHayekianMarket:
+                common.totalConsumptionInQuantityInPrevious_TimeStep = \
+                   common.totalConsumptionInQuantityInA_TimeStep
+            # !!!! here we can use also delayed values, look at !!!! in
+            # notesOnHayekianTransformation.md
+
+            common.totalConsumptionInQuantityInA_TimeStep = 0
+
+            # list of all the transaction prices in a cycle of the
+            # hayekian market
+            common.hayekianMarketTransactionPriceList_inACycle=[]
+            # v6 reset block ends here
+
             common.totalProductionInA_TimeStep = 0
             common.totalPlannedConsumptionInValueInA_TimeStep = 0
+
             common.totalProfit = 0
             common.totalPlannedProduction = 0
 
-        # troubles related variables
+        # troubles related idividual variables
         if self.agType == "entrepreneurs":
             self.hasTroubles = 0
         if self.agType == "workers":
@@ -156,7 +233,7 @@ class Agent(SuperAgent):
         laborForceRequired = int(
             self.plannedProduction / common.laborProductivity)
 
-        #???????????????????
+        #
         # countUnemployed=0
         # for ag in self.agentList:
         #    if not ag.employed: countUnemployed+=1
@@ -205,7 +282,8 @@ class Agent(SuperAgent):
             n = laborForce0 - laborForceRequired
 
             # the list of the employees of the firm
-            entrepreneurWorkers = gvf.nx.neighbors(common.g, self)
+            #entrepreneurWorkers = gvf.nx.neighbors(common.g, self) with nx 2.0
+            entrepreneurWorkers = list(common.g.neighbors(self))
             # print "entrepreneur", self.number, "could fire",
             # entrepreneurWorkers
 
@@ -247,7 +325,8 @@ class Agent(SuperAgent):
             return
 
         # the list of the employees of the firm
-        entrepreneurWorkers = gvf.nx.neighbors(common.g, self)
+        #entrepreneurWorkers = gvf.nx.neighbors(common.g, self) with nx 2.0
+        entrepreneurWorkers = list(common.g.neighbors(self))
         # print "entrepreneur", self.number, "could fire", entrepreneurWorkers
 
         # the list returnes by nx is unstable as order
@@ -405,6 +484,235 @@ class Agent(SuperAgent):
             # print "entrepreneur", self.number, "plan", self.plannedProduction,\
             #    "total", common.totalPlannedProduction
 
+    # adaptProductionPlanV6
+    def adaptProductionPlanV6(self):
+
+        # pre hayekian period
+        if common.cycle > 1 and common.cycle < common.startHayekianMarket:
+            # count of the entrepreneur number
+            nEntrepreneurs = 0
+            for ag in self.agentList:
+                if ag.agType == "entrepreneurs":
+                    nEntrepreneurs += 1
+
+            # with the scheme of prices until V.5c_fd
+            if len(common.ts_df.price.values) == 1:
+                previuosPrice = common.ts_df.price.values[-1]  # t=2
+            if len(common.ts_df.price.values) > 1:
+                previuosPrice = common.ts_df.price.values[-2]  # t>2
+            # NB adapt acts from t>1
+
+            self.plannedProduction = (common.totalDemandInPrevious_TimeStep /
+                                      previuosPrice) \
+                / nEntrepreneurs
+
+            shock = uniform(
+                -common.randomComponentOfPlannedProduction,
+                common.randomComponentOfPlannedProduction)
+
+            if shock >= 0:
+                self.plannedProduction *= (1. + shock)
+
+            if shock < 0:
+                shock *= -1.
+                self.plannedProduction /= (1. + shock)
+            # print self.number, self.plannedProduction
+
+            common.totalPlannedProduction += self.plannedProduction
+            # print "entrepreneur", self.number, "plan", self.plannedProduction,\
+            #    "total", common.totalPlannedProduction
+
+        # hayekian period
+        if common.cycle >1 and common.cycle >= common.startHayekianMarket:
+            #the case common.cycle==1, with common.startHayekianMarket==1, is
+            #absorbed by makeProductionPlan
+
+            nEntrepreneurs = 0
+            for ag in self.agentList:
+                if ag.agType == "entrepreneurs":
+                    nEntrepreneurs += 1
+
+
+            self.plannedProduction = \
+                      common.totalConsumptionInQuantityInPrevious_TimeStep \
+                      / nEntrepreneurs
+
+            shock = uniform(
+                -common.randomComponentOfPlannedProduction,
+                common.randomComponentOfPlannedProduction)
+
+            if shock >= 0:
+                self.plannedProduction *= (1. + shock)
+
+            if shock < 0:
+                shock *= -1.
+                self.plannedProduction /= (1. + shock)
+            # print self.number, self.plannedProduction
+
+            common.totalPlannedProduction += self.plannedProduction
+            # print "entrepreneur", self.number, "plan", self.plannedProduction,\
+            #    "total", common.totalPlannedProduction
+
+            # to record sold production and revenue in hayekian phase
+            self.soldProduction=0
+            self.revenue=0
+
+    # all acting as consumers on the market place
+    def actOnMarketPlace(self):
+        if common.cycle < common.startHayekianMarket: return
+
+        if not self.priceWarmingDone:
+           # setting the price uniquely in the first hayekian step of the
+           # first hayekian cycle
+
+           if common.startHayekianMarket>1:
+            if len(common.ts_df.price.values) > 1:
+              self.buyPrice  = self.sellPrice = \
+                      common.ts_df.price.values[-1] # the last price
+              #print("Ag.", self.number,"buying at", self.buyPrice,
+              #                         "selling at",self.sellPrice)
+              #if self.buyPrice >= self.sellPrice:
+              #        print ("buyPrice >= sellPrice")
+              # NB the code above can act only if t>1
+            if len(common.ts_df.price.values) > 2:
+              self.buyPrice  = self.sellPrice = \
+                      common.ts_df.price.values[-2] # the second last price
+              #print("Ag.", self.number,"buying at", self.buyPrice,
+              #                         "selling at",self.sellPrice)
+              #if self.buyPrice >= self.sellPrice:
+              #        print ("buyPrice >= sellPrice")
+              # NB the code above can act only if t>2
+
+           else: # case t==1 being common.startHayekianMarket==1
+                 # look at the equilibrium price that would have been created
+                 # at t==1 in the non-hayekian execution
+
+                 # in the common.startHayekianMarket == 1 case, when
+                 # actOnMaketPlace is activated
+                 # we already have
+                 # common.totalPlannedConsumptionInValueInA_TimeStep and
+                 # common.totalProductionInA_TimeStep
+                 # so, we can calculate
+              self.buyPrice  = self.sellPrice = \
+                            common.totalPlannedConsumptionInValueInA_TimeStep \
+                            / common.totalProductionInA_TimeStep
+
+                 # outside WorldState setMarketPriceV3 method, to avoid here
+                 # random shocks
+
+           self.buyPrice = \
+                     applyRationallyTheRateOfChange(self.buyPrice,\
+                        uniform(-(1-common.initAsymmetry)*common.initShock, \
+                                common.initAsymmetry*common.initShock))
+           self.sellPrice = \
+                     applyRationallyTheRateOfChange(self.sellPrice,\
+                        uniform(-common.initAsymmetry*common.initShock, \
+                                (1-common.initAsymmetry)*common.initAsymmetry))
+
+
+        self.priceWarmingDone = True
+
+
+
+
+        # first call in each cycle, preparing action (only once per cycle)
+        if self.currentCycle != common.cycle:
+           self.currentCycle = common.cycle
+
+           # we check that the planning of the consumption has been
+           # made for the current cycle
+           if self.consumptionPlanningInCycleNumber != common.cycle:
+               print('Attempt of using actOnMarketPlace method before'+\
+                     ' consumption planning')
+               os.sys.exit(1) # to stop the execution, in the calling module
+                           # we have multiple except, with 'SystemExit' case
+
+           # create a tmp list of sellers
+           self.sellerList=[]
+           for anAg in self.agentList:
+               if anAg.getType() == "entrepreneurs":
+                   self.sellerList.append(anAg)
+
+
+        # acting (NB self.consumption comes from planConsumptionInValueV6)
+        # if buying action is possible
+        #print("cycle",common.cycle,"ag",self.number,"cons val",self.consumption)
+        if self.consumption > 0 and self.sellerList != []:
+            # chose a seller
+            mySeller=self.sellerList[randint(0,len(self.sellerList)-1)]
+            sellerQ=mySeller.production - mySeller.soldProduction
+            if sellerQ>0:
+              # try a deal
+              if self.buyPrice <  mySeller.sellPrice:
+                 self.statusB=mySeller.statusS=-1
+              if self.buyPrice >= mySeller.sellPrice:
+                 self.statusB=mySeller.statusS= 1
+
+                 #print(common.cycle,"entr.",mySeller.number,\
+                 #  mySeller.production,mySeller.soldProduction,\
+                 #  mySeller.sellPrice)
+
+                 # NB production can be < plannedProduction due to lack of workers
+
+                 # consumption in value cannot exceed self.maxConsumptionInAStep
+                 buyerQ=min(self.consumption/mySeller.sellPrice, sellerQ,\
+                            self.maxConsumptionInAStep/mySeller.sellPrice)
+
+                 mySeller.soldProduction+=buyerQ
+                 mySeller.revenue+=buyerQ*mySeller.sellPrice
+                 self.consumption-=buyerQ*mySeller.sellPrice
+                 #print("cycle",common.cycle,"ag",self.number,"deal: cons val",\
+                 #        buyerQ*mySeller.sellPrice,"price",mySeller.sellPrice)
+                 # saving the price of the transaction
+                 common.hayekianMarketTransactionPriceList_inACycle.\
+                        append(mySeller.sellPrice)
+
+                 common.totalConsumptionInQuantityInA_TimeStep += buyerQ
+
+
+
+            # correct running prices
+
+            # if the status is != 0 the agent has already been acting
+            if self.statusB == 1:  # buyer case (statusB 1, successful buy attempt,
+                               # acting mostly to decrease the reservation price)
+              self.buyPrice = applyRationallyTheRateOfChange(self.buyPrice,\
+                                  uniform(-common.runningAsymmetry* \
+                                        common.runningShock, \
+                                        (1-common.runningAsymmetry)* \
+                                        common.runningShock))
+
+            if self.statusB == -1: # buyer case (statusB -1, unsuccessful buy attempt,
+                               # acting mostly to increase the reservation price)
+              self.buyPrice = applyRationallyTheRateOfChange(self.buyPrice,\
+                                  uniform(-(1-common.runningAsymmetry)* \
+                                        common.runningShock, \
+                                        common.runningAsymmetry* \
+                                        common.runningShock))
+
+            if mySeller.statusS == 1:  # seller case (statusS 1, successful sell attempt,
+                               # acting mostly to increase the reservation price)
+              mySeller.sellPrice = applyRationallyTheRateOfChange(mySeller.sellPrice,\
+                                       uniform(-(1-common.runningAsymmetry)* \
+                                        common.runningShock, \
+                                        common.runningAsymmetry* \
+                                        common.runningShock))
+
+            if mySeller.statusS == -1: # seller case (statusS -1, unsuccess. s. attempt,
+                               # acting mostly to decrease the reservation price)
+              mySeller.sellPrice = applyRationallyTheRateOfChange(mySeller.sellPrice,\
+                                       uniform(-common.runningAsymmetry* \
+                                        common.runningShock, \
+                                        (1-common.runningAsymmetry)* \
+                                        common.runningShock))
+
+            #print("ag.", self.number, "new prices", self.buyPrice, mySeller.sellPrice)
+
+            # cleaning the situation (redundant)\\
+            self.statusB=mySeller.statusS=0
+
+
+
     # calculateProfit V0
     def evaluateProfitV0(self):
 
@@ -447,7 +755,7 @@ class Agent(SuperAgent):
         self.costs = common.wage * \
             (self.production / common.laborProductivity) + XC
 
-        # the entrepreur sells her production, which is cotributing - via
+        # the entrepreur sells her production, which is contributing - via
         # totalActualProductionInA_TimeStep, to price formation
         self.profit = common.price * self.production - self.costs
 
@@ -505,11 +813,103 @@ class Agent(SuperAgent):
         if self.hasTroubles > 0:
             pv = common.penaltyValue
 
-        # the entrepreur sells her production, which is cotributing - via
+        # the entrepreur sells her production, which is contributing - via
         # totalActualProductionInA_TimeStep, to price formation
         self.profit = common.price * (1. - pv) * self.production - self.costs
         print("I'm entrepreur", self.number, "my price is ",
               common.price * (1. - pv))
+
+
+        # individual data collection
+        # creating the dataframe
+        try:
+            common.dataCounter
+        except BaseException:
+            common.dataCounter=-1
+
+        try:
+            common.firm_df
+        except BaseException:
+            common.firm_df = pd.DataFrame(
+                    columns=[
+                        'production',
+                        'profit'])
+            print("\nCreation of fhe dataframe of the firms (individual data)\n")
+
+        common.dataCounter+=1
+        common.firm_df.set_value(common.dataCounter,\
+                                 'production',self.production)
+        common.firm_df.set_value(common.dataCounter,\
+                                 'profit',self.profit)
+
+
+        common.totalProfit += self.profit
+
+        # calculateProfit
+    def evaluateProfitV6(self):
+
+        # this is an entrepreneur action
+        if self.agType == "workers":
+            return
+
+        # backward compatibily to version 1
+        try:
+            XC = common.newEntrantExtraCosts
+        except BaseException:
+            XC = 0
+        try:
+            k = self.extraCostsResidualDuration
+        except BaseException:
+            k = 0
+
+        if k == 0:
+            XC = 0
+        if k > 0:
+            self.extraCostsResidualDuration -= 1
+
+        # the number of pruducing workers is obtained indirectly via
+        # production/laborProductivity
+        # print self.production/common.laborProductivity
+
+        # how many workers, not via productvity due to possible troubles
+        # in production
+
+        laborForce = gvf.nx.degree(common.g, nbunch=self) + \
+            1  # +1 to account for the entrepreneur herself
+
+        # the followin if/else structure is for control reasons because if
+        # not common.wageCutForWorkTroubles we do not take in account
+        # self.workTroubles also if != 0; if = 0 is non relevant in any case
+        if common.wageCutForWorkTroubles:
+            self.costs = (common.wage - self.hasTroubles) \
+                * (laborForce - 1) \
+                + common.wage * 1 +  \
+                XC
+            # above, common.wage * 1 is for the entrepreur herself
+
+        else:
+            self.costs = common.wage * laborForce + \
+                XC
+        # print "I'm entrepreur", self.number, "costs are",self.costs
+
+        # penalty Value
+        pv = 0
+        if self.hasTroubles > 0:
+            pv = common.penaltyValue
+
+        # V6 - before hayekian phase
+        if common.cycle < common.startHayekianMarket:
+           # the entrepreur sells her production, which is contributing - via
+           # totalActualProductionInA_TimeStep, to price formation
+           self.profit = common.price * (1. - pv) * self.production - self.costs
+           print("I'm entrepreur", self.number, "my price is ",
+              common.price * (1. - pv))
+
+        # V6 - into the hayekian phase
+        else:
+           self.profit = self.revenue - self.costs
+           print("I'm entrepreur", self.number, "my individual price is ",
+              self.sellPrice)
 
 
         # individual data collection
@@ -569,7 +969,7 @@ class Agent(SuperAgent):
         common.totalPlannedConsumptionInValueInA_TimeStep += self.consumption
         # print "C sum", common.totalPlannedConsumptionInValueInA_TimeStep
 
-    # compensation
+    # consumptions
     def planConsumptionInValueV5(self):
         self.consumption = 0
         #case (1)
@@ -611,12 +1011,76 @@ class Agent(SuperAgent):
         common.totalPlannedConsumptionInValueInA_TimeStep += self.consumption
         # print "C sum", common.totalPlannedConsumptionInValueInA_TimeStep
 
+        self.consumptionPlanningInCycleNumber=common.cycle
+
+    # consumptions
+    def planConsumptionInValueV6(self):
+        self.consumption = 0
+        #case (1)
+        # Y1=profit(t-1)+wage NB no negative consumption if profit(t-1) < 0
+        # this is an entrepreneur action
+        if self.agType == "entrepreneurs":
+            self.consumption = common.a1 + \
+                common.b1 * (self.profit + common.wage) + \
+                gauss(0, common.consumptionRandomComponentSD)
+            if self.consumption < 0:
+                self.consumption = 0
+            # profit, in V2, is at time -1 due to the sequence in schedule2.xls
+
+        #case (2)
+        # Y2=wage
+        if self.agType == "workers" and self.employed:
+            # the followin if/else structure is for control reasons because if
+            # not common.wageCutForWorkTroubles we do not take in account
+            # self.workTroubles also if != 0; if = 0 is non relevant in any
+            # case
+            if common.wageCutForWorkTroubles:
+                self.consumption = common.a2 + \
+                    common.b2 * common.wage * (1. - self.workTroubles) + \
+                    gauss(0, common.consumptionRandomComponentSD)
+                # print "worker", self.number, "wage x",(1.-self.workTroubles)
+            else:
+                self.consumption = common.a2 + \
+                    common.b2 * common.wage + \
+                    gauss(0, common.consumptionRandomComponentSD)
+
+        #case (3)
+        # Y3=socialWelfareCompensation
+        if self.agType == "workers" and not self.employed:
+            self.consumption = common.a3 + \
+                common.b3 * common.socialWelfareCompensation + \
+                gauss(0, common.consumptionRandomComponentSD)
+
+        if self.consumption < 0:
+            #print('*************************************',self.employed, \
+            #        self.consumption)
+            self.consumption=0
+
+        # max cons. in each step of a cycles of the hayekian phase
+        self.maxConsumptionInAStep=self.consumption*common.consumptionQuota
+
+        # update totalPlannedConsumptionInValueInA_TimeStep
+        if common.cycle < common.startHayekianMarket or \
+           (common.cycle == common.startHayekianMarket and \
+           common.startHayekianMarket == 1):
+           # the 'or' condition is necessary In the hayekian perspective,
+           # when the start is a cyce 1; the value of
+           # common.totalPlannedConsumptionInValueInA_TimeStep is necessary
+           # in the warming phase: look at the ‘else’ within
+           # ‘if not self.priceWarmingDone’
+
+           common.totalPlannedConsumptionInValueInA_TimeStep += self.consumption
+           # print "C sum", common.totalPlannedConsumptionInValueInA_TimeStep
+
+        self.consumptionPlanningInCycleNumber=common.cycle
+
     # to entrepreneur
     def toEntrepreneur(self):
         if self.agType != "workers" or not self.employed:
             return
 
-        myEntrepreneur = gvf.nx.neighbors(common.g, self)[0]
+        #myEntrepreneur = gvf.nx.neighbors(common.g, self)[0] with nx 2.0
+        myEntrepreneur = list(common.g.neighbors(self))[0]
         myEntrepreneurProfit = myEntrepreneur.profit
         if myEntrepreneurProfit >= common.thresholdToEntrepreneur:
             print("I'm worker %2.0f and myEntrepreneurProfit is %4.2f" %
@@ -643,7 +1107,8 @@ class Agent(SuperAgent):
         #               len(self.agentList)
         if random() <= float(common.absoluteBarrierToBecomeEntrepreneur) / \
                 len(self.agentList):
-            myEntrepreneur = gvf.nx.neighbors(common.g, self)[0]
+            #myEntrepreneur = gvf.nx.neighbors(common.g, self)[0] with nx 2.0
+            myEntrepreneur = list(common.g.neighbors(self))[0]
             myEntrepreneurProfit = myEntrepreneur.profit
             myEntrepreneurCosts = myEntrepreneur.costs
             if myEntrepreneurProfit / myEntrepreneurCosts >= \
@@ -675,8 +1140,10 @@ class Agent(SuperAgent):
                   (self.number, self.profit))
 
             # the list of the employees of the firm, IF ANY
-            entrepreneurWorkers = gvf.nx.neighbors(common.g, self)
-            print("entrepreneur", self.number, "has", len(entrepreneurWorkers),
+            #entrepreneurWorkers = gvf.nx.neighbors(common.g, self) with nx 2.0
+            entrepreneurWorkers = list(common.g.neighbors(self))
+            print("entrepreneur", self.number, "has",
+                   len(entrepreneurWorkers),
                   "workers to be fired")
 
             if len(entrepreneurWorkers) > 0:
@@ -715,8 +1182,10 @@ class Agent(SuperAgent):
                   (self.number, self.profit / self.costs))
 
             # the list of the employees of the firm, IF ANY
-            entrepreneurWorkers = gvf.nx.neighbors(common.g, self)
-            print("entrepreneur", self.number, "has", len(entrepreneurWorkers),
+            #entrepreneurWorkers = gvf.nx.neighbors(common.g, self) with nx 2.0
+            entrepreneurWorkers = list(common.g.neighbors(self))
+            print("entrepreneur", self.number, "has",
+                  len(entrepreneurWorkers),
                   "workers to be fired")
 
             if len(entrepreneurWorkers) > 0:
@@ -756,8 +1225,9 @@ class Agent(SuperAgent):
               "production of", psiShock * 100, "%, due to work troubles")
 
         if common.wageCutForWorkTroubles:
-                # the list of the employees of the firm
-            entrepreneurWorkers = gvf.nx.neighbors(common.g, self)
+            # the list of the employees of the firm
+            #entrepreneurWorkers = gvf.nx.neighbors(common.g, self) with nx 2.0
+            entrepreneurWorkers = list(common.g.neighbors(self))
             for aWorker in entrepreneurWorkers:
                 # avoiding the entrepreneur herself, as we are refering to her
                 # network of workers
@@ -768,3 +1238,7 @@ class Agent(SuperAgent):
     # get graph
     def getGraph(self):
         return common.g
+
+    # get type
+    def getType(self):
+        return self.agType

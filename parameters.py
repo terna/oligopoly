@@ -271,6 +271,48 @@ def loadParameters(self):
     dataFrameAppend("penaltyValue","price penalty for the firms if work troubles",
                     common.penaltyValue)  # saving par
 
+    print("\nHayekian market starts at cycle = %3d\n" %
+            common.startHayekianMarket)
+    dataFrameAppend("startHayekian",
+                        "cycle to starts the hayekian market",
+                        common.startHayekianMarket)  # saving pars
+
+    print("\nRange of the correction of agent starting prices in h. market = %5.2f\n" %
+            common.initShock)
+    dataFrameAppend("initShock",
+                        "correction of starting prices in h. market",
+                        common.initShock)  # saving pars
+
+    print("\nAsymmetry in individual starting prices (h. market) = %5.2f\n" %
+            common.initAsymmetry)
+    dataFrameAppend("initAsymmetry",
+                        "asymmetry in individual starting prices (h. market)",
+                        common.initAsymmetry)  # saving pars
+
+    print("\nRange of the correction of agent running prices in h. market = %5.2f\n"\
+            % common.runningShock)
+    dataFrameAppend("runningShock",
+                        "correction of running prices in h. market",
+                        common.runningShock)  # saving pars
+
+    print("\nAsymmetry in individual running prices (h. market) = %5.2f\n" %
+            common.runningAsymmetry)
+    dataFrameAppend("runningAsymmetry",
+                        "asymmetry in individual running prices (h. market)",
+                        common.runningAsymmetry)  # saving pars
+
+
+    # Max quota (base 1) of the consumption in each step of a cycle
+    print("\nMax quota (base 1) of the consumptions in each step of a cycle\n")
+    common.consumptionQuota = eval(input(\
+                      "(enter any value in a non-hayekian simulation): "))
+
+    dataFrameAppend("consumptionQuota",
+                        "Max quota (b. 1) of the cons. in each step of a cycle",
+                        common.consumptionQuota)  # saving pars
+
+
+
     # cycles
     self.nCycles = eval(input("How many cycles? (0 = exit) "))
 
