@@ -1,12 +1,8 @@
 # commonVar.py
 
-projectVersion = "6, temporary develHayekianMarket"
+projectVersion = "6 tmp few workers and h. phase at 1"
 
-<<<<<<< HEAD
-build = "20180209"
-=======
 build = "20180403"
->>>>>>> develHayekianMarket
 
 debug = False
 
