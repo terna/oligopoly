@@ -837,10 +837,12 @@ class Agent(SuperAgent):
             print("\nCreation of fhe dataframe of the firms (individual data)\n")
 
         common.dataCounter+=1
-        common.firm_df.set_value(common.dataCounter,\
-                                 'production',self.production)
-        common.firm_df.set_value(common.dataCounter,\
-                                 'profit',self.profit)
+        #common.firm_df.set_value(common.dataCounter,\ deprecated since pandas 0.21
+        common.firm_df.at[common.dataCounter,\
+                                 'production',self.production]
+        #common.firm_df.set_value(common.dataCounter,\ deprecated since pandas 0.21
+        common.firm_df.at[common.dataCounter,\
+                                 'profit',self.profit]
 
 
         common.totalProfit += self.profit
@@ -929,10 +931,12 @@ class Agent(SuperAgent):
             print("\nCreation of fhe dataframe of the firms (individual data)\n")
 
         common.dataCounter+=1
-        common.firm_df.set_value(common.dataCounter,\
-                                 'production',self.production)
-        common.firm_df.set_value(common.dataCounter,\
-                                 'profit',self.profit)
+        #common.firm_df.set_value(common.dataCounter,\ deprecated since pandas 0.21
+        common.firm_df.at[common.dataCounter,\
+                                 'production',self.production]
+        #common.firm_df.set_value(common.dataCounter,\ deprecated since pandas 0.21
+        common.firm_df.at[common.dataCounter,\
+                                 'profit',self.profit]
 
 
         common.totalProfit += self.profit
@@ -1066,8 +1070,8 @@ class Agent(SuperAgent):
            # the 'or' condition is necessary In the hayekian perspective,
            # when the start is a cyce 1; the value of
            # common.totalPlannedConsumptionInValueInA_TimeStep is necessary
-           # in the warming phase: look at the ‘else’ within
-           # ‘if not self.priceWarmingDone’
+           # in the warming phase: look at the 'else' within
+           # 'if not self.priceWarmingDone'
 
            common.totalPlannedConsumptionInValueInA_TimeStep += self.consumption
            # print "C sum", common.totalPlannedConsumptionInValueInA_TimeStep
