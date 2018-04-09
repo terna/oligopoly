@@ -838,16 +838,19 @@ class Agent(SuperAgent):
 
         common.dataCounter+=1
         #common.firm_df.set_value(common.dataCounter,\ deprecated since pandas 0.21
-        common.firm_df.at[common.dataCounter,\
-                                 'production',self.production]
+        col=common.firm_df.columns.get_loc('production')
+        common.firm_df.ix[common.dataCounter,\
+                                 col]=self.production
         #common.firm_df.set_value(common.dataCounter,\ deprecated since pandas 0.21
-        common.firm_df.at[common.dataCounter,\
-                                 'profit',self.profit]
+        col=common.firm_df.columns.get_loc('profit')
+        common.firm_df.ix[common.dataCounter,\
+                                 col]=self.profit
+
 
 
         common.totalProfit += self.profit
 
-        # calculateProfit
+    # calculateProfit
     def evaluateProfitV6(self):
 
         # this is an entrepreneur action
@@ -932,11 +935,13 @@ class Agent(SuperAgent):
 
         common.dataCounter+=1
         #common.firm_df.set_value(common.dataCounter,\ deprecated since pandas 0.21
+        col=common.firm_df.columns.get_loc('production')
         common.firm_df.at[common.dataCounter,\
-                                 'production',self.production]
+                                 col]=self.production
         #common.firm_df.set_value(common.dataCounter,\ deprecated since pandas 0.21
-        common.firm_df.at[common.dataCounter,\
-                                 'profit',self.profit]
+        col=common.firm_df.columns.get_loc('profit')
+        common.firm_df.ix[common.dataCounter,\
+                                 col]=self.profit
 
 
         common.totalProfit += self.profit
