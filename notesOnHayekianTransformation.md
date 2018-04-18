@@ -59,11 +59,17 @@ common.totalPlannedProduction
 derive directly from common.totalConsumptionInQuantityInPrevious_TimeStep
 
 !!!!
-or (NOVELTY) with delay (-1 OR -2) or with a mix of two periods (nb, acting in
-reset phase)
-using new definitions such as
-common.totalConsumptionInQuantityInPrevious_TimeStep1 and
-common.totalConsumptionInQuantityInPrevious_TimeStep1
+or (NOVELTY) from common.totalConsumptionInQuantityInPrevious2_TimeStep
+with a mix of the two measures with weights
+
+w and (1 - w) having (0 <= w <= 1)
+
+and (with common.w)
+
+    common.totalConsumptionInQuantityInPrevious_TimeStep = \
+      common.w * common.totalConsumptionInQuantityInPrevious_TimeStep +\
+      (1 - common.w) * common.totalConsumptionInQuantityInPrevious2_TimeStep
+
 !!!!
 
 

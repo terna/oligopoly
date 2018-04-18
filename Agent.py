@@ -159,8 +159,15 @@ class Agent(SuperAgent):
 
             # not in case common.cycle == common.startHayekianMarket == 1
             elif common.cycle > common.startHayekianMarket:
+                common.totalConsumptionInQuantityInPrevious2_TimeStep= \
+                 common.totalConsumptionInQuantityInPrevious_TimeStep
                 common.totalConsumptionInQuantityInPrevious_TimeStep = \
-                   common.totalConsumptionInQuantityInA_TimeStep
+                 common.totalConsumptionInQuantityInA_TimeStep
+                if common.cycle > common.startHayekianMarket+1:
+                 common.totalConsumptionInQuantityInPrevious_TimeStep = \
+                 common.w*common.totalConsumptionInQuantityInPrevious_TimeStep +\
+                 (1-common.w)*common.totalConsumptionInQuantityInPrevious2_TimeStep
+
             # !!!! here we can use also delayed values, look at !!!! in
             # notesOnHayekianTransformation.md
 

@@ -312,6 +312,22 @@ def loadParameters(self):
                         common.consumptionQuota)  # saving pars
 
 
+    # Weight (0 <= w <= 1) of the consumption quantities in hayekian phase at
+    # t==-1; the weight of the quantity at t==-2 is (1 - w)
+    print(\
+     "\nWeight (0 <= w <= 1) of the consumption quantities in hayekian phase")
+    common.w = eval(input(\
+     "(w is the weight of the quantity at t==-1;\n(w - 1) is the weight "+\
+     "of the quantity at t==-2: "))
+    if common.w < 0 or common.w > 1:
+        print("out of range (0 <= w <= 1)")
+        os.sys.exit(1)
+
+    dataFrameAppend("w",
+                    "Weights w and (1 - w) (0 <= w <= 1) of c. q.s in h. phase",
+                    common.w)  # saving pars
+
+
 
     # cycles
     self.nCycles = eval(input("How many cycles? (0 = exit) "))
