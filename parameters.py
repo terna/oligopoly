@@ -317,7 +317,7 @@ def loadParameters(self):
     print(\
      "\nWeight (0 <= w <= 1) of the consumption quantities in hayekian phase")
     common.w = eval(input(\
-     "(w is the weight of the quantity at t==-1;\n(w - 1) is the weight "+\
+     "(w is the weight of the quantity at t==-1;\n(1 - w) is the weight "+\
      "of the quantity at t==-2: "))
     if common.w < 0 or common.w > 1:
         print("out of range (0 <= w <= 1)")

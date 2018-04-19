@@ -2,7 +2,7 @@
 
 projectVersion = "6 tmp few workers and h. phase at 1"
 
-build = "20180403"
+build = "20180419"
 
 debug = False
 
@@ -160,3 +160,6 @@ parsDict={}
 
 # to report hayekian price st. dev. if not still calculated
 hPriceSd = -100 # -100 will not appear in graphs
+
+# predefintion
+totalConsumptionInQuantityInPrevious1_TimeStep=0
