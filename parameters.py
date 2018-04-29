@@ -289,17 +289,29 @@ def loadParameters(self):
                         "asymmetry in individual starting prices (h. market)",
                         common.initAsymmetry)  # saving pars
 
-    print("\nRange of the correction of agent running prices in h. market = %5.2f\n"\
-            % common.runningShock)
-    dataFrameAppend("runningShock",
-                        "correction of running prices in h. market",
-                        common.runningShock)  # saving pars
+    print("\nRange of the correction of agent (as buyers) running prices in h. market = %5.2f\n"\
+            % common.runningShockB)
+    dataFrameAppend("runningShockB",
+                        "correction of running prices in h. market (buyers)",
+                        common.runningShockB)  # saving pars
 
-    print("\nAsymmetry in individual running prices (h. market) = %5.2f\n" %
-            common.runningAsymmetry)
-    dataFrameAppend("runningAsymmetry",
-                        "asymmetry in individual running prices (h. market)",
-                        common.runningAsymmetry)  # saving pars
+    print("\nRange of the correction of agent (as sellers) running prices in h. market = %5.2f\n"\
+            % common.runningShockS)
+    dataFrameAppend("runningShockS",
+                        "correction of running prices in h. market (sellers)",
+                        common.runningShockS)  # saving pars
+
+    print("\nAsymmetry in individual buyer running prices (h. market) = %5.2f\n" %
+            common.runningAsymmetryB)
+    dataFrameAppend("runningAsymmetryB",
+                        "asymmetry in individual buyer running prices (h. market)",
+                        common.runningAsymmetryB)  # saving pars
+
+    print("\nAsymmetry in individual seller running prices (h. market) = %5.2f\n" %
+            common.runningAsymmetryS)
+    dataFrameAppend("runningAsymmetryS",
+                        "asymmetry in individual seller running prices (h. market)",
+                        common.runningAsymmetryS)  # saving pars
 
 
     # Max quota (base 1) of the consumption in each step of a cycle

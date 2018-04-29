@@ -687,34 +687,34 @@ class Agent(SuperAgent):
             if self.statusB == 1:  # buyer case (statusB 1, successful buy attempt,
                                # acting mostly to decrease the reservation price)
               self.buyPrice = applyRationallyTheRateOfChange(self.buyPrice,\
-                                  uniform(-common.runningAsymmetry* \
-                                        common.runningShock, \
-                                        (1-common.runningAsymmetry)* \
-                                        common.runningShock))
+                                  uniform(-common.runningAsymmetryB* \
+                                        common.runningShockB, \
+                                        (1-common.runningAsymmetryB)* \
+                                        common.runningShockB))
 
             if self.statusB == -1: # buyer case (statusB -1, unsuccessful buy attempt,
                                # acting mostly to increase the reservation price)
               self.buyPrice = applyRationallyTheRateOfChange(self.buyPrice,\
-                                  uniform(-(1-common.runningAsymmetry)* \
-                                        common.runningShock, \
-                                        common.runningAsymmetry* \
-                                        common.runningShock))
+                                  uniform(-(1-common.runningAsymmetryB)* \
+                                        common.runningShockB, \
+                                        common.runningAsymmetryB* \
+                                        common.runningShockB))
 
             if mySeller.statusS == 1:  # seller case (statusS 1, successful sell attempt,
                                # acting mostly to increase the reservation price)
               mySeller.sellPrice = applyRationallyTheRateOfChange(mySeller.sellPrice,\
-                                       uniform(-(1-common.runningAsymmetry)* \
-                                        common.runningShock, \
-                                        common.runningAsymmetry* \
-                                        common.runningShock))
+                                       uniform(-(1-common.runningAsymmetryS)* \
+                                        common.runningShockS, \
+                                        common.runningAsymmetryS* \
+                                        common.runningShockS))
 
             if mySeller.statusS == -1: # seller case (statusS -1, unsuccess. s. attempt,
                                # acting mostly to decrease the reservation price)
               mySeller.sellPrice = applyRationallyTheRateOfChange(mySeller.sellPrice,\
-                                       uniform(-common.runningAsymmetry* \
-                                        common.runningShock, \
-                                        (1-common.runningAsymmetry)* \
-                                        common.runningShock))
+                                       uniform(-common.runningAsymmetryS* \
+                                        common.runningShockS, \
+                                        (1-common.runningAsymmetryS)* \
+                                        common.runningShockS))
 
             #print("ag.", self.number, "new prices", self.buyPrice, mySeller.sellPrice)
 

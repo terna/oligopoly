@@ -163,7 +163,7 @@ class WorldState(object):
             common.wage /= (1 + common.wageStepInFullEmployment)
             common.fullEmploymentStatus = False
 
-    # incumbents rising wages as na entry barrier
+    # incumbents rising wages as an entry barrier
     def incumbentActionOnWages(self):
 
         # current number of entrepreneurs

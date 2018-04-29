@@ -80,7 +80,7 @@ wageStepInFullEmployment = 0.10
 fullEmploymentStatus = False
 
 wageAddendum = 0
-maxAcceptableOligopolistRelativeIncrement = 0.20
+maxAcceptableOligopolistRelativeIncrement = 0.30 # was 0.20 in the paper
 temporaryRelativeWageIncrementAsBarrier = 0.15
 
 
@@ -115,7 +115,7 @@ nu = 5
 rho = 0.9
 
 # threshold toEntrepreneur
-thresholdToEntrepreneur = 0.15  # was 0.20
+thresholdToEntrepreneur = 0.10 # was 0.15 in the paper  # was 0.20 in the init. trials
 extraCostsDuration = 3
 newEntrantExtraCosts = 60  # was 100.0 # was 2.0
 
@@ -127,7 +127,7 @@ absoluteBarrierToBecomeEntrepreneur = 20
 maxDemandRelativeRandomShock = 0.15  # was 0.10 #was 0.20
 
 # threshold toWorker
-thresholdToWorker = -0.20
+thresholdToWorker = -0.25 # -0.20 was the value in the paper
 
 # start the hayekian market at cycle ... (NB > 0)
 startHayekianMarket = 1 #6
@@ -138,9 +138,11 @@ initShock = 0.3
 initAsymmetry = 0.90
 
 # Range of the correction of agent current price (h. market), as buyer/seller
-runningShock = 0.05
+runningShockB = 0.05
+runningShockS = 0.05
 # current asymmetry in individual price correction (h. market)
-runningAsymmetry = 0.9
+runningAsymmetryB = 0.9
+runningAsymmetryS = 0.9
 
 nodeNumbersInGraph = False
 
