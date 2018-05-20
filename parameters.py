@@ -283,11 +283,11 @@ def loadParameters(self):
                         "correction of starting prices in h. market",
                         common.initShock)  # saving pars
 
-    print("\nAsymmetry in individual starting prices (h. market) = %5.2f\n" %
-            common.initAsymmetry)
-    dataFrameAppend("initAsymmetry",
-                        "asymmetry in individual starting prices (h. market)",
-                        common.initAsymmetry)  # saving pars
+    print("\nShift in individual starting prices (h. market) = %5.2f\n" %
+            common.initShift)
+    dataFrameAppend("initShift",
+                        "shift in individual starting prices (h. market)",
+                        common.initShift)  # saving pars
 
     print("\nRange of the correction of agent (as buyers) running prices in h. market = %5.2f\n"\
             % common.runningShockB)

@@ -581,16 +581,12 @@ class Agent(SuperAgent):
                       common.ts_df.price.values[-1] # the last price
               #print("Ag.", self.number,"buying at", self.buyPrice,
               #                         "selling at",self.sellPrice)
-              #if self.buyPrice >= self.sellPrice:
-              #        print ("buyPrice >= sellPrice")
               # NB the code above can act only if t>1
             if len(common.ts_df.price.values) > 2:
               self.buyPrice  = self.sellPrice = \
                       common.ts_df.price.values[-2] # the second last price
               #print("Ag.", self.number,"buying at", self.buyPrice,
               #                         "selling at",self.sellPrice)
-              #if self.buyPrice >= self.sellPrice:
-              #        print ("buyPrice >= sellPrice")
               # NB the code above can act only if t>2
 
            else: # case t==1 being common.startHayekianMarket==1
@@ -607,18 +603,20 @@ class Agent(SuperAgent):
                             common.totalPlannedConsumptionInValueInA_TimeStep \
                             / common.totalProductionInA_TimeStep
 
+
                  # outside WorldState setMarketPriceV3 method, to avoid here
                  # random shocks
 
-           self.buyPrice = \
-                     applyRationallyTheRateOfChange(self.buyPrice,\
-                        uniform(-(1-common.initAsymmetry)*common.initShock, \
-                                common.initAsymmetry*common.initShock))
+           #starting sell price
            self.sellPrice = \
                      applyRationallyTheRateOfChange(self.sellPrice,\
-                        uniform(-common.initAsymmetry*common.initShock, \
-                                (1-common.initAsymmetry)*common.initAsymmetry))
-
+                        uniform(-common.initShift*common.initShock, \
+                                (1-common.initShift)*common.initShock))
+           #starting buy price
+           self.buyPrice = \
+                     applyRationallyTheRateOfChange(self.buyPrice,\
+                        uniform((common.initShift-1)*common.initShock, \
+                                common.initShift*common.initShock))
 
         self.priceWarmingDone = True
 
@@ -688,9 +686,9 @@ class Agent(SuperAgent):
                                # acting mostly to decrease the reservation price)
               self.buyPrice = applyRationallyTheRateOfChange(self.buyPrice,\
                                   uniform(-common.runningAsymmetryB* \
-                                        common.runningShockB, \
+                                        common.runningShockB*1.02, \
                                         (1-common.runningAsymmetryB)* \
-                                        common.runningShockB))
+                                        common.runningShockB*1.02))
 
             if self.statusB == -1: # buyer case (statusB -1, unsuccessful buy attempt,
                                # acting mostly to increase the reservation price)
@@ -704,9 +702,9 @@ class Agent(SuperAgent):
                                # acting mostly to increase the reservation price)
               mySeller.sellPrice = applyRationallyTheRateOfChange(mySeller.sellPrice,\
                                        uniform(-(1-common.runningAsymmetryS)* \
-                                        common.runningShockS, \
+                                        common.runningShockS*1.02, \
                                         common.runningAsymmetryS* \
-                                        common.runningShockS))
+                                        common.runningShockS*1.02))
 
             if mySeller.statusS == -1: # seller case (statusS -1, unsuccess. s. attempt,
                                # acting mostly to decrease the reservation price)

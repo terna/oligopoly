@@ -115,7 +115,7 @@ nu = 5
 rho = 0.9
 
 # threshold toEntrepreneur
-thresholdToEntrepreneur = 0.10 # was 0.15 in the paper  # was 0.20 in the init. trials
+thresholdToEntrepreneur = 0.05 # was 0.15 in the paper  # was 0.20 in the init. trials
 extraCostsDuration = 3
 newEntrantExtraCosts = 60  # was 100.0 # was 2.0
 
@@ -135,7 +135,7 @@ startHayekianMarket = 1 #6
 # Range of the correction of agent starting prices (h. market)
 initShock = 0.3
 # initial asymmetry in individual starting prices (h. market)
-initAsymmetry = 0.90
+initShift = 0.1
 
 # Range of the correction of agent current price (h. market), as buyer/seller
 runningShockB = 0.05
