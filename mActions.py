@@ -27,6 +27,13 @@ def createTheAgent(self, line, num, agType):
     if num == 1:
         common.agent1existing = True
 
+        #create file for first hayekian step output
+        import csv
+        common.csvf=open(common.pro + "/" +\
+           "firstStepOutputInHayekianMarket.csv", "w")
+        common.wr=csv.writer(common.csvf)
+        common.closed=False
+
     # workers
     if agType == "workers":
         anAgent = Agent(num, self.worldState,

@@ -1,8 +1,8 @@
 # commonVar.py
 
-projectVersion = "6 tmp few workers and h. phase at 1"
+projectVersion = "6"
 
-build = "20180520"
+build = "20180527"
 
 debug = False
 
@@ -130,7 +130,7 @@ maxDemandRelativeRandomShock = 0.15  # was 0.10 #was 0.20
 thresholdToWorker = -0.25 # -0.20 was the value in the paper
 
 # start the hayekian market at cycle ... (NB > 0)
-startHayekianMarket = 1 #6
+startHayekianMarket = 3 #1 #6
 
 # Range of the correction of agent starting prices (h. market)
 initShock = 0.3
@@ -165,3 +165,6 @@ hPriceSd = -100 # -100 will not appear in graphs
 
 # predefintion
 totalConsumptionInQuantityInPrevious1_TimeStep=0
+
+#instruments
+startingHayekianCommonPriceAlreadyWritten=False

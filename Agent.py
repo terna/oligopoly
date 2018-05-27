@@ -5,8 +5,11 @@ from random import *
 import graphicDisplayGlobalVarAndFunctions as gvf
 import commonVar as common
 import numpy.random as npr
+import numpy
 import pandas as pd
 import os
+
+
 
 def mySort(ag):
     if ag == []:
@@ -92,8 +95,9 @@ class Agent(SuperAgent):
         self.yPos = yPos
 
         # price memory
-        self.buyPrice  = 1
-        self.sellPrice = 1
+        self.buyPrice  = -1000
+        self.sellPrice = 1000
+        self.sellPriceDefined=False
 
         # consumption planning for the current cycle
         # if the planning has been made, the variable contains
@@ -571,18 +575,24 @@ class Agent(SuperAgent):
     def actOnMarketPlace(self):
         if common.cycle < common.startHayekianMarket: return
 
+        try: common.wr.writerow
+        except:
+            print("The file firstStepOutputInHayekianMarket.csv was not"+\
+                  " created in mActions.py")
+            os.sys.exit(1)
+
         if not self.priceWarmingDone:
            # setting the price uniquely in the first hayekian step of the
            # first hayekian cycle
 
            if common.startHayekianMarket>1:
-            if len(common.ts_df.price.values) > 1:
+            if len(common.ts_df.price.values) == 1:
               self.buyPrice  = self.sellPrice = \
                       common.ts_df.price.values[-1] # the last price
               #print("Ag.", self.number,"buying at", self.buyPrice,
               #                         "selling at",self.sellPrice)
               # NB the code above can act only if t>1
-            if len(common.ts_df.price.values) > 2:
+            if len(common.ts_df.price.values) > 1:
               self.buyPrice  = self.sellPrice = \
                       common.ts_df.price.values[-2] # the second last price
               #print("Ag.", self.number,"buying at", self.buyPrice,
@@ -602,21 +612,31 @@ class Agent(SuperAgent):
               self.buyPrice  = self.sellPrice = \
                             common.totalPlannedConsumptionInValueInA_TimeStep \
                             / common.totalProductionInA_TimeStep
-
-
                  # outside WorldState setMarketPriceV3 method, to avoid here
                  # random shocks
+
+           #startingHayekianCommonPrice
+           if not common.startingHayekianCommonPriceAlreadyWritten:
+                  print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+                  print("starting hayekian common price",self.buyPrice)
+                  print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+                  common.startingHayekianCommonPriceAlreadyWritten=True
+
+
 
            #starting sell price
            self.sellPrice = \
                      applyRationallyTheRateOfChange(self.sellPrice,\
                         uniform(-common.initShift*common.initShock, \
                                 (1-common.initShift)*common.initShock))
+           self.sellPriceDefined=True
+
            #starting buy price
            self.buyPrice = \
                      applyRationallyTheRateOfChange(self.buyPrice,\
                         uniform((common.initShift-1)*common.initShock, \
                                 common.initShift*common.initShock))
+
 
         self.priceWarmingDone = True
 
@@ -635,17 +655,25 @@ class Agent(SuperAgent):
                os.sys.exit(1) # to stop the execution, in the calling module
                            # we have multiple except, with 'SystemExit' case
 
-           # create a tmp list of sellers
-           self.sellerList=[]
+           # create a temporary list of sellers, starting each step
+           self.sellerList0=[]
            for anAg in self.agentList:
                if anAg.getType() == "entrepreneurs":
-                   self.sellerList.append(anAg)
+                       self.sellerList0.append(anAg)
 
 
         # acting (NB self.consumption comes from planConsumptionInValueV6)
         # if buying action is possible
         #print("cycle",common.cycle,"ag",self.number,"cons val",self.consumption)
-        if self.consumption > 0 and self.sellerList != []:
+
+        # create a temporary list of sellers, in each subStep
+        self.sellerList=[]
+        for anAg in self.sellerList0:
+                   if anAg.sellPriceDefined:
+                       self.sellerList.append(anAg)
+
+        if self.consumption > 0:
+          if self.sellerList != []:
             # chose a seller
             mySeller=self.sellerList[randint(0,len(self.sellerList)-1)]
             sellerQ=mySeller.production - mySeller.soldProduction
@@ -677,6 +705,23 @@ class Agent(SuperAgent):
 
                  common.totalConsumptionInQuantityInA_TimeStep += buyerQ
 
+
+            #out seller has no goods to sell
+            elif common.cycle==common.startHayekianMarket:
+                     common.wr.writerow\
+                     (["nogoods", "buy", numpy.nan, self.consumption, self.number,\
+                     "sell", numpy.nan,mySeller.number])
+
+            #out
+            if common.cycle==common.startHayekianMarket:
+                if mySeller.statusS==1:
+                    common.wr.writerow\
+                    (["deal", "buy", self.buyPrice, self.consumption, self.number,\
+                    "sell", mySeller.sellPrice,mySeller.number])
+                if mySeller.statusS==-1 and mySeller.sellPriceDefined:
+                    common.wr.writerow\
+                    (["nodeal", "buy", self.buyPrice, self.consumption, self.number,\
+                    "sell", mySeller.sellPrice,mySeller.number])
 
 
             # correct running prices
@@ -719,6 +764,22 @@ class Agent(SuperAgent):
             # cleaning the situation (redundant)\\
             self.statusB=mySeller.statusS=0
 
+          #out self.sellerList==[]
+          elif common.cycle==common.startHayekianMarket:
+               common.wr.writerow\
+                (["nosellers", "buy", numpy.nan, self.consumption, self.number,\
+                "sell", numpy.nan,numpy.nan])
+
+        #out self.consumption<=0
+        elif common.cycle==common.startHayekianMarket:
+             common.wr.writerow\
+               (["noconsumption", "buy", numpy.nan, self.consumption, self.number,\
+               "sell", numpy.nan,numpy.nan])
+
+        #out
+        if common.cycle==common.startHayekianMarket+1 and not common.closed:
+            common.csvf.close()
+            common.closed=True
 
 
     # calculateProfit V0
