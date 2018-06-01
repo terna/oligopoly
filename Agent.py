@@ -625,10 +625,14 @@ class Agent(SuperAgent):
 
 
            #starting sell price
+           if self.agType=="entrepreneurs":
+               print("???????????????????a", self.sellPrice)
            self.sellPrice = \
                      applyRationallyTheRateOfChange(self.sellPrice,\
                         uniform(-common.initShift*common.initShock, \
                                 (1-common.initShift)*common.initShock))
+           if self.agType=="entrepreneurs":
+               print("???????????????????b", self.sellPrice)
            self.sellPriceDefined=True
 
            #starting buy price
@@ -767,7 +771,7 @@ class Agent(SuperAgent):
           #out self.sellerList==[]
           elif common.cycle==common.startHayekianMarket:
                common.wr.writerow\
-                (["nosellers", "buy", numpy.nan, self.consumption, self.number,\
+                (["nosellers", "buy", self.buyPrice, self.consumption, self.number,\
                 "sell", numpy.nan,numpy.nan])
 
         #out self.consumption<=0
@@ -908,7 +912,7 @@ class Agent(SuperAgent):
         common.dataCounter+=1
         #common.firm_df.set_value(common.dataCounter,\ deprecated since pandas 0.21
         col=common.firm_df.columns.get_loc('production')
-        common.firm_df.ix[common.dataCounter,\
+        common.firm_df.at[common.dataCounter,\
                                  col]=self.production
         #common.firm_df.set_value(common.dataCounter,\ deprecated since pandas 0.21
         col=common.firm_df.columns.get_loc('profit')
