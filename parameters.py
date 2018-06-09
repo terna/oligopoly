@@ -273,9 +273,15 @@ def loadParameters(self):
 
     print("\nHayekian market starts at cycle = %3d\n" %
             common.startHayekianMarket)
-    dataFrameAppend("startHayekian",
+    dataFrameAppend("startHayekianMarket",
                         "cycle to starts the hayekian market",
                         common.startHayekianMarket)  # saving pars
+
+    print("\nhayekian market sell price modification = %10s\n" %
+            common.hParadigm)
+    dataFrameAppend("hParadigm",
+                        "hayekian market sell price modification",
+                        common.hParadigm)  # saving pars
 
     print("\nRange of the correction of agent starting prices in h. market = %5.2f\n" %
             common.initShock)

@@ -2,7 +2,7 @@
 
 projectVersion = "6"
 
-build = "20180601"
+build = "20180605"
 
 debug = False
 
@@ -17,7 +17,6 @@ def check(nn):
         return (True, globals()[nn])
     except BaseException:
         return (False, False)
-
 
 
 # controlling the existence of an agent with number==0 used by reset
@@ -132,6 +131,12 @@ thresholdToWorker = -0.25 # -0.20 was the value in the paper
 # start the hayekian market at cycle ... (NB > 0)
 startHayekianMarket = 1 #3 #1 #6
 
+# use full hayekian paradigm or quasi hayekian paradigm?
+# for explanations see the document
+# "Oligopoly: the Making of the Simulation Model", section
+# "Version 6, the hayekian market"
+hParadigm= "noPriceMod" #"full" #"quasi"
+
 # Range of the correction of agent starting prices (h. market)
 initShock = 0.1 #0.3
 # initial asymmetry in individual starting prices (h. market)
@@ -139,7 +144,7 @@ initShift = 0.1
 
 # Range of the correction of agent current price (h. market), as buyer/seller
 runningShockB = 0.05
-runningShockS = 0.05/1000.0
+runningShockS = 0.05
 # current asymmetry in individual price correction (h. market)
 runningAsymmetryB = 0.9
 runningAsymmetryS = 0.9

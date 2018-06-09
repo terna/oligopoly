@@ -4,3 +4,4 @@ schedule.txt
 *.csv
 .ipynb_checkpoints/readingCVSoutput-checkpoint.ipynb
 .ipynb_checkpoints/readingFirstStepOutputInHayekinaMarket.ipynb
+.ipynb_checkpoints/readingCsvOutput-checkpoint.ipynb

@@ -197,6 +197,9 @@ class Agent(SuperAgent):
         if self.agType == "workers":
             self.workTroubles = 0
 
+        # ratio sellers/buyers
+        common.ratioSellersBuyersAlreadySet=False
+
     # hireIfProfit
     def hireIfProfit(self):
 
@@ -571,6 +574,25 @@ class Agent(SuperAgent):
             self.soldProduction=0
             self.revenue=0
 
+
+    # set or modify sell prices
+    def setOrModSellPrices(self):
+        if common.cycle >= common.startHayekianMarket:
+          if not common.ratioSellersBuyersAlreadySet:
+              nEntrepreneurs = 0
+              for ag in self.agentList:
+                if ag.agType == "entrepreneurs":
+                          nEntrepreneurs += 1
+              nSellers=nEntrepreneurs
+
+              nBuyers=len(self.agentList)
+
+              common.ratioSellersBuyersAlreadySet=True
+              common.ratioSellersBuyers=nSellers/nBuyers
+              print("NEWNEWNEWNEWNEWNEWNEWNEWNEW",common.ratioSellersBuyers)
+
+
+
     # all acting as consumers on the market place
     def actOnMarketPlace(self):
         if common.cycle < common.startHayekianMarket: return
@@ -598,6 +620,10 @@ class Agent(SuperAgent):
               #print("Ag.", self.number,"buying at", self.buyPrice,
               #                         "selling at",self.sellPrice)
               # NB the code above can act only if t>2
+              # NB NB  we set the sellPrice also for workers but we do not
+              #        use it
+              #        when a worker becomes an entreprenuer she copies the
+              #        sell price of the firm she is coming from
 
            else: # case t==1 being common.startHayekianMarket==1
                  # look at the equilibrium price that would have been created
@@ -747,21 +773,27 @@ class Agent(SuperAgent):
                                         common.runningAsymmetryB* \
                                         common.runningShockB))
 
-            if mySeller.statusS == 1:  # seller case (statusS 1, successful sell attempt,
+            if mySeller.statusS == 1 and common.hParadigm=="full":
+                               # seller case (statusS 1, successful sell attempt,
                                # acting mostly to increase the reservation price)
               mySeller.sellPrice = applyRationallyTheRateOfChange(mySeller.sellPrice,\
                                        uniform(-(1-common.runningAsymmetryS)* \
-                                        common.runningShockS*1.02, \
+                                        common.runningShockS*\
+                                        common.ratioSellersBuyers*1.02, \
                                         common.runningAsymmetryS* \
-                                        common.runningShockS*1.02))
+                                        common.runningShockS*\
+                                        common.ratioSellersBuyers*1.02))
 
-            if mySeller.statusS == -1: # seller case (statusS -1, unsuccess. s. attempt,
+            if mySeller.statusS == -1 and common.hParadigm=="full":
+                               # seller case (statusS -1, unsuccess. s. attempt,
                                # acting mostly to decrease the reservation price)
               mySeller.sellPrice = applyRationallyTheRateOfChange(mySeller.sellPrice,\
                                        uniform(-common.runningAsymmetryS* \
-                                        common.runningShockS, \
+                                        common.runningShockS*\
+                                        common.ratioSellersBuyers, \
                                         (1-common.runningAsymmetryS)* \
-                                        common.runningShockS))
+                                        common.runningShockS*\
+                                        common.ratioSellersBuyers))
 
             #print("ag.", self.number, "new prices", self.buyPrice, mySeller.sellPrice)
 
@@ -1211,6 +1243,48 @@ class Agent(SuperAgent):
                 self.agType = "entrepreneurs"
                 self.employed = True
                 self.extraCostsResidualDuration = common.extraCostsDuration
+
+
+    # to entrepreneurV6
+    def toEntrepreneurV6(self):
+        if self.agType != "workers" or not self.employed:
+            return
+        # print float(common.absoluteBarrierToBecomeEntrepreneur)/ \
+        #               len(self.agentList)
+        if random() <= float(common.absoluteBarrierToBecomeEntrepreneur) / \
+                len(self.agentList):
+            #myEntrepreneur = gvf.nx.neighbors(common.g, self)[0] with nx 2.0
+            myEntrepreneur = list(common.g.neighbors(self))[0]
+            myEntrepreneurProfit = myEntrepreneur.profit
+            myEntrepreneurCosts = myEntrepreneur.costs
+            if myEntrepreneurProfit / myEntrepreneurCosts >= \
+                    common.thresholdToEntrepreneur:
+                print(
+                    "Worker %2.0f is now an entrepreneur (previous firm relative profit %4.2f)" %
+                    (self.number, myEntrepreneurProfit / myEntrepreneurCosts))
+                common.g.remove_edge(myEntrepreneur, self)
+
+                # originally, it was a worker
+                if self.xPos > 0:
+                    gvf.pos[self] = (self.xPos - 15, self.yPos)
+                # originally, it was an entrepreneur
+                else:
+                    gvf.pos[self] = (self.xPos, self.yPos)
+                # colors at http://www.w3schools.com/html/html_colornames.asp
+                gvf.colors[self] = "LawnGreen"
+                self.agType = "entrepreneurs"
+                self.employed = True
+                self.extraCostsResidualDuration = common.extraCostsDuration
+
+                if common.cycle >=common.startHayekianMarket:
+                  if myEntrepreneur.sellPriceDefined:
+                    self.sellPrice=myEntrepreneur.sellPrice
+                    print("with the same sell price of the the previous firm",\
+                          self.sellPrice)
+                  else:
+                    print("New entrepreneur cannot copy the price of previous firm")
+                    os.sys.exit(1)
+                    
 
     # to workers
     def toWorker(self):
