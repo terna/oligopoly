@@ -122,8 +122,6 @@ class Agent(SuperAgent):
         # -1 if previous action was an unsuccessful sell attempt
         self.statusS = 0
 
-        # price warming has to be done only once (hayekian market)
-        self.priceWarmingDone = False
 
     # talk
     def talk(self):
@@ -191,14 +189,15 @@ class Agent(SuperAgent):
             common.totalProfit = 0
             common.totalPlannedProduction = 0
 
+            # ratio sellers/buyers
+            common.ratioSellersBuyersAlreadySet=False
+
         # troubles related idividual variables
         if self.agType == "entrepreneurs":
             self.hasTroubles = 0
         if self.agType == "workers":
             self.workTroubles = 0
 
-        # ratio sellers/buyers
-        common.ratioSellersBuyersAlreadySet=False
 
     # hireIfProfit
     def hireIfProfit(self):
@@ -575,8 +574,10 @@ class Agent(SuperAgent):
             self.revenue=0
 
 
-    # set or modify sell prices
-    def setOrModSellPrices(self):
+    # set initial sell and buy prices in hayekian market
+    def setInitialPricesHM(self):
+
+        # 1 -----------------------------------------
         if common.cycle >= common.startHayekianMarket:
           if not common.ratioSellersBuyersAlreadySet:
               nEntrepreneurs = 0
@@ -589,33 +590,25 @@ class Agent(SuperAgent):
 
               common.ratioSellersBuyersAlreadySet=True
               common.ratioSellersBuyers=nSellers/nBuyers
-              print("NEWNEWNEWNEWNEWNEWNEWNEWNEW",common.ratioSellersBuyers)
+              print("Ratio sellers/buyers =",common.ratioSellersBuyers)
+              # in setNewCycleValues common.ratioSellersBuyersAlreadySet=False
+              # at the beginning of each cycle
 
-
-
-    # all acting as consumers on the market place
-    def actOnMarketPlace(self):
-        if common.cycle < common.startHayekianMarket: return
-
-        try: common.wr.writerow
-        except:
-            print("The file firstStepOutputInHayekianMarket.csv was not"+\
-                  " created in mActions.py")
-            os.sys.exit(1)
-
-        if not self.priceWarmingDone:
-           # setting the price uniquely in the first hayekian step of the
-           # first hayekian cycle
-
+        # 2 -----------------------------------------
+        if common.cycle == common.startHayekianMarket and \
+                        not common.priceWarmingDone:
+           # setting the basic price uniquely before the first hayekian cycle
+           common.sellPrice=1000
+           common.buyPrice=-1000
            if common.startHayekianMarket>1:
             if len(common.ts_df.price.values) == 1:
-              self.buyPrice  = self.sellPrice = \
+              common.buyPrice  = common.sellPrice = \
                       common.ts_df.price.values[-1] # the last price
               #print("Ag.", self.number,"buying at", self.buyPrice,
               #                         "selling at",self.sellPrice)
               # NB the code above can act only if t>1
             if len(common.ts_df.price.values) > 1:
-              self.buyPrice  = self.sellPrice = \
+              common.buyPrice  = common.sellPrice = \
                       common.ts_df.price.values[-2] # the second last price
               #print("Ag.", self.number,"buying at", self.buyPrice,
               #                         "selling at",self.sellPrice)
@@ -635,42 +628,61 @@ class Agent(SuperAgent):
                  # common.totalPlannedConsumptionInValueInA_TimeStep and
                  # common.totalProductionInA_TimeStep
                  # so, we can calculate
-              self.buyPrice  = self.sellPrice = \
+              common.buyPrice  = common.sellPrice = \
                             common.totalPlannedConsumptionInValueInA_TimeStep \
                             / common.totalProductionInA_TimeStep
                  # outside WorldState setMarketPriceV3 method, to avoid here
                  # random shocks
+                 # NB NB  we set the sellPrice also for workers but we do not
+                 #        use it
+                 #        when a worker becomes an entreprenuer she copies the
+                 #        sell price of the firm she is coming from
 
            #startingHayekianCommonPrice
-           if not common.startingHayekianCommonPriceAlreadyWritten:
-                  print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-                  print("starting hayekian common price",self.buyPrice)
-                  print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-                  common.startingHayekianCommonPriceAlreadyWritten=True
+           print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+           print("starting hayekian common price",common.buyPrice)
+           print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 
+        common.priceWarmingDone = True
 
+        # individual starting prices
+        if common.cycle == common.startHayekianMarket:
 
            #starting sell price
-           if self.agType=="entrepreneurs":
-               print("???????????????????a", self.sellPrice)
            self.sellPrice = \
-                     applyRationallyTheRateOfChange(self.sellPrice,\
+                     applyRationallyTheRateOfChange(common.sellPrice,\
                         uniform(-common.initShift*common.initShock, \
                                 (1-common.initShift)*common.initShock))
            if self.agType=="entrepreneurs":
-               print("???????????????????b", self.sellPrice)
+               print("entrepreneur", self.number, "has initial sell price",\
+                                     self.sellPrice)
            self.sellPriceDefined=True
 
-           #starting buy price
+           # starting individual buy price
            self.buyPrice = \
-                     applyRationallyTheRateOfChange(self.buyPrice,\
+                     applyRationallyTheRateOfChange(common.buyPrice,\
                         uniform((common.initShift-1)*common.initShock, \
                                 common.initShift*common.initShock))
 
+        # 3 -----------------------------------------
 
-        self.priceWarmingDone = True
 
 
+    # modify sell prices in quasi hayekian market
+    def modSellPricesQHM(self):
+        pass
+
+
+
+    # all acting as consumers on the market place
+    def actOnMarketPlace(self):
+        if common.cycle < common.startHayekianMarket: return
+
+        try: common.wr.writerow
+        except:
+            print("The file firstStepOutputInHayekianMarket.csv was not"+\
+                  " created in mActions.py")
+            os.sys.exit(1)
 
 
         # first call in each cycle, preparing action (only once per cycle)
@@ -736,13 +748,13 @@ class Agent(SuperAgent):
                  common.totalConsumptionInQuantityInA_TimeStep += buyerQ
 
 
-            #out seller has no goods to sell
+            #ouput -  seller has no goods to sell
             elif common.cycle==common.startHayekianMarket:
                      common.wr.writerow\
                      (["nogoods", "buy", numpy.nan, self.consumption, self.number,\
                      "sell", numpy.nan,mySeller.number])
 
-            #out
+            #output - deal vs. nodeal
             if common.cycle==common.startHayekianMarket:
                 if mySeller.statusS==1:
                     common.wr.writerow\
@@ -800,19 +812,19 @@ class Agent(SuperAgent):
             # cleaning the situation (redundant)\\
             self.statusB=mySeller.statusS=0
 
-          #out self.sellerList==[]
+          #output - self.sellerList==[]
           elif common.cycle==common.startHayekianMarket:
                common.wr.writerow\
                 (["nosellers", "buy", self.buyPrice, self.consumption, self.number,\
                 "sell", numpy.nan,numpy.nan])
 
-        #out self.consumption<=0
+        #output - self.consumption<=0
         elif common.cycle==common.startHayekianMarket:
              common.wr.writerow\
                (["noconsumption", "buy", numpy.nan, self.consumption, self.number,\
                "sell", numpy.nan,numpy.nan])
 
-        #out
+        #output close
         if common.cycle==common.startHayekianMarket+1 and not common.closed:
             common.csvf.close()
             common.closed=True
@@ -1181,7 +1193,7 @@ class Agent(SuperAgent):
            # when the start is a cyce 1; the value of
            # common.totalPlannedConsumptionInValueInA_TimeStep is necessary
            # in the warming phase: look at the 'else' within
-           # 'if not self.priceWarmingDone'
+           # the second block in setInitialPricesHM
 
            common.totalPlannedConsumptionInValueInA_TimeStep += self.consumption
            # print "C sum", common.totalPlannedConsumptionInValueInA_TimeStep
@@ -1284,7 +1296,7 @@ class Agent(SuperAgent):
                   else:
                     print("New entrepreneur cannot copy the price of previous firm")
                     os.sys.exit(1)
-                    
+
 
     # to workers
     def toWorker(self):
