@@ -2,7 +2,7 @@
 
 projectVersion = "6"
 
-build = "20180612"
+build = "20180616"
 
 debug = False
 
@@ -53,7 +53,7 @@ nsize = 150
 #(3) unemployed workers
 # with Ci = ai + bi Y + u
 # u=N(0,consumptionErrorSD)
-consumptionRandomComponentSD = 0.3
+consumptionRandomComponentSD = 0.1 # nel paper pubblicato 0.3
 
 #(1)
 a1 = 0.4
@@ -139,19 +139,19 @@ startHayekianMarket = 1 #3 #1 #6
 # for explanations see the document
 # "Oligopoly: the Making of the Simulation Model", section
 # "Version 6, the hayekian market"
-hParadigm= "noPriceMod" #"full" #"quasi"
+hParadigm= "full" #"noPriceMod" #"full" #"quasi"
 
 # Range of the correction of agent starting prices (h. market)
 initShock = 0.1 #0.3
-# initial asymmetry in individual starting prices (h. market)
+# initial shift in individual starting prices (h. market)
 initShift = 0.1
 
 # Range of the correction of agent current price (h. market), as buyer/seller
 runningShockB = 0.05
 runningShockS = 0.05
-# current asymmetry in individual price correction (h. market)
-runningAsymmetryB = 0.9
-runningAsymmetryS = 0.9
+# current shift in individual price correction (h. market)
+runningShiftB = 0.1
+runningShiftS = 0.1
 
 nodeNumbersInGraph = False
 

@@ -307,17 +307,17 @@ def loadParameters(self):
                         "correction of running prices in h. market (sellers)",
                         common.runningShockS)  # saving pars
 
-    print("\nAsymmetry in individual buyer running prices (h. market) = %5.2f\n" %
-            common.runningAsymmetryB)
-    dataFrameAppend("runningAsymmetryB",
-                        "asymmetry in individual buyer running prices (h. market)",
-                        common.runningAsymmetryB)  # saving pars
+    print("\nShift in individual buyer running prices (h. market) = %5.2f\n" %
+            common.runningShiftB)
+    dataFrameAppend("runningShiftB",
+                        "shift in individual buyer running prices (h. market)",
+                        common.runningShiftB)  # saving pars
 
-    print("\nAsymmetry in individual seller running prices (h. market) = %5.2f\n" %
-            common.runningAsymmetryS)
-    dataFrameAppend("runningAsymmetryS",
-                        "asymmetry in individual seller running prices (h. market)",
-                        common.runningAsymmetryS)  # saving pars
+    print("\nShift in individual seller running prices (h. market) = %5.2f\n" %
+            common.runningShiftS)
+    dataFrameAppend("runningShiftS",
+                        "shift in individual seller running prices (h. market)",
+                        common.runningShiftS)  # saving pars
 
 
     # Max quota (base 1) of the consumption in each step of a cycle

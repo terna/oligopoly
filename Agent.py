@@ -590,7 +590,7 @@ class Agent(SuperAgent):
 
               common.ratioSellersBuyersAlreadySet=True
               common.ratioSellersBuyers=nSellers/nBuyers
-              print("Ratio sellers/buyers =",common.ratioSellersBuyers)
+              print("\nRatio sellers/buyers =",common.ratioSellersBuyers,"\n")
               # in setNewCycleValues common.ratioSellersBuyersAlreadySet=False
               # at the beginning of each cycle
 
@@ -639,12 +639,13 @@ class Agent(SuperAgent):
                  #        sell price of the firm she is coming from
 
            #startingHayekianCommonPrice
-           print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+           print("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
            print("starting hayekian common price",common.buyPrice)
-           print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+           print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n")
 
         common.priceWarmingDone = True
 
+        # 3 -----------------------------------------
         # individual starting prices
         if common.cycle == common.startHayekianMarket:
 
@@ -664,7 +665,6 @@ class Agent(SuperAgent):
                         uniform((common.initShift-1)*common.initShock, \
                                 common.initShift*common.initShock))
 
-        # 3 -----------------------------------------
 
 
 
@@ -697,22 +697,20 @@ class Agent(SuperAgent):
                os.sys.exit(1) # to stop the execution, in the calling module
                            # we have multiple except, with 'SystemExit' case
 
-           # create a temporary list of sellers, starting each step
-           self.sellerList0=[]
+           # create a temporary list of sellers, starting each step (cycle)
+           self.sellerList=[]
            for anAg in self.agentList:
                if anAg.getType() == "entrepreneurs":
-                       self.sellerList0.append(anAg)
+                   if not anAg.sellPriceDefined:
+                       print("Inconsistent situation, an active selles"\
+                       +" has no sell price defined.")
+                       os.sys.exit(1)
+                   else: self.sellerList.append(anAg)
 
 
         # acting (NB self.consumption comes from planConsumptionInValueV6)
         # if buying action is possible
         #print("cycle",common.cycle,"ag",self.number,"cons val",self.consumption)
-
-        # create a temporary list of sellers, in each subStep
-        self.sellerList=[]
-        for anAg in self.sellerList0:
-                   if anAg.sellPriceDefined:
-                       self.sellerList.append(anAg)
 
         if self.consumption > 0:
           if self.sellerList != []:
@@ -772,40 +770,38 @@ class Agent(SuperAgent):
             if self.statusB == 1:  # buyer case (statusB 1, successful buy attempt,
                                # acting mostly to decrease the reservation price)
               self.buyPrice = applyRationallyTheRateOfChange(self.buyPrice,\
-                                  uniform(-common.runningAsymmetryB* \
-                                        common.runningShockB*1.02, \
-                                        (1-common.runningAsymmetryB)* \
-                                        common.runningShockB*1.02))
+                                  uniform(-(1-common.runningShiftB)* \
+                                        common.runningShockB, \
+                                        common.runningShiftB* \
+                                        common.runningShockB))
 
             if self.statusB == -1: # buyer case (statusB -1, unsuccessful buy attempt,
                                # acting mostly to increase the reservation price)
               self.buyPrice = applyRationallyTheRateOfChange(self.buyPrice,\
-                                  uniform(-(1-common.runningAsymmetryB)* \
+                                  uniform(-common.runningShiftB* \
                                         common.runningShockB, \
-                                        common.runningAsymmetryB* \
+                                        (1-common.runningShiftB)* \
                                         common.runningShockB))
 
             if mySeller.statusS == 1 and common.hParadigm=="full":
                                # seller case (statusS 1, successful sell attempt,
                                # acting mostly to increase the reservation price)
               mySeller.sellPrice = applyRationallyTheRateOfChange(mySeller.sellPrice,\
-                                       uniform(-(1-common.runningAsymmetryS)* \
-                                        common.runningShockS*\
-                                        common.ratioSellersBuyers*1.02, \
-                                        common.runningAsymmetryS* \
-                                        common.runningShockS*\
-                                        common.ratioSellersBuyers*1.02))
+                                       common.ratioSellersBuyers*\
+                                       uniform(-common.runningShiftS* \
+                                        common.runningShockS,
+                                        (1-common.runningShiftS)* \
+                                        common.runningShockS))
 
             if mySeller.statusS == -1 and common.hParadigm=="full":
                                # seller case (statusS -1, unsuccess. s. attempt,
                                # acting mostly to decrease the reservation price)
               mySeller.sellPrice = applyRationallyTheRateOfChange(mySeller.sellPrice,\
-                                       uniform(-common.runningAsymmetryS* \
-                                        common.runningShockS*\
-                                        common.ratioSellersBuyers, \
-                                        (1-common.runningAsymmetryS)* \
-                                        common.runningShockS*\
-                                        common.ratioSellersBuyers))
+                                       common.ratioSellersBuyers*\
+                                       uniform(-(1-common.runningShiftS)* \
+                                        common.runningShockS, \
+                                        common.runningShiftS* \
+                                        common.runningShockS))
 
             #print("ag.", self.number, "new prices", self.buyPrice, mySeller.sellPrice)
 
