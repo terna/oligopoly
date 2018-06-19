@@ -2,7 +2,7 @@
 
 projectVersion = "6"
 
-build = "20180616"
+build = "201806119"
 
 debug = False
 
@@ -114,7 +114,7 @@ nu = 5
 rho = 0.9
 
 # threshold toEntrepreneur
-thresholdToEntrepreneur = 0.05 # was 0.15 in the paper  # was 0.20 in the init. trials
+thresholdToEntrepreneur = 0.045 #0.075 # was 0.15 in the paper  # was 0.20 in the init. trials
 extraCostsDuration = 3
 newEntrantExtraCosts = 60  # was 100.0 # was 2.0
 
@@ -147,11 +147,11 @@ initShock = 0.1 #0.3
 initShift = 0.1
 
 # Range of the correction of agent current price (h. market), as buyer/seller
-runningShockB = 0.05
-runningShockS = 0.05
+runningShockB = 0.10 #0.05
+runningShockS = 0.05 #0.10 #0.05
 # current shift in individual price correction (h. market)
-runningShiftB = 0.1
-runningShiftS = 0.1
+runningShiftB = 0 #0.1
+runningShiftS = 0.1 #0 #0.1
 
 nodeNumbersInGraph = False
 
