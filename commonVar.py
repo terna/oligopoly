@@ -2,9 +2,9 @@
 
 projectVersion = "6"
 
-build = "201806119"
+build = "20180709"
 
-debug = False
+debug = True
 
 # function for the management of the paramenters
 def setVar():
@@ -114,7 +114,7 @@ nu = 5
 rho = 0.9
 
 # threshold toEntrepreneur
-thresholdToEntrepreneur = 0.045 #0.075 # was 0.15 in the paper  # was 0.20 in the init. trials
+thresholdToEntrepreneur = 0.10 #0.075 #0.045 #0.075 # was 0.15 in the paper  # was 0.20 in the init. trials
 extraCostsDuration = 3
 newEntrantExtraCosts = 60  # was 100.0 # was 2.0
 
@@ -133,13 +133,13 @@ thresholdToWorker = -0.25 # -0.20 was the value in the paper
 priceWarmingDone = False
 
 # start the hayekian market at cycle ... (NB > 0)
-startHayekianMarket = 1 #3 #1 #6
+startHayekianMarket = 6 #1 #3 #1 #6
 
 # use full hayekian paradigm or quasi hayekian paradigm?
 # for explanations see the document
 # "Oligopoly: the Making of the Simulation Model", section
 # "Version 6, the hayekian market"
-hParadigm= "full" #"noPriceMod" #"full" #"quasi"
+hParadigm= "quasi" #"noPriceMod" #"full" #"quasi"
 
 # Range of the correction of agent starting prices (h. market)
 initShock = 0.1 #0.3

@@ -643,7 +643,7 @@ class Agent(SuperAgent):
            print("starting hayekian common price",common.buyPrice)
            print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n")
 
-        common.priceWarmingDone = True
+           common.priceWarmingDone = True
 
         # 3 -----------------------------------------
         # individual starting prices
@@ -669,8 +669,29 @@ class Agent(SuperAgent):
 
 
     # modify sell prices in quasi hayekian market
-    def modSellPricesQHM(self):
-        pass
+    # NB we are at the end of each cycle
+    def nextSellPricesQHM(self):
+        if self.agType != "entrepreneurs": return
+
+        # hayekian period, "quasi" hayekian paradigm,
+        # consideing relative unsold quantity
+        if common.cycle >= common.startHayekianMarket and \
+                          common.hParadigm=="quasi":
+            oldP=self.sellPrice
+            thresholdSoldProduction=0.95
+            if self.soldProduction/self.production <= thresholdSoldProduction:
+
+                self.sellPrice = applyRationallyTheRateOfChange(self.sellPrice,\
+                                                      uniform(-0.20, 0))
+            if self.soldProduction==self.production:
+                self.sellPrice = applyRationallyTheRateOfChange(self.sellPrice,\
+                                                      uniform(0, 0.02))
+
+            print(("end of t = %d entrepreneur %d initial production"+\
+                   " %.2f sold  %.2f \nold price %.2f new price %.2f") %\
+                   (common.cycle,self.number,self.production,\
+                    self.soldProduction,oldP,self.sellPrice))
+
 
 
 
@@ -783,7 +804,9 @@ class Agent(SuperAgent):
                                         (1-common.runningShiftB)* \
                                         common.runningShockB))
 
-            if mySeller.statusS == 1 and common.hParadigm=="full":
+            if mySeller.statusS == 1 and common.hParadigm=="full" or \
+                                     (common.hParadigm=="quasi" and \
+                                     common.cycle==common.startHayekianMarket):
                                # seller case (statusS 1, successful sell attempt,
                                # acting mostly to increase the reservation price)
               mySeller.sellPrice = applyRationallyTheRateOfChange(mySeller.sellPrice,\
@@ -793,7 +816,9 @@ class Agent(SuperAgent):
                                         (1-common.runningShiftS)* \
                                         common.runningShockS))
 
-            if mySeller.statusS == -1 and common.hParadigm=="full":
+            if mySeller.statusS == -1 and common.hParadigm=="full" or \
+                                     (common.hParadigm=="quasi" and \
+                                     common.cycle==common.startHayekianMarket):
                                # seller case (statusS -1, unsuccess. s. attempt,
                                # acting mostly to decrease the reservation price)
               mySeller.sellPrice = applyRationallyTheRateOfChange(mySeller.sellPrice,\
