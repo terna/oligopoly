@@ -680,7 +680,6 @@ class Agent(SuperAgent):
             oldP=self.sellPrice
             thresholdSoldProduction=0.95
             if self.soldProduction/self.production <= thresholdSoldProduction:
-
                 self.sellPrice = applyRationallyTheRateOfChange(self.sellPrice,\
                                                       uniform(-0.20, 0))
             if self.soldProduction==self.production:
