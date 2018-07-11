@@ -283,11 +283,31 @@ def loadParameters(self):
                         "hayekian market sell price modification",
                         common.hParadigm)  # saving pars
 
-    print("\nRange of the correction of agent starting prices in h. market = %5.2f\n" %
-            common.initShock)
-    dataFrameAppend("initShock",
-                        "correction of starting prices in h. market",
-                        common.initShock)  # saving pars
+    print(\
+    "\n(quasi) hayekian market sold threshold to lower the prices = %10s\n" %
+            common.soldThreshold)
+    dataFrameAppend("soldThreshold",
+                        "quasi h. market sold threshold lo lower the p.",
+                        common.soldThreshold)  # saving pars
+
+    print(\
+    "\n(quasi) hayekian market sold threshold to lower the prices = %10s\n" %
+            common.soldThreshold)
+    dataFrameAppend("soldThreshold",
+                        "quasi h. market, sold threshold lo lower the p.",
+                        common.soldThreshold)  # saving pars
+
+    print("\n'quasi' h. market, decreasing rate range of the prices = %5.2f\n" %
+            common.decreasingRateRange)
+    dataFrameAppend("decreasingRateRange",
+                        "quasi h. market, decr. r. range of prices",
+                        common.decreasingRateRange)  # saving pars
+
+    print("\n'quasi' h. market, increasing rate range of the prices = %5.2f\n" %
+            common.increasingRateRange)
+    dataFrameAppend("increasingRateRange",
+                        "quasi h. market, incr. r. range of prices",
+                        common.increasingRateRange)  # saving pars
 
     print("\nShift in individual starting prices (h. market) = %5.2f\n" %
             common.initShift)

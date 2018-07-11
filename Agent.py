@@ -678,10 +678,9 @@ class Agent(SuperAgent):
         if common.cycle >= common.startHayekianMarket and \
                           common.hParadigm=="quasi":
             oldP=self.sellPrice
-            thresholdSoldProduction=0.95
-            if self.soldProduction/self.production <= thresholdSoldProduction:
+            if self.soldProduction/self.production <= common.soldThreshold:
                 self.sellPrice = applyRationallyTheRateOfChange(self.sellPrice,\
-                                                      uniform(-0.20, 0))
+                                                uniform(decreasingRateRange, 0))
             if self.soldProduction==self.production:
                 self.sellPrice = applyRationallyTheRateOfChange(self.sellPrice,\
                                                       uniform(0, 0.02))

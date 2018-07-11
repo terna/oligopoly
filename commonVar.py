@@ -2,7 +2,7 @@
 
 projectVersion = "6"
 
-build = "20180709"
+build = "20180711"
 
 debug = True
 
@@ -140,6 +140,15 @@ startHayekianMarket = 6 #1 #3 #1 #6
 # "Oligopoly: the Making of the Simulation Model", section
 # "Version 6, the hayekian market"
 hParadigm= "quasi" #"noPriceMod" #"full" #"quasi"
+
+# threshold to decide to lower the price in the 'quasi' hParadigm
+soldThreshold=0.95
+
+# 'quasi' hParadigm, decreasingRateRange
+decreasingRateRange=-0.20
+
+# 'quasi' hParadigm, increasingRateRange
+increasingRateRange=0.02
 
 # Range of the correction of agent starting prices (h. market)
 initShock = 0.1 #0.3
