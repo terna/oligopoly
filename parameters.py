@@ -9,9 +9,14 @@ import pandas as pd
 from IPython import get_ipython
 import pandas as pd
 import numpy as np
+import sys
 
 
 def loadParameters(self):
+
+    if sys.version_info[0] < 3:
+        print("Python 3 required")
+        os.sys.exit(1)
 
     # creating the dataframe of the paramenters
     try:
