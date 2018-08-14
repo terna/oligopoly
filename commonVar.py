@@ -133,7 +133,7 @@ thresholdToWorker = -0.25 # -0.20 was the value in the paper
 priceWarmingDone = False
 
 # start the hayekian market at cycle ... (NB > 0)
-startHayekianMarket = 6 #1 #3 #1 #6
+startHayekianMarket = 1 #3 #1 #6
 
 # use full hayekian paradigm or quasi hayekian paradigm?
 # for explanations see the document
