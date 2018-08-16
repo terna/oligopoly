@@ -314,6 +314,12 @@ def loadParameters(self):
                         "quasi h. market, incr. r. range of prices",
                         common.increasingRateRange)  # saving pars
 
+    print("\nShock in individual starting prices (h. market) = %5.2f\n" %
+            common.initShock)
+    dataFrameAppend("initShock",
+                        "shock in individual starting prices (h. market)",
+                        common.initShock)  # saving pars
+
     print("\nShift in individual starting prices (h. market) = %5.2f\n" %
             common.initShift)
     dataFrameAppend("initShift",
