@@ -683,7 +683,7 @@ class Agent(SuperAgent):
                                         uniform(common.decreasingRateRange, 0))
             if self.soldProduction==self.production:
                 self.sellPrice = applyRationallyTheRateOfChange(self.sellPrice,\
-                                                      uniform(0, 0.02))
+                                        uniform(0, common.increasingRateRange))
 
             print(("end of t = %d entrepreneur %d initial production"+\
                    " %.2f sold  %.2f \nold price %.2f new price %.2f") %\
