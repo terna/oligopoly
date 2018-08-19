@@ -151,9 +151,9 @@ decreasingRateRange=-0.20
 increasingRateRange=0.02
 
 # Range of the correction of agent starting prices (h. market)
-initShock = 0.1 #0.3
+initShock = 0.2 #0.1 #0.3
 # initial shift in individual starting prices (h. market)
-initShift = 0.1
+initShift = 0.5 #0.1
 
 # Range of the correction of agent current price (h. market), as buyer/seller
 runningShockB = 0.10 #0.05
@@ -161,6 +161,11 @@ runningShockS = 0.05 #0.10 #0.05
 # current shift in individual price correction (h. market)
 runningShiftB = 0 #0.1
 runningShiftS = 0.1 #0 #0.1
+
+# Choosing among different quasi hayekian strategies in modifiying seller
+# hPriceSd
+
+quasiHchoice="unsold" # three choices: unsold, profictDirect, profitInverse
 
 nodeNumbersInGraph = False
 

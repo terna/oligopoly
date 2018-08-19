@@ -675,7 +675,8 @@ class Agent(SuperAgent):
 
         # hayekian period, "quasi" hayekian paradigm,
         # consideing relative unsold quantity
-        if common.cycle >= common.startHayekianMarket and \
+        if common.quasiHchoice=="unsold":
+         if common.cycle >= common.startHayekianMarket and \
                           common.hParadigm=="quasi":
             oldP=self.sellPrice
             if self.soldProduction/self.production <= common.soldThreshold:
@@ -689,8 +690,13 @@ class Agent(SuperAgent):
                    " %.2f sold  %.2f \nold price %.2f new price %.2f") %\
                    (common.cycle,self.number,self.production,\
                     self.soldProduction,oldP,self.sellPrice))
+            return
 
-
+        # here in error
+        print("Using the 'quasi' option in hayekian market:\n",\
+              "the",common.quasiHchoice, "value is not one of the\n",
+              "valid option (unsold, profictDirect, profitInverse)")
+        os.sys.exit(1)
 
 
     # all acting as consumers on the market place

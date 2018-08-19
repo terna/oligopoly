@@ -343,6 +343,11 @@ def loadParameters(self):
                         "shift in individual seller running prices (h. market)",
                         common.runningShiftS)  # saving pars
 
+    print("\nquasi hayekian choice to drive sellers' price mod. = %15s\n" %
+            common.quasiHchoice)
+    dataFrameAppend("quasiHchoice",
+                        "quasi hayekian choice to drive sellers' price mod.",
+                        common.quasiHchoice)  # saving pars
 
     # Max quota (base 1) of the consumption in each step of a cycle
     print("\nMax quota (base 1) of the consumptions in each step of a cycle\n")
