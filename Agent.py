@@ -673,7 +673,8 @@ class Agent(SuperAgent):
     def nextSellPricesQHM(self):
         if self.agType != "entrepreneurs": return
 
-        # hayekian period, "quasi" hayekian paradigm,
+        # hayekian period, "quasi" hayekian paradigm
+
         # consideing relative unsold quantity
         if common.quasiHchoice=="unsold":
          if common.cycle >= common.startHayekianMarket and \
@@ -691,6 +692,16 @@ class Agent(SuperAgent):
                    (common.cycle,self.number,self.production,\
                     self.soldProduction,oldP,self.sellPrice))
             return
+
+        # consideing profit sign directly
+        if common.quasiHchoice=="profitDirec":
+            return
+
+        # consideing profit sign in inverse way
+        if common.quasiHchoice=="profitInverse":
+            return
+
+
 
         # here in error
         print("Using the 'quasi' option in hayekian market:\n",\
