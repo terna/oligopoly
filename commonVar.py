@@ -57,16 +57,16 @@ consumptionRandomComponentSD = 0.1 # nel paper pubblicato 0.3
 
 #(1)
 a1 = 0.4
-b1 = 0.6 #0.55
+b1 = 0.55 #0.6 #0.55
 # Y1=profit(t-1)+wage NB no negative consumption if profit(t-1) < 0
 
 #(2)
 a2 = 0.3
-b2 = 0.7 #0.65
+b2 = 0.65 #0.7 #0.65
 # Y2=wage
 
 #(3)
-socialWelfareCompensation = 0.3
+socialWelfareCompensation = 0.7 #0.3
 a3 = 0
 b3 = 1
 # Y3=socialWelfareCompensation
@@ -114,7 +114,7 @@ nu = 5
 rho = 0.9
 
 # threshold toEntrepreneur
-thresholdToEntrepreneur = 0.10 #0.075 #0.045 #0.075 # was 0.15 in the paper  # was 0.20 in the init. trials
+thresholdToEntrepreneur = 0.08 #0.085 #0.09 #0.10 #0.075 #0.05 #0.05 #0.15 #0.10 #0.075 #0.045 #0.075 # was 0.15 in the paper  # was 0.20 in the init. trials
 extraCostsDuration = 3
 newEntrantExtraCosts = 60  # was 100.0 # was 2.0
 
@@ -139,7 +139,7 @@ startHayekianMarket = 1 #3 #1 #6
 # for explanations see the document
 # "Oligopoly: the Making of the Simulation Model", section
 # "Version 6, the hayekian market"
-hParadigm= "quasi" #"noPriceMod" #"full" #"quasi"
+hParadigm= "full" #"noPriceMod" #"full" #"quasi"
 
 # threshold to decide to lower the price in the 'quasi' hParadigm
 soldThreshold=0.95
@@ -151,15 +151,15 @@ decreasingRateRange=-0.20
 increasingRateRange=0.02
 
 # Range of the correction of agent starting prices (h. market)
-initShock = 0.2 #0.1 #0.3
+initShock = 0.10 #0.2 #0.1 #0.3
 # initial shift in individual starting prices (h. market)
-initShift = 0.5 #0.1
+initShift = -0.15 #-0.10 #0.5 #0.1
 
 # Range of the correction of agent current price (h. market), as buyer/seller
 runningShockB = 0.10 #0.05
-runningShockS = 0.05 #0.10 #0.05
+runningShockS = 0.02 #0.20 #0.05 #0.10 #0.05
 # current shift in individual price correction (h. market)
-runningShiftB = 0 #0.1
+runningShiftB = 0.1 #0 #0.1
 runningShiftS = 0.1 #0 #0.1
 
 # Choosing among different quasi hayekian strategies in modifiying seller

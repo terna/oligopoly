@@ -672,6 +672,7 @@ class Agent(SuperAgent):
     # NB we are at the end of each cycle
     def nextSellPricesQHM(self):
         if self.agType != "entrepreneurs": return
+        if common.hParadigm=="full": return
 
         # hayekian period, "quasi" hayekian paradigm
 
