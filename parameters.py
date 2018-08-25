@@ -14,6 +14,21 @@ import sys
 
 def loadParameters(self):
 
+    # projectVersion version and build
+    try:
+        projectVersion = str(common.projectVersion)
+    except BaseException:
+        projectVersion = "Unknown"
+    try:
+        build = str(common.build)
+    except BaseException:
+        build = "Unknown"
+    print(
+        "\nProject Oligopoly: version " +
+        projectVersion,
+        "build",
+        build,"\n")
+
     if sys.version_info[0] < 3:
         print("Python 3 required")
         os.sys.exit(1)
@@ -92,20 +107,8 @@ def loadParameters(self):
     self.worldYSize = 1
     # print "y size of the world not relevant"
 
-    # projectVersion version and thresholds
-    try:
-        projectVersion = str(common.projectVersion)
-    except BaseException:
-        projectVersion = "Unknown"
-    try:
-        build = str(common.build)
-    except BaseException:
-        build = "Unknown"
+    # a few thresholds
     print(
-        "\nProject version " +
-        projectVersion,
-        "build",
-        build,
         "\nhiringThreshold",
         common.hiringThreshold,
         "firingThreshold",
@@ -248,6 +251,13 @@ def loadParameters(self):
     dataFrameAppend("maxAcceptableOligopolistRelativeIncrement",
                     "trigger level (relative increment of olig. firms)",
                     common.maxAcceptableOligopolistRelativeIncrement)  # saving par
+
+    print(
+        "\nMeasuring the new entrant number in a cumulative way %s\n" %
+        common.cumulativelyMeasuringNewEntrantNumber)
+    dataFrameAppend("cumulativelyMeasuringNewEntrantNumber",
+                    "Measuring the new entrant number in a cumulative way",
+                    common.cumulativelyMeasuringNewEntrantNumber)  # saving pars
 
     print("Production correction (lost production) due to work troubles " +
           "between %4.2f%s and %4.2f%s, if any."

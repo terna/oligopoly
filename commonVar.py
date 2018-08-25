@@ -80,6 +80,7 @@ fullEmploymentStatus = False
 
 wageAddendum = 0
 maxAcceptableOligopolistRelativeIncrement = 0.30 # was 0.20 in the paper
+cumulativelyMeasuringNewEntrantNumber=False
 temporaryRelativeWageIncrementAsBarrier = 0.15
 
 
