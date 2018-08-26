@@ -2,7 +2,7 @@
 
 projectVersion = "6"
 
-build = "20180825"
+build = "20180826"
 
 debug = False
 
@@ -80,8 +80,9 @@ fullEmploymentStatus = False
 
 wageAddendum = 0
 maxAcceptableOligopolistRelativeIncrement = 0.30 # was 0.20 in the paper
-cumulativelyMeasuringNewEntrantNumber=False
+cumulativelyMeasuringNewEntrantNumber=True
 temporaryRelativeWageIncrementAsBarrier = 0.15
+ReferenceLevel=0 # to avoit a referenced before assignment error in WorldState
 
 
 revenuesOfSalesForEachWorker = 1.005

@@ -174,20 +174,69 @@ class WorldState(object):
                 nEntrepreneurs += 1
         nEntrepreneurs = float(nEntrepreneurs)
 
-        # previous number of entrepreneurs
-        nEntrepreneurs0 = common.str_df.iloc[-1, 0]  # indexes Python style
+        # no cumulative measure
+        # as in the Section incumbentActionOnWages, as in WorldState, with details
+        # in the Reference
+        if not common.cumulativelyMeasuringNewEntrantNumber:
+          # previous number of entrepreneurs
+          # values in str_df at the beginning of each cycle (B as beginning)
+          nEntrepreneursB = common.str_df.iloc[-1, 0]  # indexing Python style
 
-        # print nEntrepreneurs, nEntrepreneurs0
+          # print nEntrepreneurs, nEntrepreneurs0
 
-        # wages: reset incumbent action if any
-        if common.wageAddendum > 0:
-            common.wage -= common.wageAddendum
-            common.wageAddendum = 0
+          # wages: reset incumbent action if any
+          if common.wageAddendum > 0:
+              common.wage -= common.wageAddendum
+              common.wageAddendum = 0
 
-        # wages: set
-        if nEntrepreneurs > 1:
-          if nEntrepreneurs / nEntrepreneurs0 - 1 > \
-                common.maxAcceptableOligopolistRelativeIncrement:
-            common.wageAddendum = common.wage *\
-                common.temporaryRelativeWageIncrementAsBarrier
-            common.wage += common.wageAddendum
+          # wages: set
+          if nEntrepreneursB >= 1:
+              if nEntrepreneurs / nEntrepreneursB - 1 > \
+                 common.maxAcceptableOligopolistRelativeIncrement:
+                common.wageAddendum = common.wage *\
+                 common.temporaryRelativeWageIncrementAsBarrier
+                common.wage += common.wageAddendum
+
+        # cumulative measure
+        # as in the Section incumbentActionOnWages, as in WorldState, with details
+        # in the Reference
+        if common.cumulativelyMeasuringNewEntrantNumber:
+          print("///////// ","common.cycle",common.cycle)
+          if common.cycle == 1:
+                # values in str_df at the beginning of each cycle
+                nEntrepreneursB_1     = common.str_df.iloc[-1, 0]#indexing Py. style
+                nEntrepreneursB       = common.str_df.iloc[-1, 0]
+                ReferenceLevel_1      = common.str_df.iloc[-1, 0]
+                common.ReferenceLevel = common.str_df.iloc[-1, 0]
+                                      # common to avoid a reference error
+          else:
+                nEntrepreneursB_1 = common.str_df.iloc[-2, 0]#indexing Py. style
+                nEntrepreneursB   = common.str_df.iloc[-1, 0]
+                ReferenceLevel_1  = common.ReferenceLevel
+
+          #if nEntrepreneursB - nEntrepreneursB_1 <= 0 or \
+          if  nEntrepreneursB_1 / ReferenceLevel_1 > \
+                   common.maxAcceptableOligopolistRelativeIncrement:
+                      common.ReferenceLevel = nEntrepreneursB
+          else:
+                      common.ReferenceLevel = ReferenceLevel_1
+
+          # wages: reset incumbent action if any
+          if common.wageAddendum > 0:
+              common.wage -= common.wageAddendum
+              common.wageAddendum = 0
+
+          # wages: set
+          if common.ReferenceLevel >= 1:
+              if nEntrepreneurs / common.ReferenceLevel - 1 > \
+                 common.maxAcceptableOligopolistRelativeIncrement:
+                common.wageAddendum = common.wage *\
+                 common.temporaryRelativeWageIncrementAsBarrier
+                common.wage += common.wageAddendum
+
+          print("/// ","nEntrepreneurs",nEntrepreneurs)
+          print("/// ","nEntrepreneursB",nEntrepreneursB)
+          print("/// ","nEntrepreneursB_1",nEntrepreneursB_1)
+          print("/// ","ReferenceLevel",common.ReferenceLevel)
+          print("/// ","ReferenceLevel_1",ReferenceLevel_1)
+          print("/// ","wageAddendum",common.wageAddendum)
