@@ -166,13 +166,15 @@ class WorldState(object):
     # incumbents rising wages as an entry barrier
     def incumbentActionOnWages(self):
 
+        # E and B final letters in the name are consistent with the symbols
+        # in Section "incumbentActionOnWages, as in WorldState, with details"
         # current number of entrepreneurs
         peopleList = common.g.nodes()
-        nEntrepreneurs = 0
+        nEntrepreneursE = 0
         for p in peopleList:
             if p.agType == "entrepreneurs":
-                nEntrepreneurs += 1
-        nEntrepreneurs = float(nEntrepreneurs)
+                nEntrepreneursE += 1
+        nEntrepreneursE = float(nEntrepreneursE)
 
         # no cumulative measure
         # as in the Section incumbentActionOnWages, as in WorldState, with details
@@ -181,6 +183,7 @@ class WorldState(object):
           # previous number of entrepreneurs
           # values in str_df at the beginning of each cycle (B as beginning)
           nEntrepreneursB = common.str_df.iloc[-1, 0]  # indexing Python style
+                                                       # pos. -1 is the last one
 
           # print nEntrepreneurs, nEntrepreneurs0
 
@@ -191,7 +194,7 @@ class WorldState(object):
 
           # wages: set
           if nEntrepreneursB >= 1:
-              if nEntrepreneurs / nEntrepreneursB - 1 > \
+              if nEntrepreneursE / nEntrepreneursB - 1 > \
                  common.maxAcceptableOligopolistRelativeIncrement:
                 common.wageAddendum = common.wage *\
                  common.temporaryRelativeWageIncrementAsBarrier
@@ -205,17 +208,19 @@ class WorldState(object):
           if common.cycle == 1:
                 # values in str_df at the beginning of each cycle
                 nEntrepreneursB_1     = common.str_df.iloc[-1, 0]#indexing Py. style
-                nEntrepreneursB       = common.str_df.iloc[-1, 0]
-                ReferenceLevel_1      = common.str_df.iloc[-1, 0]
+                nEntrepreneursB       = common.str_df.iloc[-1, 0]# pos. -1 is
+                nEntrepreneursE_1     = common.str_df.iloc[-1, 0]
+                ReferenceLevel_1      = common.str_df.iloc[-1, 0]# the last one
                 common.ReferenceLevel = common.str_df.iloc[-1, 0]
                                       # common to avoid a reference error
           else:
                 nEntrepreneursB_1 = common.str_df.iloc[-2, 0]#indexing Py. style
                 nEntrepreneursB   = common.str_df.iloc[-1, 0]
+                nEntrepreneursE_1 = common.str_df.iloc[-1, 0]
                 ReferenceLevel_1  = common.ReferenceLevel
 
           #if nEntrepreneursB - nEntrepreneursB_1 <= 0 or \
-          if  nEntrepreneursB_1 / ReferenceLevel_1 > \
+          if  nEntrepreneursE_1 / ReferenceLevel_1 - 1 > \
                    common.maxAcceptableOligopolistRelativeIncrement:
                       common.ReferenceLevel = nEntrepreneursB
           else:
@@ -228,15 +233,18 @@ class WorldState(object):
 
           # wages: set
           if common.ReferenceLevel >= 1:
-              if nEntrepreneurs / common.ReferenceLevel - 1 > \
+              if nEntrepreneursE / common.ReferenceLevel - 1 > \
                  common.maxAcceptableOligopolistRelativeIncrement:
                 common.wageAddendum = common.wage *\
                  common.temporaryRelativeWageIncrementAsBarrier
                 common.wage += common.wageAddendum
 
-          print("/// ","nEntrepreneurs",nEntrepreneurs)
+          """
+          print("/// ","nEntrepreneursE",nEntrepreneursE)
+          print("/// ","nEntrepreneursE_1",nEntrepreneursE_1)
           print("/// ","nEntrepreneursB",nEntrepreneursB)
           print("/// ","nEntrepreneursB_1",nEntrepreneursB_1)
           print("/// ","ReferenceLevel",common.ReferenceLevel)
           print("/// ","ReferenceLevel_1",ReferenceLevel_1)
           print("/// ","wageAddendum",common.wageAddendum)
+          """
