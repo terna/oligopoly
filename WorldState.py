@@ -204,7 +204,7 @@ class WorldState(object):
         # as in the Section incumbentActionOnWages, as in WorldState, with details
         # in the Reference
         if common.cumulativelyMeasuringNewEntrantNumber:
-          print("///////// ","common.cycle",common.cycle)
+          #print("///////// ","common.cycle",common.cycle)
           if common.cycle == 1:
                 # values in str_df at the beginning of each cycle
                 nEntrepreneursB_1     = common.str_df.iloc[-1, 0]#indexing Py. style
