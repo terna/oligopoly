@@ -166,6 +166,12 @@ class WorldState(object):
     # incumbents rising wages as an entry barrier
     def incumbentActionOnWages(self):
 
+        # wages: reset incumbent action if any
+        if common.wageAddendum > 0:
+            common.wage -= common.wageAddendum
+            common.wageAddendum = 0
+
+
         # E and B final letters in the name are consistent with the symbols
         # in Section "incumbentActionOnWages, as in WorldState, with details"
         # current number of entrepreneurs
@@ -186,11 +192,6 @@ class WorldState(object):
                                                        # pos. -1 is the last one
 
           # print nEntrepreneurs, nEntrepreneurs0
-
-          # wages: reset incumbent action if any
-          if common.wageAddendum > 0:
-              common.wage -= common.wageAddendum
-              common.wageAddendum = 0
 
           # wages: set
           if nEntrepreneursB >= 1:
@@ -225,11 +226,6 @@ class WorldState(object):
                       common.ReferenceLevel = nEntrepreneursB
           else:
                       common.ReferenceLevel = ReferenceLevel_1
-
-          # wages: reset incumbent action if any
-          if common.wageAddendum > 0:
-              common.wage -= common.wageAddendum
-              common.wageAddendum = 0
 
           # wages: set
           if common.ReferenceLevel >= 1:
