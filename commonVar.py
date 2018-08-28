@@ -66,7 +66,7 @@ b2 = 0.65 #0.7 #0.65
 # Y2=wage
 
 #(3)
-socialWelfareCompensation = 0.60 #0.75 #0.70 #0.3
+socialWelfareCompensation = 0.70 #0.60 #0.75 #0.70 #0.3
 a3 = 0
 b3 = 1
 # Y3=socialWelfareCompensation
@@ -117,7 +117,7 @@ rho = 0.9
 
 # threshold toEntrepreneur
 thresholdToEntrepreneur = 0.08 #0.085 #0.09 #0.10 #0.075 #0.05 #0.05 #0.15 #0.10 #0.075 #0.045 #0.075 # was 0.15 in the paper  # was 0.20 in the init. trials
-extraCostsDuration = 3
+extraCostsDuration = 5 #3
 newEntrantExtraCosts = 60  # was 100.0 # was 2.0
 
 randomComponentOfPlannedProduction = 0.10
@@ -159,7 +159,7 @@ initShift = -0.15 #-0.10 #0.5 #0.1
 
 # Range of the correction of agent current price (h. market), as buyer/seller
 runningShockB = 0.20 #0.10 #0.05
-runningShockS = 0.02 #0.20 #0.05 #0.10 #0.05
+runningShockS = 0.05 #0.02 #0.20 #0.05 #0.10 #0.05
 # current shift in individual price correction (h. market)
 runningShiftB = 0.1 #0 #0.1
 runningShiftS = 0.1 #0 #0.1
