@@ -138,10 +138,10 @@ class WorldState(object):
     # shock to wages (full employment case)
     def fullEmploymentEffectOnWages(self):
 
-        # wages: reset incumbent action if any
-        if common.wageAddendum > 0:
-            common.wage -= common.wageAddendum
-            common.wageAddendum = 0
+        # wages: reset wage addendum, if any
+        # excluding the case of a raise made in this cycle (by another procedure)
+        if  common.wageCorrectionInCycle != common.cycle:
+            common.wage = common.wageBase
 
         # employed people
         peopleList = common.g.nodes()
@@ -153,23 +153,18 @@ class WorldState(object):
         # print totalPeople, totalEmployed
         unemploymentRate = 1. - float(totalEmployed) / \
             float(totalPeople)
-        if not common.fullEmploymentStatus and \
-           unemploymentRate <= common.fullEmploymentThreshold:
+        if unemploymentRate <= common.fullEmploymentThreshold:
             common.wage *= (1 + common.wageStepInFullEmployment)
-            common.fullEmploymentStatus = True
-
-        if common.fullEmploymentStatus and \
-           unemploymentRate > common.fullEmploymentThreshold:
-            common.wage /= (1 + common.wageStepInFullEmployment)
-            common.fullEmploymentStatus = False
+            common.wageCorrectionInCycle=common.cycle
 
     # incumbents rising wages as an entry barrier
     def incumbentActionOnWages(self):
 
-        # wages: reset incumbent action if any
-        if common.wageAddendum > 0:
-            common.wage -= common.wageAddendum
-            common.wageAddendum = 0
+        # wages: reset wage addendum, if any
+        # excluding the case of a raise made in this cycle (by another procedure)
+        if  common.wageCorrectionInCycle != common.cycle:
+            common.wage = common.wageBase
+            common.wageAddendum=0 # for the final print if in use
 
 
         # E and B final letters in the name are consistent with the symbols
@@ -197,10 +192,10 @@ class WorldState(object):
           if nEntrepreneursB >= 1:
               if nEntrepreneursE / nEntrepreneursB - 1 > \
                  common.maxAcceptableOligopolistRelativeIncrement:
-                common.wageAddendum = common.wage *\
-                 common.temporaryRelativeWageIncrementAsBarrier
-                common.wage += common.wageAddendum
-
+                  common.wageAddendum = common.wage *\
+                       common.temporaryRelativeWageIncrementAsBarrier
+                  common.wage += common.wageAddendum
+                  common.wageCorrectionInCycle=common.cycle
         # cumulative measure
         # as in the Section incumbentActionOnWages, as in WorldState, with details
         # in the Reference
@@ -231,9 +226,10 @@ class WorldState(object):
           if common.ReferenceLevel >= 1:
               if nEntrepreneursE / common.ReferenceLevel - 1 > \
                  common.maxAcceptableOligopolistRelativeIncrement:
-                common.wageAddendum = common.wage *\
-                 common.temporaryRelativeWageIncrementAsBarrier
-                common.wage += common.wageAddendum
+                  common.wageAddendum = common.wage *\
+                         common.temporaryRelativeWageIncrementAsBarrier
+                  common.wage += common.wageAddendum
+                  common.wageCorrectionInCycle=common.cycle
 
           """
           print("/// ","nEntrepreneursE",nEntrepreneursE)

@@ -2,7 +2,7 @@
 
 projectVersion = "6"
 
-build = "20180827"
+build = "20180828"
 
 debug = False
 
@@ -72,13 +72,14 @@ b3 = 1
 # Y3=socialWelfareCompensation
 
 #wages and revenues
-wage = 1.
+wageBase = 1.
+wage = wageBase
 
 fullEmploymentThreshold = 0.05
 wageStepInFullEmployment = 0.10
-fullEmploymentStatus = False
 
 wageAddendum = 0
+wageCorrectionInCycle=0
 maxAcceptableOligopolistRelativeIncrement = 0.20 #0.30 # was 0.20 in the paper
 cumulativelyMeasuringNewEntrantNumber=True
 temporaryRelativeWageIncrementAsBarrier = 0.15
