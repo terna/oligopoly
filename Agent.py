@@ -715,6 +715,40 @@ class Agent(SuperAgent):
     def actOnMarketPlace(self):
         if common.cycle < common.startHayekianMarket: return
 
+        # in each sub step, we show residual consumption and production; the
+        # code operates on different agents, but consistently (in each call,
+        # the elaboration jumps from an instance of agent to another one)
+        if common.checkResCons:
+
+         #print(self.number)
+         if common.withinASubstep:
+            common.internalSubStepAgentCounter+=1
+            #print('*',common.internalSubStepAgentCounter)
+            if common.internalSubStepAgentCounter==len(self.agentList):
+                common.withinASubstep=False
+
+         else: # not withinASubstep
+            common.withinASubstep=True
+            common.internalSubStepAgentCounter=1
+            if common.currentCycle != common.cycle:
+                  common.currentCycle = common.cycle
+                  common.subStepCounter=0
+                  print()
+            common.subStepCounter+=1
+            residualConsumptionCapabilityInValue=0
+            residualUnsoldPruduction=0
+            for anAgent in self.agentList:
+                residualConsumptionCapabilityInValue += anAgent.consumption
+                if anAgent.agType=="entrepreneurs":
+                    residualUnsoldPruduction+= \
+                    anAgent.production - anAgent.soldProduction
+            print(\
+"subc. %2d.%3d starts with cons. capab. (v) %.1f and uns. p. (q) %.1f"\
+% (common.cycle, common.subStepCounter, residualConsumptionCapabilityInValue,\
+                                        residualUnsoldPruduction))
+
+
+
         try: common.wr.writerow
         except:
             print("The file firstStepOutputInHayekianMarket.csv was not"+\

@@ -2,7 +2,7 @@
 
 projectVersion = "6"
 
-build = "20180828"
+build = "20180830"
 
 debug = False
 
@@ -194,3 +194,10 @@ totalConsumptionInQuantityInPrevious1_TimeStep=0
 
 #instruments
 startingHayekianCommonPriceAlreadyWritten=False
+
+# infos on substep management
+checkResCons=True
+
+withinASubstep=False
+currentCycle=0
+subStepCounter=0
