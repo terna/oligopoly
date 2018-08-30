@@ -196,7 +196,7 @@ totalConsumptionInQuantityInPrevious1_TimeStep=0
 startingHayekianCommonPriceAlreadyWritten=False
 
 # infos on substep management
-checkResCons=True
+checkResConsUnsoldProd=True
 
 withinASubstep=False
 currentCycle=0

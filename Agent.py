@@ -718,7 +718,7 @@ class Agent(SuperAgent):
         # in each sub step, we show residual consumption and production; the
         # code operates on different agents, but consistently (in each call,
         # the elaboration jumps from an instance of agent to another one)
-        if common.checkResCons:
+        if common.checkResConsUnsoldProd:
 
          #print(self.number)
          if common.withinASubstep:
