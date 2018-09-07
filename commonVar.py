@@ -2,7 +2,7 @@
 
 projectVersion = "6"
 
-build = "20180830"
+build = "20180907"
 
 debug = False
 
@@ -70,6 +70,10 @@ socialWelfareCompensation = 0.70 #0.60 #0.75 #0.70 #0.3
 a3 = 0
 b3 = 1
 # Y3=socialWelfareCompensation
+
+# quota of the unspent consumption capability coming from the past to be
+# added to the corrent consumption plan [0, 1]
+reUseUnspentConsumptionCapability=0
 
 #wages and revenues
 wageBase = 1.

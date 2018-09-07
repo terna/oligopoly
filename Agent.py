@@ -67,6 +67,8 @@ class Agent(SuperAgent):
 
             self.workTroubles = 0
 
+            self.unspentConsumptionCapability = 0
+
         if agType == 'entrepreneurs': #useful in initial creation
             common.orderedListOfNodes.append(self)
             # use to keep the order
@@ -78,6 +80,8 @@ class Agent(SuperAgent):
             self.employed = True
             self.plannedProduction = -100  # not used in plots if -100
             self.hasTroubles = 0
+
+            self.unspentConsumptionCapability = 0
 
         self.myWorldState = myWorldState
         self.agType = agType
@@ -808,6 +812,7 @@ class Agent(SuperAgent):
                  mySeller.soldProduction+=buyerQ
                  mySeller.revenue+=buyerQ*mySeller.sellPrice
                  self.consumption-=buyerQ*mySeller.sellPrice
+                 self.unspentConsumptionCapability=self.consumption
                  #print("cycle",common.cycle,"ag",self.number,"deal: cons val",\
                  #        buyerQ*mySeller.sellPrice,"price",mySeller.sellPrice)
                  # saving the price of the transaction
@@ -1248,10 +1253,18 @@ class Agent(SuperAgent):
                 common.b3 * common.socialWelfareCompensation + \
                 gauss(0, common.consumptionRandomComponentSD)
 
+        # reuse unspent consumption capability
+        #if self.number==1:
+        #    print("reuse unspent consumption capability", \
+        #                            self.unspentConsumptionCapability)
+        self.consumption += common.reUseUnspentConsumptionCapability * \
+                            self.unspentConsumptionCapability
+
         if self.consumption < 0:
             #print('*************************************',self.employed, \
             #        self.consumption)
             self.consumption=0
+
 
         # max cons. in each step of a cycles of the hayekian phase
         self.maxConsumptionInAStep=self.consumption*common.consumptionQuota

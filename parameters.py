@@ -126,6 +126,13 @@ def loadParameters(self):
     dataFrameAppend("socialWelfareCompensation","social welfare compensation",
                     common.socialWelfareCompensation)  # saving pars
 
+    # social welfare compensation
+    print("reuse unspent consumption capability [0, 1]", \
+                                common.reUseUnspentConsumptionCapability)
+    dataFrameAppend("reUseUnspentConsumptionCapability",\
+                                "reuse unspent consumption capability [0, 1]",
+                    common.reUseUnspentConsumptionCapability)  # saving pars
+
     # revenue of sales per worker (version 0)
     # print "revenues of sales for each worker in Version 0", \
     #      common.revenuesOfSalesForEachWorker
