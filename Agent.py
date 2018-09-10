@@ -69,6 +69,8 @@ class Agent(SuperAgent):
 
             self.unspentConsumptionCapability = 0
 
+            self.jump = 0
+
         if agType == 'entrepreneurs': #useful in initial creation
             common.orderedListOfNodes.append(self)
             # use to keep the order
@@ -82,6 +84,8 @@ class Agent(SuperAgent):
             self.hasTroubles = 0
 
             self.unspentConsumptionCapability = 0
+
+            self.jump = 0
 
         self.myWorldState = myWorldState
         self.agType = agType
@@ -671,6 +675,25 @@ class Agent(SuperAgent):
 
 
 
+    # modify a specific sell price with a jump on the side of the up
+    # corrections, in full hayekian market
+    # NB we are at the end of each cycle
+    def nextSellPriceJumpFHM(self):
+        if self.agType != "entrepreneurs": return
+        if common.hParadigm=="quasi": return
+
+        if npr.uniform(0,1)<=common.pJump:
+            if self.jump == 0:
+                self.jump=common.jump
+                self.sellPrice *= 1 + self.jump
+                print("entrepreur # ", self.number, \
+                      "raises the sell price with a jump")
+            else:
+                self.sellPrice /= 1 + self.jump
+                self.jump=0
+                print("entrepreur # ", self.number, \
+                      "reduces the sell price with a jump")
+
 
     # modify sell prices in quasi hayekian market
     # NB we are at the end of each cycle
@@ -863,7 +886,6 @@ class Agent(SuperAgent):
                                      (common.hParadigm=="quasi" and \
                                      common.cycle==common.startHayekianMarket):
                                # seller case (statusS 1, successful sell attempt,
-                               # acting mostly to increase the reservation price)
               mySeller.sellPrice = applyRationallyTheRateOfChange(mySeller.sellPrice,\
                                        common.ratioSellersBuyers*\
                                        uniform(-common.runningShiftS* \
@@ -1375,6 +1397,7 @@ class Agent(SuperAgent):
                 if common.cycle >=common.startHayekianMarket:
                   if myEntrepreneur.sellPriceDefined:
                     self.sellPrice=myEntrepreneur.sellPrice
+                    self.jump=myEntrepreneur.jump
                     print("with the same sell price of the the previous firm",\
                           self.sellPrice)
                   else:

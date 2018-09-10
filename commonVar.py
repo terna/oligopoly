@@ -2,7 +2,7 @@
 
 projectVersion = "6"
 
-build = "20180907"
+build = "20180910"
 
 debug = False
 
@@ -73,7 +73,7 @@ b3 = 1
 
 # quota of the unspent consumption capability coming from the past to be
 # added to the corrent consumption plan [0, 1]
-reUseUnspentConsumptionCapability=1
+reUseUnspentConsumptionCapability= 0.5 #0 #0.5 #1
 
 #wages and revenues
 wageBase = 1.
@@ -121,14 +121,14 @@ nu = 5
 rho = 0.9
 
 # threshold toEntrepreneur
-thresholdToEntrepreneur = 0.08 #0.085 #0.09 #0.10 #0.075 #0.05 #0.05 #0.15 #0.10 #0.075 #0.045 #0.075 # was 0.15 in the paper  # was 0.20 in the init. trials
+thresholdToEntrepreneur = 0.10 #0.08 #0.085 #0.09 #0.10 #0.075 #0.05 #0.05 #0.15 #0.10 #0.075 #0.045 #0.075 # was 0.15 in the paper  # was 0.20 in the init. trials
 extraCostsDuration = 5 #3
 newEntrantExtraCosts = 60  # was 100.0 # was 2.0
 
 randomComponentOfPlannedProduction = 0.10
 
 # max new entrant number in a time step
-absoluteBarrierToBecomeEntrepreneur = 20
+absoluteBarrierToBecomeEntrepreneur = 10 #20
 
 maxDemandRelativeRandomShock = 0.15  # was 0.10 #was 0.20
 
@@ -168,6 +168,10 @@ runningShockS = 0.05 #0.02 #0.20 #0.05 #0.10 #0.05
 # current shift in individual price correction (h. market)
 runningShiftB = 0.1 #0 #0.1
 runningShiftS = 0.1 #0 #0.1
+
+# a jump in prices made by the sellers
+jump= 0.05 #0.30 #0.20 #0.10
+pJump=0.05
 
 # Choosing among different quasi hayekian strategies in modifiying seller
 # hPriceSd
