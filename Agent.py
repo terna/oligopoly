@@ -692,7 +692,7 @@ class Agent(SuperAgent):
                 self.sellPrice /= 1 + self.jump
                 self.jump=0
                 print("entrepreur # ", self.number, \
-                      "reduces the sell price with a jump")
+                      "reduces the sell price with a jump back")
 
 
     # modify sell prices in quasi hayekian market
