@@ -9,7 +9,7 @@ A  concise presentation of the simulation mechanism is reported in the following
 image:
 
 <p align="center">
-<img src="./OligopolyOutline.png" width="450" />
+<img src="./OligopolyOutline.png" width="350" />
 </p>
 
 We have also the [slides](slides_of_a_presentazione_of_the_model.pdf) of the presentation of the Oligopoly model at [WEHIA 2017](http://www.wehia2017.com).
