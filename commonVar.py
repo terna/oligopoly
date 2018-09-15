@@ -2,7 +2,7 @@
 
 projectVersion = "6"
 
-build = "20180913"
+build = "20180915"
 
 debug = False
 
@@ -171,7 +171,7 @@ runningShiftS = 0.1 #0 #0.1
 
 # a jump in prices made by the sellers
 jump= 0.10 #0.05 #0.30 #0.20 #0.10
-pJump=0.05
+pJump=0.10 # 0.05
 
 # Choosing among different quasi hayekian strategies in modifiying seller
 # hPriceSd
