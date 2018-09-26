@@ -703,15 +703,15 @@ class Agent(SuperAgent):
 
         # hayekian period, "quasi" hayekian paradigm
 
-        # consideing relative unsold quantity
+        # considering relative unsold quantity
         if common.quasiHchoice=="unsold":
          if common.cycle >= common.startHayekianMarket and \
                           common.hParadigm=="quasi":
             oldP=self.sellPrice
-            if self.soldProduction/self.production <= common.soldThreshold:
+            if self.soldProduction/self.production <= common.soldThreshold1:
                 self.sellPrice = applyRationallyTheRateOfChange(self.sellPrice,\
                                         uniform(common.decreasingRateRange, 0))
-            if self.soldProduction==self.production:
+            if self.soldProduction2>=self.production/self.production:
                 self.sellPrice = applyRationallyTheRateOfChange(self.sellPrice,\
                                         uniform(0, common.increasingRateRange))
 

@@ -307,10 +307,17 @@ def loadParameters(self):
 
     print(\
     "\n(quasi) hayekian market sold threshold to lower the prices = %10s\n" %
-            common.soldThreshold)
-    dataFrameAppend("soldThreshold",
+            common.soldThreshold1)
+    dataFrameAppend("soldThreshold1",
                         "quasi h. market sold threshold lo lower the p.",
-                        common.soldThreshold)  # saving pars
+                        common.soldThreshold1)  # saving pars
+
+    print(\
+    "\n(quasi) hayekian market sold threshold to raise the prices = %10s\n" %
+            common.soldThreshold2)
+    dataFrameAppend("soldThreshold2",
+                        "quasi h. market sold threshold lo raise the p.",
+                        common.soldThreshold2)  # saving pars
 
     print("\n'quasi' h. market, decreasing rate range of the prices = %5.2f\n" %
             common.decreasingRateRange)
