@@ -2,7 +2,7 @@
 
 projectVersion = "6"
 
-build = "20180926"
+build = "20180928"
 
 debug = False
 
@@ -150,16 +150,16 @@ hParadigm= "quasi" #"noPriceMod" #"full" #"quasi"
 
 # thresholds to decide
 # to lower the prices in the 'quasi' hParadigm
-soldThreshold1=0.80
+soldThreshold1=0.90 #0.85
 # to raise the prices in the 'quasi' hParadigm
-soldThreshold2=0.90
+soldThreshold2=0.99 #0.95
 
 
 # 'quasi' hParadigm, decreasingRateRange
-decreasingRateRange=-0.20
+decreasingRateRange=-0.10
 
 # 'quasi' hParadigm, increasingRateRange
-increasingRateRange=0.20
+increasingRateRange=0.01
 
 # Range of the correction of agent starting prices (h. market)
 initShock = 0.10 #0.2 #0.1 #0.3
@@ -167,7 +167,7 @@ initShock = 0.10 #0.2 #0.1 #0.3
 initShift = -0.15 #-0.10 #0.5 #0.1
 
 # Range of the correction of agent current price (h. market), as buyer/seller
-runningShockB = 0.20 #0.10 #0.05
+runningShockB = 0.30 #0.01 #0.05 #0.20 #0.10 #0.05
 runningShockS = 0.05 #0.02 #0.20 #0.05 #0.10 #0.05
 # current shift in individual price correction (h. market)
 runningShiftB = 0.1 #0 #0.1
