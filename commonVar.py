@@ -2,7 +2,7 @@
 
 projectVersion = "6"
 
-build = "20180928"
+build = "20180929"
 
 debug = False
 
@@ -148,6 +148,9 @@ startHayekianMarket = 1 #3 #1 #6
 # "Version 6, the hayekian market"
 hParadigm= "quasi" #"noPriceMod" #"full" #"quasi"
 
+# checking falling plannedProduction
+entrepreneursMindIfPlannedProductionFalls=True
+
 # thresholds to decide
 # to lower the prices in the 'quasi' hParadigm
 soldThreshold1=0.90 #0.85
@@ -164,10 +167,10 @@ increasingRateRange=0.01
 # Range of the correction of agent starting prices (h. market)
 initShock = 0.10 #0.2 #0.1 #0.3
 # initial shift in individual starting prices (h. market)
-initShift = -0.15 #-0.10 #0.5 #0.1
+initShift = 1.1 #0.7 #-0.15 #-0.10 #0.5 #0.1
 
 # Range of the correction of agent current price (h. market), as buyer/seller
-runningShockB = 0.30 #0.01 #0.05 #0.20 #0.10 #0.05
+runningShockB = 0.0005 #0.0001 #0.30 #0.01 #0.05 #0.20 #0.10 #0.05
 runningShockS = 0.05 #0.02 #0.20 #0.05 #0.10 #0.05
 # current shift in individual price correction (h. market)
 runningShiftB = 0.1 #0 #0.1

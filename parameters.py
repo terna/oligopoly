@@ -305,6 +305,13 @@ def loadParameters(self):
                         "hayekian market sell price modification",
                         common.hParadigm)  # saving pars
 
+    print("\entrepreneurs mind if plannedProduction falls = %10s\n" %
+            common.entrepreneursMindIfPlannedProductionFalls)
+    dataFrameAppend("entrepreneurs mind if plannedProduction falls",
+                        "hayekian market sell price modification",
+                        common.entrepreneursMindIfPlannedProductionFalls)
+                        # saving pars
+
     print(\
     "\n(quasi) hayekian market sold threshold to lower the prices = %10s\n" %
             common.soldThreshold1)

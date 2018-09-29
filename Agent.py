@@ -704,10 +704,21 @@ class Agent(SuperAgent):
         # hayekian period, "quasi" hayekian paradigm
 
         # considering relative unsold quantity
-        if common.quasiHchoice=="unsold":
-         if common.cycle >= common.startHayekianMarket and \
-                          common.hParadigm=="quasi":
-            oldP=self.sellPrice
+        if common.hParadigm=="quasi" and common.quasiHchoice=="unsold":
+         if common.cycle >= common.startHayekianMarket:
+          oldP=self.sellPrice
+          if common.cycle >1 and \
+           common.entrepreneursMindIfPlannedProductionFalls and \
+           common.ts_df.iloc[-1, 3] > common.totalPlannedProduction:
+           # indexing Python style, pos. -1 is the last one
+            self.sellPrice = applyRationallyTheRateOfChange(self.sellPrice,\
+                                     uniform(common.decreasingRateRange, 0))
+            print(("end of t = %d entrepreneur %d initial production"+\
+                   " %.2f sold  %.3f \nold price %.3f new price %.2f as "+\
+                   " total plannedProduction falls") %\
+                   (common.cycle,self.number,self.production,\
+                    self.soldProduction,oldP,self.sellPrice))
+          else:
             if self.soldProduction/self.production <= common.soldThreshold1:
                 self.sellPrice = applyRationallyTheRateOfChange(self.sellPrice,\
                                         uniform(common.decreasingRateRange, 0))
@@ -716,18 +727,18 @@ class Agent(SuperAgent):
                                         uniform(0, common.increasingRateRange))
 
             print(("end of t = %d entrepreneur %d initial production"+\
-                   " %.2f sold  %.2f \nold price %.2f new price %.2f") %\
+                   " %.2f sold  %.3f \nold price %.3f new price %.2f") %\
                    (common.cycle,self.number,self.production,\
                     self.soldProduction,oldP,self.sellPrice))
-            return
+          return
 
         # consideing profit sign directly
-        if common.quasiHchoice=="profitDirec":
-            return
+        if common.hParadigm=="quasi" and common.quasiHchoice=="profitDirec":
+          return
 
         # consideing profit sign in inverse way
-        if common.quasiHchoice=="profitInverse":
-            return
+        if common.hParadigm=="quasi" and common.quasiHchoice=="profitInverse":
+           return
 
 
 
