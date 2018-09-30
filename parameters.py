@@ -307,20 +307,27 @@ def loadParameters(self):
 
     print("\nentrepreneurs mind if plannedProduction falls = %10s\n" %
             common.entrepreneursMindIfPlannedProductionFalls)
-    dataFrameAppend("entrepreneurs mind if plannedProduction falls",
-                        "hayekian market sell price modification",
+    dataFrameAppend("entrepreneursMindIfPlannedProductionFalls",
+                        "entrepreneurs mind if plannedProduction falls",
                         common.entrepreneursMindIfPlannedProductionFalls)
                         # saving pars
 
+    print("\nthreshold to decrease the price if total plannedP falls = %.2f\n" %
+            common.thresholdToDecreaseThePriceIfTotalPlannedPFalls)
+    dataFrameAppend("thresholdToDecreaseThePriceIfTotalPlannedPFalls",
+                        "threshold to decrease the price if total plannedP falls",
+                        common.thresholdToDecreaseThePriceIfTotalPlannedPFalls)
+                        # saving pars
+
     print(\
-    "\n(quasi) hayekian market sold threshold to lower the prices = %10s\n" %
+    "\n(quasi) hayekian market sold threshold to lower the prices = %.2f\n" %
             common.soldThreshold1)
     dataFrameAppend("soldThreshold1",
                         "quasi h. market sold threshold lo lower the p.",
                         common.soldThreshold1)  # saving pars
 
     print(\
-    "\n(quasi) hayekian market sold threshold to raise the prices = %10s\n" %
+    "\n(quasi) hayekian market sold threshold to raise the prices = %.2f\n" %
             common.soldThreshold2)
     dataFrameAppend("soldThreshold2",
                         "quasi h. market sold threshold lo raise the p.",

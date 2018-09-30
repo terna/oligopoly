@@ -704,7 +704,8 @@ class Agent(SuperAgent):
           oldP=self.sellPrice
           if common.cycle >1 and \
            common.entrepreneursMindIfPlannedProductionFalls and \
-           common.ts_df.iloc[-1, 3] > common.totalPlannedProduction:
+           common.ts_df.iloc[-1, 3] / common.totalPlannedProduction - 1 >= \
+                   common.thresholdToDecreaseThePriceIfTotalPlannedPFalls:
            # indexing Python style, pos. -1 is the last one
             self.sellPrice = applyRationallyTheRateOfChange(self.sellPrice,\
                                      uniform(common.decreasingRateRange, 0))
