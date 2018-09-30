@@ -333,49 +333,49 @@ def loadParameters(self):
                         "quasi h. market sold threshold lo raise the p.",
                         common.soldThreshold2)  # saving pars
 
-    print("\n'quasi' h. market, decreasing rate range of the prices = %5.2f\n" %
+    print("\n'quasi' h. market, decreasing rate range of the prices = %6.3f\n" %
             common.decreasingRateRange)
     dataFrameAppend("decreasingRateRange",
                         "quasi h. market, decr. r. range of prices",
                         common.decreasingRateRange)  # saving pars
 
-    print("\n'quasi' h. market, increasing rate range of the prices = %5.2f\n" %
+    print("\n'quasi' h. market, increasing rate range of the prices = %6.3f\n" %
             common.increasingRateRange)
     dataFrameAppend("increasingRateRange",
                         "quasi h. market, incr. r. range of prices",
                         common.increasingRateRange)  # saving pars
 
-    print("\nShock in individual starting prices (h. market) = %5.2f\n" %
+    print("\nShock in individual starting prices (h. market) = %6.3f\n" %
             common.initShock)
     dataFrameAppend("initShock",
                         "shock in individual starting prices (h. market)",
                         common.initShock)  # saving pars
 
-    print("\nShift in individual starting prices (h. market) = %5.2f\n" %
+    print("\nShift in individual starting prices (h. market) = %6.3f\n" %
             common.initShift)
     dataFrameAppend("initShift",
                         "shift in individual starting prices (h. market)",
                         common.initShift)  # saving pars
 
-    print("\nRange of the correction of agent (as buyers) running prices in h. market = %5.2f\n"\
+    print("\nRange of the correction of agent (as buyers) running prices in h. market = %7.4f\n"\
             % common.runningShockB)
     dataFrameAppend("runningShockB",
                         "correction of running prices in h. market (buyers)",
                         common.runningShockB)  # saving pars
 
-    print("\nRange of the correction of agent (as sellers) running prices in h. market = %5.2f\n"\
+    print("\nRange of the correction of agent (as sellers) running prices in h. market = %7.4f\n"\
             % common.runningShockS)
     dataFrameAppend("runningShockS",
                         "correction of running prices in h. market (sellers)",
                         common.runningShockS)  # saving pars
 
-    print("\nShift in individual buyer running prices (h. market) = %5.2f\n" %
+    print("\nShift in individual buyer running prices (h. market) = %6.3f\n" %
             common.runningShiftB)
     dataFrameAppend("runningShiftB",
                         "shift in individual buyer running prices (h. market)",
                         common.runningShiftB)  # saving pars
 
-    print("\nShift in individual seller running prices (h. market) = %5.2f\n" %
+    print("\nShift in individual seller running prices (h. market) = %6.3f\n" %
             common.runningShiftS)
     dataFrameAppend("runningShiftS",
                         "shift in individual seller running prices (h. market)",

@@ -710,7 +710,7 @@ class Agent(SuperAgent):
             self.sellPrice = applyRationallyTheRateOfChange(self.sellPrice,\
                                      uniform(common.decreasingRateRange, 0))
             print(("end of t = %d entrepreneur %d initial production"+\
-                   " %.2f sold  %.3f \nold price %.3f new price %.2f as "+\
+                   " %.2f sold  %.3f \nold price %.3f new price %.3f as "+\
                    " total plannedProduction falls") %\
                    (common.cycle,self.number,self.production,\
                     self.soldProduction,oldP,self.sellPrice))
@@ -724,7 +724,7 @@ class Agent(SuperAgent):
                                         uniform(0, common.increasingRateRange))
 
             print(("end of t = %d entrepreneur %d initial production"+\
-                   " %.2f sold  %.3f \nold price %.3f new price %.2f") %\
+                   " %.2f sold  %.3f \nold price %.3f new price %.3f") %\
                    (common.cycle,self.number,self.production,\
                     self.soldProduction,oldP,self.sellPrice))
           return
