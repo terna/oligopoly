@@ -112,12 +112,6 @@ class Agent(SuperAgent):
         # the number of the cycle
         self.consumptionPlanningInCycleNumber = -1
 
-        # the cycle we are in
-        self.currentCycle=-1
-
-        # seller list in actOnMarketPlace
-        self.sellerList=[]
-
         #  status to be used in actOnMarketPlace acting as a buyer
         #  0 means never used
         #  1 if previous action was a successful buy attempt
@@ -706,6 +700,7 @@ class Agent(SuperAgent):
         # considering relative unsold quantity
         if common.hParadigm=="quasi" and common.quasiHchoice=="unsold":
          if common.cycle >= common.startHayekianMarket:
+
           oldP=self.sellPrice
           if common.cycle >1 and \
            common.entrepreneursMindIfPlannedProductionFalls and \
@@ -718,6 +713,7 @@ class Agent(SuperAgent):
                    " total plannedProduction falls") %\
                    (common.cycle,self.number,self.production,\
                     self.soldProduction,oldP,self.sellPrice))
+
           else:
             if self.soldProduction/self.production <= common.soldThreshold1:
                 self.sellPrice = applyRationallyTheRateOfChange(self.sellPrice,\
@@ -771,19 +767,20 @@ class Agent(SuperAgent):
             if common.currentCycle != common.cycle:
                   common.currentCycle = common.cycle
                   common.subStepCounter=0
+                  common.readySellerList=False
                   print()
             common.subStepCounter+=1
             residualConsumptionCapabilityInValue=0
-            residualUnsoldPruduction=0
+            residualUnsoldProduction=0
             for anAgent in self.agentList:
                 residualConsumptionCapabilityInValue += anAgent.consumption
                 if anAgent.agType=="entrepreneurs":
-                    residualUnsoldPruduction+= \
+                    residualUnsoldProduction+= \
                     anAgent.production - anAgent.soldProduction
             print(\
 "subc. %2d.%3d starts with cons. capab. (v) %.1f and uns. p. (q) %.1f"\
 % (common.cycle, common.subStepCounter, residualConsumptionCapabilityInValue,\
-                                        residualUnsoldPruduction))
+                                        residualUnsoldProduction))
 
 
 
@@ -795,9 +792,11 @@ class Agent(SuperAgent):
 
 
         # first call in each cycle, preparing action (only once per cycle)
-        if self.currentCycle != common.cycle:
-           self.currentCycle = common.cycle
+        #if self.currentCycle != common.cycle:
+        if not common.readySellerList:
+               #self.currentCycle = common.cycle
 
+           common.readySellerList=True
            # we check that the planning of the consumption has been
            # made for the current cycle
            if self.consumptionPlanningInCycleNumber != common.cycle:
@@ -807,14 +806,14 @@ class Agent(SuperAgent):
                            # we have multiple except, with 'SystemExit' case
 
            # create a temporary list of sellers, starting each step (cycle)
-           self.sellerList=[]
+           common.sellerList=[]
            for anAg in self.agentList:
                if anAg.getType() == "entrepreneurs":
                    if not anAg.sellPriceDefined:
                        print("Inconsistent situation, an active selles"\
                        +" has no sell price defined.")
                        os.sys.exit(1)
-                   else: self.sellerList.append(anAg)
+                   else: common.sellerList.append(anAg)
 
 
         # acting (NB self.consumption comes from planConsumptionInValueV6)
@@ -822,9 +821,9 @@ class Agent(SuperAgent):
         #print("cycle",common.cycle,"ag",self.number,"cons val",self.consumption)
 
         if self.consumption > 0:
-          if self.sellerList != []:
+          if common.sellerList != []:
             # chose a seller
-            mySeller=self.sellerList[randint(0,len(self.sellerList)-1)]
+            mySeller=common.sellerList[randint(0,len(common.sellerList)-1)]
             sellerQ=mySeller.production - mySeller.soldProduction
             if sellerQ>0:
               # try a deal
@@ -921,7 +920,7 @@ class Agent(SuperAgent):
             # cleaning the situation (redundant)\\
             self.statusB=mySeller.statusS=0
 
-          #output - self.sellerList==[]
+          #output - common.sellerList==[]
           elif common.cycle==common.startHayekianMarket:
                common.wr.writerow\
                 (["nosellers", "buy", self.buyPrice, self.consumption, self.number,\

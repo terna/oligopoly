@@ -216,3 +216,4 @@ checkResConsUnsoldProd=True
 withinASubstep=False
 currentCycle=0
 subStepCounter=0
+readySellerList=False
