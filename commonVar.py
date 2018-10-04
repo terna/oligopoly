@@ -2,7 +2,7 @@
 
 projectVersion = "6"
 
-build = "20181001"
+build = "20181004"
 
 debug = False
 
@@ -171,7 +171,7 @@ initShock = 0.10 #0.2 #0.1 #0.3
 initShift = 1.1 #0.7 #-0.15 #-0.10 #0.5 #0.1
 
 # Range of the correction of agent current price (h. market), as buyer/seller
-runningShockB = 0.005 #0.001 #0.0008 #0.0005 #0.0001 #0.30 #0.01 #0.05 #0.20 #0.10 #0.05
+runningShockB = 0.001 #0.005 #0.001 #0.0008 #0.0005 #0.0001 #0.30 #0.01 #0.05 #0.20 #0.10 #0.05
 runningShockS = 0.05 #0.02 #0.20 #0.05 #0.10 #0.05
 # current shift in individual price correction (h. market)
 runningShiftB = 0.1 #0 #0.1
@@ -184,7 +184,7 @@ pJump=0.10 # 0.05
 # Choosing among different quasi hayekian strategies in modifiying seller
 # hPriceSd
 
-quasiHchoice="unsold" # three choices: unsold, profictDirect, profitInverse
+quasiHchoice= "randomUp" #"unsold" # three choices: unsold, randomUp, profit
 
 nodeNumbersInGraph = False
 

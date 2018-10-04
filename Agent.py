@@ -730,11 +730,23 @@ class Agent(SuperAgent):
           return
 
         # consideing profit sign directly
-        if common.hParadigm=="quasi" and common.quasiHchoice=="profitDirec":
-          return
+        if common.hParadigm=="quasi" and common.quasiHchoice=="randomUp":
+            if npr.uniform(0,1)<=common.pJump:
+                        if self.jump == 0:
+                            self.jump=common.jump
+                            self.sellPrice *= 1 + self.jump
+                            print("entrepreur # ", self.number, \
+                                  "raises the sell price with a jump")
+                        else:
+                            self.sellPrice /= 1 + self.jump
+                            self.jump=0
+                            print("entrepreur # ", self.number, \
+                                  "reduces the sell price with a jump back")
+
+            return
 
         # consideing profit sign in inverse way
-        if common.hParadigm=="quasi" and common.quasiHchoice=="profitInverse":
+        if common.hParadigm=="quasi" and common.quasiHchoice=="profit":
            return
 
 

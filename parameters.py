@@ -381,13 +381,13 @@ def loadParameters(self):
                         "shift in individual seller running prices (h. market)",
                         common.runningShiftS)  # saving pars
 
-    print("\nJump in seller prices (full h. market) = %5.2f\n" % common.jump)
-    dataFrameAppend("jump", "Jump in seller prices (full h. market)",
+    print("\nJump in seller prices (full and quasi h. market) = %5.2f\n" % common.jump)
+    dataFrameAppend("jump", "Jump in seller prices (full and quasi h. market)",
                         common.jump)  # saving pars
 
-    print("\nProb. of a jump in seller prices (full h. market) = %5.2f\n"
+    print("\nProb. of a jump in seller prices (full and quasi h. market) = %5.2f\n"
                       % common.pJump)
-    dataFrameAppend("pJump", "Prob. of a jump in seller prices (full h. market)",
+    dataFrameAppend("pJump", "Prob. of a jump in seller prices (full and quasi h. market)",
                         common.pJump)  # saving pars
 
     print("\nquasi hayekian choice to drive sellers' price mod. = %15s\n" %
