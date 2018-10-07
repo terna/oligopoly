@@ -181,6 +181,9 @@ runningShiftS = 0.1 #0 #0.1
 jump= 0.20 #0.10 #0.05 #0.30 #0.20 #0.10
 pJump=0.10 # 0.05
 
+profitFallToMovePrice=0.10
+priceSwitchIfProfitFalls="raise"
+
 # Choosing among different quasi hayekian strategies in modifiying seller
 # hPriceSd
 

@@ -745,16 +745,23 @@ class Agent(SuperAgent):
 
             return
 
-        # consideing profit sign in inverse way
+        # consideirng profit falls to acto on price
         if common.hParadigm=="quasi" and common.quasiHchoice=="profit":
            return
+           """
+           if common.cycle >= common.startHayekianMarket:
+            oldP=self.sellPrice
+            if common.cycle >1 and \
+             common.ts_df.iloc[-1, 3] / common.totalPlannedProduction - 1 >= \
+                   common.thresholdToDecreaseThePriceIfTotalPlannedPFalls:
 
+            """
 
 
         # here in error
         print("Using the 'quasi' option in hayekian market:\n",\
               "the",common.quasiHchoice, "value is not one of the\n",
-              "valid option (unsold, profictDirect, profitInverse)")
+              "valid option (unsold, randomUp, profit)")
         os.sys.exit(1)
 
 
