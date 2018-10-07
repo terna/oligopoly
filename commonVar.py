@@ -186,7 +186,7 @@ priceSwitchIfProfitFalls="raise" #"lower"
 # Choosing among different quasi hayekian strategies in modifiying seller
 # hPriceSd
 
-quasiHchoice= "randomUp" #"unsold" # three choices: unsold, randomUp, profit
+quasiHchoice= "profit" #"randomUp" #"unsold" # three choices: unsold, randomUp, profit
 
 nodeNumbersInGraph = False
 
