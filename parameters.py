@@ -390,11 +390,6 @@ def loadParameters(self):
     dataFrameAppend("pJump", "Prob. of a jump in seller prices (full and quasi h. market)",
                         common.pJump)  # saving pars
 
-    print("\nProfit fall to move price (quasi h. market) = %5.2f\n"
-                      % common.profitFallToMovePrice)
-    dataFrameAppend("profitFallToMovePrice", "Profit fall to move price (quasi h. market)",
-                        common.profitFallToMovePrice)  # saving pars
-
     print("\nPrice switch if profit falls (quasi h. market) = %7s\n"
                       % common.priceSwitchIfProfitFalls)
     dataFrameAppend("priceSwitchIfProfitFalls", "Price switch if profit falls (quasi h. market)",

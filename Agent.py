@@ -729,7 +729,7 @@ class Agent(SuperAgent):
                     self.soldProduction,oldP,self.sellPrice))
           return
 
-        # consideing profit sign directly
+        # considering randomUp
         if common.hParadigm=="quasi" and common.quasiHchoice=="randomUp":
             if npr.uniform(0,1)<=common.pJump:
                         if self.jump == 0:
@@ -745,18 +745,20 @@ class Agent(SuperAgent):
 
             return
 
-        # consideirng profit falls to acto on price
+        # consideirng profit falls to act on price
         if common.hParadigm=="quasi" and common.quasiHchoice=="profit":
-           return
-           """
            if common.cycle >= common.startHayekianMarket:
             oldP=self.sellPrice
-            if common.cycle >1 and \
-             common.ts_df.iloc[-1, 3] / common.totalPlannedProduction - 1 >= \
-                   common.thresholdToDecreaseThePriceIfTotalPlannedPFalls:
-
-            """
-
+            if self.profit <0 and npr.uniform(0,1)<=common.pJump:
+              if common.priceSwitchIfProfitFalls=="raise":
+                  self.sellPrice *= 1 + common.jump
+                  print("entrepreur # ", self.number, \
+                        "with profit<0, is raising the sell price")
+              if common.priceSwitchIfProfitFalls=="lower":
+                  self.sellPrice /= 1 + common.jump
+                  print("entrepreur # ", self.number, \
+                        "with profit<0, is lowering the sell price")
+            return
 
         # here in error
         print("Using the 'quasi' option in hayekian market:\n",\

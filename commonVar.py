@@ -178,11 +178,10 @@ runningShiftB = 0.1 #0 #0.1
 runningShiftS = 0.1 #0 #0.1
 
 # a jump in prices made by the sellers
-jump= 0.20 #0.10 #0.05 #0.30 #0.20 #0.10
-pJump=0.10 # 0.05
+jump= 0.10 #0.20 #0.10 #0.05 #0.30 #0.20 #0.10
+pJump=0.5 #0.10 # 0.05
 
-profitFallToMovePrice=0.10
-priceSwitchIfProfitFalls="raise"
+priceSwitchIfProfitFalls="raise" #"lower"
 
 # Choosing among different quasi hayekian strategies in modifiying seller
 # hPriceSd
