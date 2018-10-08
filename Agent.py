@@ -769,8 +769,8 @@ class Agent(SuperAgent):
                                   common.profitStrategyReverseAfterN
 
                else:
-                     self.profitStrategyReverseAfterN-=1
-
+                   self.profitStrategyReverseAfterN-=1
+                   if self.profitStrategyReverseAfterN==0:
                      if common.priceSwitchIfProfitFalls=="raise":
                         self.sellPrice /= 1 + common.jump
                         print("entrepreur # ", self.number, \

@@ -397,7 +397,7 @@ def loadParameters(self):
                             "Price switch if profit falls (quasi h. market)",
                         common.priceSwitchIfProfitFalls)  # saving pars
 
-    print("\nPrice reverse action after %4d (q. h. mself.);\nif <0, no other action in the while"
+    print("\nPrice reverse action after %4d (q. h. m.);\nif <0, no other action in the while"
                       % common.profitStrategyReverseAfterN)
     dataFrameAppend("profitStrategyReverseAfterN",
      "P. reverse action after %4d (q. h. m.); if <0, no other action in the while",
