@@ -54,6 +54,7 @@ class Agent(SuperAgent):
         self.consumptionQuantity=0
         self.employed = False
         self.extraCostsResidualDuration = 0
+        self.profitStrategyReverseAfterN=0
 
         if agType == 'workers': #useful in initial creation
             common.orderedListOfNodes.append(self)
@@ -697,7 +698,7 @@ class Agent(SuperAgent):
 
         # hayekian period, "quasi" hayekian paradigm
 
-        # considering relative unsold quantity
+        # i) considering relative unsold quantity
         if common.hParadigm=="quasi" and common.quasiHchoice=="unsold":
          if common.cycle >= common.startHayekianMarket:
 
@@ -729,7 +730,7 @@ class Agent(SuperAgent):
                     self.soldProduction,oldP,self.sellPrice))
           return
 
-        # considering randomUp
+        # ii) considering randomUp
         if common.hParadigm=="quasi" and common.quasiHchoice=="randomUp":
             if npr.uniform(0,1)<=common.pJump:
                         if self.jump == 0:
@@ -745,20 +746,41 @@ class Agent(SuperAgent):
 
             return
 
-        # consideirng profit falls to act on price
+        # iii) consideirng profit falls to act on price
         if common.hParadigm=="quasi" and common.quasiHchoice=="profit":
-           if common.cycle >= common.startHayekianMarket:
-            oldP=self.sellPrice
-            if self.profit <0 and npr.uniform(0,1)<=common.pJump:
-              if common.priceSwitchIfProfitFalls=="raise":
-                  self.sellPrice *= 1 + common.jump
-                  print("entrepreur # ", self.number, \
+          if common.cycle >= common.startHayekianMarket:
+               if self.profitStrategyReverseAfterN==0:
+
+                   if self.profit <0 and npr.uniform(0,1)<=common.pJump:
+                     if common.priceSwitchIfProfitFalls=="raise":
+                        self.sellPrice *= 1 + common.jump
+                        print("entrepreur # ", self.number, \
                         "with profit<0, is raising the sell price")
-              if common.priceSwitchIfProfitFalls=="lower":
-                  self.sellPrice /= 1 + common.jump
-                  print("entrepreur # ", self.number, \
+                        self.profitStrategyReverseAfterN=\
+                                  common.profitStrategyReverseAfterN
+                        #  0 means: acting again always possible
+                        #  a value > the number of cycles means:
+                        #           acting again never possible
+                     if common.priceSwitchIfProfitFalls=="lower":
+                        self.sellPrice /= 1 + common.jump
+                        print("entrepreur # ", self.number, \
                         "with profit<0, is lowering the sell price")
-            return
+                        self.profitStrategyReverseAfterN=\
+                                  common.profitStrategyReverseAfterN
+
+               else:
+                     self.profitStrategyReverseAfterN-=1
+
+                     if common.priceSwitchIfProfitFalls=="raise":
+                        self.sellPrice /= 1 + common.jump
+                        print("entrepreur # ", self.number, \
+                        "lowering back the sell price")
+                     if common.priceSwitchIfProfitFalls=="lower":
+                        self.sellPrice *= 1 + common.jump
+                        print("entrepreur # ", self.number, \
+                        "raising back the sell price")
+
+          return
 
         # here in error
         print("Using the 'quasi' option in hayekian market:\n",\

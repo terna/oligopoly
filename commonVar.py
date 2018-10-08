@@ -1,8 +1,9 @@
 # commonVar.py
+import os
 
 projectVersion = "6"
 
-build = "20181005"
+build = "20181008"
 
 debug = False
 
@@ -178,10 +179,13 @@ runningShiftB = 0.1 #0 #0.1
 runningShiftS = 0.1 #0 #0.1
 
 # a jump in prices made by the sellers
-jump= 0.10 #0.20 #0.10 #0.05 #0.30 #0.20 #0.10
-pJump=0.5 #0.10 # 0.05
+jump= 0.05 #0.02 #0.10 #0.20 #0.10 #0.05 #0.30 #0.20 #0.10
+pJump=0.20 #0.5 #0.10 # 0.05
 
-priceSwitchIfProfitFalls="raise" #"lower"
+priceSwitchIfProfitFalls="raise" #"lower" #"raise" #"lower"
+profitStrategyReverseAfterN=5 #  0 means: acting again always possible
+                              #  a value > the number of cycles means:
+                              #           acting again never possible
 
 # Choosing among different quasi hayekian strategies in modifiying seller
 # hPriceSd

@@ -387,15 +387,23 @@ def loadParameters(self):
 
     print("\nProb. of a jump in seller prices (full and quasi h. market) = %5.2f\n"
                       % common.pJump)
-    dataFrameAppend("pJump", "Prob. of a jump in seller prices (full and quasi h. market)",
+    dataFrameAppend("pJump",
+                "Prob. of a jump in seller prices (full and quasi h. market)",
                         common.pJump)  # saving pars
 
     print("\nPrice switch if profit falls (quasi h. market) = %7s\n"
                       % common.priceSwitchIfProfitFalls)
-    dataFrameAppend("priceSwitchIfProfitFalls", "Price switch if profit falls (quasi h. market)",
+    dataFrameAppend("priceSwitchIfProfitFalls",
+                            "Price switch if profit falls (quasi h. market)",
                         common.priceSwitchIfProfitFalls)  # saving pars
 
-    print("\nquasi hayekian choice to drive sellers' price mod. = %15s\n" %
+    print("\nPrice reverse action after %4d (q. h. mself.);\nif <0, no other action in the while"
+                      % common.profitStrategyReverseAfterN)
+    dataFrameAppend("profitStrategyReverseAfterN",
+     "P. reverse action after %4d (q. h. m.); if <0, no other action in the while",
+                        common.profitStrategyReverseAfterN)  # saving pars
+
+    print("\nquasi hayekian choice to drive sellers' price mod. = %9s\n" %
             common.quasiHchoice)
     dataFrameAppend("quasiHchoice",
                         "quasi hayekian choice to drive sellers' price mod.",
