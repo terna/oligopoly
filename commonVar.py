@@ -179,7 +179,7 @@ runningShiftB = 0.1 #0 #0.1
 runningShiftS = 0.1 #0 #0.1
 
 # a jump in prices made by the sellers
-jump= 0.05 #0.02 #0.10 #0.20 #0.10 #0.05 #0.30 #0.20 #0.10
+jump= 0.20 #0.05 #0.02 #0.10 #0.20 #0.10 #0.05 #0.30 #0.20 #0.10
 pJump=0.20 #0.5 #0.10 # 0.05
 
 priceSwitchIfProfitFalls="raise" #"lower" #"raise" #"lower"

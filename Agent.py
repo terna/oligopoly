@@ -1454,6 +1454,8 @@ class Agent(SuperAgent):
                     self.jump=myEntrepreneur.jump
                     print("with the same sell price of the the previous firm",\
                           self.sellPrice)
+                    self.profitStrategyReverseAfterN=\
+                                     myEntrepreneur.profitStrategyReverseAfterN
                   else:
                     print("New entrepreneur cannot copy the price of previous firm")
                     os.sys.exit(1)
