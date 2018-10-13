@@ -217,7 +217,7 @@ totalConsumptionInQuantityInPrevious1_TimeStep=0
 #instruments
 startingHayekianCommonPriceAlreadyWritten=False
 
-# infos on substep management
+# infos on substep output management
 checkResConsUnsoldProd=True
 
 withinASubstep=False

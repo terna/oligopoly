@@ -299,6 +299,13 @@ def loadParameters(self):
                         "cycle to starts the hayekian market",
                         common.startHayekianMarket)  # saving pars
 
+    print("\ninfos on substep output management = %5s\n" %
+            common.checkResConsUnsoldProd)
+    dataFrameAppend("checkResConsUnsoldProd",
+                        "infos on substep output management",
+                        common.checkResConsUnsoldProd)  # saving pars
+
+
     print("\nhayekian market sell price modification = %10s\n" %
             common.hParadigm)
     dataFrameAppend("hParadigm",
