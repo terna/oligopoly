@@ -173,8 +173,8 @@ class Agent(SuperAgent):
                  common.totalConsumptionInQuantityInPrevious1_TimeStep
                 if common.cycle > common.startHayekianMarket+1:
                  common.totalConsumptionInQuantityInPrevious_TimeStep = \
-                 common.w*common.totalConsumptionInQuantityInPrevious1_TimeStep +\
-                 (1-common.w)*common.totalConsumptionInQuantityInPrevious2_TimeStep
+                 common.Q*common.totalConsumptionInQuantityInPrevious1_TimeStep +\
+                 (1-common.Q)*common.totalConsumptionInQuantityInPrevious2_TimeStep
 
             # !!!! here we can use also delayed values, look at !!!! in
             # notesOnHayekianTransformation.md

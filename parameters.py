@@ -426,20 +426,20 @@ def loadParameters(self):
                         common.consumptionQuota)  # saving pars
 
 
-    # Weight (0 <= w <= 1) of the consumption quantities in hayekian phase at
-    # t==-1; the weight of the quantity at t==-2 is (1 - w)
+    # Quota (0 <= Q <= 1) of the consumption quantities in hayekian phase at
+    # t==-1; the quota of the quantity at t==-2 is (1 - Q)
     print(\
-     "\nWeight (0 <= w <= 1) of the consumption quantities in hayekian phase")
-    common.w = eval(input(\
-     "(w is the weight of the quantity at t==-1;\n(1 - w) is the weight "+\
+     "\nQuota (0 <= Q <= 1) of the consumption quantities in hayekian phase")
+    common.Q = eval(input(\
+     "(Q is the weight of the quantity at t==-1;\n(1 - Q) is the weight "+\
      "of the quantity at t==-2: "))
-    if common.w < 0 or common.w > 1:
-        print("out of range (0 <= w <= 1)")
+    if common.Q < 0 or common.Q > 1:
+        print("out of range (0 <= Q <= 1)")
         os.sys.exit(1)
 
-    dataFrameAppend("w",
-                    "Weights w and (1 - w) (0 <= w <= 1) of c. q.s in h. phase",
-                    common.w)  # saving pars
+    dataFrameAppend("Q",
+                    "Quota Q and (1 - Q) (0 <= Q <= 1) of c. at t-1 and t-2 in h. phase",
+                    common.Q)  # saving pars
 
 
 
