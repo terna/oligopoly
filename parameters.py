@@ -186,12 +186,12 @@ def loadParameters(self):
                     "consumption random component (SD)",
                     common.consumptionRandomComponentSD)  # saving pars
 
-    print(("Relative threshold to become an entrepreneur %4.2f\n" +
+    print(("Relative profit threshold to become an entrepreneur %4.2f\n" +
            "with new entrant extra costs %4.2f and duration of the extra costs %d") %
           (common.thresholdToEntrepreneur, common.newEntrantExtraCosts,
            common.extraCostsDuration))
     dataFrameAppend("thresholdToEntrepreneur",
-                    "relative threshold to become an entrepreneur",
+                    "relative profit threshold to become an entrepreneur",
                     common.thresholdToEntrepreneur)  # saving pars
     dataFrameAppend("newEntrantExtraCosts","new entrant extra costs",
                     common.newEntrantExtraCosts)  # saving pars
