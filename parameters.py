@@ -213,7 +213,7 @@ def loadParameters(self):
                     common.absoluteBarrierToBecomeEntrepreneur)  # saving pars
 
     print(
-        "\nRelative threshold to lose the entrepreneur status (becoming a unemployed worker) %4.2f\n" %
+        "\nRelative threshold to lose the entrepreneur status (becoming an unemployed worker) %4.2f\n" %
         common.thresholdToWorker)
     dataFrameAppend("thresholdToWorker",
                     "relative threshold from entrepreneur to unempl.",
