@@ -3,7 +3,7 @@ import os
 
 projectVersion = "6"
 
-build = "20181015"
+build = "20181027"
 
 debug = False
 

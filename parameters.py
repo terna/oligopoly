@@ -416,13 +416,13 @@ def loadParameters(self):
                         "quasi hayekian choice to drive sellers' price mod.",
                         common.quasiHchoice)  # saving pars
 
-    # Max quota (base 1) of the consumption in each step of a cycle
-    print("\nMax quota (base 1) of the consumptions in each step of a cycle\n")
+    # Max quota (base 1) of the consumption in each sub step of a cycle
+    print("\nMax quota (base 1) of the consumptions in each sub step of a cycle\n")
     common.consumptionQuota = eval(input(\
                       "(enter any value in a non-hayekian simulation): "))
 
     dataFrameAppend("consumptionQuota",
-                        "Max quota (b. 1) of the cons. in each step of a cycle",
+                        "Max quota (b. 1) of the cons. in each sub step of a cycle",
                         common.consumptionQuota)  # saving pars
 
 
