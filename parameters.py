@@ -296,7 +296,7 @@ def loadParameters(self):
     print("\nHayekian market starts at cycle = %3d\n" %
             common.startHayekianMarket)
     dataFrameAppend("startHayekianMarket",
-                        "cycle to starts the hayekian market",
+                        "cycle to start the hayekian market",
                         common.startHayekianMarket)  # saving pars
 
     print("\ninfos on substep output management = %5s\n" %
