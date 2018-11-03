@@ -2,12 +2,5 @@
 workers.txt
 schedule.txt
 *.csv
-.ipynb_checkpoints/readingCVSoutput-checkpoint.ipynb
-.ipynb_checkpoints/readingCsvOutput-checkpoint.ipynb
-.ipynb_checkpoints/readingFirstStepOutputInHayekinaMarket-checkpoint.ipynb
-firstStepOutputInHayekianMarket.csv.7_30
-firstStepOutputInHayekianMarket.csv.6_100
-.ipynb_checkpoints/readingFirstStepOutputInHayekinaMarket-checkpoint.ipynb
-.ipynb_checkpoints/readingCsvOutput_par_corr-checkpoint.ipynb
-firstStepOutputInHayekianMarket.csv24
-firstStepOutputInHayekianMarket.csv20
+!labelsPositions.csv
+.ipynb_checkpoints/*
