@@ -54,7 +54,7 @@ class WorldState(object):
             common.totalDemandInPrevious_TimeStep=totalDemand
 
         if shock < 0:
-            shock *= -1.  # always positive, boing added to the denominator
+            shock *= -1.  # always positive, being added to the denominator
             totalDemand = \
                 common.totalPlannedConsumptionInValueInA_TimeStep / \
                 (1 + shock)
@@ -95,7 +95,7 @@ class WorldState(object):
                common.totalDemandInPrevious_TimeStep=totalDemand
 
            if shock < 0:
-               shock *= -1.  # always positive, boing added to the denominator
+               shock *= -1.  # always positive, being added to the denominator
                totalDemand = \
                    common.totalPlannedConsumptionInValueInA_TimeStep / \
                    (1 + shock)

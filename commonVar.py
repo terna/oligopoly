@@ -3,7 +3,7 @@ import os
 
 projectVersion = "6"
 
-build = "20181115"
+build = "20181116"
 
 debug = False
 
@@ -74,7 +74,7 @@ b3 = 1
 
 # quota of the unspent consumption capability coming from the past to be
 # added to the corrent consumption plan [0, 1]
-reUseUnspentConsumptionCapability= 0.5 #0 #0.5 #1
+reUseUnspentConsumptionCapability= 0 #0 #0.5 #1
 
 #wages and revenues
 wageBase = 1.
@@ -150,7 +150,7 @@ startHayekianMarket = 1 #3 #1 #6
 hParadigm= "full" #"noPriceMod" #"full" #"quasi"
 
 # checking falling plannedProduction
-entrepreneursMindIfPlannedProductionFalls=True
+entrepreneursMindIfPlannedProductionFalls=False #True
 thresholdToDecreaseThePriceIfTotalPlannedPFalls=0.05 # 0.10
 
 # thresholds to decide
@@ -180,7 +180,9 @@ runningShiftS = 0.1 #0 #0.1
 
 # a jump in prices made by the sellers
 jump= 0. #0.20 #0.05 #0.02 #0.10 #0.20 #0.10 #0.05 #0.30 #0.20 #0.10
-pJump=0.20 #0.5 #0.10 # 0.05
+# pjump set to -1 avoids the calculation of the jump and the generation
+# of a random number
+pJump= -1 #0.20 #0.5 #0.10 # 0.05
 
 priceSwitchIfProfitFalls= "raise" #"lower" #"raise" #"lower" #"raise" #"lower"
 profitStrategyReverseAfterN=5 #  0 means: acting again always possible

@@ -676,8 +676,8 @@ class Agent(SuperAgent):
     def nextSellPriceJumpFHM(self):
         if self.agType != "entrepreneurs": return
         if common.hParadigm=="quasi": return
-
-        if npr.uniform(0,1)<=common.pJump:
+        
+        if common.pJump != -1 and npr.uniform(0,1)<=common.pJump:
             if self.jump == 0:
                 self.jump=common.jump
                 self.sellPrice *= 1 + self.jump
@@ -732,7 +732,7 @@ class Agent(SuperAgent):
 
         # ii) considering randomUp
         if common.hParadigm=="quasi" and common.quasiHchoice=="randomUp":
-            if npr.uniform(0,1)<=common.pJump:
+            if common.pJump != -1 and npr.uniform(0,1)<=common.pJump:
                         if self.jump == 0:
                             self.jump=common.jump
                             self.sellPrice *= 1 + self.jump
@@ -751,7 +751,8 @@ class Agent(SuperAgent):
           if common.cycle >= common.startHayekianMarket:
                if self.profitStrategyReverseAfterN==0:
 
-                   if self.profit <0 and npr.uniform(0,1)<=common.pJump:
+                   if common.pJump != -1 and self.profit <0 and \
+                                 npr.uniform(0,1)<=common.pJump:
                      if common.priceSwitchIfProfitFalls=="raise":
                         self.sellPrice *= 1 + common.jump
                         print("entrepreur # ", self.number, \
