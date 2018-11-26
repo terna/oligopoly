@@ -182,7 +182,7 @@ runningShiftS = 0.1 #0 #0.1
 jump= 0.05 #0.2 #0.10 #0. #0.20 #0.05 #0.02 #0.10 #0.20 #0.10 #0.05 #0.30 #0.20 #0.10
 # pjump set to -1 avoids the calculation of the jump and the generation
 # of a random number
-pJump= 0.1 #0.05 #-1 #0.20 #0.5 #0.10 # 0.05
+pJump= 0.2 #0.1 #0.05 #-1 #0.20 #0.5 #0.10 # 0.05
 
 priceSwitchIfProfitFalls= "raise" #"lower" #"raise" #"lower" #"raise" #"lower"
 profitStrategyReverseAfterN=5 #  0 means: acting again always possible
