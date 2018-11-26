@@ -54,7 +54,7 @@ nsize = 150
 #(3) unemployed workers
 # with Ci = ai + bi Y + u
 # u=N(0,consumptionErrorSD)
-consumptionRandomComponentSD = 0.3 #0.1 # nel paper pubblicato 0.3
+consumptionRandomComponentSD = 0.1 # nel paper pubblicato 0.3
 
 #(1)
 a1 = 0.4
