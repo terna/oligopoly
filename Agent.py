@@ -55,6 +55,7 @@ class Agent(SuperAgent):
         self.employed = False
         self.extraCostsResidualDuration = 0
         self.profitStrategyReverseAfterN=0
+        self.priceSwitchIfProfitFalls=""
 
         if agType == 'workers': #useful in initial creation
             common.orderedListOfNodes.append(self)
@@ -71,6 +72,7 @@ class Agent(SuperAgent):
             self.unspentConsumptionCapability = 0
 
             self.jump = 0
+
 
         if agType == 'entrepreneurs': #useful in initial creation
             common.orderedListOfNodes.append(self)
@@ -676,7 +678,7 @@ class Agent(SuperAgent):
     def nextSellPriceJumpFHM(self):
         if self.agType != "entrepreneurs": return
         if common.hParadigm=="quasi": return
-        
+
         if common.pJump != -1 and npr.uniform(0,1)<=common.pJump:
             if self.jump == 0:
                 self.jump=common.jump
@@ -750,10 +752,23 @@ class Agent(SuperAgent):
         if common.hParadigm=="quasi" and common.quasiHchoice=="profit":
           if common.cycle >= common.startHayekianMarket:
                if self.profitStrategyReverseAfterN==0:
+                   if common.priceSwitchIfProfitFalls=="raise":
+
+                    if npr.uniform(0,1)<=0.6:
+                        self.priceSwitchIfProfitFalls="raise"
+                    else:
+                        self.priceSwitchIfProfitFalls="lower"
+
+                   if common.priceSwitchIfProfitFalls=="lower":
+
+                    if npr.uniform(0,1)<=0.4:
+                        self.priceSwitchIfProfitFalls="raise"
+                    else:
+                        self.priceSwitchIfProfitFalls="lower"
 
                    if common.pJump != -1 and self.profit <0 and \
                                  npr.uniform(0,1)<=common.pJump:
-                     if common.priceSwitchIfProfitFalls=="raise":
+                     if self.priceSwitchIfProfitFalls=="raise":
                         self.sellPrice *= 1 + common.jump
                         print("entrepreur # ", self.number, \
                         "with profit<0, is raising the sell price")
@@ -762,7 +777,7 @@ class Agent(SuperAgent):
                         #  0 means: acting again always possible
                         #  a value > the number of cycles means:
                         #           acting again never possible
-                     if common.priceSwitchIfProfitFalls=="lower":
+                     if self.priceSwitchIfProfitFalls=="lower":
                         self.sellPrice /= 1 + common.jump
                         print("entrepreur # ", self.number, \
                         "with profit<0, is lowering the sell price")
@@ -772,11 +787,11 @@ class Agent(SuperAgent):
                else:
                    self.profitStrategyReverseAfterN-=1
                    if self.profitStrategyReverseAfterN==0:
-                     if common.priceSwitchIfProfitFalls=="raise":
+                     if self.priceSwitchIfProfitFalls=="raise":
                         self.sellPrice /= 1 + common.jump
                         print("entrepreur # ", self.number, \
                         "lowering back the sell price")
-                     if common.priceSwitchIfProfitFalls=="lower":
+                     if self.priceSwitchIfProfitFalls=="lower":
                         self.sellPrice *= 1 + common.jump
                         print("entrepreur # ", self.number, \
                         "raising back the sell price")
@@ -1457,6 +1472,8 @@ class Agent(SuperAgent):
                           self.sellPrice)
                     self.profitStrategyReverseAfterN=\
                                      myEntrepreneur.profitStrategyReverseAfterN
+                    self.priceSwitchIfProfitFalls=\
+                                     myEntrepreneur.priceSwitchIfProfitFalls
                   else:
                     print("New entrepreneur cannot copy the price of previous firm")
                     os.sys.exit(1)
