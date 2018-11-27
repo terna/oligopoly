@@ -74,7 +74,7 @@ b3 = 1
 
 # quota of the unspent consumption capability coming from the past to be
 # added to the corrent consumption plan [0, 1]
-reUseUnspentConsumptionCapability= 0.5 #0.5 #0 #NBNBNB #0 #0.5 #1
+reUseUnspentConsumptionCapability= 0.75 #0.5 #0.5 #0 #NBNBNB #0 #0.5 #1
 
 #wages and revenues
 wageBase = 1.
