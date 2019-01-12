@@ -20,4 +20,4 @@ The Oligopoly model uses [SLAPP](https://terna.github.io/SLAPP/) as its agent-ba
 
 ______________________________________
 
-<sub><sup>*Erratum*: in Table 1, the **Expected employment ratio at t=1** is **0.9** and not 0.8.<sub><sup>
+<sub><sup>*Erratum for the paper above*: in Table 1, the **Expected employment ratio at t=1** is **0.9** and not 0.8.<sub><sup>
