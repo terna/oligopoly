@@ -3,7 +3,7 @@
 
 Marco Mazzoli, Matteo Morini, and Pietro Terna
 
-The model and its construction are reported in [Oligopoly.pdf](Oligopoly.pdf).
+The model and its construction are reported in [Oligopoly.pdf](Oligopoly.pdf). The code of the project is at [https://github.com/terna/oligopoly](https://github.com/terna/oligopoly).
 
 A  concise presentation of the simulation mechanism is reported in the following
 image:
