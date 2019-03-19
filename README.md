@@ -19,7 +19,7 @@ A recent paper [(Business Cycle in a Macromodel with Oligopoly and Agents' Heter
 The Oligopoly model uses [SLAPP](https://terna.github.io/SLAPP/) as its agent-based modeling shell.
 
 To run a specific case of the incoming book *Rethinking macroeconomics with endogenous market structure* of M.Mazzoli, M.Morini, and P.Terna, please look at the Appendix C of the book itself or to the file **runningSpecificCases.md** at [https://github.com/terna/oligopoly](https://github.com/terna/oligopoly).
-
+ 
 ______________________________________
 
 <sub><sup>*Erratum for the paper above*: in Table 1, the **Expected employment ratio at t=1** is **0.9** and not 0.8.<sub><sup>
