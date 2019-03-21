@@ -1,17 +1,52 @@
 The files T1.pdf, T2.pdf, and T3.pdf are in this folder.
 
-**To run the experiments of the cases *0a* and *0b***, we need to use the
-Oligopoly code version V5 or V5bP2_fd, running the project with SLAPP 2.0,
-which is at [https://github.com/terna/SLAPP2](https://github.com/terna/SLAPP2) and controlling that the parameters are those of rows 1 and 2 of Tables T1.pdf and T2.pdf here. Using that SMAC (Simple Market Aggregate Clearing mechanism) specific version of the *oligopoly* project, the *startHayekianMarket* parameter is not used, while in the Table T2.pdf is set to 51 by default.
+Versions of the key libraries:
+NetworkX 2.2
+matplotlib 3.0.2
+pandas 0.23.1
 
-To set the correct parameters, for the cases *0a* and *0b** we can simply modify the parameter absoluteBarrierToBecomeEntrepreneur at row 123 of the file commonVar.py of the above releases of Oligopoly (20 in case *0a* and 0 in case *0b*).
+In case of Python errors, try to go back to these versions. E.g., using pip in the form
 
-**To run the experiments of the cases from *1* to *7* (with *7b*)**
+pip uninstall specificLib && pip install specificLib==versionNumber
+(or pip -> pip3)
+
+e.g.,
+
+pip uninstall matplotlib && pip install matplotlib==3.0.2
+
+
+**To run the experiments of the cases *0a* and *0b***
+Please use the Oligopoly code version ???????????? V5 or V5bP2_fd, running the project with SLAPP 2.0,
+which is at [https://github.com/terna/SLAPP2](https://github.com/terna/SLAPP2) and controlling that the parameters are those of rows 1 and 2 of Tables T1.pdf and T2.pdf here. Considering the SMAC (Simple Market Aggregate Clearing mechanism)  version of the *oligopoly* project, the *startHayekianMarket* parameter is not used, while in the Table T2.pdf is set to 51 by default.
+
+To set the correct parameters, for the cases *0a* and *0b** we can simply modify the parameter absoluteBarrierToBecomeEntrepreneur in row 123 of the file commonVar.py of the above releases of Oligopoly, setting it to 20 (case *0a*) or 0 (case *0b*).
+
+**To run the experiments of the cases from *1* to *6*)**
+
 * delete the file schedule.xls;
-* duplicate the file schedule6.xls.backwardCompatibily;
+* duplicate the file **schedule5.xls**;
 * rename the result as schedule.xls.
 
-The experiments from *1* to *7* also run without these modifications, but producing slightly different results.
+*For each specific experiment*:
+* delete the files commonVar.py,  workers.txtx, entrepreneurs.txt (if any), entrepreneurs.txtx (if any);
+
+* for case *X*, duplicate the files commonVar.py.caseX, workers.txtx.caseX, entrepreneurs.txt.caseX or entrepreneurs.txtx.caseX ;
+
+* rename the results as commonVar.py,  workers.txtx, entrepreneurs.txt or entrepreneurs.txtx.
+
+**To run the experiments of the cases *7* and *7b***
+* delete the file schedule.xls;
+* duplicate the file **schedule6.xls.backwardCompatibily**;
+* rename the result as schedule.xls.
+
+The experiments from *1* to *6* also run without the modifications above, but producing slightly different results.
+
+*For each specific experiment*:
+* delete the files commonVar.py,  workers.txtx, entrepreneurs.txt (if any), entrepreneurs.txtx (if any);
+
+* for case *X*, duplicate the files commonVar.py.caseX, workers.txtx.caseX, entrepreneurs.txt.caseX or entrepreneurs.txtx.caseX ;
+
+* rename the results as commonVar.py,  workers.txtx, entrepreneurs.txt or entrepreneurs.txtx.
 
 **To run the experiments of the cases from *8* upwards**
 
@@ -20,10 +55,9 @@ If we made the modifications above:
 * duplicate the file schedule6.xls;
 * rename the result as schedule.xls.
 
-**For each specific experiment**:
+*For each specific experiment*:
+* delete the files commonVar.py,  workers.txtx, entrepreneurs.txt (if any), entrepreneurs.txtx (if any);
 
-* delete the files commonVar.py,  workers.txtx, entrepreneurs.txt;
+* for case *X*, duplicate the files commonVar.py.caseX, workers.txtx.caseX, entrepreneurs.txt.caseX or entrepreneurs.txtx.caseX ;
 
-* for case *X*, duplicate the files commonVar.py.caseX, workers.txtx.caseX, entrepreneurs.txt.caseX;
-
-* rename the results as commonVar.py,  workers.txtx, entrepreneurs.txt.
+* rename the results as commonVar.py,  workers.txtx, entrepreneurs.txt or entrepreneurs.txtx.

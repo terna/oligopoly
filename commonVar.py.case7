@@ -73,7 +73,7 @@ b3 = 1
 # Y3=socialWelfareCompensation
 
 # quota of the unspent consumption capability coming from the past to be
-# added to the corrent consumption plan [0, 1]
+# added to the current consumption plan [0, 1]
 reUseUnspentConsumptionCapability= 0 #NBNBNB #0 #0.5 #1
 
 #wages and revenues

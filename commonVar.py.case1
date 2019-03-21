@@ -54,7 +54,7 @@ nsize = 150
 #(3) unemployed workers
 # with Ci = ai + bi Y + u
 # u=N(0,consumptionErrorSD)
-consumptionRandomComponentSD = 0.1 # nel paper pubblicato 0.3
+consumptionRandomComponentSD = 0.3 # nel paper pubblicato 0.3
 
 #(1)
 a1 = 0.4
@@ -73,7 +73,7 @@ b3 = 1
 # Y3=socialWelfareCompensation
 
 # quota of the unspent consumption capability coming from the past to be
-# added to the corrent consumption plan [0, 1]
+# added to the current consumption plan [0, 1]
 reUseUnspentConsumptionCapability= 0 #0.5 #0.5 #0 #NBNBNB #0 #0.5 #1
 
 #wages and revenues
@@ -86,7 +86,7 @@ wageStepInFullEmployment = 0.10
 wageAddendum = 0
 wageCorrectionInCycle=0
 maxAcceptableOligopolistRelativeIncrement = 0.20 #0.30 # was 0.20 in the paper
-cumulativelyMeasuringNewEntrantNumber=True
+cumulativelyMeasuringNewEntrantNumber=False
 temporaryRelativeWageIncrementAsBarrier = 0.15
 ReferenceLevel=0 # to avoit a referenced before assignment error in WorldState
 
