@@ -1,4 +1,3 @@
-The files T1.pdf, T2.pdf, and T3.pdf are in this folder.
 
 Versions of the key libraries:
 NetworkX 2.2
@@ -61,3 +60,11 @@ If we made the modifications above:
 * for case *X*, duplicate the files commonVar.py.caseX, workers.txtx.caseX, entrepreneurs.txt.caseX or entrepreneurs.txtx.caseX ;
 
 * rename the results as commonVar.py,  workers.txtx, entrepreneurs.txt or entrepreneurs.txtx.
+
+==========
+
+The parameters of the different cases, contained into the *commonVar.py.caseX* files, are also reported in the tables of the files *T1.pdf* and *T2.pdf*.
+
+The values to be introduced interactively for each case, if any, are reported in the table of the file *T3.pdf*.
+
+The files T1.pdf, T2.pdf, and T3.pdf are in this folder.
