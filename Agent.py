@@ -675,7 +675,8 @@ class Agent(SuperAgent):
 
 
             # the list of the employees of the firm, IF ANY
-            entrepreneurWorkers=gvf.nx.neighbors(common.g,self)
+            #entrepreneurWorkers=gvf.nx.neighbors(common.g,self) with nx 2.0
+            entrepreneurWorkers = list(common.g.neighbors(self))
             print "entrepreneur", self.number, "has", len(entrepreneurWorkers),\
              "workers to be fired"
 
