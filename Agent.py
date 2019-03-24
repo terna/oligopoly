@@ -604,7 +604,8 @@ class Agent(SuperAgent):
         #               len(self.agentList)
         if random() <= float(common.absoluteBarrierToBecomeEntrepreneur)/ \
                        len(self.agentList):
-          myEntrepreneur=gvf.nx.neighbors(common.g, self)[0]
+          #myEntrepreneur=gvf.nx.neighbors(common.g, self)[0]] with nx 2.0
+          myEntrepreneur = list(common.g.neighbors(self))[0]
           myEntrepreneurProfit=myEntrepreneur.profit
           myEntrepreneurCosts=myEntrepreneur.costs
           if myEntrepreneurProfit/myEntrepreneurCosts  >= \
