@@ -16,8 +16,8 @@ e.g.,
 pip uninstall matplotlib && pip install matplotlib==3.0.2
 
 
-**To run the experiments of the cases *0a* and *0b***
-Please use the Oligopoly code of the release ????????????, or directly the branch masterP2, running the project with SLAPP 2.0,
+**To run the experiments of the cases *0a* and *0b*** of the book (or the two of the 2017 article, which are the same),
+please use the Oligopoly code of the release V5book, or directly the branch masterP2, running the project with SLAPP 2.0,
 which is at [https://github.com/terna/SLAPP2](https://github.com/terna/SLAPP2) and controlling that the parameters are those of rows 1 and 2 of Tables T1.pdf and T2.pdf here. Considering the SMAC (Simple Market Aggregate Clearing mechanism)  version of the *oligopoly* project, the *startHayekianMarket* parameter is not used, while in the Table T2.pdf is set to 51 by default.
 
 To set the correct parameters, for the cases *0a* and *0b**, you can simply modify the parameter absoluteBarrierToBecomeEntrepreneur at row 123 of the file commonVar.py of the above releases of Oligopoly, setting it to 20 (case *0a*) or to 0 (case *0b*).
