@@ -17,10 +17,17 @@ pip uninstall matplotlib && pip install matplotlib==3.0.2
 
 
 **To run the experiments of the cases *0a* and *0b***
-Please use the Oligopoly code version ???????????? V5 or V5bP2_fd, running the project with SLAPP 2.0,
+Please use the Oligopoly code of the release ????????????, or directly the branch masterP2, running the project with SLAPP 2.0,
 which is at [https://github.com/terna/SLAPP2](https://github.com/terna/SLAPP2) and controlling that the parameters are those of rows 1 and 2 of Tables T1.pdf and T2.pdf here. Considering the SMAC (Simple Market Aggregate Clearing mechanism)  version of the *oligopoly* project, the *startHayekianMarket* parameter is not used, while in the Table T2.pdf is set to 51 by default.
 
-To set the correct parameters, for the cases *0a* and *0b** we can simply modify the parameter absoluteBarrierToBecomeEntrepreneur in row 123 of the file commonVar.py of the above releases of Oligopoly, setting it to 20 (case *0a*) or 0 (case *0b*).
+To set the correct parameters, for the cases *0a* and *0b**, you can simply modify the parameter absoluteBarrierToBecomeEntrepreneur at row 123 of the file commonVar.py of the above releases of Oligopoly, setting it to 20 (case *0a*) or to 0 (case *0b*).
+
+The path to the folder containing the Oligopoly code has to be included in a file named *project.txt*, to be placed into the main folder os SLAPP.
+
+**For all the cases below**, please use SLAPP 3.0 or higher,
+which is at [https://github.com/terna/SLAPP3](https://github.com/terna/SLAPP3)
+
+As above, the path to the folder containing the Oligopoly code has to be included in a file named *project.txt*, to be placed into the main folder os SLAPP.
 
 **To run the experiments of the cases from *1* to *6*)**
 
