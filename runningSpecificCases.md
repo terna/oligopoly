@@ -29,7 +29,7 @@ which is at [https://github.com/terna/SLAPP3](https://github.com/terna/SLAPP3).
 
 As above, the path to the folder containing the Oligopoly code has to be included in a file named *project.txt*, to be placed into the main folder of SLAPP.
 
-**To run the experiments of the cases from *1* to *6*)**
+**To run the experiments of the cases from *1* to *6***
 
 * delete the file schedule.xls;
 * duplicate the file **schedule5.xls**;
