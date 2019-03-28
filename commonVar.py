@@ -1,9 +1,9 @@
 # commonVar.py
 import os
 
-projectVersion = "6"
+projectVersion = "6book"
 
-build = "20181116"
+build = "20190328"
 
 debug = False
 
