@@ -47,14 +47,14 @@ As above, the path to the folder containing the Oligopoly code has to be include
 * duplicate the file **schedule6.xls.backwardCompatibily**;
 * rename the result as schedule.xls.
 
-The experiments from *1* to *7* also run without the modifications above, but producing slightly different results.
-
 *For each specific experiment*:
 * delete the files commonVar.py,  workers.txtx, entrepreneurs.txt (if any), entrepreneurs.txtx (if any);
 
 * for case *X*, duplicate the files commonVar.py.caseX, workers.txtx.caseX, entrepreneurs.txt.caseX or entrepreneurs.txtx.caseX ;
 
 * rename the results as commonVar.py,  workers.txtx, entrepreneurs.txt or entrepreneurs.txtx.
+
+The experiments from *1* to *7* also run without the modifications above, but producing slightly different results.
 
 **To run the experiments of the cases from *8* upwards**
 
