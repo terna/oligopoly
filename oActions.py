@@ -15,6 +15,16 @@ warnings.filterwarnings("ignore", module="matplotlib")
 
 def do1b(address):
 
+    if common.cycle == 1:
+            # setting Figure for the net
+            if not common.IPython or common.graphicStatus == "PythonViaTerminal":
+                # the or is about ipython running in a terminal
+                f=gvf.plt.figure()
+                mngr1 = gvf.plt.get_current_fig_manager()  # NB, after figure()
+                mngr1.window.wm_geometry("+650+0")
+                mngr1.set_window_title("Links Entrepreneurs - Workers")
+                common.fNet = f
+
     # having the map of the agent
     agL = []
     for ag in address.modelSwarm.agentList:

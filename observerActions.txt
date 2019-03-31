@@ -1,1 +1,1 @@
-collectStructuralData modelStep collectTimeSeries visualizePlot visualizeNet clock
+collectStructuralData modelStep collectTimeSeries NvisualizePlot visualizeNet clock
