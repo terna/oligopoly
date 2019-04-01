@@ -203,21 +203,18 @@ def visualizePlot():
     if common.cycle == 1 and \
        (not common.IPython or common.graphicStatus == "PythonViaTerminal"):
         # the or is about ipython running in a terminal
-        gvf.plt.figure(2)
+        f= gvf.plt.figure()
         mngr2 = gvf.plt.get_current_fig_manager()
         mngr2.window.wm_geometry("+0+0")
         mngr2.set_window_title("Time series")
-
         params = {'legend.fontsize': 10}
         gvf.plt.rcParams.update(params)
+        common.axPlot = f.gca()
+        gvf.plt.ion()
 
     if not common.IPython or common.graphicStatus == "PythonViaTerminal":
         # the or is about ipython running in a terminal
-        gvf.plt.ion()
-        f2 = gvf.plt.figure(2)
-        gvf.plt.clf()
-        myax = f2.gca()
-        # myax.set_autoscale_on(True)
+        common.axPlot.cla()
 
         ts_dfOut = common.ts_df
         # set index to start from 1
@@ -237,12 +234,13 @@ def visualizePlot():
                 "Pink",
                 "Gray",
                 "Brown"],
-            ax=myax)
+            ax=common.axPlot)
         myPlot.set_ylabel(
         'unemployed, totalProfit, totalProduction, plannedProduction, consumptionQ')
         myPlot.right_ax.set_ylabel('hPriceSd, price, wage')
         myPlot.legend(loc='upper left')
         myPlot.axes.right_ax.legend(loc='lower right')
+        gvf.plt.pause(0.01)
 
     if common.IPython and not common.graphicStatus == "PythonViaTerminal":
         # the and not is about ipython running in a terminal
@@ -276,9 +274,9 @@ def visualizePlot():
         myPlot.legend(loc='upper left')
         myPlot.axes.right_ax.legend(loc='lower right')
 
-    if not common.IPython or common.graphicStatus == "PythonViaTerminal":
+    #if not common.IPython or common.graphicStatus == "PythonViaTerminal":
         # the or is about ipython running in a terminal
-        gvf.plt.figure(1)
+        #gvf.plt.figure(1)
         # gvf.plt.show()
         # gvf.plt.pause(0.01) #to display the sequence
 
