@@ -1107,10 +1107,6 @@ class Agent(SuperAgent):
 
         # individual data collection
         # creating the dataframe
-        try:
-            common.dataCounter
-        except BaseException:
-            common.dataCounter=-1
 
         try:
             common.firm_df
@@ -1121,16 +1117,9 @@ class Agent(SuperAgent):
                         'profit'])
             print("\nCreation of fhe dataframe of the firms (individual data)\n")
 
-        common.dataCounter+=1
-        #common.firm_df.set_value(common.dataCounter,\ deprecated since pandas 0.21
-        col=common.firm_df.columns.get_loc('production')
-        common.firm_df.at[common.dataCounter,\
-                                 col]=self.production
-        #common.firm_df.set_value(common.dataCounter,\ deprecated since pandas 0.21
-        col=common.firm_df.columns.get_loc('profit')
-        common.firm_df.ix[common.dataCounter,\
-                                 col]=self.profit
-
+        firm_df2 = pd.DataFrame([[self.production, self.profit]],
+                           columns=['production', 'profit'])
+        common.firm_df = common.firm_df.append(firm_df2, ignore_index=True)
 
 
         common.totalProfit += self.profit
@@ -1204,10 +1193,6 @@ class Agent(SuperAgent):
 
         # individual data collection
         # creating the dataframe
-        try:
-            common.dataCounter
-        except BaseException:
-            common.dataCounter=-1
 
         try:
             common.firm_df
@@ -1218,15 +1203,10 @@ class Agent(SuperAgent):
                         'profit'])
             print("\nCreation of fhe dataframe of the firms (individual data)\n")
 
-        common.dataCounter+=1
-        #common.firm_df.set_value(common.dataCounter,\ deprecated since pandas 0.21
-        col=common.firm_df.columns.get_loc('production')
-        common.firm_df.at[common.dataCounter,\
-                                 col]=self.production
-        #common.firm_df.set_value(common.dataCounter,\ deprecated since pandas 0.21
-        col=common.firm_df.columns.get_loc('profit')
-        common.firm_df.ix[common.dataCounter,\
-                                 col]=self.profit
+
+        firm_df2 = pd.DataFrame([[self.production, self.profit]],
+                           columns=['production', 'profit'])
+        common.firm_df = common.firm_df.append(firm_df2, ignore_index=True)
 
 
         common.totalProfit += self.profit
