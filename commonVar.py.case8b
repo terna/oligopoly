@@ -189,8 +189,8 @@ profitStrategyReverseAfterN=5 #  0 means: acting again always possible
                               #  a value > the number of cycles means:
                               #           acting again never possible
 
-# Choosing among different quasi hayekian strategies in modifiying seller
-# hPriceSd
+# Choosing among different quasi hayekian strategies in modifying seller
+# price
 
 quasiHchoice= "unsold" #"randomUp" #"unsold" # three choices: unsold, randomUp, profit
 
@@ -200,7 +200,7 @@ nodeNumbersInGraph = False
 # within oActions.py)
 toBeExecuted = "saveData()"
 
-# specialAction in observerActions.txt is evatulated to "makeSpecialAction"
+# specialAction in observerActions.txt is evaluated to "makeSpecialAction"
 # defined in oActions.py
 specialAction = "makeSpecialAction()"
 # with
@@ -211,7 +211,7 @@ file_modPars=False
 parsDict={}
 
 # to report hayekian price st. dev. if not still calculated
-hPriceSd = -100 # -100 will not appear in graphs
+hPSd = -100 # -100 will not appear in graphs
 
 # predefintion
 totalConsumptionInQuantityInPrevious1_TimeStep=0

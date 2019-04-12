@@ -110,13 +110,13 @@ class WorldState(object):
 
         # hayekian phase
         else:
-            (common.price, common.hPriceSd)=checkHayekianPrices(\
+            (common.price, common.hPSd)=checkHayekianPrices(\
                    common.hayekianMarketTransactionPriceList_inACycle)
 
             print("Hayekian phase (NA as not available values)")
             if common.price != -100:    print("Mean price ",common.price)
             else:                       print("Mean price NA")
-            if common.hPriceSd != -100: print("Mean price s.d.",common.hPriceSd)
+            if common.hPSd != -100: print("Mean price s.d.",common.hPSd)
             else:                       print("Mean price s.d. NA")
 
         print("-------------------------------------\n")

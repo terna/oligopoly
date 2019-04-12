@@ -143,7 +143,8 @@ def collectTimeSeries(aL, t):
                 'totalProduction',
                 'plannedProduction',
                 'consumptionQ',
-                'hPriceSd',
+                #'hPriceSd',
+                'hPSd',
                 'price',
                 'wage'])
         print("\nCreation of fhe time series dataframe\n")
@@ -158,8 +159,8 @@ def collectTimeSeries(aL, t):
     # or in the hayekian one if data are too few
     # -100 is used in checkHayekianPrices function of WorldState.py
     if common.price == -100: common.price=np.nan
-    hPriceSd_=common.hPriceSd
-    if common.hPriceSd==-100: hPriceSd_=np.nan
+    hPSd_=common.hPSd
+    if common.hPSd==-100: hPSd_=np.nan
 
     # hiding unexisting measure of consumtion in quantity in the pre-hayekian
     # phase
@@ -171,7 +172,7 @@ def collectTimeSeries(aL, t):
                             common.totalProductionInA_TimeStep,
                             common.totalPlannedProduction,
                             common.totalConsumptionInQuantityInA_TimeStep,
-                            hPriceSd_,
+                            hPSd_,
                             common.price,
                             common.wage]],
                           columns=['unemployed',
@@ -179,7 +180,7 @@ def collectTimeSeries(aL, t):
                                    'totalProduction',
                                    'plannedProduction',
                                    'consumptionQ',
-                                   'hPriceSd',
+                                   'hPSd',
                                    'price',
                                    'wage'])
     # print ts_df2
@@ -221,7 +222,7 @@ def visualizePlot():
         ts_dfOut.index += 1
         myPlot = ts_dfOut.plot(
             secondary_y=[
-                'hPriceSd',
+                #'hPriceSd',
                 'price',
                 'wage'],
             marker="*",
@@ -236,8 +237,8 @@ def visualizePlot():
                 "Brown"],
             ax=common.axPlot)
         myPlot.set_ylabel(
-        'unemployed, totalProfit, totalProduction, plannedProduction, consumptionQ')
-        myPlot.right_ax.set_ylabel('hPriceSd, price, wage')
+'unemployed, totalProfit, totalProduction, plannedProduction, consumptionQ, hPSd')
+        myPlot.right_ax.set_ylabel('price, wage')
         myPlot.legend(loc='upper left')
         myPlot.axes.right_ax.legend(loc='lower right')
         gvf.plt.pause(0.01)
@@ -254,7 +255,7 @@ def visualizePlot():
         ts_dfOut.index += 1
         myPlot = ts_dfOut.plot(
             secondary_y=[
-                'hPriceSd',
+                #'hPriceSd',
                 'price',
                 'wage'],
             marker="*",
@@ -269,8 +270,8 @@ def visualizePlot():
                 "Brown"],
             ax=myax)
         myPlot.set_ylabel(
-        'unemployed, totalProfit, totalProduction, plannedProduction, consumptionQ')
-        myPlot.right_ax.set_ylabel('hPriceSd, price, wage')
+'unemployed, totalProfit, totalProduction, plannedProduction, consumptionQ, hPSd')
+        myPlot.right_ax.set_ylabel('price, wage')
         myPlot.legend(loc='upper left')
         myPlot.axes.right_ax.legend(loc='lower right')
 
