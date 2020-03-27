@@ -21,7 +21,7 @@ An article, [Business Cycle in a Macromodel with Oligopoly and Agents' Heterogen
 
 The Oligopoly model uses [SLAPP](https://terna.github.io/SLAPP/) as its agent-based modeling shell.
 
-To run a specific case of the above quoted article or of the incoming book *Rethinking macroeconomics with endogenous market structure* of M.Mazzoli, M.Morini, and P.Terna, please look at the Appendix C of the book itself or to the file [runningSpecificCases.md](https://github.com/terna/oligopoly/blob/master/runningSpecificCases.md).
+To run a specific case of the above quoted article or of the book *Rethinking macroeconomics with endogenous market structure* of M.Mazzoli, M.Morini, and P.Terna, please look at the Appendix C of the book itself or to the file [runningSpecificCases.md](https://github.com/terna/oligopoly/blob/master/runningSpecificCases.md).
 
 It is possible to run Oligopoly directly online, via [https://mybinder.org](https://mybinder.org),
 accessing the file system at
