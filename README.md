@@ -1,6 +1,7 @@
 # Oligopoly
 (build 20200327)
 
+**Stay tuned**: new 6b version with takeover acions under development.
 
 Marco Mazzoli, Matteo Morini, and Pietro Terna
 
@@ -13,7 +14,7 @@ image:
 <img src="./OligopolyOutline.png" width="350" />
 </p>
 
-The book [M.Mazzoli, M.Morini, and P.Terna (2019), *Rethinking macroeconomics with endogenous market structure*, Cambridge University Press](https://www.cambridge.org/gb/academic/subjects/economics/macroeconomics-and-monetary-economics/rethinking-macroeconomics-endogenous-market-structure?format=HB&isbn=9781108482608); [other details](https://www.cambridge.org/core/books/rethinking-macroeconomics-with-endogenous-market-structure/CF5640C357029D9E49BE67D63A3FB122#). See also [Introduction and Chapter 1](https://books.google.it/books?id=iIHCDwAAQBAJ&pg=PR4&dq=mazzoli+terna&hl=it&sa=X&ved=0ahUKEwjfnpCVyIboAhWrw8QBHSVdDNAQ6AEIKTAA#v=onepage&q&f=false) via Googe Books. 
+The book [M.Mazzoli, M.Morini, and P.Terna (2019), *Rethinking macroeconomics with endogenous market structure*, Cambridge University Press](https://www.cambridge.org/gb/academic/subjects/economics/macroeconomics-and-monetary-economics/rethinking-macroeconomics-endogenous-market-structure?format=HB&isbn=9781108482608); [other details](https://www.cambridge.org/core/books/rethinking-macroeconomics-with-endogenous-market-structure/CF5640C357029D9E49BE67D63A3FB122#). See also [Introduction and Chapter 1](https://books.google.it/books?id=iIHCDwAAQBAJ&pg=PR4&dq=mazzoli+terna&hl=it&sa=X&ved=0ahUKEwjfnpCVyIboAhWrw8QBHSVdDNAQ6AEIKTAA#v=onepage&q&f=false) via Googe Books.
 
 We have also the [slides](slides_of_a_presentazione_of_the_model.pdf) of an old presentation of the Oligopoly model at [WEHIA 2017](http://www.wehia2017.com).
 
