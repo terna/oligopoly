@@ -1,7 +1,7 @@
 # Oligopoly
-(build 20200327)
+(build 20200328)
 
-**Stay tuned**: new 6b version with takeover acions under development.
+**Stay tuned**: new 6b version with takeover actions under development.
 
 Marco Mazzoli, Matteo Morini, and Pietro Terna
 

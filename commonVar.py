@@ -1,13 +1,13 @@
 # commonVar.py
 import os
 
-projectVersion = "6, book case 11"
+projectVersion = "6b, starting takeover experiment"
 
-build = "20190510"
+build = "20200328"
 
 debug = False
 
-case = "11"
+case = "v6b_1"
 
 fgIn=fgOu=None # used in myGauss.py
 
