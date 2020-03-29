@@ -87,13 +87,12 @@ class myG():
           mySin=float(mySin[0:12])  # effects and different tails in Mac or Linux)
 
           z = myCos * g2rad
-          self.gauss_next=mySin * g2rad
         return mu + z*sigma
 
     # use this method
     def myGauss(self,mu, sigma):
 
-        # cases 1-7 of the book or new cases
+        # cases 1-6 of the book or new cases (cases 0a and 0b use another version of SLAPP, in Python2)
         if common.fgIn == None and common.fgOu==None:
             return self.myGauss0(mu, sigma)
 
