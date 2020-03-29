@@ -42,9 +42,8 @@ class myG():
         #if those values are missing, they are anyway calculated using the non perfectly portable
         #random.gauss() tool and the common.fgOu value is != None to acrivate [$] below
 
-        try: #is this a book ASHAM case?
-            common.case
-            if common.case in self.caseList: #check if the recorded gaussian values are on disk
+        #is this a book ASHAM case?
+        if common.case in self.caseList: #check if the recorded gaussian values are on disk
                 try: #local file existing
                     common.fgIn=open(common.project+\
                             "/exampleGauss/"+common.case+".txt","r")
@@ -60,7 +59,7 @@ class myG():
                     except: #data does not exists, we will record them (see [$] above and below)
                         common.fgOu=open(common.project+\
                                 "/exampleGauss/"+common.case+".txt","w")
-            else:
+        else:
                 print("The running case is outside book cases 7-11.\n"\
                       "Neither using past random gaussian values nor saving the new generated ones")
 
@@ -101,13 +100,12 @@ class myG():
         # cases 7-11 of the book
         if common.fgIn != None:
             g=float(common.fgIn.readline())
-            r.gauss(mu, sigma) # void destination, the call is made to generate the two
-                               # random numbersof the original globals, preserving it
-                               # for all the random calls
+            r.gauss(mu, sigma) # void destination, the call is made to keep safe
+                               # the original sequence of random number generation
             return g
 
         # [$] - see above the comment with [$] inside
         if common.fgOu != None: # [$] see  comment above
             g=r.gauss(mu, sigma)
-            print(g,file=common.fgOu)
+            print(g,file=common.fgOu) #the close() is in oActions.py
             return g
