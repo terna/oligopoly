@@ -1,0 +1,1 @@
+Referring to the book "Rethinking macroeconomics with endogenous market structure", publishing the version "6book" of this simulation, you can replicate all the result published there following the file runningSpecificCases.md in this folder.
