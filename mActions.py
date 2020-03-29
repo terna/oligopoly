@@ -51,6 +51,10 @@ def createTheAgent(self, line, num, agType):
                         agType=agType)
         self.agentList.append(anAgent)
 
+    # bigEntrepreneurs, none in the starting phase
+    elif agType == "bigEntrepreneurs":
+        pass
+
         # anAgent.setAgentList(self.agentList) #in ModelSwarm.py
 
     else:
