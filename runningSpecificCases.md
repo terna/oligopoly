@@ -4,7 +4,7 @@ The final rows of Appendix C of the book recall this file.
 
 
 
-*Running Oligopoy project*
+*Running Oligopoly projects*
 
 The default current case is the experiment 11.
 

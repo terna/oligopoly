@@ -47,6 +47,7 @@ class myG():
                 try: #local file existing
                     common.fgIn=open(common.project+\
                             "/exampleGauss/"+common.case+".txt","r")
+    non solo ASAHA
                     print("\nBook ASHAM case\n",\
                           "\nReading gaussian random values locally.\n")
                 except:                     #if not, check if rerded gaussian values are online
@@ -59,6 +60,7 @@ class myG():
                     except: #data does not exists, we will record them (see [$] above and below)
                         common.fgOu=open(common.project+\
                                 "/exampleGauss/"+common.case+".txt","w")
+                        print(
         else:
                 print("\n\nThe running case is outside book cases 7-11\n"\
                       "Neither using past random gaussian values nor saving the new generated ones\n")
