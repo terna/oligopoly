@@ -13,7 +13,7 @@ fgIn=fgOu=None # used in myGauss.py
 
 debug = False
 
-# function for the management of the paramenters
+# function for the management of the parameters
 def setVar():
     #print(nameValues)
     globals().update(nameValues)

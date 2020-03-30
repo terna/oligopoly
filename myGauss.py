@@ -60,8 +60,8 @@ class myG():
                         common.fgOu=open(common.project+\
                                 "/exampleGauss/"+common.case+".txt","w")
         else:
-                print("The running case is outside book cases 7-11.\n"\
-                      "Neither using past random gaussian values nor saving the new generated ones")
+                print("\n\nThe running case is outside book cases 7-11\n"\
+                      "Neither using past random gaussian values nor saving the new generated ones\n")
 
     # internal method
     # the following result is the same in any operating system, using recorded

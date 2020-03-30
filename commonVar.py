@@ -11,7 +11,7 @@ case = "10"     #"10newForV6b"
 
 fgIn=fgOu=None # used in myGauss.py
 
-# function for the management of the paramenters
+# function for the management of the parameters
 def setVar():
     #print(nameValues)
     globals().update(nameValues)

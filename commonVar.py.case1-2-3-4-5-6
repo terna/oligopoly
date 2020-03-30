@@ -3,11 +3,15 @@ import os
 
 projectVersion = "6"
 
+case = "1 to 6"     #"10newForV6b"
+
+fgIn=fgOu=None # used in myGauss.py
+
 build = "20181116"
 
 debug = False
 
-# function for the management of the paramenters
+# function for the management of the parameters
 def setVar():
     #print(nameValues)
     globals().update(nameValues)
