@@ -31,7 +31,7 @@ class myG():
 
         self.TWOPI=2.0*math.pi
         self.gauss_next=None
-        self.caseList=["7","7b","8","8b","9","9b","10","11"] # book ASHAM cases
+        self.caseList=["1","2","3","4","5","6""7","7b","8","8b","9","9b","10","11"] # book cases
         self.error=False
         self.link = \
          "https://raw.githubusercontent.com/terna/oligopolyBookCasesGaussianValues/master/"
@@ -47,20 +47,19 @@ class myG():
                 try: #local file existing
                     common.fgIn=open(common.project+\
                             "/exampleGauss/"+common.case+".txt","r")
-    non solo ASAHA
-                    print("\nBook ASHAM case\n",\
+                    print("\nBook case",common.case,"\n",\
                           "\nReading gaussian random values locally.\n")
                 except:                     #if not, check if rerded gaussian values are online
                     try: # online file
                         common.fgIn=\
                                urllib.request.urlopen(self.link+common.case+".txt")
-                        print(\
-                         "\nBook ASHAM case\n",\
-                         "\nReading gaussian random values from:",self.link,"\n")
+                        print("\nBook case",common.case,"\n",\
+                              "\nReading gaussian random values from:",self.link,"\n")
                     except: #data does not exists, we will record them (see [$] above and below)
                         common.fgOu=open(common.project+\
                                 "/exampleGauss/"+common.case+".txt","w")
-                        print(
+                        print("\nBook case",common.case,"\n",\
+                              "\nWriting gaussian random values to local 'exampleGauss' folder\n")
         else:
                 print("\n\nThe running case is outside book cases 7-11\n"\
                       "Neither using past random gaussian values nor saving the new generated ones\n")
