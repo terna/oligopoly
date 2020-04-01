@@ -3,7 +3,7 @@ import os
 
 projectVersion = "6b"
 
-case = "3"
+case = "4"
 
 fgIn=fgOu=None # used in myGauss.py
 
