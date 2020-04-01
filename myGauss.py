@@ -31,7 +31,8 @@ class myG():
 
         self.TWOPI=2.0*math.pi
         self.gauss_next=None
-        self.caseList=["1","2","3","4","5","6""7","7b","8","8b","9","9b","10","11"] # book cases
+        self.caseList=["1","2","3","4","5","6","7","7b","8","8b","9","9b","10","11"] # book cases
+        # NB cases 0a and 0b use another version of SLAPP, in Python2
         self.error=False
         self.link = \
          "https://raw.githubusercontent.com/terna/oligopolyBookCasesGaussianValues/master/"
@@ -61,7 +62,7 @@ class myG():
                         print("\nBook case",common.case,"\n",\
                               "\nWriting gaussian random values to local 'exampleGauss' folder\n")
         else:
-                print("\n\nThe running case is outside book cases 7-11\n"\
+                print("\n\nThe running case is outside book cases\n"\
                       "Neither using past random gaussian values nor saving the new generated ones\n")
 
     # internal method
@@ -93,11 +94,11 @@ class myG():
     # use this method
     def myGauss(self,mu, sigma):
 
-        # cases 1-6 of the book or new cases (cases 0a and 0b use another version of SLAPP, in Python2)
+        # new cases
         if common.fgIn == None and common.fgOu==None:
             return self.myGauss0(mu, sigma)
 
-        # cases 7-11 of the book
+        # cases of the book
         if common.fgIn != None:
             g=float(common.fgIn.readline())
             r.gauss(mu, sigma) # void destination, the call is made to keep safe
