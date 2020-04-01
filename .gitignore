@@ -4,3 +4,4 @@ schedule.txt
 *.csv
 !labelsPositions.csv
 .ipynb_checkpoints/*
+./exampleGauss/.gitattributes
