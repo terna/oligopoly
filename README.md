@@ -1,5 +1,5 @@
 # Oligopoly
-(build 20200330)
+(build 20200402)
 
 **Stay tuned**: new 6b version with takeover actions under development.
 
