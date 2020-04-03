@@ -1,7 +1,7 @@
 # commonVar.py
 import os
 
-projectVersion = "6b"
+projectVersion = "6b" #post book
 
 case = "6"
 
