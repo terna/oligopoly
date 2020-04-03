@@ -1,5 +1,5 @@
 # Oligopoly
-(readme build 20200320)
+(readme build 20200403)
 
 
 Marco Mazzoli, Matteo Morini, and Pietro Terna
