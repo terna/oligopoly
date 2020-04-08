@@ -7,7 +7,8 @@ import os
 import random as r
 import math
 import commonVar as common
-import urllib.request
+#import urllib.request
+import zipfile, requests, io
 
 # the myGauss calculation is possible via common.mg=myGauss.myG() in paramenters.property
 # then  call it with common.mg.myGauss(...)
@@ -36,6 +37,8 @@ class myG():
         self.error=False
         self.link = \
          "https://raw.githubusercontent.com/terna/oligopolyBookCasesGaussianValues/master/"
+         # this is for the zip file, but it is exactly the same of a .txt one; you calculation
+         # verify opening 'View raw' for a large file
 
         #common.fgOu is set by default to None in commmonVar.py
         #for the ASAHAM cases of thrbook Rethinking ... of Mazzoli, Morini,
@@ -47,13 +50,21 @@ class myG():
         if common.case in self.caseList: #check if the recorded gaussian values are on disk
                 try: #local file existing
                     common.fgIn=open(common.project+\
-                            "/exampleGauss/"+common.case+".txt","r")
+                            "/exampleGauss/"+common.case+".txt","r")#ANCHE QUI ZIP usingZipLocally.py
                     print("\nBook case",common.case,"\n",\
                           "\nReading gaussian random values locally.\n")
-                except:                     #if not, check if rerded gaussian values are online
+                except:                  #if not, check if rerded gaussian values are online
                     try: # online file
-                        common.fgIn=\
-                               urllib.request.urlopen(self.link+common.case+".txt")
+                        r = requests.get(self.link+common.case+".txt.zip",\
+                                headers = { "User-Agent":"My new User-Agent"})
+                                # "My new User-Agent" is a trick from
+                                # http://wolfprojects.altervista.org/articles/change-urllib-user-agent/
+                                # unnecessary with github repositories, but does not hurt if left there
+                        z = zipfile.ZipFile(io.BytesIO(r.content))
+                        z.extractall()
+                        common.fgIn=z.open(common.case+".txt")
+
+                        #       urllib.request.urlopen(self.link+common.case+".txt")
                         print("\nBook case",common.case,"\n",\
                               "\nReading gaussian random values from:",self.link,"\n")
                     except: #data does not exists, we will record them (see [$] above and below)
