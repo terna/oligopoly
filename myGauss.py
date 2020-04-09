@@ -41,7 +41,7 @@ class myG():
          # verify opening 'View raw' for a large file
 
         #common.fgOu is set by default to None in commmonVar.py
-        #for the ASAHAM cases of thrbook Rethinking ... of Mazzoli, Morini,
+        #for the cases of the book Rethinking ... of Mazzoli, Morini,
         #and Terna, we have recorded the same gaussaian values used there, whith random.gauss();
         #if those values are missing, they are anyway calculated using the non perfectly portable
         #random.gauss() tool and the common.fgOu value is != None to acrivate [$] below
@@ -49,10 +49,11 @@ class myG():
         #is this a book ASHAM case?
         if common.case in self.caseList: #check if the recorded gaussian values are on disk
                 try: #local file existing
-                    common.fgIn=open(common.project+\
-                            "/exampleGauss/"+common.case+".txt","r")#ANCHE QUI ZIP usingZipLocally.py
+                    z = zipfile.ZipFile(common.project+"/exampleGauss/"+common.case+".txt.zip")
+                    common.fgIn=z.open(common.case+".txt")
                     print("\nBook case",common.case,"\n",\
                           "\nReading gaussian random values locally.\n")
+
                 except:                  #if not, check if rerded gaussian values are online
                     try: # online file
                         r = requests.get(self.link+common.case+".txt.zip",\
@@ -64,7 +65,6 @@ class myG():
                         z.extractall()
                         common.fgIn=z.open(common.case+".txt")
 
-                        #       urllib.request.urlopen(self.link+common.case+".txt")
                         print("\nBook case",common.case,"\n",\
                               "\nReading gaussian random values from:",self.link,"\n")
                     except: #data does not exists, we will record them (see [$] above and below)
@@ -72,8 +72,10 @@ class myG():
                                 "/exampleGauss/"+common.case+".txt","w")
                         print("\nBook case",common.case,"\n",\
                               "\nWriting gaussian random values to local 'exampleGauss' folder\n")
+                        # the final zip operation is done in oActions.py look "#closing fgOu"
         else:
-                print("\n\nThe running case is outside book cases\n"\
+                if common.case== "": common.case="'unknown'"
+                print("\n\nThe running case "+common.case+" is outside book (Mazzoli et al. 2019) cases\n"\
                       "Neither using past random gaussian values nor saving the new generated ones\n")
 
     # internal method
