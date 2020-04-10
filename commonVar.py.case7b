@@ -7,7 +7,7 @@ build = "20190513"
 
 debug = False
 
-case = "7b"
+case = "7b" # if missing, use ""
 
 fgIn=fgOu=None # used in myGauss.py
 
