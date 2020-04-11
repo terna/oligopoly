@@ -1,7 +1,7 @@
 # commonVar.py
 import os
 
-projectVersion = "6, book case 11"
+projectVersion = "6book"
 
 build = "20190510"
 
