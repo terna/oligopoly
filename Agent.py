@@ -1459,6 +1459,16 @@ class Agent(SuperAgent):
                     os.sys.exit(1)
 
 
+    # to entrepreneur
+    def toBigEntrepreneur(self):
+        if self.agType != "entrepreneurs" or not self.employed:
+            return
+
+        if random() <= 0.10:
+            print("entrepreneur # %2.0f moves to bigEntrepreneur" % self.number)
+            gvf.colors[self] = "ForestGreen"
+
+
     # to workers
     def toWorker(self):
         if self.agType != "entrepreneurs":
