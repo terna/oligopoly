@@ -108,20 +108,23 @@ def collectStructuralData(aL, t):
     try:
         common.str_df
     except BaseException:
-        common.str_df = pd.DataFrame(columns=['entrepreneurs', 'workers'])
+        common.str_df = pd.DataFrame(columns=['bigEntrepreneurs','entrepreneurs', 'workers'])
         print("\nCreation of fhe structural dataframe\n")
         # print common.str_df
 
-    nWorkers = 0
+    nBigEntrepreneurs = 0
     nEntrepreneurs = 0
+    nWorkers = 0
     for ag in aL:
+        if ag.agType == "bigEntrepreneurs":
+            nBigEntrepreneurs += 1
         if ag.agType == "entrepreneurs":
             nEntrepreneurs += 1
         if ag.agType == "workers":
             nWorkers += 1
     # print nEntrepreneurs, nWorkers
-    str_df2 = pd.DataFrame([[nEntrepreneurs, nWorkers]],
-                           columns=['entrepreneurs', 'workers'])
+    str_df2 = pd.DataFrame([[nBigEntrepreneurs,nEntrepreneurs, nWorkers]],
+                           columns=['bigEntrepreneurs','entrepreneurs', 'workers'])
     # print str_df2
 
     common.str_df = common.str_df.append(str_df2, ignore_index=True)
