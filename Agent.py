@@ -56,6 +56,8 @@ class Agent(SuperAgent):
         self.extraCostsResidualDuration = 0
         self.profitStrategyReverseAfterN=0
         self.priceSwitchIfProfitFalls=""
+        self.countConsecutiveVeryNegativeProfits=0
+
 
         if agType == 'workers': #useful in initial creation
             common.orderedListOfNodes.append(self)
@@ -1464,10 +1466,10 @@ class Agent(SuperAgent):
         if self.agType != "entrepreneurs" or not self.employed:
             return
 
-        if random() <= 0.10:
+        if random() <= 0.02:
             print("entrepreneur # %2.0f moves to bigEntrepreneur" % self.number)
             gvf.colors[self] = "ForestGreen"
-
+            self.agType = "bigEntrepreneurs"
 
     # to workers
     def toWorker(self):
@@ -1519,6 +1521,56 @@ class Agent(SuperAgent):
         if self.profit / self.costs <= common.thresholdToWorker:
             print("I'm entrepreneur %2.0f and my relative profit is %4.2f" %
                   (self.number, self.profit / self.costs))
+
+            # the list of the employees of the firm, IF ANY
+            #entrepreneurWorkers = gvf.nx.neighbors(common.g, self) with nx 2.0
+            entrepreneurWorkers = list(common.g.neighbors(self))
+            print("entrepreneur", self.number, "has",
+                  len(entrepreneurWorkers),
+                  "workers to be fired")
+
+            if len(entrepreneurWorkers) > 0:
+                for aWorker in entrepreneurWorkers:
+                    gvf.colors[aWorker] = "OrangeRed"
+                    aWorker.employed = False
+
+                    common.g.remove_edge(self, aWorker)
+
+            self.numOfWorkers = 0
+
+            # originally, it was an entrepreneur
+            if self.xPos < 0:
+                gvf.pos[self] = (self.xPos + 15, self.yPos)
+            # originally, it was a worker
+            else:
+                gvf.pos[self] = (self.xPos, self.yPos)
+            # colors at http://www.w3schools.com/html/html_colornames.asp
+            gvf.colors[self] = "OrangeRed"
+            self.agType = "workers"
+            self.employed = False
+
+    #  bigEntreprenuers to workerworkers from toworkerV3
+    def bigEntrepreneurToWorker(self):
+        if self.agType != "bigEntrepreneurs":
+            return
+
+        # check for newborn firms
+        try:
+            self.costs
+        except BaseException:
+            return
+
+        if self.profit <= common.thresholdToWorker:
+            print("I'm a big entrepreneur %2.0f and my profit is %4.2f, so below threshold" %
+                  (self.number, self.profit))
+            self.countConsecutiveVeryNegativeProfits += 1
+            print("I'm a big entrepreneur %2.0f and the number of consective very negative profits is %2.0f" %
+                  (self.number, self.countConsecutiveVeryNegativeProfits))
+        else:
+            self.countConsecutiveVeryNegativProfits = 0
+
+        # safe until 3
+        if self.countConsecutiveVeryNegativeProfits > 3 and self.profit <=common.thresholdToWorker:
 
             # the list of the employees of the firm, IF ANY
             #entrepreneurWorkers = gvf.nx.neighbors(common.g, self) with nx 2.0
