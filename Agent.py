@@ -588,7 +588,7 @@ class Agent(SuperAgent):
           if not common.ratioSellersBuyersAlreadySet:
               nEntrepreneurs = 0
               for ag in self.agentList:
-                if ag.agType == "entrepreneurs":
+                if ag.agType == "entrepreneurs" or ag.agType == "bigEntrepreneurs":
                           nEntrepreneurs += 1
               nSellers=nEntrepreneurs
 
