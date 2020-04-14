@@ -76,7 +76,7 @@ class Agent(SuperAgent):
             self.jump = 0
 
 
-        if agType == 'entrepreneurs': #useful in initial creation
+        if agType == 'entrepreneurs': #useful in initial creation, no bigEntrepreneurs here
             common.orderedListOfNodes.append(self)
             # use to keep the order
             # in output (ex. adjacency matrix)
@@ -199,7 +199,7 @@ class Agent(SuperAgent):
             common.ratioSellersBuyersAlreadySet=False
 
         # troubles related idividual variables
-        if self.agType == "entrepreneurs":
+        if self.agType == "entrepreneurs" or self.agType == "bigEntrepreneurs":
             self.hasTroubles = 0
         if self.agType == "workers":
             self.workTroubles = 0
@@ -292,8 +292,16 @@ class Agent(SuperAgent):
             # nbunch : iterable container, optional (default=all nodes)
             # A container of nodes. The container will be iterated through
             # once.
-            print(
+            if self.agType == "entrepreneurs":
+                print(
                 "entrepreneur",
+                self.number,
+                "is applying prod. plan and has",
+                self.numOfWorkers,
+                "edge/s after hiring")
+            if self.agType == "bigEntrepreneurs":
+                print(
+                "bigEntrepreneur",
                 self.number,
                 "is applying prod. plan and has",
                 self.numOfWorkers,
@@ -329,12 +337,20 @@ class Agent(SuperAgent):
             # nbunch : iterable container, optional (default=all nodes)
             # A container of nodes. The container will be iterated through
             # once.
-            print(
+            if self.agType == "entrepreneurs":
+                print(
                 "entrepreneur",
                 self.number,
                 "is applying prod. plan and has",
                 self.numOfWorkers,
-                "edge/s after firing")
+                "edge/s after hiring")
+            if self.agType == "bigEntrepreneurs":
+                print(
+                "bigEntrepreneur",
+                self.number,
+                "is applying prod. plan and has",
+                self.numOfWorkers,
+                "edge/s after hiring")
 
     # fireIfProfit
     def fireIfProfit(self):
@@ -446,7 +462,7 @@ class Agent(SuperAgent):
         if common.projectVersion >= "3" and common.cycle == 1:
             nEntrepreneurs = 0
             for ag in self.agentList:
-                if ag.agType == "entrepreneurs":
+                if ag.agType == "entrepreneurs": # no bigEntrepreneurs here
                     nEntrepreneurs += 1
             # print nEntrepreneurs
             nWorkersPlus_nEntrepreneurs = len(self.agentList)
@@ -514,7 +530,7 @@ class Agent(SuperAgent):
             # count of the entrepreneur number
             nEntrepreneurs = 0
             for ag in self.agentList:
-                if ag.agType == "entrepreneurs":
+                if ag.agType == "entrepreneurs" or ag.agType == "bigEntrepreneurs":
                     nEntrepreneurs += 1
 
             # with the scheme of prices until V.5c_fd
@@ -551,7 +567,7 @@ class Agent(SuperAgent):
 
             nEntrepreneurs = 0
             for ag in self.agentList:
-                if ag.agType == "entrepreneurs":
+                if ag.agType == "entrepreneurs" or ag.agType == "bigEntrepreneurs":
                     nEntrepreneurs += 1
 
 
@@ -677,26 +693,26 @@ class Agent(SuperAgent):
     # corrections, in full hayekian market
     # NB we are at the end of each cycle
     def nextSellPriceJumpFHM(self):
-        if self.agType != "entrepreneurs": return
+        if self.agType == "workers": return
         if common.hParadigm=="quasi": return
 
         if common.pJump != -1 and npr.uniform(0,1)<=common.pJump:
             if self.jump == 0:
                 self.jump=common.jump
                 self.sellPrice *= 1 + self.jump
-                print("entrepreur # ", self.number, \
+                print("entrepreneur # ", self.number, \
                       "raises the sell price with a jump")
             else:
                 self.sellPrice /= 1 + self.jump
                 self.jump=0
-                print("entrepreur # ", self.number, \
+                print("entrepreneur # ", self.number, \
                       "reduces the sell price with a jump back")
 
 
     # modify sell prices in quasi hayekian market
     # NB we are at the end of each cycle
     def nextSellPricesQHM(self):
-        if self.agType != "entrepreneurs": return
+        if self.agType == "workers": return
         if common.hParadigm=="full": return
 
         # hayekian period, "quasi" hayekian paradigm
@@ -713,7 +729,14 @@ class Agent(SuperAgent):
            # indexing Python style, pos. -1 is the last one
             self.sellPrice = applyRationallyTheRateOfChange(self.sellPrice,\
                                      uniform(common.decreasingRateRange, 0))
-            print(("end of t = %d entrepreneur %d initial production"+\
+            if ag.agType == "entrepreneurs":
+                  print(("end of t = %d entrepreneur %d initial production"+\
+                   " %.2f sold  %.3f \nold price %.3f new price %.3f as "+\
+                   " total plannedProduction falls") %\
+                   (common.cycle,self.number,self.production,\
+                    self.soldProduction,oldP,self.sellPrice))
+            if ag.agType == "bigEntrepreneurs":
+                  print(("end of t = %d bigEntrepreneur %d initial production"+\
                    " %.2f sold  %.3f \nold price %.3f new price %.3f as "+\
                    " total plannedProduction falls") %\
                    (common.cycle,self.number,self.production,\
@@ -727,7 +750,13 @@ class Agent(SuperAgent):
                 self.sellPrice = applyRationallyTheRateOfChange(self.sellPrice,\
                                         uniform(0, common.increasingRateRange))
 
-            print(("end of t = %d entrepreneur %d initial production"+\
+            if ag.agType == "entrepreneurs":
+                  print(("end of t = %d entrepreneur %d initial production"+\
+                   " %.2f sold  %.3f \nold price %.3f new price %.3f") %\
+                   (common.cycle,self.number,self.production,\
+                    self.soldProduction,oldP,self.sellPrice))
+            if ag.agType == "bigEntrepreneurs":
+                  print(("end of t = %d bigEntrepreneur %d initial production"+\
                    " %.2f sold  %.3f \nold price %.3f new price %.3f") %\
                    (common.cycle,self.number,self.production,\
                     self.soldProduction,oldP,self.sellPrice))
@@ -739,12 +768,12 @@ class Agent(SuperAgent):
                         if self.jump == 0:
                             self.jump=common.jump
                             self.sellPrice *= 1 + self.jump
-                            print("entrepreur # ", self.number, \
+                            print("entrepreneur # ", self.number, \
                                   "raises the sell price with a jump")
                         else:
                             self.sellPrice /= 1 + self.jump
                             self.jump=0
-                            print("entrepreur # ", self.number, \
+                            print("entrepreneur # ", self.number, \
                                   "reduces the sell price with a jump back")
 
             return
@@ -771,7 +800,7 @@ class Agent(SuperAgent):
                                  npr.uniform(0,1)<=common.pJump:
                      if self.priceSwitchIfProfitFalls=="raise":
                         self.sellPrice *= 1 + common.jump
-                        print("entrepreur # ", self.number, \
+                        print("entrepreneur # ", self.number, \
                         "with profit<0, is raising the sell price")
                         self.profitStrategyReverseAfterN=\
                                   common.profitStrategyReverseAfterN
@@ -780,7 +809,7 @@ class Agent(SuperAgent):
                         #           acting again never possible
                      if self.priceSwitchIfProfitFalls=="lower":
                         self.sellPrice /= 1 + common.jump
-                        print("entrepreur # ", self.number, \
+                        print("entrepreneur # ", self.number, \
                         "with profit<0, is lowering the sell price")
                         self.profitStrategyReverseAfterN=\
                                   common.profitStrategyReverseAfterN
@@ -790,11 +819,11 @@ class Agent(SuperAgent):
                    if self.profitStrategyReverseAfterN==0:
                      if self.priceSwitchIfProfitFalls=="raise":
                         self.sellPrice /= 1 + common.jump
-                        print("entrepreur # ", self.number, \
+                        print("entrepreneur # ", self.number, \
                         "lowering back the sell price")
                      if self.priceSwitchIfProfitFalls=="lower":
                         self.sellPrice *= 1 + common.jump
-                        print("entrepreur # ", self.number, \
+                        print("entrepreneur # ", self.number, \
                         "raising back the sell price")
 
           return
@@ -835,7 +864,7 @@ class Agent(SuperAgent):
             residualUnsoldProduction=0
             for anAgent in self.agentList:
                 residualConsumptionCapabilityInValue += anAgent.consumption
-                if anAgent.agType=="entrepreneurs":
+                if anAgent.agType=="entrepreneurs" or anAgent.agType=="bigEntrepreneurs":
                     residualUnsoldProduction+= \
                     anAgent.production - anAgent.soldProduction
             print(\
@@ -869,7 +898,7 @@ class Agent(SuperAgent):
            # create a temporary list of sellers, starting each step (cycle)
            common.sellerList=[]
            for anAg in self.agentList:
-               if anAg.getType() == "entrepreneurs":
+               if anAg.getType() == "entrepreneurs" or anAg.getType() == "bigEntrepreneurs":
                    if not anAg.sellPriceDefined:
                        print("Inconsistent situation, an active selles"\
                        +" has no sell price defined.")
@@ -1041,7 +1070,7 @@ class Agent(SuperAgent):
         self.costs = common.wage * \
             (self.production / common.laborProductivity) + XC
 
-        # the entrepreur sells her production, which is contributing - via
+        # the entrepreneur sells her production, which is contributing - via
         # totalActualProductionInA_TimeStep, to price formation
         self.profit = common.price * self.production - self.costs
 
@@ -1087,22 +1116,22 @@ class Agent(SuperAgent):
                 * (laborForce - 1) \
                 + common.wage * 1 +  \
                 XC
-            # above, common.wage * 1 is for the entrepreur herself
+            # above, common.wage * 1 is for the entrepreneur herself
 
         else:
             self.costs = common.wage * laborForce + \
                 XC
-        # print "I'm entrepreur", self.number, "costs are",self.costs
+        # print "I'm entrepreneur", self.number, "costs are",self.costs
 
         # penalty Value
         pv = 0
         if self.hasTroubles > 0:
             pv = common.penaltyValue
 
-        # the entrepreur sells her production, which is contributing - via
+        # the entrepreneur sells her production, which is contributing - via
         # totalActualProductionInA_TimeStep, to price formation
         self.profit = common.price * (1. - pv) * self.production - self.costs
-        print("I'm entrepreur", self.number, "my price is ",
+        print("I'm entrepreneur", self.number, "my price is ",
               common.price * (1. - pv))
 
 
@@ -1165,12 +1194,12 @@ class Agent(SuperAgent):
                 * (laborForce - 1) \
                 + common.wage * 1 +  \
                 XC
-            # above, common.wage * 1 is for the entrepreur herself
+            # above, common.wage * 1 is for the entrepreneur herself
 
         else:
             self.costs = common.wage * laborForce + \
                 XC
-        # print "I'm entrepreur", self.number, "costs are",self.costs
+        # print "I'm entrepreneur", self.number, "costs are",self.costs
 
         # penalty Value
         pv = 0
@@ -1179,16 +1208,16 @@ class Agent(SuperAgent):
 
         # V6 - before hayekian phase
         if common.cycle < common.startHayekianMarket:
-           # the entrepreur sells her production, which is contributing - via
+           # the entrepreneur sells her production, which is contributing - via
            # totalActualProductionInA_TimeStep, to price formation
            self.profit = common.price * (1. - pv) * self.production - self.costs
-           print("I'm entrepreur", self.number, "my price is ",
+           print("I'm entrepreneur", self.number, "my price is ",
               common.price * (1. - pv))
 
         # V6 - into the hayekian phase
         else:
            self.profit = self.revenue - self.costs
-           print("I'm entrepreur", self.number, "my individual price is ",
+           print("I'm entrepreneur", self.number, "my individual price is ",
               self.sellPrice)
 
 
@@ -1426,11 +1455,17 @@ class Agent(SuperAgent):
             #myEntrepreneur = gvf.nx.neighbors(common.g, self)[0] with nx 2.0
             myEntrepreneur = list(common.g.neighbors(self))[0]
             myEntrepreneurProfit = myEntrepreneur.profit
+            myEntrepreneurType = myEntrepreneur.agT
             myEntrepreneurCosts = myEntrepreneur.costs
             if myEntrepreneurProfit / myEntrepreneurCosts >= \
                     common.thresholdToEntrepreneur:
-                print(
+                if myEntrepreneurType == "entrepreneurs":
+                    print(
                     "Worker %2.0f is now an entrepreneur (previous firm relative profit %4.2f)" %
+                    (self.number, myEntrepreneurProfit / myEntrepreneurCosts))
+                if myEntrepreneurType == "bigEntrepreneurs":
+                    print(
+                    "Worker %2.0f is now an entrepreneur (previous (big) firm relative profit %4.2f)" %
                     (self.number, myEntrepreneurProfit / myEntrepreneurCosts))
                 common.g.remove_edge(myEntrepreneur, self)
 
@@ -1509,7 +1544,7 @@ class Agent(SuperAgent):
 
     # to workersV3
     def toWorkerV3(self):
-        if self.agType != "entrepreneurs":
+        if self.agType == "workers":
             return
 
         # check for newborn firms
@@ -1612,7 +1647,9 @@ class Agent(SuperAgent):
         psiShock = uniform(common.productionCorrectionPsi / 2,
                            common.productionCorrectionPsi)
         self.hasTroubles = psiShock
-        print("Entrepreneur", self.number, "is suffering a reduction of "
+        if self.agType == "entrepreneurs":print("Entrepreneur", self.number, "is suffering a reduction of "
+              "production of", psiShock * 100, "%, due to work troubles")
+        if self.agType == "bigEntrepreneurs":print("BigEntrepreneur", self.number, "is suffering a reduction of "
               "production of", psiShock * 100, "%, due to work troubles")
 
         if common.wageCutForWorkTroubles:
