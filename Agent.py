@@ -876,7 +876,7 @@ class Agent(SuperAgent):
 
         try: common.wr.writerow
         except:
-            print("The file firstStepOutputInHayekianMarket.csv was not"+\
+            print("The file firstStepOutputInHayekianMarket.csv has not been"+\
                   " created in mActions.py")
             os.sys.exit(1)
 
