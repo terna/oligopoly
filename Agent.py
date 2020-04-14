@@ -1455,7 +1455,7 @@ class Agent(SuperAgent):
             #myEntrepreneur = gvf.nx.neighbors(common.g, self)[0] with nx 2.0
             myEntrepreneur = list(common.g.neighbors(self))[0]
             myEntrepreneurProfit = myEntrepreneur.profit
-            myEntrepreneurType = myEntrepreneur.agT
+            myEntrepreneurType = myEntrepreneur.agType
             myEntrepreneurCosts = myEntrepreneur.costs
             if myEntrepreneurProfit / myEntrepreneurCosts >= \
                     common.thresholdToEntrepreneur:
