@@ -1295,7 +1295,7 @@ class Agent(SuperAgent):
         #case (1)
         # Y1=profit(t-1)+wage NB no negative consumption if profit(t-1) < 0
         # this is an entrepreneur action
-        if self.agType == "entrepreneurs":
+        if self.agType == "entrepreneurs" or self.agType == "bigEntrepreneurs":
             self.consumption = common.a1 + \
                 common.b1 * (self.profit + common.wage) + \
                 common.mg.myGauss(0, common.consumptionRandomComponentSD)
@@ -1604,7 +1604,7 @@ class Agent(SuperAgent):
 
             # NB this method acts with the probability set in the schedule.txt
             # file
-        if self.agType != "entrepreneurs":
+        if self.agType == "workers":
             return
 
         # production shock due to work troubles
