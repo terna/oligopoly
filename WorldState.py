@@ -173,7 +173,7 @@ class WorldState(object):
         peopleList = common.g.nodes()
         nEntrepreneursE = 0
         for p in peopleList:
-            if p.agType == "entrepreneurs":
+            if p.agType == "entrepreneurs" or p.agType == "bigEntreprenuers":
                 nEntrepreneursE += 1
         nEntrepreneursE = float(nEntrepreneursE)
 
@@ -203,16 +203,24 @@ class WorldState(object):
           #print("///////// ","common.cycle",common.cycle)
           if common.cycle == 1:
                 # values in str_df at the beginning of each cycle
-                nEntrepreneursB_1     = common.str_df.iloc[-1, 0]#indexing Py. style
-                nEntrepreneursB       = common.str_df.iloc[-1, 0]# pos. -1 is
-                nEntrepreneursE_1     = common.str_df.iloc[-1, 0]
-                ReferenceLevel_1      = common.str_df.iloc[-1, 0]# the last one
-                common.ReferenceLevel = common.str_df.iloc[-1, 0]
+                nEntrepreneursB_1     = common.str_df.iloc[-1, 0]+\
+                                        common.str_df.iloc[-1, 1]#indexing Py. style
+                nEntrepreneursB       = common.str_df.iloc[-1, 0]+\
+                                        common.str_df.iloc[-1, 1]# pos. -1 is
+                nEntrepreneursE_1     = common.str_df.iloc[-1, 0]+\
+                                        common.str_df.iloc[-1, 1]
+                ReferenceLevel_1      = common.str_df.iloc[-1, 0]+\
+                                        common.str_df.iloc[-1, 1]# the last one
+                common.ReferenceLevel = common.str_df.iloc[-1, 0]+\
+                                        common.str_df.iloc[-1, 1]
                                       # common to avoid a reference error
           else:
-                nEntrepreneursB_1 = common.str_df.iloc[-2, 0]#indexing Py. style
-                nEntrepreneursB   = common.str_df.iloc[-1, 0]
-                nEntrepreneursE_1 = common.str_df.iloc[-1, 0]
+                nEntrepreneursB_1 = common.str_df.iloc[-2, 0]+\
+                                    common.str_df.iloc[-2, 1]#indexing Py. style
+                nEntrepreneursB   = common.str_df.iloc[-1, 0]+\
+                                    common.str_df.iloc[-1, 1]
+                nEntrepreneursE_1 = common.str_df.iloc[-1, 0]+\
+                                    common.str_df.iloc[-1, 1]
                 ReferenceLevel_1  = common.ReferenceLevel
 
           #if nEntrepreneursB - nEntrepreneursB_1 <= 0 or \
