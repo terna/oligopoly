@@ -454,6 +454,18 @@ def loadParameters(self):
                     common.Q)  # saving pars
 
 
+    # very negative profit count limit, used from 6b (takeover) version
+    common.veryNegativeProfitCountLimit = fInput("\nVery negative profit count limit (>=0) ")
+
+    if common.veryNegativeProfitCountLimit < 0:
+        print("out of range (>=0")
+        os.sys.exit(1)
+
+    dataFrameAppend("veryNegativeProfitCountLimit",
+                    "very negative profit count limit, used from 6b (takeover) version",
+                    common.veryNegativeProfitCountLimit)  # saving pars
+
+
 
     # cycles
     self.nCycles = fInput("How many cycles? (0 = exit) ")
