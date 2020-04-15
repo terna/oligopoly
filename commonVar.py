@@ -140,6 +140,8 @@ maxDemandRelativeRandomShock = 0.15  # was 0.10 #was 0.20
 # threshold toWorker
 thresholdToWorker = -0.25 # -0.20 was the value in the paper
 
+# very negative profit count limit for bigEntrepreneurs
+veryNegativeProfitCountLimit=0
 
 # price warming has to be done only once (hayekian market)
 priceWarmingDone = False
