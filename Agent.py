@@ -1604,9 +1604,8 @@ class Agent(SuperAgent):
         else:
             self.countConsecutiveVeryNegativProfits = 0
 
-        # test veryNegativeProfitCountLimit
-        if self.countConsecutiveVeryNegativeProfits > common.veryNegativeProfitCountLimit \
-                and self.profit <=common.thresholdToWorker:
+        # test if the count exceeds veryNegativeProfitCountLimit
+        if self.countConsecutiveVeryNegativeProfits > common.veryNegativeProfitCountLimit:
 
             # the list of the employees of the firm, IF ANY
             #entrepreneurWorkers = gvf.nx.neighbors(common.g, self) with nx 2.0
