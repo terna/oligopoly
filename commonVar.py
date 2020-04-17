@@ -3,11 +3,15 @@ import os
 
 projectVersion = "6b, post book, with takeover"
 
-build = "20200415"
+build = "20200417"
 
 debug = False
 
 case = "v6b_1" # from book case 10
+
+# very negative profit count limit for bigEntrepreneurs
+# if commented, no use of it, neigher in paraameters.py nor in Agent.py
+veryNegativeProfitCountLimit=0
 
 fgIn=fgOu=None # used in myGauss.py
 
@@ -139,9 +143,6 @@ maxDemandRelativeRandomShock = 0.15  # was 0.10 #was 0.20
 
 # threshold toWorker
 thresholdToWorker = -0.25 # -0.20 was the value in the paper
-
-# very negative profit count limit for bigEntrepreneurs
-veryNegativeProfitCountLimit=0
 
 # price warming has to be done only once (hayekian market)
 priceWarmingDone = False
