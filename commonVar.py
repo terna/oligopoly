@@ -3,7 +3,7 @@ import os
 
 projectVersion = "6b, post book, with takeover"
 
-build = "20200417"
+build = "20200419"
 
 debug = False
 

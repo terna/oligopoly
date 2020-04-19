@@ -30,6 +30,7 @@ def applyRationallyTheRateOfChange(base,rate):
             return base/(1+abs(rate))
 
 class Agent(SuperAgent):
+
     def __init__(self, number, myWorldState,
                  xPos=0, yPos=0, agType=""):
 
@@ -238,7 +239,8 @@ class Agent(SuperAgent):
 
     def hireFireWithProduction(self):
 
-        # workers do not hire/fire
+        # executed by entrepreneurs or bigEntrepreneurs, the following if
+        # is uniquely an internal safety control
         if self.agType == "workers":
             return
 
@@ -418,7 +420,8 @@ class Agent(SuperAgent):
     # produce
     def produceV5(self):
 
-        # this is an entrepreneur action
+        # executed by entrepreneurs or bigEntrepreneurs, the following if
+        # is uniquely an internal safety control
         if self.agType == "workers":
             return
 
@@ -455,7 +458,8 @@ class Agent(SuperAgent):
     # makeProductionPlan
     def makeProductionPlan(self):
 
-        # this is an entrepreneur action
+        # executed by entrepreneurs or bigEntrepreneurs, the following if
+        # is uniquely an internal safety control
         if self.agType == "workers":
             return
 
@@ -525,7 +529,8 @@ class Agent(SuperAgent):
     # adaptProductionPlanV6
     def adaptProductionPlanV6(self):
 
-        # this is an entrepreneur action
+        # executed by entrepreneurs or bigEntrepreneurs, the following if
+        # is uniquely an internal safety control
         if self.agType == "workers":
             return
 
@@ -603,6 +608,8 @@ class Agent(SuperAgent):
 
     # set initial sell and buy prices in hayekian market
     def setInitialPricesHM(self):
+
+        # executed by all, so no internal safety control
 
         # 1 -----------------------------------------
         if common.cycle >= common.startHayekianMarket:
@@ -698,7 +705,11 @@ class Agent(SuperAgent):
     # corrections, in full hayekian market
     # NB we are at the end of each cycle
     def nextSellPriceJumpFHM(self):
+
+        # executed by entrepreneurs or bigEntrepreneurs, the following if
+        # is uniquely an internal safety control
         if self.agType == "workers": return
+
         if common.hParadigm=="quasi": return
 
         if common.pJump != -1 and npr.uniform(0,1)<=common.pJump:
@@ -717,7 +728,11 @@ class Agent(SuperAgent):
     # modify sell prices in quasi hayekian market
     # NB we are at the end of each cycle
     def nextSellPricesQHM(self):
+
+        # executed by entrepreneurs or bigEntrepreneurs, the following if
+        # is uniquely an internal safety control
         if self.agType == "workers": return
+
         if common.hParadigm=="full": return
 
         # hayekian period, "quasi" hayekian paradigm
@@ -842,6 +857,9 @@ class Agent(SuperAgent):
 
     # all acting as consumers on the market place
     def actOnMarketPlace(self):
+
+        # executed by all, so no internal safety control
+
         if common.cycle < common.startHayekianMarket: return
 
         # in each sub step, we show residual consumption and production; the
@@ -1162,7 +1180,8 @@ class Agent(SuperAgent):
     # calculateProfit
     def evaluateProfitV6(self):
 
-        # this is an entrepreneur action
+        # executed by entrepreneurs or bigEntrepreneurs, the following if
+        # is uniquely an internal safety control
         if self.agType == "workers":
             return
 
@@ -1325,6 +1344,8 @@ class Agent(SuperAgent):
     # consumptions
     def planConsumptionInValueV6(self):
 
+        # executed by all, so no internal safety control
+
         self.consumption = 0
         #case (1)
         # Y1=profit(t-1)+wage NB no negative consumption if profit(t-1) < 0
@@ -1451,8 +1472,12 @@ class Agent(SuperAgent):
 
     # to entrepreneurV6
     def toEntrepreneurV6(self):
+
+        # executed by workers, the following if
+        # is uniquely an internal safety control
         if self.agType != "workers" or not self.employed:
             return
+
         # print float(common.absoluteBarrierToBecomeEntrepreneur)/ \
         #               len(self.agentList)
         if random() <= float(common.absoluteBarrierToBecomeEntrepreneur) / \
@@ -1503,8 +1528,12 @@ class Agent(SuperAgent):
 
     # to entrepreneur
     def toBigEntrepreneur(self):
+
+        # executed by entrepreneurs, the following if
+        # is uniquely an internal safety control
+
         """
-        if self.agType != "entrepreneurs" or not self.employed:ERRORE
+        if self.agType != "entrepreneurs" or not self.employed:ERRORE? INUTILE
             return
 
         if random() <= 0.02:
@@ -1552,6 +1581,9 @@ class Agent(SuperAgent):
 
     # to workersV3
     def toWorkerV3(self):
+
+        # executed by workers, the following if
+        # is uniquely an internal safety control
         if self.agType == "workers":
             return
 
@@ -1594,6 +1626,9 @@ class Agent(SuperAgent):
 
     #  bigEntreprenuers to workerworkers from toworkerV3
     def bigEntrepreneurToWorker(self):
+
+        # executed by bigEntrepreneurs, the following if
+        # is uniquely an internal safety control
         if self.agType != "bigEntrepreneurs":
             return
 
@@ -1662,6 +1697,9 @@ class Agent(SuperAgent):
 
             # NB this method acts with the probability set in the schedule.txt
             # file
+
+        # executed by entrepreneurs or bigEntrepreneurs, the following if
+        # is uniquely an internal safety control
         if self.agType == "workers":
             return
 
