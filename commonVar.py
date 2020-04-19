@@ -11,7 +11,7 @@ case = "v6b_1" # from book case 10
 
 # very negative profit count limit for bigEntrepreneurs
 # if commented, no use of it, neigher in paraameters.py nor in Agent.py
-veryNegativeProfitCountLimit=0
+#veryNegativeProfitCountLimit=0
 
 fgIn=fgOu=None # used in myGauss.py
 

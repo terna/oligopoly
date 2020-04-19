@@ -343,14 +343,14 @@ class Agent(SuperAgent):
                 self.number,
                 "is applying prod. plan and has",
                 self.numOfWorkers,
-                "edge/s after hiring")
+                "edge/s after firing")
             if self.agType == "bigEntrepreneurs":
                 print(
                 "bigEntrepreneur",
                 self.number,
                 "is applying prod. plan and has",
                 self.numOfWorkers,
-                "edge/s after hiring")
+                "edge/s after firing")
 
     # fireIfProfit
     def fireIfProfit(self):
@@ -524,6 +524,11 @@ class Agent(SuperAgent):
 
     # adaptProductionPlanV6
     def adaptProductionPlanV6(self):
+
+        # this is an entrepreneur action
+        if self.agType == "workers":
+            return
+
 
         # pre hayekian period
         if common.cycle > 1 and common.cycle < common.startHayekianMarket:
@@ -1498,13 +1503,16 @@ class Agent(SuperAgent):
 
     # to entrepreneur
     def toBigEntrepreneur(self):
-        if self.agType != "entrepreneurs" or not self.employed:
+        """
+        if self.agType != "entrepreneurs" or not self.employed:ERRORE
             return
 
         if random() <= 0.02:
             print("entrepreneur # %2.0f moves to bigEntrepreneur" % self.number)
             gvf.colors[self] = "ForestGreen"
             self.agType = "bigEntrepreneurs"
+        """
+        pass
 
     # to workers
     def toWorker(self):
@@ -1595,18 +1603,33 @@ class Agent(SuperAgent):
         except BaseException:
             return
 
-        if self.profit <= common.thresholdToWorker:
+        moveToWorker=False
+
+        # if the paramenter does not exist in commonVar.py, ignore it
+        try:
+         common.veryNegativeProfitCountLimit
+         if self.profit / self.costs <= common.thresholdToWorker:
             print("I'm a big entrepreneur %2.0f and my profit is %4.2f, so below threshold" %
                   (self.number, self.profit))
             self.countConsecutiveVeryNegativeProfits += 1
             print("I'm a big entrepreneur %2.0f and the number of consective very negative profits is %2.0f" %
                   (self.number, self.countConsecutiveVeryNegativeProfits))
-        else:
+         else:
             self.countConsecutiveVeryNegativProfits = 0
 
-        # test if the count exceeds veryNegativeProfitCountLimit
-        if self.countConsecutiveVeryNegativeProfits > common.veryNegativeProfitCountLimit:
+         # test if the count exceeds veryNegativeProfitCountLimit
+         if self.countConsecutiveVeryNegativeProfits > common.veryNegativeProfitCountLimit:
+            moveToWorker=True
 
+        except:
+
+         if self.profit / self.costs <= common.thresholdToWorker:
+            print("I'm bigEntrepreneur %2.0f and my relative profit is %4.2f" %
+                  (self.number, self.profit / self.costs))
+
+            moveToWorker=True
+
+        if moveToWorker:
             # the list of the employees of the firm, IF ANY
             #entrepreneurWorkers = gvf.nx.neighbors(common.g, self) with nx 2.0
             entrepreneurWorkers = list(common.g.neighbors(self))

@@ -455,16 +455,19 @@ def loadParameters(self):
 
 
     # very negative profit count limit, used from 6b (takeover) version
-    common.veryNegativeProfitCountLimit = fInput("\nVery negative profit count limit (>=0) ")
+    # if the paramenter does not exist in commonVar.py, ignore it
+    try:
+     common.veryNegativeProfitCountLimit
+     common.veryNegativeProfitCountLimit = fInput("\nVery negative profit count limit (>=0) ")
 
-    if common.veryNegativeProfitCountLimit < 0:
+     if common.veryNegativeProfitCountLimit < 0:
         print("out of range (>=0")
         os.sys.exit(1)
 
-    dataFrameAppend("veryNegativeProfitCountLimit",
+     dataFrameAppend("veryNegativeProfitCountLimit",
                     "very negative profit count limit, used from 6b (takeover) version",
                     common.veryNegativeProfitCountLimit)  # saving pars
-
+    except: pass
 
 
     # cycles
